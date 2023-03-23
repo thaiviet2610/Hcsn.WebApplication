@@ -69,7 +69,15 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ValidateResource.DepreciationYearGreateThanCost
                 };
             }
-            
+            //if(asset.depreciation_rate != (1 / asset.life_time) * 100)
+            //{
+            //    return new ValidateResult
+            //    {
+            //        IsSuccess = false,
+            //        ValidateCode = ValidateCode.DepreciationRateDifferentLifeTime,
+            //        Message = ValidateResource.DepreciationRateDifferentLifeTime
+            //    };
+            //}
             return new ValidateResult
             {
                 IsSuccess = true,

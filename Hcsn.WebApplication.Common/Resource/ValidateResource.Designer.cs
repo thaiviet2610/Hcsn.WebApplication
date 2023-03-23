@@ -61,6 +61,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng.
+        /// </summary>
+        public static string DepreciationRateDifferentLifeTime {
+            get {
+                return ResourceManager.GetString("DepreciationRateDifferentLifeTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giá trị hao mòn năm phải nhỏ hơn hoặc bàng nguyên giá.
         /// </summary>
         public static string DepreciationYearGreateThanCost {

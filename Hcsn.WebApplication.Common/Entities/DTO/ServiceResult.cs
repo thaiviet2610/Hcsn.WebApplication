@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
+    /// <summary>
+    /// Đối tượng chứa thông tin lỗi nhận đucợ ở tầng BL trả về cho tầng Controller 
+    /// Created by: LTVIET (10/03/2023)
+    /// </summary>
     public class ServiceResult
     {
         /// <summary>

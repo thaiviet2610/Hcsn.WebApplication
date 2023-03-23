@@ -41,6 +41,9 @@ namespace Hcsn.WebApplication.Common.Enums
         /// </summary>
         NumberEqual0 = 6,
 
-        
+        /// <summary>
+        /// Lỗi validate tỷ lệ hao mòn != (1/số năm sử dụng)*100
+        /// </summary>
+        DepreciationRateDifferentLifeTime = 7,
     }
 }

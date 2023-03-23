@@ -2,6 +2,10 @@
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
+    /// <summary>
+    /// Đối tượng chứa thông tin lỗi được trả về cho frontend
+    /// Created by: LTVIET (10/03/2023)
+    /// </summary>
     public class ErrorResult
     {
         /// <summary>
