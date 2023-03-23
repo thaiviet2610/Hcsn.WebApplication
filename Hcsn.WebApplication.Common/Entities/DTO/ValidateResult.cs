@@ -28,6 +28,6 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// <summary>
         /// Thông báo lỗi chi tiết
         /// </summary>
-        public string Message { get; set; }
+        public string? Message { get; set; }
     }
 }

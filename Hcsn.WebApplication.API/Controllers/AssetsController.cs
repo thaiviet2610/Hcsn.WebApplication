@@ -30,6 +30,15 @@ namespace Hcsn.WebApplication.API.Controllers
             _assetBL = assetBL;
         }
 
+        /// <summary>
+        /// API phân trang, lọc danh sách tài sản
+        /// </summary>
+        /// <param name="keyword">Từ khóa tìm kiếm</param>
+        /// <param name="departmentId">Id phòng ban tìm kiếm</param>
+        /// <param name="fixedAssetCatagortId">Id loại tài sản tìm kiếm</param>
+        /// <param name="pageSize">Số bản ghi trong 1 trang</param>
+        /// <param name="pageNumber">Vị trí trang hiện tại</param>
+        /// <returns>Danh sách các tài sản phù hợp</returns>
         [HttpGet("Filter")]
         public IActionResult GetPaging(
             [FromQuery] string? keyword,

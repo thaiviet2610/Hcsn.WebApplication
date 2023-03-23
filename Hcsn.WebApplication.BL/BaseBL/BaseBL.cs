@@ -28,6 +28,15 @@ namespace Hcsn.WebApplication.BL.BaseBL
         #endregion
 
         #region Method
+
+        /// <summary>
+        /// Hàm xử lý logic khi xóa 1 bản ghi
+        /// </summary>
+        /// <param name="recordId">Id bản ghi muốn xóa</param>
+        /// <returns>
+        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
+        /// </returns>
+        /// Created by: LTViet (20/03/2023)
         public ServiceResult DeleteRecord(Guid recordId)
         {
             var numberOfAffectedRows = _baseDL.DeleteRecord(recordId);
@@ -46,6 +55,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
+        /// <summary>
+        /// Hàm xử lý logic khi lấy ra danh sách tất cả các bản ghi
+        /// </summary>
+        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+        /// Created by: LTVIET (20/03/2023)
         public ServiceResult GetAllRecord()
         {
             var records = _baseDL.GetAllRecord();
@@ -65,6 +79,12 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
+        /// <summary>
+        /// Hàm xử lý logic khi lấy thông tin chi tiết 1 bản ghi theo id từ tầng DL 
+        /// </summary>
+        /// <param name="recordId">ID bản ghi muốn lấy</param>
+        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+        /// Created by: LTVIET (20/03/2023)
         public ServiceResult GetRecordById(Guid recordId)
         {
             var record = _baseDL.GetRecordById(recordId);
@@ -84,6 +104,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
+        /// <summary>
+        /// Hàm xử lý logic khi thêm mới 1 bản ghi
+        /// </summary>
+        /// <param name="record">Bản ghi muốn thêm</param>
+        /// <returns>
+        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
+        /// </returns>
+        /// Created by: LTViet (20/03/2023)
         public ServiceResult InsertRecord(T record)
         {
             var validateResult = ValidateRequesData(record,Guid.Empty);
@@ -128,34 +156,17 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
         }
 
-        
 
+        /// <summary>
+        /// Hàm xử lý logic khi sửa đổi 1 bản ghi
+        /// </summary>
+        /// <param name="record">Bản ghi muốn sửa đổi</param>
+        /// <returns>
+        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
+        /// </returns>
+        /// Created by: LTViet (20/03/2023)
         public ServiceResult UpdateRecord(Guid recordId, T record)
         {
-            // Kiểm tra có trung code hay không ?
-            //string recordCode = "";
-            //var properties = typeof(T).GetProperties();
-            //foreach (var property in properties)
-            //{
-            //    if (property.IsDefined(typeof(HcsnCodeAttribute), false))
-            //    {
-            //        recordCode = property.GetValue(record).ToString();
-            //        break;
-            //    }
-            //}
-            //var isSameCode = IsSameCode(recordCode, recordId);
-            //if (!isSameCode.IsSuccess)
-            //{
-            //    // Thất bại
-            //    return new ServiceResult
-            //    {
-            //        IsSuccess = false,
-            //        ErrorCode = ErrorCode.DuplicateCode,
-            //        Message = ServiceResource.DuplicateCode,
-            //        Data = isSameCode
-            //    };
-            //}
-            // Thành công
             // Validate dữ liệu đầu vào
             var validateResult = ValidateRequesData(record,recordId);
             if (!validateResult.IsSuccess)
@@ -201,6 +212,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
         }
 
+        /// <summary>
+        /// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
+        /// </summary>
+        /// <param name="recordCode">Code cần kiểm tra</param>
+        /// <param name="recordId">Id </param>
+        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+        /// Created by: LTViet (20/03/2023)
         public ServiceResult IsSameCode(string recordCode, Guid recordId)
         {
             var numberOfAffectedRows = _baseDL.GetRecordByCode(recordCode, recordId);
@@ -222,6 +240,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
         }
 
+        /// <summary>
+        /// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
+        /// </summary>
+        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+        /// Created by: LTViet (20/03/2023)
         public ServiceResult GetNewCode()
         {
             var oldCode = _baseDL.GetNewCode();
@@ -245,6 +268,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
 
         }
 
+        /// <summary>
+        /// Hàm sinh ra code mới từ việc tách code ra phần chữ và số rồi tăng phần số lên 1 đơn vị
+        /// </summary>
+        /// <param name="oldCode">Code cần tách ra</param>
+        /// <returns>Code mới</returns>
         private string GenerateNewCode(string oldCode)
         {
             // Thành công
@@ -276,15 +304,21 @@ namespace Hcsn.WebApplication.BL.BaseBL
             return newCode;
         }
 
+        /// <summary>
+        /// Hàm validate chung dữ liệu 
+        /// </summary>
+        /// <param name="record">bản ghi cần validate</param>
+        /// <param name="recordId">Id của bản ghi</param>
+        /// <returns>Kết quả validate dữ liệu</returns>
         protected virtual ValidateResult ValidateRequesData(T record,Guid recordId)
         {
-            string recordCode = "";
+            
             var properties = typeof(T).GetProperties();
             foreach (var property in properties)
             {
                 if (property.IsDefined(typeof(HcsnCodeAttribute), false))
                 {
-                    recordCode = property.GetValue(record).ToString();
+                    string recordCode = property.GetValue(record).ToString();
                     var isSameCode = IsSameCode(recordCode, recordId);
                     if (!isSameCode.IsSuccess)
                     {
@@ -371,6 +405,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
 
         }
 
+        /// <summary>
+        /// Hàm validate riêng dữ liệu 
+        /// </summary>
+        /// <param name="record">bản ghi cần validate</param>
+        /// <returns>Kết quả validate dữ liệu</returns>
         protected virtual ValidateResult ValidateCustom(T record)
         {
             return new ValidateResult() { IsSuccess = true };

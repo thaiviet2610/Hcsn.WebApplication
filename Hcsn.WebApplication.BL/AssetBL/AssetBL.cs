@@ -24,15 +24,30 @@ namespace Hcsn.WebApplication.BL.AssetBL
         #region Field
         private IAssetDL _assetDL;
         #endregion
+
+        #region Constructor
         public AssetBL(IAssetDL assetDL) : base(assetDL)
         {
             _assetDL = assetDL;
         }
+        #endregion
 
+        #region Method
+        /// <summary>
+        /// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+        /// </summary>
+        /// <param name="keyword"></param> Từ khóa tìm kiếm (mã tài sản, tên tài sản)
+        /// <param name="departmentId"></param> Id của phòng ban
+        /// <param name="fixedAssetCatagortId"></param> Id của loại tài sản
+        /// <returns> Đối tượng PagingResult bao gồm:
+        /// - Danh sách tài sản trong 1 trang
+        /// - Tổng số bản ghi thỏa mãn điều kiện
+        /// </returns>
+        /// Created by: LTVIET (09/03/2023)
         public ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
         {
             var result = _assetDL.GetPaging(keyword, departmentId, fixedAssetCatagortId, pageSize, pageNumber);
-            if(result.Data == null)
+            if (result.Data == null)
             {
                 return new ServiceResult
                 {
@@ -82,7 +97,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
             {
                 IsSuccess = true,
             };
-        }
+        } 
+        #endregion
 
 
 

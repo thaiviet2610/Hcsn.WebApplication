@@ -2,7 +2,6 @@ using Hcsn.WebApplication.BL.AssetBL;
 using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.DL.AssetDL;
 using Hcsn.WebApplication.DL.BaseDL;
-using Hcsn.WebApplication.DL.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +21,6 @@ builder.Services.AddSwaggerGen();
 // Dependency injection
 builder.Services.AddScoped<IAssetBL, AssetBL>();
 builder.Services.AddScoped<IAssetDL, AssetDL>();
-builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));
 
