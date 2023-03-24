@@ -16,6 +16,7 @@ using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.BL.AssetBL;
 using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 using Hcsn.WebApplication.Common.Resource;
+using System.Collections;
 
 namespace Hcsn.WebApplication.API.Controllers
 {
@@ -63,12 +64,12 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 return StatusCode(200, result.Data);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception +ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -79,16 +80,32 @@ namespace Hcsn.WebApplication.API.Controllers
         [HttpGet("test")]
         public IActionResult get()
         {
-            string store = "Proc_Asset_CheckSameCode";
-            var parmeters = new DynamicParameters();
-            parmeters.Add("p_code", "TS74451");
-            parmeters.Add("p_id", Guid.NewGuid());
+            string store = "Proc_Asset_Filter";
+            int limit = 10;
+            int offset = (1 - 1) * limit;
+            var parameters = new DynamicParameters();
+            parameters.Add("p_department_id", null);
+            parameters.Add("p_asset_category_id", null);
+            parameters.Add("p_keyword", null);
+            parameters.Add("p_limit", limit);
+            parameters.Add("p_offset", offset);
+            // Khởi tạo kết nối tới Database
+            // Thực hiện gọi vào Database để chạy stored procedure
             string connec = "Server=localhost;Port=3306;Database=test;Uid=root;Pwd=123456;";
             using(var mySQL = new MySqlConnection(connec))
             {
                 mySQL.Open();
-                var a = mySQL.QueryFirstOrDefault<int>(store, parmeters, commandType:CommandType.StoredProcedure);
-                return StatusCode(200, a);
+                var result = mySQL.QueryMultiple(store, parameters, commandType:CommandType.StoredProcedure);
+                var data = result.Read<Asset>().ToList();
+                
+                var asset = data[0];
+                var b = asset.purchase_date;
+                var c = asset.production_year;
+                var d = (b - c).TotalDays;
+                var totalRecord = result.Read<int>().Single();
+
+                var a = result.Read<Asset>().Single();
+                return StatusCode(200, asset);
             }
         }
        

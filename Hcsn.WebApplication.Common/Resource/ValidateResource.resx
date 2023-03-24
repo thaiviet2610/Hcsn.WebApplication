@@ -138,4 +138,7 @@
   <data name="OutOfRate" xml:space="preserve">
     <value> nằm ngoài khoảng cho phép từ 0 -&gt; 100</value>
   </data>
+  <data name="PurchaseDateGreaterThanProductionYear" xml:space="preserve">
+    <value>Ngày mua phải là ngày trước ngày bắt đầu sử dụng</value>
+  </data>
 </root>

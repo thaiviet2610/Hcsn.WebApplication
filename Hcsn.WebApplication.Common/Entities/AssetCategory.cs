@@ -7,7 +7,7 @@ namespace Hcsn.WebApplication.Common.Entities
     /// <summary>
     /// Thông tin loại tài sản
     /// </summary>
-    public class AssetCategory
+    public class AssetCategory : BaseEntity
     {
         /// <summary>
         /// Khóa chính
@@ -60,25 +60,5 @@ namespace Hcsn.WebApplication.Common.Entities
         /// </summary>
         [AllowNull]
         public string? description { get; set; }
-
-        /// <summary>
-        /// Người tạo
-        /// </summary>
-        public string? created_by { get; set; }
-
-        /// <summary>
-        /// Ngày tạo
-        /// </summary>
-        public DateTime? created_date { get; set; }
-
-        /// <summary>
-        /// Người sửa
-        /// </summary>
-        public string? modified_by { get; set; }
-
-        /// <summary>
-        /// Ngày sửa
-        /// </summary>
-        public DateTime? modified_date { get; set; }
     }
 }

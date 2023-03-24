@@ -84,15 +84,24 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ValidateResource.DepreciationYearGreateThanCost
                 };
             }
-            //if(asset.depreciation_rate != (1 / asset.life_time) * 100)
-            //{
-            //    return new ValidateResult
-            //    {
-            //        IsSuccess = false,
-            //        ValidateCode = ValidateCode.DepreciationRateDifferentLifeTime,
-            //        Message = ValidateResource.DepreciationRateDifferentLifeTime
-            //    };
-            //}
+            if (asset.depreciation_rate != (1 / asset.life_time))
+            {
+                return new ValidateResult
+                {
+                    IsSuccess = false,
+                    ValidateCode = ValidateCode.DepreciationRateDifferentLifeTime,
+                    Message = ValidateResource.DepreciationRateDifferentLifeTime
+                };
+            }
+            if((asset.purchase_date - asset.production_year).TotalDays > 0)
+            {
+                return new ValidateResult
+                {
+                    IsSuccess = false,
+                    ValidateCode = ValidateCode.PurchaseDateGreaterThanProductionYear,
+                    Message = ValidateResource.PurchaseDateGreaterThanProductionYear
+                };
+            }
             return new ValidateResult
             {
                 IsSuccess = true,

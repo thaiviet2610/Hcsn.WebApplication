@@ -89,12 +89,12 @@ namespace Hcsn.WebApplication.API.Controllers
                     MoreInfo = result.Data,
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -155,12 +155,12 @@ namespace Hcsn.WebApplication.API.Controllers
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -222,16 +222,18 @@ namespace Hcsn.WebApplication.API.Controllers
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
                 });
+
+                //System.IO.writeline(ex.ToString(), "D\:log.txt");
             }
         }
 
@@ -264,12 +266,12 @@ namespace Hcsn.WebApplication.API.Controllers
                 });
                 
             }
-            catch (Exception)
+            catch (Exception ex)   
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -301,12 +303,12 @@ namespace Hcsn.WebApplication.API.Controllers
                     TraceId = HttpContext.TraceIdentifier
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
+                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",

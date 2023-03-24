@@ -122,5 +122,14 @@ namespace Hcsn.WebApplication.Common.Resource {
                 return ResourceManager.GetString("OutOfRate", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngày mua phải là ngày trước ngày bắt đầu sử dụng.
+        /// </summary>
+        public static string PurchaseDateGreaterThanProductionYear {
+            get {
+                return ResourceManager.GetString("PurchaseDateGreaterThanProductionYear", resourceCulture);
+            }
+        }
     }
 }

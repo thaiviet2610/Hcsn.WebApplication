@@ -22,6 +22,6 @@ namespace Hcsn.WebApplication.DL.AssetDL
         /// - Tổng số bản ghi thỏa mãn điều kiện
         /// </returns>
         /// Created by: LTVIET (09/03/2023)
-        PagingResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
+        PagingResultAsset GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
     }
 }

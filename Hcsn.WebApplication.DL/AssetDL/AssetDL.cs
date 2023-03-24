@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Data.Common;
+using System.Collections;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {
@@ -32,7 +33,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
         /// - Tổng số bản ghi thỏa mãn điều kiện
         /// </returns>
         /// Created by: LTVIET (09/03/2023)
-        public PagingResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
+        public PagingResultAsset GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.Filter, typeof(Asset).Name);
@@ -49,14 +50,22 @@ namespace Hcsn.WebApplication.DL.AssetDL
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
             var result = QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+            
             var data = result.Read<Asset>().ToList();
-            var totalRecord = result.Read<int>().ToList()[0];
+
+            var totalRecord = result.Read<int>().Single();
+
+            var totalResult = result.Read<Asset>().Single();
+
             dbConnection.Close();
             // Xử lý kết quả trả về
-            return new PagingResult
+            return new PagingResultAsset
             {
                 Data = data,
                 TotalRecord = totalRecord,
+                QuantityTotal = totalResult.quantity_total,
+                CostTotal = totalResult.cost_total,
+                DepreciationValueTotal = totalResult.depreciation_value_total
             };
 
         } 

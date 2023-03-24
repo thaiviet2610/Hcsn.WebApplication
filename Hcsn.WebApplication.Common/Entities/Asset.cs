@@ -7,7 +7,7 @@ namespace Hcsn.WebApplication.Common.Entities
     /// <summary>
     /// Thông tin tài sản
     /// </summary>
-    public class Asset
+    public class Asset : BaseEntity
     {
         /// <summary>
         /// Khóa chính
@@ -159,25 +159,10 @@ namespace Hcsn.WebApplication.Common.Entities
         [AllowNull]
         public bool? active { get; set; }
 
-        /// <summary>
-        /// Người tạo
-        /// </summary>
-        public string? created_by { get; set; }
+        public int quantity_total { get; set; }
 
-        /// <summary>
-        /// Ngày tạo
-        /// </summary>
-        public DateTime? created_date { get; set; }
+        public decimal cost_total { get; set; }
 
-        /// <summary>
-        /// Người sửa
-        /// </summary>
-        public string? modified_by { get; set; }
-
-        /// <summary>
-        /// Ngày sửa
-        /// </summary>
-        public DateTime? modified_date { get; set; }
-
+        public double depreciation_value_total { get; set; }
     }
 }
