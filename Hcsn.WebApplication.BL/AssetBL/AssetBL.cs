@@ -102,7 +102,29 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ValidateResource.PurchaseDateGreaterThanProductionYear
                 };
             }
-            return new ValidateResult
+
+            var properties = typeof(Asset).GetProperties();
+            foreach (var property in properties)
+            {
+                string propName = property.Name;
+                var propValue = property.GetValue(asset);
+				if (property.IsDefined(typeof(HcsnMaxLengthAttribute), false))
+				{
+					var attHcsnLength = property.GetCustomAttributes(typeof(HcsnMaxLengthAttribute), false).FirstOrDefault();
+					int propLength = (attHcsnLength as HcsnMaxLengthAttribute).Length;
+					if (propValue.ToString().Length > propLength)
+					{
+						return new ValidateResult
+						{
+							IsSuccess = false,
+							ValidateCode = ValidateCode.MaxLength,
+							Message = propName + ValidateResource.MaxLength
+						};
+					}
+				}
+			}
+            
+			return new ValidateResult
             {
                 IsSuccess = true,
             };

@@ -395,6 +395,8 @@ namespace Hcsn.WebApplication.BL.BaseBL
                         }
                     }
                 }
+
+                
             }
             var result = ValidateCustom(record);
             if (!result.IsSuccess)

@@ -97,6 +97,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  vượt quá độ dài ký tự cho phép.
+        /// </summary>
+        public static string MaxLength {
+            get {
+                return ResourceManager.GetString("MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  phải lớn hơn 0.
         /// </summary>
         public static string NumberEqual0 {

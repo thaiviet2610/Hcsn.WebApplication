@@ -24,14 +24,16 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnRequired]
         [HcsnName("Mã phòng ban")]
         [HcsnCode]
-        public string department_code { get; set; }
+		[HcsnMaxLength(50)]
+		public string department_code { get; set; }
 
         /// <summary>
         /// Tên phòng ban
         /// </summary>
         [HcsnRequired]
         [HcsnName("Tên phòng ban")]
-        public string department_name { get; set; }
+		[HcsnMaxLength(255)]
+		public string department_name { get; set; }
 
         /// <summary>
         /// Ghi chú

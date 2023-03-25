@@ -50,5 +50,10 @@ namespace Hcsn.WebApplication.Common.Enums
         /// Lỗi validate ngày mua lớn hơn ngày bắt đầu sử dụng
         /// </summary>
         PurchaseDateGreaterThanProductionYear = 8,
+
+        /// <summary>
+        /// Lỗi vượt quá độ dài ký tự cho phép
+        /// </summary>
+        MaxLength = 9,
     }
 }

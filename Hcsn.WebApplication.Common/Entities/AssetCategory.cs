@@ -23,6 +23,7 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnRequired]
         [HcsnName("Mã loại tài sản")]
         [HcsnCode]
+        [HcsnMaxLength(50)]
         public string fixed_asset_category_code { get; set; }
 
         /// <summary>
@@ -30,7 +31,8 @@ namespace Hcsn.WebApplication.Common.Entities
         /// </summary>
         [HcsnRequired]
         [HcsnName("Tên loại tài sản")]
-        public string fixed_asset_category_name { get; set; }
+		[HcsnMaxLength(255)]
+		public string fixed_asset_category_name { get; set; }
 
         /// <summary>
         /// Id của đơn vị

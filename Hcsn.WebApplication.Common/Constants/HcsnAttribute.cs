@@ -52,7 +52,18 @@ namespace Hcsn.WebApplication.Common.Constants
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	public class HcsnMaxLengthAttribute : Attribute
+	{
+		public HcsnMaxLengthAttribute(int length)
+		{
+			Length = length;
+		}
+		public int Length { get; set; }
+
+	}
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnNameAttribute : Attribute
     {
         public HcsnNameAttribute(string name)

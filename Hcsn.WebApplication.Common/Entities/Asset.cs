@@ -23,6 +23,7 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnRequired]
         [HcsnName("Mã tài sản")]
         [HcsnCode]
+        [HcsnMaxLength(100)]
         public string fixed_asset_code { get; set; }
 
         /// <summary>
@@ -30,6 +31,7 @@ namespace Hcsn.WebApplication.Common.Entities
         /// </summary>
         [HcsnRequired]
         [HcsnName("Tên tài sản")]
+        [HcsnMaxLength(255)]
         public string fixed_asset_name { get; set; }
 
         /// <summary>
