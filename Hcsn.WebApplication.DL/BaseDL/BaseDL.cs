@@ -21,13 +21,6 @@ namespace Hcsn.WebApplication.DL.BaseDL
 {
     public class BaseDL<T> : IBaseDL<T>
     {
-        #region Field
-        //private IBaseRepository<T> _baseRepository;
-        /// <summary>
-        /// Tên kết nối tới MySQL database
-        /// </summary>
-        private readonly string _connectionString = "Server=localhost;Port=3306;Database=test;Uid=root;Pwd=123456;";
-        #endregion
 
         #region Method
 
@@ -118,7 +111,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             var parameters = new DynamicParameters();
             var properties = typeof(T).GetProperties();
             AddParametersValue(properties, parameters, record);
-            GeneratePrimaryKeyValue(properties, parameters, Guid.Empty );
+            GeneratePrimaryKeyValue(properties, parameters, Guid.Empty);
             // Khởi tạo kết nối tới Database
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
@@ -157,13 +150,13 @@ namespace Hcsn.WebApplication.DL.BaseDL
 
         }
 
-        /// <summary>
-        /// Hàm lấy ra mã code ở lần nhập gần nhất
-        /// </summary>
-        /// <returns>Mã code của đối tượng</returns>
-        /// Created by: LTViet (20/03/2023)
-        public string GetNewCode()
-        {
+		/// <summary>
+		/// Hàm lấy ra mã code ở lần nhập gần nhất
+		/// </summary>
+		/// <returns>Mã code của đối tượng</returns>
+		/// Created by: LTViet (20/03/2023)
+		public string? GetNewCode()
+		{
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.GetNewCode, typeof(Asset).Name);
             // Chuẩn bị tham số đầu vào cho stored
@@ -172,6 +165,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             // Thực hiện gọi vào Database để chạy stored procedure
             var asset = QueryFirstOrDefault<Asset>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
+
             // Xử lý kết quả trả về 
             if (asset == null)
             {
@@ -237,7 +231,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="parameters">Các tham số truyền vào</param>
         /// <param name="entity">Đối tượng truyền vào</param>
         /// Create by: LTVIET (20/03/2023)
-        protected virtual void AddParametersValue(PropertyInfo[] properties, DynamicParameters parameters, Object entity)
+        protected virtual void AddParametersValue(PropertyInfo[] properties, DynamicParameters parameters, T entity)
         {
             foreach (var property in properties)
             {
@@ -252,7 +246,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// Create by: LTVIET (20/03/2023)
         public IDbConnection GetOpenConnection()
         {
-            var mySqlConnection = new MySqlConnection(_connectionString);
+            var mySqlConnection = new MySqlConnection(DatabaseContext.ConnectionString);
             mySqlConnection.Open();
             return mySqlConnection;
         }
@@ -268,7 +262,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
         /// <returns> Số bản ghi bị ảnh hưởng</returns>
         /// Create by: LTVIET (20/03/2023)
-        public int Execute(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public int Execute(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             return cnn.Execute(sql, param, transaction, commandTimeout, commandType);
         }
@@ -285,7 +279,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <returns>một multiple result sets kiểu GridReader</returns>
         /// Create by: LTVIET (20/03/2023)
         /// 
-        public GridReader QueryMultiple(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public GridReader QueryMultiple(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             var result = cnn.QueryMultiple(sql, param, transaction, commandTimeout, commandType);
             return result;
@@ -306,7 +300,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// nếu không, một phiên bản được tạo trên mỗi hàng và ánh xạ trực tiếp column-name===member-name được giả định (không phân biệt chữ hoa chữ thường)
         /// </returns>
         /// Create by: LTVIET (20/03/2023)
-        public Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             return cnn.QueryFirstOrDefault<Object>(sql, param, transaction, commandTimeout, commandType);
         }

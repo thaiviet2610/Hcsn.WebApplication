@@ -1,5 +1,6 @@
 using Hcsn.WebApplication.BL.AssetBL;
 using Hcsn.WebApplication.BL.BaseBL;
+using Hcsn.WebApplication.DL;
 using Hcsn.WebApplication.DL.AssetDL;
 using Hcsn.WebApplication.DL.BaseDL;
 
@@ -23,6 +24,9 @@ builder.Services.AddScoped<IAssetBL, AssetBL>();
 builder.Services.AddScoped<IAssetDL, AssetDL>();
 builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));
+
+DatabaseContext.ConnectionString = builder.Configuration.GetConnectionString("MySql");
+
 
 builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 {

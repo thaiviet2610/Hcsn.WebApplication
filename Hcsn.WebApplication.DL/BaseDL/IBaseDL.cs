@@ -64,7 +64,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// </summary>
         /// <returns>Mã code của đối tượng</returns>
         /// Created by: LTViet (20/03/2023)
-        string GetNewCode();
+        string? GetNewCode();
 
         /// <summary>
         /// Hàm truy cập database lấy ra số bản ghi có cùng code nhưng khác id được truyền vào
@@ -97,7 +97,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// nếu không, một phiên bản được tạo trên mỗi hàng và ánh xạ trực tiếp column-name===member-name được giả định (không phân biệt chữ hoa chữ thường)
         /// </returns>
         /// Created by: LTViet (20/03/2023)
-        Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
+        Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null);
 
         /// <summary>
         /// Thực thi một lệnh trả về nhiều tập hợp kết quả và truy cập lần lượt từng tập hợp
@@ -110,7 +110,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
         /// <returns>một multiple result sets kiểu GridReader</returns>
         /// Created by: LTViet (20/03/2023)
-        GridReader QueryMultiple(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
+        GridReader QueryMultiple(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null);
 
         /// <summary>
         /// Thực thi SQL được tham số hóa
@@ -123,7 +123,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
         /// <returns> Số bản ghi bị ảnh hưởng</returns>
         /// Created by: LTViet (20/03/2023)
-        int Execute(IDbConnection cnn, string sql, object param = null, IDbTransaction transaction = null, int? commandTimeout = null, CommandType? commandType = null);
+        int Execute(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null);
         #endregion
     }
 }
