@@ -8,10 +8,13 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
     /// </summary>
     public class ErrorResult
     {
-        /// <summary>
-        /// Mã lỗi
-        /// </summary>
-        public ErrorCode? ErrorCode { get; set; }
+		#region Field
+		public static string LogError = "D:\\code\\misa\\API\\Hcsn.WebApplication\\LogError.txt";
+		#endregion
+		/// <summary>
+		/// Mã lỗi
+		/// </summary>
+		public ErrorCode? ErrorCode { get; set; }
 
         /// <summary>
         /// Thông báo lỗi cho dev
@@ -32,5 +35,7 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// Id truy vết lỗi
         /// </summary>
         public string? TraceId { get; set; }
-    }
+
+		
+	}
 }

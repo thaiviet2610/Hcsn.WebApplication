@@ -51,9 +51,15 @@ namespace Hcsn.WebApplication.API.Controllers
                     });
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
                     DevMsg = ErrorResource.DevMsg_Exception,
@@ -78,7 +84,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.GetRecordById(recordId);
                 if (result.IsSuccess)
                 {
-                    return StatusCode(200, result.Data);
+					return StatusCode(200, result.Data);
                 }
                 return StatusCode(500, new ErrorResult
                 {
@@ -91,10 +97,16 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
+                    DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -145,7 +157,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-                    return StatusCode(500, new ErrorResult
+					return StatusCode(500, new ErrorResult
                     {
                         ErrorCode = ErrorCode.InsertFailed,
                         DevMsg = ErrorResource.DevMsg_InsertFailed,
@@ -157,10 +169,16 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
+                    DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -224,17 +242,26 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
+                    DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
                 });
 
-                //System.IO.writeline(ex.ToString(), "D\:log.txt");
-            }
+				//System.IO.writeline(ex.ToString(), "D\:log.txt");
+				
+
+			}
         }
 
         /// <summary>
@@ -268,10 +295,16 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)   
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
+                    DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",
@@ -294,6 +327,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 {
                     return StatusCode(200, result.Data);
                 }
+
                 return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.GenerateNewCodefailed,
@@ -305,10 +339,16 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(HttpContext.TraceIdentifier);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception + ex.Message,
+                    DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = HttpContext.TraceIdentifier,
                     MoreInfo = "Xảy ra exception",

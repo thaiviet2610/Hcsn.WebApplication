@@ -1,8 +1,11 @@
 using Hcsn.WebApplication.BL.AssetBL;
 using Hcsn.WebApplication.BL.BaseBL;
+using Hcsn.WebApplication.Common.Entities.DTO;
+using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL;
 using Hcsn.WebApplication.DL.AssetDL;
 using Hcsn.WebApplication.DL.BaseDL;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +29,10 @@ builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));
 
 DatabaseContext.ConnectionString = builder.Configuration.GetConnectionString("MySql");
-
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
 
 builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 {
