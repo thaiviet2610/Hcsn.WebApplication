@@ -84,7 +84,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ValidateResource.DepreciationYearGreateThanCost
                 };
             }
-            if (asset.depreciation_rate != (1 / asset.life_time))
+            if (asset.depreciation_rate != (float)Math.Round((decimal)1 / asset.life_time, 3))
             {
                 return new ValidateResult
                 {

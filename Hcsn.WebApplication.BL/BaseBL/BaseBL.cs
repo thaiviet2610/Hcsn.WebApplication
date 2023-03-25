@@ -319,7 +319,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
                 if (property.IsDefined(typeof(HcsnCodeAttribute), false))
                 {
                     string recordCode = property.GetValue(record).ToString();
-                    var isSameCode = IsSameCode(recordCode, recordId);
+                    var isSameCode = IsSameCode(recordCode, recordId);      
                     if (!isSameCode.IsSuccess)
                     {
                         return new ValidateResult
