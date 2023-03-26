@@ -76,7 +76,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				decimal costTotal = result.CostTotal;
 				double depreciationValueTotal = result.DepreciationValueTotal;
 				byte[] data = GenerateExcelFile(assets, quantityTotal, costTotal, depreciationValueTotal);
-				string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Assets", "assets.xlsx");
+				string currentDatetime = DateTime.Now.ToString("dd-MM-yyyyTHH.mm.ss");
+				string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Assets", $"assets{currentDatetime}.xlsx");
 				File.WriteAllBytes(filePath, data);
 				return new ServiceResult
 				{

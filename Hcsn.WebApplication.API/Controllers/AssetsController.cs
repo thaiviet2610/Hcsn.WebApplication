@@ -66,15 +66,22 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new ErrorResult
-                {
-                    ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception +ex.Message,
-                    UserMsg = ErrorResource.UserMsg_Exception,
-                    TraceId = HttpContext.TraceIdentifier,
-                    MoreInfo = "Xảy ra exception",
-                });
-            }
+				string traceId = HttpContext.TraceIdentifier;
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(traceId);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
+				{
+					ErrorCode = ErrorCode.Exception,
+					DevMsg = ErrorResource.DevMsg_Exception,
+					UserMsg = ErrorResource.UserMsg_Exception,
+					TraceId = traceId,
+					MoreInfo = "Xảy ra exception",
+				});
+			}
         }
 
 		[HttpGet("Export")]
