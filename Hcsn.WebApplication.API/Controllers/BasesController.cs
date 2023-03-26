@@ -339,9 +339,11 @@ namespace Hcsn.WebApplication.API.Controllers
             }
             catch (Exception ex)
             {
+                string traceId = HttpContext.TraceIdentifier;
 				using (StreamWriter sws = new(ErrorResult.LogError, true))
 				{
-					sws.WriteLine(HttpContext.TraceIdentifier);
+                    
+					sws.WriteLine(traceId);
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
@@ -350,7 +352,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     ErrorCode = ErrorCode.Exception,
                     DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
-                    TraceId = HttpContext.TraceIdentifier,
+                    TraceId = traceId,
                     MoreInfo = "Xảy ra exception",
                 });
             }

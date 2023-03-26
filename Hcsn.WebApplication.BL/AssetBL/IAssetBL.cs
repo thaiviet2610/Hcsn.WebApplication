@@ -24,6 +24,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
         /// </returns>
         /// Created by: LTVIET (09/03/2023)
         ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
+
+        ServiceResult ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
     } 
     #endregion
 }

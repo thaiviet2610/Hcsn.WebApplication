@@ -77,7 +77,49 @@ namespace Hcsn.WebApplication.API.Controllers
             }
         }
 
-        [HttpGet("test")]
+		[HttpGet("Export")]
+		public IActionResult GetExcelFiles(
+			[FromQuery] string? keyword,
+			[FromQuery] Guid? departmentId,
+			[FromQuery] Guid? fixedAssetCatagortId)
+		{
+			try
+			{
+				var result = _assetBL.ExportExcel(keyword, departmentId, fixedAssetCatagortId);
+				if (result.IsSuccess)
+				{
+					return StatusCode(200, result.Data);
+				}
+				return StatusCode(500, new ErrorResult
+				{
+					ErrorCode = ErrorCode.NotFound,
+					DevMsg = ErrorResource.DevMsg_NotFound,
+					UserMsg = ErrorResource.UserMsg_NotFound,
+					TraceId = HttpContext.TraceIdentifier,
+					MoreInfo = result.Data,
+				});
+			}
+			catch (Exception ex)
+			{
+				string traceId = HttpContext.TraceIdentifier;
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(traceId);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
+				{
+					ErrorCode = ErrorCode.Exception,
+					DevMsg = ErrorResource.DevMsg_Exception,
+					UserMsg = ErrorResource.UserMsg_Exception,
+					TraceId = traceId,
+					MoreInfo = "Xảy ra exception",
+				});
+			}
+		}
+
+		[HttpGet("test")]
         public IActionResult get()
         {
             string store = "Proc_Asset_Filter";

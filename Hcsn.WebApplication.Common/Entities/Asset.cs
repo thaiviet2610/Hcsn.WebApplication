@@ -130,10 +130,17 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnName("Tỷ lệ hao mòn")]
         public float depreciation_rate { get; set; }
 
-        /// <summary>
-        /// Năm bắt đầu theo dõi tài sản trên phần mềm
-        /// </summary>
-        [HcsnRequired]
+		/// <summary>
+		/// Hao mòn lũy kế
+		/// </summary>
+		[HcsnNumber("decimal")]
+		[HcsnName("Hao mòn lũy kế")]
+		public decimal depreciation_value { get; set; }
+
+		/// <summary>
+		/// Năm bắt đầu theo dõi tài sản trên phần mềm
+		/// </summary>
+		[HcsnRequired]
         [HcsnNumber("int")]
         [HcsnGreateThanZero]
         [HcsnName("Năm theo dõi")]
