@@ -50,12 +50,85 @@ namespace Hcsn.WebApplication.DL.BaseDL
             return numberOfAffectedRows;
         }
 
-        /// <summary>
-        /// API Lấy ra danh sách tất cả các bản ghi
-        /// </summary>
-        /// <returns>Danh sách tất cả các bản ghi</returns>
-        /// Created by: LTVIET (20/03/2023)
-        public List<T> GetAllRecord()
+		public int DeleteMultipleRecord(List<Guid> entitiesId)
+		{
+			// Chuẩn bị tham số đầu vào
+			string entityName = GetEntityName();
+			string primaryKey = "";
+			var properties = typeof(T).GetProperties();
+			foreach (var property in properties)
+			{
+				if (property.IsDefined(typeof(HcsnPrimaryKeyAttribute), false))
+				{
+					primaryKey = property.Name;
+					break;
+				}
+			}
+			string sql = string.Format(ProcedureName.DeleteMultiple, entityName, primaryKey, string.Join("','", entitiesId));
+
+			// Khởi tạo kết nối tới Database
+			int numberOfAffectedRows = 0;
+
+			var dbConnection = GetOpenConnection();
+			using (var transaction = dbConnection.BeginTransaction())
+			{
+				try
+				{
+					// Thực hiện gọi vào Database để chạy stored procedure
+					numberOfAffectedRows = Execute(dbConnection, sql, transaction: transaction);
+                    if(numberOfAffectedRows != entitiesId.Count)
+                    {
+                        throw new Exception();
+                    }
+					transaction.Commit();
+				}
+				catch (Exception)
+				{
+                    numberOfAffectedRows = 0;
+					transaction.Rollback();
+				}
+			}
+
+			dbConnection.Close();
+			// Xử lý kết quả trả về
+			return numberOfAffectedRows;
+		}
+
+		private static string GetEntityName()
+		{
+			string str = "";
+			int j = 0;
+			for (int i = 0; i < typeof(T).Name.Length; i++)
+			{
+				if (Char.IsUpper(typeof(T).Name[i]))
+				{
+					if (j != 0)
+					{
+						str += $"_{typeof(T).Name[i]}";
+					}
+					else
+					{
+						j += 1;
+						str += typeof(T).Name[i];
+					}
+				}
+				else
+				{
+					str += typeof(T).Name[i];
+				}
+			}
+
+			return str;
+		}
+
+
+
+		/// <summary>
+		/// API Lấy ra danh sách tất cả các bản ghi
+		/// </summary>
+		/// <returns>Danh sách tất cả các bản ghi</returns>
+		/// Created by: LTVIET (20/03/2023)
+		public List<T> GetAllRecord()
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.GetAll, typeof(T).Name);
@@ -158,12 +231,12 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		public string? GetNewCode()
 		{
             // Chuẩn bị tên stored procedure
-            string storedProcedureName = String.Format(ProcedureName.GetNewCode, typeof(Asset).Name);
+            string storedProcedureName = String.Format(ProcedureName.GetNewCode, typeof(FixedAsset).Name);
             // Chuẩn bị tham số đầu vào cho stored
             // Khởi tạo kết nối tới Database
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            var asset = QueryFirstOrDefault<Asset>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+            var asset = QueryFirstOrDefault<FixedAsset>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
 
             // Xử lý kết quả trả về 
@@ -187,7 +260,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// Created by: LTViet (20/03/2023)
         public int GetRecordByCode(string recordCode, Guid recordId)
         {
-            string storedProcedureNameCheckSameCode = String.Format(ProcedureName.CheckSameCode, typeof(Asset).Name);
+            string storedProcedureNameCheckSameCode = String.Format(ProcedureName.CheckSameCode, typeof(FixedAsset).Name);
             var parametersCheckSameCode = new DynamicParameters();
             parametersCheckSameCode.Add("p_code", recordCode);
             parametersCheckSameCode.Add("p_id", recordId);
@@ -205,7 +278,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="parameters">Các tham số đầu vào</param>
         /// <param name="entityId">Id của đối tượng</param>
         /// Create by: LTVIET (20/03/2023)
-        protected virtual void GeneratePrimaryKeyValue(PropertyInfo[] properties, DynamicParameters parameters, Guid? entityId)
+        protected virtual void GeneratePrimaryKeyValue
+            (PropertyInfo[] properties, DynamicParameters parameters, Guid? entityId)
         {
             foreach (var property in properties)
             {
@@ -262,7 +336,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
         /// <returns> Số bản ghi bị ảnh hưởng</returns>
         /// Create by: LTVIET (20/03/2023)
-        public int Execute(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public int Execute(IDbConnection cnn, string sql, object? param = null, 
+            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             return cnn.Execute(sql, param, transaction, commandTimeout, commandType);
         }
@@ -278,8 +353,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
         /// <returns>một multiple result sets kiểu GridReader</returns>
         /// Create by: LTVIET (20/03/2023)
-        /// 
-        public GridReader QueryMultiple(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public GridReader QueryMultiple(IDbConnection cnn, string sql, object? param = null, 
+            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             var result = cnn.QueryMultiple(sql, param, transaction, commandTimeout, commandType);
             return result;
@@ -300,10 +375,13 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// nếu không, một phiên bản được tạo trên mỗi hàng và ánh xạ trực tiếp column-name===member-name được giả định (không phân biệt chữ hoa chữ thường)
         /// </returns>
         /// Create by: LTVIET (20/03/2023)
-        public Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
+        public Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object? param = null, 
+            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
         {
             return cnn.QueryFirstOrDefault<Object>(sql, param, transaction, commandTimeout, commandType);
         }
-        #endregion
-    }
+
+		
+		#endregion
+	}
 }

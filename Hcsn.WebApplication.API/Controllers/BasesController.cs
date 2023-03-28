@@ -93,7 +93,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     DevMsg = ErrorResource.DevMsg_NotFound,
                     UserMsg = ErrorResource.UserMsg_NotFound,
                     TraceId = HttpContext.TraceIdentifier,
-                    MoreInfo = result.Data,
+                    MoreInfo = result.Message,
                 });
             }
             catch (Exception ex)
@@ -292,7 +292,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     DevMsg = ErrorResource.DevMsg_DeleteFailed,
                     UserMsg = ErrorResource.UserMsg_DeleteFailed,
                     TraceId = HttpContext.TraceIdentifier,
-                    MoreInfo = result.Data,
+                    MoreInfo = result.Message,
                 });
                 
             }
@@ -316,12 +316,61 @@ namespace Hcsn.WebApplication.API.Controllers
             }
         }
 
-        /// <summary>
-        /// API lấy ra code mới dựa theo code ở lần nhập gần nhất + 1
-        /// </summary>
-        /// <returns>Mã code mới</returns>
-        /// Created by: LTViet (20/03/2023)
-        [HttpGet("GetNewCode")]
+		/// <summary>
+		/// API xóa 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <returns>
+		/// 1: Nếu delete thành công
+		/// 2: Nếu delete thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		[HttpDelete("DeleteMultiple")]
+		public ActionResult DeleteMultipleRecord([FromBody] List<Guid> entitiesId)
+		{
+			try
+			{
+				var result = _baseBL.DeleteMultipleRecord(entitiesId);
+				if (result.IsSuccess)
+				{
+					return StatusCode(200,result.Data);
+				}
+				return StatusCode(500, new ErrorResult
+				{
+					ErrorCode = ErrorCode.DeleteMultipleFailed,
+					DevMsg = ErrorResource.DevMsg_DeleteMultipleFailed,
+					UserMsg = ErrorResource.UserMsg_DeleteMultipleFailed,
+					TraceId = HttpContext.TraceIdentifier,
+					MoreInfo = result.Message,
+				});
+
+			}
+			catch (Exception ex)
+			{
+				string traceId = HttpContext.TraceIdentifier;
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(traceId);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(500, new ErrorResult
+				{
+					ErrorCode = ErrorCode.Exception,
+					DevMsg = ErrorResource.DevMsg_Exception,
+					UserMsg = ErrorResource.UserMsg_Exception,
+					TraceId = traceId,
+					MoreInfo = "Xảy ra exception",
+				});
+			}
+		}
+
+		/// <summary>
+		/// API lấy ra code mới dựa theo code ở lần nhập gần nhất + 1
+		/// </summary>
+		/// <returns>Mã code mới</returns>
+		/// Created by: LTViet (20/03/2023)
+		[HttpGet("GetNewCode")]
         public IActionResult GetNewCode()
         {
             try

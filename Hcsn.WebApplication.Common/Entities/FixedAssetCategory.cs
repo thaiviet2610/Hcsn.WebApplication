@@ -7,7 +7,7 @@ namespace Hcsn.WebApplication.Common.Entities
     /// <summary>
     /// Thông tin loại tài sản
     /// </summary>
-    public class AssetCategory : BaseEntity
+    public class FixedAssetCategory : BaseEntity
     {
         /// <summary>
         /// Khóa chính

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {
-    public interface IAssetDL : IBaseDL<Asset>
+    public interface IAssetDL : IBaseDL<FixedAsset>
     {
         /// <summary>
         /// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
@@ -22,6 +22,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
         /// - Tổng số bản ghi thỏa mãn điều kiện
         /// </returns>
         /// Created by: LTVIET (09/03/2023)
-        PagingResultAsset GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
+        PagingResultAsset GetPaging
+            (string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
     }
 }

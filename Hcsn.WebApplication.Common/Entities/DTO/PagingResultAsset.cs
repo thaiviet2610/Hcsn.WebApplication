@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
-    public class PagingResultAsset : PagingResult<Asset>
+    public class PagingResultAsset : PagingResult<FixedAsset>
     {
         /// <summary>
         /// Tổng số lượng của các bản ghi thỏa mãn điều kiện

@@ -21,7 +21,7 @@ using System.Collections;
 namespace Hcsn.WebApplication.API.Controllers
 {
     
-    public class AssetsController : BasesController<Asset>
+    public class AssetsController : BasesController<FixedAsset>
     {
         #region Field
         private IAssetBL _assetBL;
@@ -129,33 +129,31 @@ namespace Hcsn.WebApplication.API.Controllers
 		[HttpGet("test")]
         public IActionResult get()
         {
-            string store = "Proc_Asset_Filter";
-            int limit = 10;
-            int offset = (1 - 1) * limit;
-            var parameters = new DynamicParameters();
-            parameters.Add("p_department_id", null);
-            parameters.Add("p_asset_category_id", null);
-            parameters.Add("p_keyword", null);
-            parameters.Add("p_limit", limit);
-            parameters.Add("p_offset", offset);
-            // Khởi tạo kết nối tới Database
-            // Thực hiện gọi vào Database để chạy stored procedure
-            string connec = "Server=localhost;Port=3306;Database=test;Uid=root;Pwd=123456;";
-            using(var mySQL = new MySqlConnection(connec))
-            {
-                mySQL.Open();
-                var result = mySQL.QueryMultiple(store, parameters, commandType:CommandType.StoredProcedure);
-                var data = result.Read<Asset>().ToList();
-                
-                var asset = data[0];
-                var b = asset.purchase_date;
-                var c = asset.production_year;
-                var d = (b - c).TotalDays;
-                var totalRecord = result.Read<int>().Single();
-
-                var a = result.Read<Asset>().Single();
-                return StatusCode(200, asset);
-            }
+			
+			string abc = "FixedAsset";
+			string str = "";
+			int j = 0;
+			for (int i = 0; i < abc.Length; i++)
+			{
+				if (Char.IsUpper(abc[i]))
+				{
+					if (j != 0)
+					{
+						str += $"_{abc[i]}";
+					}
+					else
+					{
+						j += 1;
+						str += abc[i];
+					}
+				}
+				else
+				{
+					str += abc[i];
+				}
+			}
+			return StatusCode(200, str);
+            
         }
        
     }

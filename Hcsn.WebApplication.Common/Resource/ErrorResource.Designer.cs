@@ -70,6 +70,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catched a delete multiple failed.
+        /// </summary>
+        public static string DevMsg_DeleteMultipleFailed {
+            get {
+                return ResourceManager.GetString("DevMsg_DeleteMultipleFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catched an duplicate code.
         /// </summary>
         public static string DevMsg_DuplicateCode {
@@ -138,6 +147,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         public static string UserMsg_DeleteFailed {
             get {
                 return ResourceManager.GetString("UserMsg_DeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lỗi đã xảy ra khi xóa nhiều bản ghi. vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string UserMsg_DeleteMultipleFailed {
+            get {
+                return ResourceManager.GetString("UserMsg_DeleteMultipleFailed", resourceCulture);
             }
         }
         

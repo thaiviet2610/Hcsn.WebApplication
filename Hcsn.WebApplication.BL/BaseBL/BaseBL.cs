@@ -55,12 +55,31 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
-        /// <summary>
-        /// Hàm xử lý logic khi lấy ra danh sách tất cả các bản ghi
-        /// </summary>
-        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
-        /// Created by: LTVIET (20/03/2023)
-        public ServiceResult GetAllRecord()
+		public ServiceResult DeleteMultipleRecord(List<Guid> entitiesId)
+		{
+			var numberOfAffectedRows = _baseDL.DeleteMultipleRecord(entitiesId);
+			if (numberOfAffectedRows == 0)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.DeleteMultipleFailed,
+					Message = ServiceResource.DeleteMultipleFailed,
+				};
+			}
+			return new ServiceResult
+			{
+				IsSuccess = true,
+                Data = numberOfAffectedRows
+			};
+		}
+
+		/// <summary>
+		/// Hàm xử lý logic khi lấy ra danh sách tất cả các bản ghi
+		/// </summary>
+		/// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+		/// Created by: LTVIET (20/03/2023)
+		public ServiceResult GetAllRecord()
         {
             var records = _baseDL.GetAllRecord();
             if(records == null)
@@ -338,7 +357,8 @@ namespace Hcsn.WebApplication.BL.BaseBL
                     var attHcsnName = property.GetCustomAttributes(typeof(HcsnNameAttribute), false).FirstOrDefault();
                     propName = (attHcsnName as HcsnNameAttribute).PropName;
                 }
-                if (property.IsDefined(typeof(HcsnRequiredAttribute), false) && (propValue == null || propValue.ToString() == String.Empty))
+                if (property.IsDefined(typeof(HcsnRequiredAttribute), false) 
+                    && (propValue == null || propValue.ToString() == String.Empty))
                 {
                     return new ValidateResult
                     {
@@ -417,7 +437,9 @@ namespace Hcsn.WebApplication.BL.BaseBL
             return new ValidateResult() { IsSuccess = true };
         }
 
+		
 
-        #endregion
-    }
+
+		#endregion
+	}
 }

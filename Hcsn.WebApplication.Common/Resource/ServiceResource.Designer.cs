@@ -70,6 +70,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lỗi đã xảy ra trong quá trình xóa nhiều bản ghi khi gọi vào DL.
+        /// </summary>
+        public static string DeleteMultipleFailed {
+            get {
+                return ResourceManager.GetString("DeleteMultipleFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mã đã tồn tại..
         /// </summary>
         public static string DuplicateCode {

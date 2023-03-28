@@ -120,6 +120,9 @@
   <data name="DeleteFailed" xml:space="preserve">
     <value>Lỗi xóa thất bại khi gọi vào DL</value>
   </data>
+  <data name="DeleteMultipleFailed" xml:space="preserve">
+    <value>Lỗi đã xảy ra trong quá trình xóa nhiều bản ghi khi gọi vào DL</value>
+  </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>Mã đã tồn tại.</value>
   </data>

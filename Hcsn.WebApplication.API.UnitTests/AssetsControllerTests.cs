@@ -23,7 +23,7 @@ namespace Hcsn.WebApplication.API.UnitTests
         {
             // Arrange
             var assetId = new Guid("b1e61ef6-274b-4477-9d6d-85af26373d97");
-            var asset = new Asset
+            var asset = new FixedAsset
             {
                 fixed_asset_id = assetId,
                 fixed_asset_code = "TS00008",
@@ -44,9 +44,9 @@ namespace Hcsn.WebApplication.API.UnitTests
 
             };
 
-            var assetSearch = new List<Asset>()
+            var assetSearch = new List<FixedAsset>()
             {
-                new Asset
+                new FixedAsset
                 {
                     fixed_asset_id = Guid.NewGuid(),
                     fixed_asset_code = "TS00005",
@@ -102,7 +102,7 @@ namespace Hcsn.WebApplication.API.UnitTests
         public void InsertAsset_ValidInput_ReturnSuccess()
         {
             // Arrange
-            var asset = new Asset
+            var asset = new FixedAsset
             {
                 fixed_asset_id = Guid.NewGuid(),
                 fixed_asset_code = "TS00012",
@@ -124,7 +124,7 @@ namespace Hcsn.WebApplication.API.UnitTests
             };
 
             var expectedResult = new StatusCodeResult(201);
-            var assetSearch = new List<Asset>();
+            var assetSearch = new List<FixedAsset>();
             var fakeAssetRepository = Substitute.For<IAssetRepository>();
             fakeAssetRepository.QueryMultiple(
                 Arg.Any<IDbConnection>(),
@@ -157,7 +157,7 @@ namespace Hcsn.WebApplication.API.UnitTests
         public void InsertAsset_InsertFail_ReturnException()
         {
             // Arrange
-            var asset = new Asset
+            var asset = new FixedAsset
             {
                 fixed_asset_id = Guid.NewGuid(),
                 fixed_asset_code = "TS00012",
@@ -186,7 +186,7 @@ namespace Hcsn.WebApplication.API.UnitTests
             };
             var expectedResult = new ObjectResult(errorResult);
             expectedResult.StatusCode = 500;
-            var assetSearch = new List<Asset>();
+            var assetSearch = new List<FixedAsset>();
             var fakeAssetRepository = Substitute.For<IAssetRepository>();
             fakeAssetRepository.QueryMultiple(
                 Arg.Any<IDbConnection>(),

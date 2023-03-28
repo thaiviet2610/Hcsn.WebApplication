@@ -34,6 +34,11 @@ namespace Hcsn.WebApplication.Common.Constants
         public static string DeleteAll = "Proc_{0}_DeleteAll";
 
         /// <summary>
+        /// Xóa nhiều bản ghi
+        /// </summary>
+        public static string DeleteMultiple = "DELETE FROM {0} WHERE {1} IN ('{2}')";
+
+        /// <summary>
         /// Xóa một bản ghi
         /// </summary>
         public static string DeleteById = "Proc_{0}_DeleteById";

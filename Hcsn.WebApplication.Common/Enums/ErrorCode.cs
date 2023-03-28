@@ -44,5 +44,10 @@
         /// Lỗi sinh ra code mới thất bại
         /// </summary>
         GenerateNewCodefailed = 8,
+
+		/// <summary>
+		/// Lỗi xóa nhiều bản ghi thất bại
+		/// </summary>
+		DeleteMultipleFailed = 9,
     }
 }

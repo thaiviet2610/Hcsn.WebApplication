@@ -120,6 +120,9 @@
   <data name="DevMsg_DeleteFailed" xml:space="preserve">
     <value>Catched a delete failed</value>
   </data>
+  <data name="DevMsg_DeleteMultipleFailed" xml:space="preserve">
+    <value>Catched a delete multiple failed</value>
+  </data>
   <data name="DevMsg_DuplicateCode" xml:space="preserve">
     <value>Catched an duplicate code</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="UserMsg_DeleteFailed" xml:space="preserve">
     <value>Xóa không thành công. Vui lòng kiểm tra lại!</value>
+  </data>
+  <data name="UserMsg_DeleteMultipleFailed" xml:space="preserve">
+    <value>Lỗi đã xảy ra khi xóa nhiều bản ghi. vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_DuplicateCode" xml:space="preserve">
     <value>Mã đã tồn tại. Vui lòng kiểm tra lại!</value>

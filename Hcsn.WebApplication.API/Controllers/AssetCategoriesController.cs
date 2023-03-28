@@ -13,9 +13,9 @@ using Hcsn.WebApplication.BL.BaseBL;
 namespace Hcsn.WebApplication.API.Controllers
 {
 
-    public class AssetCategoriesController : BasesController<AssetCategory>
+    public class AssetCategoriesController : BasesController<FixedAssetCategory>
     {
-        public AssetCategoriesController(IBaseBL<AssetCategory> baseBL) : base(baseBL)
+        public AssetCategoriesController(IBaseBL<FixedAssetCategory> baseBL) : base(baseBL)
         {
         }
 

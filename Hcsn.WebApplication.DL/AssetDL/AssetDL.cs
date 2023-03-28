@@ -18,7 +18,7 @@ using System.Collections;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {
-    public class AssetDL : BaseDL<Asset>, IAssetDL
+    public class AssetDL : BaseDL<FixedAsset>, IAssetDL
     {
         #region Mehthod
         /// <summary>
@@ -33,10 +33,11 @@ namespace Hcsn.WebApplication.DL.AssetDL
         /// - Tổng số bản ghi thỏa mãn điều kiện
         /// </returns>
         /// Created by: LTVIET (09/03/2023)
-        public PagingResultAsset GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
+        public PagingResultAsset GetPaging
+            (string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
         {
             // Chuẩn bị tên stored procedure
-            string storedProcedureName = String.Format(ProcedureName.Filter, typeof(Asset).Name);
+            string storedProcedureName = String.Format(ProcedureName.Filter, typeof(FixedAsset).Name);
             // Chuẩn bị tham số đầu vào cho stored
             int limit = pageSize;
             int offset = (pageNumber - 1) * limit;
@@ -51,11 +52,11 @@ namespace Hcsn.WebApplication.DL.AssetDL
             // Thực hiện gọi vào Database để chạy stored procedure
             var result = QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             
-            var data = result.Read<Asset>().ToList();
+            var data = result.Read<FixedAsset>().ToList();
 
             var totalRecord = result.Read<int>().Single();
 
-            var totalResult = result.Read<Asset>().Single();
+            var totalResult = result.Read<FixedAsset>().Single();
 
             dbConnection.Close();
             // Xử lý kết quả trả về

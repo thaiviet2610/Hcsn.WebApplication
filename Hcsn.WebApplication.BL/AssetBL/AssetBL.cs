@@ -22,7 +22,7 @@ using System.Globalization;
 
 namespace Hcsn.WebApplication.BL.AssetBL
 {
-    public class AssetBL : BaseBL<Asset>, IAssetBL
+    public class AssetBL : BaseBL<FixedAsset>, IAssetBL
     {
         #region Field
         private IAssetDL _assetDL;
@@ -77,7 +77,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				double depreciationValueTotal = result.DepreciationValueTotal;
 				byte[] data = GenerateExcelFile(assets, quantityTotal, costTotal, depreciationValueTotal);
 				string currentDatetime = DateTime.Now.ToString("dd-MM-yyyyTHH.mm.ss");
-				string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Assets", $"assets{currentDatetime}.xlsx");
+				string exelFileName = $"assets({currentDatetime}).xlsx";
+				string filePath = Path.Combine(Directory.GetCurrentDirectory(), $"{typeof(FixedAsset).Name}s", exelFileName);
 				File.WriteAllBytes(filePath, data);
 				return new ServiceResult
 				{
@@ -96,11 +97,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			}
 		}
 
-		public byte[] GenerateExcelFile(List<Asset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
+		public byte[] GenerateExcelFile(List<FixedAsset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
 		{
+			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 			using (var package = new ExcelPackage())
 			{
-				ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 				var workSheet = package.Workbook.Worksheets.Add("Assets");
 
 				// tạo tiêu đề của bảng trong file excel
@@ -144,7 +145,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					}
 				}
 				CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-																		 // tạo dữ liệu
+				// tạo dữ liệu
 				for (int i = 0; i < assets.Count; i++)
 				{
 					workSheet.Cells[i + 4, 2].Value = (i + 1).ToString();
@@ -252,7 +253,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// IsSuccess = True: Nếu validate dữ liệu thành công
 		/// IsSuccess = False: Nếu validate dữ liệu thất bại
 		/// </returns>
-		protected override ValidateResult ValidateCustom(Asset asset)
+		protected override ValidateResult ValidateCustom(FixedAsset asset)
         {
             float depreciationValueYear = (float)asset.cost * (asset.depreciation_rate / 100);
             if (depreciationValueYear > (float)asset.cost)
@@ -283,7 +284,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
                 };
             }
 
-            var properties = typeof(Asset).GetProperties();
+            var properties = typeof(FixedAsset).GetProperties();
             foreach (var property in properties)
             {
                 string propName = property.Name;

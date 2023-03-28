@@ -1,0 +1,337 @@
+0HMPEC86R9VUT:00000003
+Please set the ExcelPackage.LicenseContext property. See https://epplussoftware.com/developers/licenseexception
+   at OfficeOpenXml.ExcelPackage.get_Workbook()
+   at OfficeOpenXml.ExcelPackage.CreateBlankWb()
+   at OfficeOpenXml.ExcelPackage.ConstructNewFile(String password)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GenerateExcelFile(List`1 assets, Int32 quantityTotal, Decimal costTotal, Double depreciationValueTotal) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 102
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 78
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95
+0HMPECB23GBTA:00000002
+Please set the ExcelPackage.LicenseContext property. See https://epplussoftware.com/developers/licenseexception
+   at OfficeOpenXml.ExcelPackage.get_Workbook()
+   at OfficeOpenXml.ExcelPackage.CreateBlankWb()
+   at OfficeOpenXml.ExcelPackage.ConstructNewFile(String password)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GenerateExcelFile(List`1 assets, Int32 quantityTotal, Decimal costTotal, Double depreciationValueTotal)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId)
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95
+0HMPECCVFL8U9:00000009
+SSL Authentication Error
+   at MySqlConnector.Core.ServerSession.InitSslAsync(ProtocolCapabilities serverCapabilities, ConnectionSettings cs, MySqlConnection connection, SslProtocols sslProtocols, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1569
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 403
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 408
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:0000013F
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 88
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 90
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPECCVFL8V7:00000141
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 88
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 90
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPECCVFL8V7:00000143
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:00000145
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:00000149
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:0000014B
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:0000014F
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:00000151
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:00000153
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:00000155
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:00000157
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:00000159
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:0000015D
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 50
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPECCVFL8V7:0000015F
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPECCVFL8V7:00000161
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEHV77G4CA:00000013
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEIDTAVN0G:00000005
+SSL Authentication Error
+   at MySqlConnector.Core.ServerSession.InitSslAsync(ProtocolCapabilities serverCapabilities, ConnectionSettings cs, MySqlConnection connection, SslProtocols sslProtocols, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1569
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 88
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 90
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPEOU9T6256:00000005
+SSL Authentication Error
+   at MySqlConnector.Core.ServerSession.InitSslAsync(ProtocolCapabilities serverCapabilities, ConnectionSettings cs, MySqlConnection connection, SslProtocols sslProtocols, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1569
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEOU9T625M:00000011
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEOU9T625M:00000013
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEOU9T625M:00000015
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPEOU9T625M:00000017
+Connect Timeout expired. All pooled connections are in use.
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 250
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 65
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPFA1QL4T2G:00000005
+PROCEDURE test.Proc_FixedAsset_Filter does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 351
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 53
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPFA1QL4T2I:00000001
+PROCEDURE test.Proc_FixedAssetCategory_GetAll does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 351
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 132
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 83
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPFA1QL4T2I:00000005
+PROCEDURE test.Proc_FixedAsset_Filter does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 351
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 53
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPFA3TMKQCC:00000005
+PROCEDURE test.Proc_FixedAssetCategory_GetAll does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 354
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 135
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 83
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPFA3TMKQCE:00000002
+PROCEDURE test.Proc_FixedAsset_Filter does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 354
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 53
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPFA3TMKQCE:00000003
+PROCEDURE test.Proc_FixedAsset_Filter does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 354
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 53
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53

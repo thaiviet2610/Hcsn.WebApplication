@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Hcsn.WebApplication.BL.AssetBL
 {
     #region Method
-    public interface IAssetBL : IBaseBL<Asset>
+    public interface IAssetBL : IBaseBL<FixedAsset>
     {
         /// <summary>
         /// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
