@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Constants
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	/// <summary>
+	/// Attribute thể hiện các trường bắt buộc nhập
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnRequiredAttribute : Attribute
     {
 
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnNumberAttribute : Attribute
     {
-        public HcsnNumberAttribute(string name)
+		/// <summary>
+		/// Attribute thể hiện các trường là kiểu number
+		/// </summary>
+		/// <param name="name"> Tên loại dữ liệu trong number(int,float,decimal...)</param>
+		public HcsnNumberAttribute(string name)
         {
             PropType = name;
         }
@@ -24,28 +31,41 @@ namespace Hcsn.WebApplication.Common.Constants
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	/// <summary>
+	/// Attribute thể hiện các trường là khóa chính
+	/// </summary>
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnPrimaryKeyAttribute : Attribute
     {
 
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	/// <summary>
+	/// Attribute thể hiện các trường có giá trị phải lớn hơn 0
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnGreateThanZeroAttribute : Attribute
     {
 
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	/// <summary>
+	/// Attribute thể hiện các trường là khóa ngoại
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnForeignKeyAttribute : Attribute
     {
 
 
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	/// <summary>
+	/// Attribute thể hiện các trường là code 
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnCodeAttribute : Attribute
     {
 
@@ -55,6 +75,10 @@ namespace Hcsn.WebApplication.Common.Constants
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
 	public class HcsnMaxLengthAttribute : Attribute
 	{
+		/// <summary>
+		/// Attribute thể hiện các trường có giới hạn về độ dài ký tự
+		/// </summary>
+		/// <param name="length"> Độ dài giới hạn ký tự</param>
 		public HcsnMaxLengthAttribute(int length)
 		{
 			Length = length;
@@ -63,10 +87,15 @@ namespace Hcsn.WebApplication.Common.Constants
 
 	}
 
+	
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnNameAttribute : Attribute
     {
-        public HcsnNameAttribute(string name)
+		/// <summary>
+		/// Attribute thể hiện tên của các trường 
+		/// </summary>
+		/// <param name="name">Tên muốn đặt cho các trường</param>
+		public HcsnNameAttribute(string name)
         {
             PropName = name;
         }

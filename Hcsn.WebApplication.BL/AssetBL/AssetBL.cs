@@ -105,143 +105,193 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				var workSheet = package.Workbook.Worksheets.Add("Assets");
 
 				// tạo tiêu đề của bảng trong file excel
-				workSheet.Cells["B2:J2"].Merge = true;
-				workSheet.Cells["B2:J2"].Value = "Danh sách tài sản";
-				workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-				workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-				workSheet.Cells["B2:J2"].Style.Font.Bold = true;
-				workSheet.Cells["B2:J2"].Style.Font.Size = 20;
-				workSheet.Cells["B2:J2"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B2:J2"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B2:J2"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B2:J2"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-				List<string> listHeader = new List<string>()
-				{
-					"STT","Mã tài sản","Tên tài sản","Loại tài sản","Bộ phận sử dụng","Số lượng","Nguyên giá","HM/KH lũy kế","Giá trị còn lại"
-				};
-
-				for (int i = 0; i < listHeader.Count; i++)
-				{
-					workSheet.Cells[3, i + 2].Value = listHeader[i];
-					workSheet.Cells[3, i + 2].Style.Font.Bold = true;
-					workSheet.Cells[3, i + 2].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[3, i + 2].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[3, i + 2].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[3, i + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-					if (i == 0)
-					{
-						workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-						workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					}
-					else if (i == 1 || i == 2 || i == 3 || i == 4)
-					{
-						workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-						workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					}
-					else
-					{
-						workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-						workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					}
-				}
-				CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+				CreateTitleTableExcel(workSheet);
+				// tạo header table
+				CreateHeaderTableExcel(workSheet);
 				// tạo dữ liệu
-				for (int i = 0; i < assets.Count; i++)
-				{
-					workSheet.Cells[i + 4, 2].Value = (i + 1).ToString();
-					workSheet.Cells[i + 4, 3].Value = assets[i].fixed_asset_code;
-					workSheet.Cells[i + 4, 4].Value = assets[i].fixed_asset_name;
-					workSheet.Cells[i + 4, 5].Value = assets[i].fixed_asset_category_name;
-					workSheet.Cells[i + 4, 6].Value = assets[i].department_name;
-					workSheet.Cells[i + 4, 7].Value = assets[i].quantity.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 8].Value = assets[i].cost.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 10].Value = Math.Round(assets[i].cost - assets[i].depreciation_value).ToString("#,###", cul.NumberFormat);
-
-					workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 10].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-				}
-
-
-
-				// Định dạng cell border
-				for (int i = 0; i <= assets.Count; i++)
-				{
-					for (int j = 2; j < 11; j++)
-					{
-						workSheet.Cells[i + 3, j].Style.Font.Size = 10;
-						workSheet.Cells[i + 3, j].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-						workSheet.Cells[i + 3, j].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-						workSheet.Cells[i + 3, j].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-						workSheet.Cells[i + 3, j].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-
-					}
-				}
-
+				CreateDataTableExcel(assets, workSheet);
 				// Tạo footer table
-				int count = assets.Count + 4;
-				workSheet.Cells[$"B{count}:F{count}"].Merge = true;
-				workSheet.Cells[$"B{count}:F{count}"].Value = "Tổng cộng";
-				workSheet.Cells[$"B{count}:F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-				workSheet.Cells[$"B{count}:F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-				workSheet.Cells[$"B{count}:F{count}"].Style.Font.Bold = true;
-				workSheet.Cells[$"B{count}:F{count}"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[$"B{count}:F{count}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[$"B{count}:F{count}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[$"B{count}:F{count}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-
-				List<string> listFooter = new List<string>()
-				{
-					$"G{count}",$"H{count}",$"I{count}",$"J{count}"
-				};
-
-				for (int i = 0; i < listFooter.Count; i++)
-				{
-
-					workSheet.Cells[listFooter[i]].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[listFooter[i]].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[listFooter[i]].Style.Font.Bold = true;
-					workSheet.Cells[listFooter[i]].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[listFooter[i]].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[listFooter[i]].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[listFooter[i]].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
-					switch (i)
-					{
-						case 0:
-							workSheet.Cells[listFooter[i]].Value = quantityTotal.ToString("#,###", cul.NumberFormat);
-							break;
-						case 1:
-							workSheet.Cells[listFooter[i]].Value = costTotal.ToString("#,###", cul.NumberFormat);
-							break;
-						case 2:
-							workSheet.Cells[listFooter[i]].Value = depreciationValueTotal.ToString("#,###", cul.NumberFormat);
-							break;
-						case 3:
-							workSheet.Cells[listFooter[i]].Value = (costTotal - (decimal)depreciationValueTotal).ToString("#,###", cul.NumberFormat);
-							break;
-					}
-				}
-
-				// định dạng độ rộng của cột
-				for (int i = 2; i < 11; i++)
-				{
-					workSheet.Column(i).AutoFit();
-				}
-
+				CreateFooterTable(assets.Count, quantityTotal, costTotal, depreciationValueTotal, workSheet);
+				// format table
+				FormatTableExcel(assets.Count, workSheet);
 
 				return package.GetAsByteArray();
 			}
 
+		}
+		/// <summary>
+		/// Hàm format cột và ô của table trong excel
+		/// </summary>
+		/// <param name="count">Số lượng bản ghi trong danh sách dữ liệu</param>
+		/// /// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/03/2023)
+		private static void FormatTableExcel(int count, ExcelWorksheet workSheet)
+		{
+			// Định dạng cell border
+			for (int i = 0; i <= count; i++)
+			{
+				for (int j = 2; j < 11; j++)
+				{
+					workSheet.Cells[i + 3, j].Style.Font.Size = 10;
+					workSheet.Cells[i + 3, j].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 3, j].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 3, j].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 3, j].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 
+				}
+			}
+			// định dạng độ rộng của cột
+			for (int i = 2; i < 11; i++)
+			{
+				workSheet.Column(i).AutoFit();
+			}
+		}
 
+		/// <summary>
+		/// Hàm tạo footer cho table trong excel
+		/// </summary>
+		/// <param name="count">Số bản ghi trong danh sách dữ liệu</param>
+		/// <param name="quantityTotal">Tổng số lượng tài sản</param>
+		/// <param name="costTotal">Tống giá trị nguyên giá</param>
+		/// <param name="depreciationValueTotal">Tổng giá trị tỷ lệ hao mòn</param>
+		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/03/2023)
+		private static void CreateFooterTable(int count,int quantityTotal, decimal costTotal, double depreciationValueTotal, ExcelWorksheet workSheet)
+		{
+			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+			count += 4;
+			workSheet.Cells[$"B{count}:F{count}"].Merge = true;
+			workSheet.Cells[$"B{count}:F{count}"].Value = "Tổng cộng";
+			workSheet.Cells[$"B{count}:F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells[$"B{count}:F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+			workSheet.Cells[$"B{count}:F{count}"].Style.Font.Bold = true;
+			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 
+			List<string> listFooter = new()
+				{
+					$"G{count}",$"H{count}",$"I{count}",$"J{count}"
+				};
+
+			for (int i = 0; i < listFooter.Count; i++)
+			{
+
+				workSheet.Cells[listFooter[i]].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				workSheet.Cells[listFooter[i]].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+				workSheet.Cells[listFooter[i]].Style.Font.Bold = true;
+				workSheet.Cells[listFooter[i]].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[listFooter[i]].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[listFooter[i]].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[listFooter[i]].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				switch (i)
+				{
+					case 0:
+						workSheet.Cells[listFooter[i]].Value = quantityTotal.ToString("#,###", cul.NumberFormat);
+						break;
+					case 1:
+						workSheet.Cells[listFooter[i]].Value = costTotal.ToString("#,###", cul.NumberFormat);
+						break;
+					case 2:
+						workSheet.Cells[listFooter[i]].Value = depreciationValueTotal.ToString("#,###", cul.NumberFormat);
+						break;
+					case 3:
+						workSheet.Cells[listFooter[i]].Value = (costTotal - (decimal)depreciationValueTotal).ToString("#,###", cul.NumberFormat);
+						break;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Hàm tạo dữ liệu trong bảng excel
+		/// </summary>
+		/// <param name="assets">Đối tượng tài sản truyền dữ liệu vào table</param>
+		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/03/2023)
+		private static void CreateDataTableExcel(List<FixedAsset> assets, ExcelWorksheet workSheet)
+		{
+			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+
+			for (int i = 0; i < assets.Count; i++)
+			{
+				workSheet.Cells[i + 4, 2].Value = (i + 1).ToString();
+				workSheet.Cells[i + 4, 3].Value = assets[i].fixed_asset_code;
+				workSheet.Cells[i + 4, 4].Value = assets[i].fixed_asset_name;
+				workSheet.Cells[i + 4, 5].Value = assets[i].fixed_asset_category_name;
+				workSheet.Cells[i + 4, 6].Value = assets[i].department_name;
+				workSheet.Cells[i + 4, 7].Value = assets[i].quantity.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 8].Value = assets[i].cost.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 10].Value = Math.Round(assets[i].cost - assets[i].depreciation_value).ToString("#,###", cul.NumberFormat);
+
+				workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+				workSheet.Cells[i + 4, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+				workSheet.Cells[i + 4, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+				workSheet.Cells[i + 4, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+				workSheet.Cells[i + 4, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+				workSheet.Cells[i + 4, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+				workSheet.Cells[i + 4, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+				workSheet.Cells[i + 4, 10].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+			}
+		}
+
+		/// <summary>
+		/// Hàm tạo header cho table trong excel
+		/// </summary>
+		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/03/2023)
+		private static void CreateHeaderTableExcel(ExcelWorksheet workSheet)
+		{
+			List<string> listHeader = new List<string>()
+				{
+					"STT","Mã tài sản","Tên tài sản","Loại tài sản","Bộ phận sử dụng","Số lượng","Nguyên giá","HM/KH lũy kế","Giá trị còn lại"
+				};
+
+			for (int i = 0; i < listHeader.Count; i++)
+			{
+				workSheet.Cells[3, i + 2].Value = listHeader[i];
+				workSheet.Cells[3, i + 2].Style.Font.Bold = true;
+				workSheet.Cells[3, i + 2].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[3, i + 2].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[3, i + 2].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[3, i + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				if (i == 0)
+				{
+					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				}
+				else if (i == 1 || i == 2 || i == 3 || i == 4)
+				{
+					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+				}
+				else
+				{
+					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Hàm tạo tiêu đề cho table trong excel
+		/// </summary>
+		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/03/2023)
+		private static void CreateTitleTableExcel(ExcelWorksheet workSheet)
+		{
+			workSheet.Cells["B2:J2"].Merge = true;
+			workSheet.Cells["B2:J2"].Value = "Danh sách tài sản";
+			workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+			workSheet.Cells["B2:J2"].Style.Font.Bold = true;
+			workSheet.Cells["B2:J2"].Style.Font.Size = 20;
+			workSheet.Cells["B2:J2"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["B2:J2"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["B2:J2"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["B2:J2"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 		}
 
 		/// <summary>
@@ -309,11 +359,67 @@ namespace Hcsn.WebApplication.BL.AssetBL
             {
                 IsSuccess = true,
             };
-        } 
-        #endregion
+        }
+
+		public ServiceResult ImportExcel()
+		{
+			string file = @"D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Assets\assets.xlsx";
+			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+			var assets = new List<FixedAsset>();
+			using(ExcelPackage package = new ExcelPackage(new FileInfo(file))) 
+			{				
+				var sheet = package.Workbook.Worksheets["assets"];
+				assets = GetListFromExcel(sheet);
+			}
+			
+			if (assets != null)
+			{
+				return new ServiceResult { IsSuccess = true, Data = assets };
+			}
+			return new ServiceResult
+			{
+				IsSuccess = false,
+				Message = "Import Failed"
+			};
+		}
+
+		private List<FixedAsset> GetListFromExcel(ExcelWorksheet sheet)
+		{
+			List<FixedAsset> list = new List<FixedAsset> ();
+			var columnInfo = Enumerable.Range(1, sheet.Dimension.Columns).ToList().Select(n =>
+				new {Index = n, ColumnName = sheet.Cells[1,n].Value.ToString() }
+			);
+
+			for(int row = 2; row < sheet.Dimension.Rows; row++)
+			{
+				FixedAsset asset = (FixedAsset)Activator.CreateInstance(typeof(FixedAsset));
+				var properties = typeof(FixedAsset).GetProperties();
+				Console.WriteLine(1);
+                foreach (var property in properties)
+                {
+					var indexColumn = columnInfo.SingleOrDefault(c => c.ColumnName == property.Name);
+					if (indexColumn != null)
+					{
+
+						int column = indexColumn.Index;
+						var value = sheet.Cells[row, column].Value;
+						if (property.IsDefined(typeof(HcsnNumberAttribute), false) && value.ToString().IndexOf(".") != -1)
+						{
+							value = value.ToString().Replace(".", "");
+						}
+						var propertyType = property.PropertyType;
+						property.SetValue(asset, Convert.ChangeType(value, propertyType));
+
+					}
+				}
+				list.Add(asset);
+            }
+			return list;
+		}
+		#endregion
 
 
 
 
-    }
+	}
 }

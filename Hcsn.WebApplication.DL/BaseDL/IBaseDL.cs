@@ -59,7 +59,16 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// Created by: LTViet (20/03/2023)
         int DeleteRecord(Guid recordId);
 
-        int DeleteMultipleRecord(List<Guid> entitiesId);
+		/// <summary>
+		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
+		/// </summary>
+		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
+		/// <returns>
+		/// Kết quả việc thực hiện xóa nhiều bản ghi
+		/// 1: Nếu update thành công
+		/// 0: Nếu update thất bại
+		/// </returns>
+		int DeleteMultipleRecord(List<Guid> entitiesId);
 
         /// <summary>
         /// Hàm truy cập database lấy ra mã code ở lần nhập gần nhất

@@ -84,6 +84,13 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
         }
 
+		/// <summary>
+		/// API xuất danh sách tài sản theo phân trang, bộ lọc ra file excel 
+		/// </summary>
+		/// <param name="keyword"> Từ khóa tìm kiếm</param>
+		/// <param name="departmentId"> Id phòng ban tìm kiếm</param>
+		/// <param name="fixedAssetCatagortId"> Id loại tìa sản tìm kiếm</param>
+		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
 		[HttpGet("Export")]
 		public IActionResult GetExcelFiles(
 			[FromQuery] string? keyword,
@@ -129,30 +136,14 @@ namespace Hcsn.WebApplication.API.Controllers
 		[HttpGet("test")]
         public IActionResult get()
         {
-			
-			string abc = "FixedAsset";
-			string str = "";
-			int j = 0;
-			for (int i = 0; i < abc.Length; i++)
+
+			var result = _assetBL.ImportExcel();
+			if (result.IsSuccess)
 			{
-				if (Char.IsUpper(abc[i]))
-				{
-					if (j != 0)
-					{
-						str += $"_{abc[i]}";
-					}
-					else
-					{
-						j += 1;
-						str += abc[i];
-					}
-				}
-				else
-				{
-					str += abc[i];
-				}
+				return StatusCode(200, result.Data);
 			}
-			return StatusCode(200, str);
+			return StatusCode(500, result.Message);
+			
             
         }
        

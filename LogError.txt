@@ -335,3 +335,35 @@ PROCEDURE test.Proc_FixedAsset_Filter does not exist
    at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 53
    at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 52
    at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 53
+0HMPFHHU25R6B:00000001
+Could not find a part of the path 'D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\FixedAssets\assets(28-03-2023T20.01.44).xlsx'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.WriteAllBytes(String path, Byte[] bytes)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 82
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95
+0HMPFHHU25R6D:00000007
+Could not find a part of the path 'D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\FixedAssets\assets(28-03-2023T20.02.15).xlsx'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.WriteAllBytes(String path, Byte[] bytes)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 82
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95
+0HMPFHHU25R6F:00000001
+Could not find a part of the path 'D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\FixedAssets\assets(28-03-2023T20.02.23).xlsx'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.WriteAllBytes(String path, Byte[] bytes)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 82
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95
+0HMPFHHU25R6H:00000001
+Could not find a part of the path 'D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\FixedAssets\assets(28-03-2023T20.02.50).xlsx'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.WriteAllBytes(String path, Byte[] bytes)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ExportExcel(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 82
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetExcelFiles(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 95

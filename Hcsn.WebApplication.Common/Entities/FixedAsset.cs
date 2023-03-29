@@ -168,10 +168,19 @@ namespace Hcsn.WebApplication.Common.Entities
         [AllowNull]
         public bool? active { get; set; }
 
+        /// <summary>
+        /// Tống giá trị của số lượng
+        /// </summary>
         public int quantity_total { get; set; }
 
+        /// <summary>
+        /// Tổng giá trị của nguyên giá
+        /// </summary>
         public decimal cost_total { get; set; }
 
+        /// <summary>
+        /// Tổng giá trị hao mòn lũy kế
+        /// </summary>
         public double depreciation_value_total { get; set; }
     }
 }

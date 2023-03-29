@@ -9,6 +9,9 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
     public class ErrorResult
     {
 		#region Field
+        /// <summary>
+        /// Địa chỉ lưu lại log lỗi
+        /// </summary>
 		public static string LogError = "D:\\code\\misa\\API\\Hcsn.WebApplication\\LogError.txt";
 		#endregion
 		/// <summary>
