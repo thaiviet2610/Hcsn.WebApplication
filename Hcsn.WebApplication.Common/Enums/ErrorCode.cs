@@ -49,5 +49,10 @@
 		/// Lỗi xóa nhiều bản ghi thất bại
 		/// </summary>
 		DeleteMultipleFailed = 9,
+
+        /// <summary>
+        /// Lỗi xuất dữ liệu ra file excel không thành công
+        /// </summary>
+        ExportExcelFailed = 10
     }
 }

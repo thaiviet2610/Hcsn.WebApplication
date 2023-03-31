@@ -129,6 +129,9 @@
   <data name="DevMsg_Exception" xml:space="preserve">
     <value>Catched an exception</value>
   </data>
+  <data name="DevMsg_ExportExcelFailed" xml:space="preserve">
+    <value>Catched an export excel failed</value>
+  </data>
   <data name="DevMsg_GetNewCodeFailed" xml:space="preserve">
     <value>Catched a get new code failed</value>
   </data>
@@ -151,10 +154,13 @@
     <value>Lỗi đã xảy ra khi xóa nhiều bản ghi. vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_DuplicateCode" xml:space="preserve">
-    <value>Mã đã tồn tại. Vui lòng kiểm tra lại!</value>
+    <value>Mã tài sản đã tồn tại. Vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_Exception" xml:space="preserve">
     <value>Đã có lỗi xảy ra. Vui lòng liên hệ trung tâm tư vấn!</value>
+  </data>
+  <data name="UserMsg_ExportExcelFailed" xml:space="preserve">
+    <value>Dữ liệu xuất ra file excel không thành công. Vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_GetNewCodeFailed" xml:space="preserve">
     <value>Lỗi sinh ra code mới thất bại</value>

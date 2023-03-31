@@ -97,6 +97,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Catched an export excel failed.
+        /// </summary>
+        public static string DevMsg_ExportExcelFailed {
+            get {
+                return ResourceManager.GetString("DevMsg_ExportExcelFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Catched a get new code failed.
         /// </summary>
         public static string DevMsg_GetNewCodeFailed {
@@ -160,7 +169,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mã đã tồn tại. Vui lòng kiểm tra lại!.
+        ///   Looks up a localized string similar to Mã tài sản đã tồn tại. Vui lòng kiểm tra lại!.
         /// </summary>
         public static string UserMsg_DuplicateCode {
             get {
@@ -174,6 +183,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         public static string UserMsg_Exception {
             get {
                 return ResourceManager.GetString("UserMsg_Exception", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dữ liệu xuất ra file excel không thành công. Vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string UserMsg_ExportExcelFailed {
+            get {
+                return ResourceManager.GetString("UserMsg_ExportExcelFailed", resourceCulture);
             }
         }
         

@@ -19,6 +19,8 @@ using Hcsn.WebApplication.Common.Resource;
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
 using System.Globalization;
+using OfficeOpenXml.DataValidation;
+using System.IO;
 
 namespace Hcsn.WebApplication.BL.AssetBL
 {
@@ -66,7 +68,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
             };
         }
 
-		public ServiceResult ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId)
+		public Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId)
 		{
 			var result = _assetDL.GetPaging(keyword, departmentId, fixedAssetCatagortId, 0, 0);
 			if (result.Data != null)
@@ -75,32 +77,17 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				int quantityTotal = result.QuantityTotal;
 				decimal costTotal = result.CostTotal;
 				double depreciationValueTotal = result.DepreciationValueTotal;
-				byte[] data = GenerateExcelFile(assets, quantityTotal, costTotal, depreciationValueTotal);
-				string currentDatetime = DateTime.Now.ToString("dd-MM-yyyyTHH.mm.ss");
-				string exelFileName = $"assets({currentDatetime}).xlsx";
-				string filePath = Path.Combine(Directory.GetCurrentDirectory(), $"{typeof(FixedAsset).Name}s", exelFileName);
-				File.WriteAllBytes(filePath, data);
-				return new ServiceResult
-				{
-					IsSuccess = true,
-					Data = filePath
-				};
+				Stream data = GenerateExcelFile(assets, quantityTotal, costTotal, depreciationValueTotal);
+				return data;
 			}
-			else
-			{
-				return new ServiceResult
-				{
-					IsSuccess = false,
-					ErrorCode = ErrorCode.NotFound,
-					Message = ServiceResource.NotFound
-				};
-			}
+			return null;
 		}
 
-		public byte[] GenerateExcelFile(List<FixedAsset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
+		public static Stream GenerateExcelFile(List<FixedAsset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
 		{
 			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-			using (var package = new ExcelPackage())
+			var stream = new MemoryStream();
+			using (var package = new ExcelPackage(stream))
 			{
 				var workSheet = package.Workbook.Worksheets.Add("Assets");
 
@@ -115,8 +102,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				// format table
 				FormatTableExcel(assets.Count, workSheet);
 
-				return package.GetAsByteArray();
+				package.Save();
 			}
+			stream.Position = 0;
+			
+			return stream;
 
 		}
 		/// <summary>
@@ -145,6 +135,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			{
 				workSheet.Column(i).AutoFit();
 			}
+
+			// định dạng độ cao của dòng
+			for (int i = 3; i < count+4; i++)
+			{
+				workSheet.Row(i).Height = 20;
+			}
+
 		}
 
 		/// <summary>
@@ -215,15 +212,22 @@ namespace Hcsn.WebApplication.BL.AssetBL
 
 			for (int i = 0; i < assets.Count; i++)
 			{
+				// Chuẩn bị giá trị đầu vào
+				var quantity = assets[i].quantity > 0 ? assets[i].quantity : 0;
+				var cost = assets[i].cost > 0 ? assets[i].cost : 0;
+				var depreciationValue = assets[i].depreciation_value > 0 ? assets[i].depreciation_value : 0;
+				var residualValue = Math.Round(assets[i].cost - assets[i].depreciation_value);
+				residualValue = residualValue > 0 ? residualValue : 0;
+				// Gán giá trị vào từng ô trên từng dòng trong file excel
 				workSheet.Cells[i + 4, 2].Value = (i + 1).ToString();
 				workSheet.Cells[i + 4, 3].Value = assets[i].fixed_asset_code;
 				workSheet.Cells[i + 4, 4].Value = assets[i].fixed_asset_name;
 				workSheet.Cells[i + 4, 5].Value = assets[i].fixed_asset_category_name;
 				workSheet.Cells[i + 4, 6].Value = assets[i].department_name;
-				workSheet.Cells[i + 4, 7].Value = assets[i].quantity.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 8].Value = assets[i].cost.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 10].Value = Math.Round(assets[i].cost - assets[i].depreciation_value).ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 7].Value = quantity == 0 ? 0 : quantity.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 8].Value = cost == 0 ? 0 : cost.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 9].Value = depreciationValue == 0 ? 0 : depreciationValue.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 10].Value = residualValue == 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
 
 				workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
@@ -244,7 +248,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (29/03/2023)
 		private static void CreateHeaderTableExcel(ExcelWorksheet workSheet)
 		{
-			List<string> listHeader = new List<string>()
+			List<string> listHeader = new()
 				{
 					"STT","Mã tài sản","Tên tài sản","Loại tài sản","Bộ phận sử dụng","Số lượng","Nguyên giá","HM/KH lũy kế","Giá trị còn lại"
 				};

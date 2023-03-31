@@ -17,6 +17,8 @@ using Hcsn.WebApplication.BL.AssetBL;
 using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 using Hcsn.WebApplication.Common.Resource;
 using System.Collections;
+using OfficeOpenXml.DataValidation;
+using System.IO;
 
 namespace Hcsn.WebApplication.API.Controllers
 {
@@ -99,19 +101,21 @@ namespace Hcsn.WebApplication.API.Controllers
 		{
 			try
 			{
-				var result = _assetBL.ExportExcel(keyword, departmentId, fixedAssetCatagortId);
-				if (result.IsSuccess)
+				var stream = _assetBL.ExportExcel(keyword, departmentId, fixedAssetCatagortId);
+				if(stream != null)
 				{
-					return StatusCode(200, result.Data);
+					string currentDatetime = DateTime.Now.ToString("dd-MM-yyyyTHH.mm.ss");
+					string excelFileName = $"assets({currentDatetime}).xlsx";
+					return File(stream, "application/vnd.ms-excel", excelFileName);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(400, new ErrorResult
 				{
-					ErrorCode = ErrorCode.NotFound,
-					DevMsg = ErrorResource.DevMsg_NotFound,
-					UserMsg = ErrorResource.UserMsg_NotFound,
+					ErrorCode = ErrorCode.ExportExcelFailed,
+					DevMsg = ErrorResource.DevMsg_ExportExcelFailed,
+					UserMsg = ErrorResource.UserMsg_ExportExcelFailed,
 					TraceId = HttpContext.TraceIdentifier,
-					MoreInfo = result.Data,
 				});
+				
 			}
 			catch (Exception ex)
 			{

@@ -36,7 +36,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Thành công: Trả về đường đẫn lưu file excel
 		/// Thất bại: Thông báo lỗi
 		/// </returns>
-		ServiceResult ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
+		Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
 
 		
 		ServiceResult ImportExcel();
