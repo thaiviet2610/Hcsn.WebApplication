@@ -104,9 +104,7 @@ namespace Hcsn.WebApplication.API.Controllers
 				var stream = _assetBL.ExportExcel(keyword, departmentId, fixedAssetCatagortId);
 				if(stream != null)
 				{
-					string currentDatetime = DateTime.Now.ToString("dd-MM-yyyyTHH.mm.ss");
-					string excelFileName = $"assets({currentDatetime}).xlsx";
-					return File(stream, "application/vnd.ms-excel", excelFileName);
+					return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelFileName);
 				}
 				return StatusCode(400, new ErrorResult
 				{
