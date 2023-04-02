@@ -74,10 +74,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
 				}
 			}
 			string sql = string.Format(ProcedureName.DeleteMultiple, entityName, primaryKey, string.Join("','", entitiesId));
-
 			// Khởi tạo kết nối tới Database
 			int numberOfAffectedRows = 0;
-
 			var dbConnection = GetOpenConnection();
 			using (var transaction = dbConnection.BeginTransaction())
 			{
@@ -97,7 +95,6 @@ namespace Hcsn.WebApplication.DL.BaseDL
 					transaction.Rollback();
 				}
 			}
-
 			dbConnection.Close();
 			// Xử lý kết quả trả về
 			return numberOfAffectedRows;
@@ -279,7 +276,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
             parametersCheckSameCode.Add("p_id", recordId);
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            int numberOfAffectedRowsCheckSameCode = QueryFirstOrDefault<int>(dbConnection, storedProcedureNameCheckSameCode, parametersCheckSameCode, commandType: CommandType.StoredProcedure);
+            int numberOfAffectedRowsCheckSameCode = QueryFirstOrDefault<int>(dbConnection, storedProcedureNameCheckSameCode, 
+                                                                            parametersCheckSameCode, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             return numberOfAffectedRowsCheckSameCode;
         }

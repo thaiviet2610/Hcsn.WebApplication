@@ -58,7 +58,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// <summary>
 		/// Hàm xử lý logic khi xóa nhiều bản ghi
 		/// </summary>
-		/// <param name="recordId">Danh sách Id các bản ghi muốn xóa</param>
+		/// <param name="entitiesId">Danh sách Id các bản ghi muốn xóa</param>
 		/// <returns>
 		/// Kết quả việc xóa nhiều bản ghi
 		/// </returns>
@@ -72,14 +72,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Created by: LTViet (20/03/2023)
 		ServiceResult GetNewCode();
 
-        /// <summary>
-        /// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
-        /// </summary>
-        /// <param name="recordCode">Code cần kiểm tra</param>
-        /// <param name="recordId">Id </param>
-        /// <returns>Kết quả việc kiểm tra trùng code</returns>
-        /// Created by: LTViet (20/03/2023)
-        ServiceResult IsSameCode(string recordCode, Guid recordId);
-        #endregion
-    }
+		/// <summary>
+		/// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
+		/// </summary>
+		/// <param name="recordCode">Code cần kiểm tra</param>
+		/// <param name="recordId">Id </param>
+		/// <returns>Kết quả việc kiểm tra trùng code</returns>
+		/// Created by: LTViet (20/03/2023)
+		ServiceResult IsSameCode(string recordCode, Guid recordId);
+		#endregion
+	}
 }

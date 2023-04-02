@@ -309,7 +309,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// </returns>
 		protected override ValidateResult ValidateCustom(FixedAsset asset)
         {
-            float depreciationValueYear = (float)asset.cost * (asset.depreciation_rate / 100);
+			float depreciationValueYear = (float)asset.cost * (asset.depreciation_rate / 100);
             if (depreciationValueYear > (float)asset.cost)
             {
                 return new ValidateResult
@@ -420,6 +420,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
             }
 			return list;
 		}
+
+		
+
+		
 		#endregion
 
 

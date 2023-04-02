@@ -86,6 +86,8 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
         }
 
+		
+
 		/// <summary>
 		/// API xuất danh sách tài sản theo phân trang, bộ lọc ra file excel 
 		/// </summary>
@@ -104,7 +106,7 @@ namespace Hcsn.WebApplication.API.Controllers
 				var stream = _assetBL.ExportExcel(keyword, departmentId, fixedAssetCatagortId);
 				if(stream != null)
 				{
-					return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", excelFileName);
+					return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 				}
 				return StatusCode(400, new ErrorResult
 				{

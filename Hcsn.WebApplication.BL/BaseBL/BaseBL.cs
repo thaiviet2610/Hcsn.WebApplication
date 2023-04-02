@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Hcsn.WebApplication.Common.Resource;
+using System.Reflection;
 
 namespace Hcsn.WebApplication.BL.BaseBL
 {
@@ -55,6 +56,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
+		/// <summary>
+		/// Hàm xử lý logic khi xóa nhiều bản ghi
+		/// </summary>
+		/// <param name="entitiesId">Danh sách Id các bản ghi muốn xóa</param>
+		/// <returns>
+		/// Kết quả việc xóa nhiều bản ghi
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
 		public ServiceResult DeleteMultipleRecord(List<Guid> entitiesId)
 		{
 			var numberOfAffectedRows = _baseDL.DeleteMultipleRecord(entitiesId);
@@ -231,107 +240,109 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
         }
 
-        /// <summary>
-        /// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
-        /// </summary>
-        /// <param name="recordCode">Code cần kiểm tra</param>
-        /// <param name="recordId">Id </param>
-        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
-        /// Created by: LTViet (20/03/2023)
-        public ServiceResult IsSameCode(string recordCode, Guid recordId)
-        {
-            var numberOfAffectedRows = _baseDL.GetRecordByCode(recordCode, recordId);
-            if (numberOfAffectedRows == 0)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = true,
-                };
-            }
-            else
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.DuplicateCode,
-                    Message = ServiceResource.DuplicateCode,
-                };
-            }
-        }
+		/// <summary>
+		/// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
+		/// </summary>
+		/// <param name="recordCode">Code cần kiểm tra</param>
+		/// <param name="recordId">Id </param>
+		/// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult IsSameCode(string recordCode, Guid recordId)
+		{
+			var numberOfAffectedRows = _baseDL.GetRecordByCode(recordCode, recordId);
+			if (numberOfAffectedRows == 0)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = true,
+				};
+			}
+			else
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.DuplicateCode,
+					Message = ServiceResource.DuplicateCode,
+				};
+			}
+		}
 
-        /// <summary>
-        /// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
-        /// </summary>
-        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
-        /// Created by: LTViet (20/03/2023)
-        public ServiceResult GetNewCode()
-        {
-            var oldCode = _baseDL.GetNewCode();
-            if (oldCode == null)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = true,
-                    Data = "TS00001"
-                };
-            }
-            else
-            {
-                string newCode = GenerateNewCode(oldCode);
-                return new ServiceResult
-                {
-                    IsSuccess = true,
-                    Data = newCode
-                };
-            }
+		/// <summary>
+		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
+		/// </summary>
+		/// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult GetNewCode()
+		{
+			var oldCode = _baseDL.GetNewCode();
+			if (oldCode == null)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = true,
+					Data = "TS00001"
+				};
+			}
+			else
+			{
+				string newCode = GenerateNewCode(oldCode);
+				return new ServiceResult
+				{
+					IsSuccess = true,
+					Data = newCode
+				};
+			}
+		}
 
-        }
-
-        /// <summary>
-        /// Hàm sinh ra code mới từ việc tách code ra phần chữ và số rồi tăng phần số lên 1 đơn vị
-        /// </summary>
-        /// <param name="oldCode">Code cần tách ra</param>
-        /// <returns>Code mới</returns>
-        private string GenerateNewCode(string oldCode)
-        {
-            // Thành công
-            // lấy ra code của đối tượng asset 
-            string newCode = "";
-            bool check = false;
-            var regex = new Regex(@"([a-zA-Z]+)(\d+)");
-            // vòng lặp lấy 
-            while (!check)
-            {
-                // Tách phần số và phần chữ của code ra
-                string alphaPart = regex.Match(oldCode).Groups[1].Value;
-                string numberPart = regex.Match(oldCode).Groups[2].Value;
-                // Tăng phần số lên một đơn vị
-                int numberCode = int.Parse(numberPart) + 1;
-                // Tạo ra code mới bằng cách nối phần chữ và phần số mới 
-                string strNumberCode = "" + numberCode;
-                while (strNumberCode.Length < 5)
-                {
-                    strNumberCode = '0' + strNumberCode;
-                }
-                newCode = alphaPart + strNumberCode;
+		/// <summary>
+		/// Hàm sinh ra code mới từ việc tách code ra phần chữ và số rồi tăng phần số lên 1 đơn vị
+		/// </summary>
+		/// <param name="oldCode">Code cần tách ra</param>
+		/// <returns>Code mới</returns>
+		private string GenerateNewCode(string oldCode)
+		{
+			// Thành công
+			// lấy ra code của đối tượng asset 
+			string newCode = "";
+			bool check = false;
+			var regex = new Regex(@"([a-zA-Z]+)(\d+)");
+			// vòng lặp lấy 
+			while (!check)
+			{
+				// Tách phần số và phần chữ của code ra
+				string alphaPart = regex.Match(oldCode).Groups[1].Value;
+				string numberPart = regex.Match(oldCode).Groups[2].Value;
+				// Tăng phần số lên một đơn vị
+				int numberCode = int.Parse(numberPart) + 1;
+				// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
+				string strNumberCode = "" + numberCode;
+				while (strNumberCode.Length < 5)
+				{
+					strNumberCode = '0' + strNumberCode;
+				}
+				newCode = alphaPart + strNumberCode;
                 // Kiểm tra xem code mới có bị trùng không
                 // Lấy ra số bản ghi tài sản có code bằng code mới
-                var result = IsSameCode(newCode,Guid.NewGuid());
-                check = result.IsSuccess;
-            }
+                var result = IsSameCode(newCode, Guid.NewGuid());
+				check = result.IsSuccess;
+                if (!check)
+                {
+                    oldCode = newCode;
+                }
+			}
 
-            return newCode;
-        }
+			return newCode;
+		}
 
-        /// <summary>
-        /// Hàm validate chung dữ liệu 
-        /// </summary>
-        /// <param name="record">bản ghi cần validate</param>
-        /// <param name="recordId">Id của bản ghi</param>
-        /// <returns>Kết quả validate dữ liệu</returns>
-        protected virtual ValidateResult ValidateRequesData(T record,Guid recordId)
+		/// <summary>
+		/// Hàm validate chung dữ liệu 
+		/// </summary>
+		/// <param name="record">bản ghi cần validate</param>
+		/// <param name="recordId">Id của bản ghi</param>
+		/// <returns>Kết quả validate dữ liệu</returns>
+		protected virtual ValidateResult ValidateRequesData(T record,Guid recordId)
         {
-            
             var properties = typeof(T).GetProperties();
             foreach (var property in properties)
             {
@@ -367,56 +378,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
                         Message = propName + ValidateResource.Empty
                     };
                 }
-                if(property.IsDefined(typeof(HcsnNumberAttribute), false))
+                var validatePropertyNumberResult = ValidatePropertyNumber(property, record);
+                if (!validatePropertyNumberResult.IsSuccess)
                 {
-                    string propNumber = propValue.ToString();
-                    var attHcsnNumber = property.GetCustomAttributes(typeof(HcsnNumberAttribute), false).FirstOrDefault();
-                    string propType = (attHcsnNumber as HcsnNumberAttribute).PropType;
-                    if (propNumber.Count() > 14)
-                    {
-                        return new ValidateResult
-                        {
-                            IsSuccess = false,
-                            ValidateCode = ValidateCode.OutMaxLength,
-                            Message = propName + ValidateResource.OutMaxLength
-                        };
-                    }else if(propType == "rate" && ((float)propValue < 0 || (float)propValue > 100))
-                    {
-                        return new ValidateResult
-                        {
-                            IsSuccess = false,
-                            ValidateCode = ValidateCode.OutOfRate,
-                            Message = propName + ValidateResource.OutOfRate
-                        };
-                    }
-                    if (property.IsDefined(typeof(HcsnGreateThanZeroAttribute), false))
-                    {
-                        bool check = true;
-                        if (propType == "decimal" && (decimal)propValue <= 0)
-                        {
-                            check = false;
-                        }
-                        else if (propType == "int" && (int)propValue <= 0)
-                        {
-                            check = false;
-                        }
-                        else if ((propType == "rate" || propType == "float") && (float)propValue <= 0)
-                        {
-                            check = false;
-                        }
-                        if (!check)
-                        {
-                            return new ValidateResult
-                            {
-                                IsSuccess = false,
-                                ValidateCode = ValidateCode.NumberEqual0,
-                                Message = propName + ValidateResource.NumberEqual0
-                            };
-                        }
-                    }
+                    return validatePropertyNumberResult;
                 }
-
-                
             }
             var result = ValidateCustom(record);
             if (!result.IsSuccess)
@@ -424,8 +390,63 @@ namespace Hcsn.WebApplication.BL.BaseBL
                 return result;
             }
             return new ValidateResult { IsSuccess = true };
-
         }
+
+        protected virtual ValidateResult ValidatePropertyNumber(PropertyInfo property,T record)
+        {
+			var propValue = property.GetValue(record);
+			string propName = property.Name;
+			if (property.IsDefined(typeof(HcsnNumberAttribute), false))
+			{
+				string propNumber = propValue.ToString();
+				var attHcsnNumber = property.GetCustomAttributes(typeof(HcsnNumberAttribute), false).FirstOrDefault();
+				string propType = (attHcsnNumber as HcsnNumberAttribute).PropType;
+				if (propNumber.Count() > 14)
+				{
+					return new ValidateResult
+					{
+						IsSuccess = false,
+						ValidateCode = ValidateCode.OutMaxLength,
+						Message = propName + ValidateResource.OutMaxLength
+					};
+				}
+				if (propType == "rate" && ((float)propValue < 0 || (float)propValue > 100))
+				{
+					return new ValidateResult
+					{
+						IsSuccess = false,
+						ValidateCode = ValidateCode.OutOfRate,
+						Message = propName + ValidateResource.OutOfRate
+					};
+				}
+				if (property.IsDefined(typeof(HcsnGreateThanZeroAttribute), false))
+				{
+					bool check = true;
+					if (propType == "decimal" && (decimal)propValue <= 0)
+					{
+						check = false;
+					}
+					else if (propType == "int" && (int)propValue <= 0)
+					{
+						check = false;
+					}
+					else if ((propType == "rate" || propType == "float") && (float)propValue <= 0)
+					{
+						check = false;
+					}
+					if (!check)
+					{
+						return new ValidateResult
+						{
+							IsSuccess = false,
+							ValidateCode = ValidateCode.NumberEqual0,
+							Message = propName + ValidateResource.NumberEqual0
+						};
+					}
+				}
+			}
+            return new ValidateResult { IsSuccess = true };
+		}
 
         /// <summary>
         /// Hàm validate riêng dữ liệu 

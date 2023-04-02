@@ -25,6 +25,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (09/03/2023)
 		ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
 
+		
+
 		/// <summary>
 		/// Hàm xuất dữ liệu ra file excel
 		/// </summary>
