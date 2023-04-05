@@ -148,6 +148,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
             var entites = QueryMultiple(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+            dbConnection.Close();
             // Xử lý kết quả trả về 
             return entites.Read<T>().ToList();
         }
@@ -172,7 +173,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 
             // Thực hiện gọi vào Database để chạy stored procedure
             var entity = QueryFirstOrDefault<T>(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-
+            dbConnection.Close();
             // Xử lý kết quả trả về 
             return entity;
         }
@@ -276,8 +277,9 @@ namespace Hcsn.WebApplication.DL.BaseDL
             parametersCheckSameCode.Add("p_id", recordId);
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            int numberOfAffectedRowsCheckSameCode = QueryFirstOrDefault<int>(dbConnection, storedProcedureNameCheckSameCode, 
-                                                                            parametersCheckSameCode, commandType: CommandType.StoredProcedure);
+            int numberOfAffectedRowsCheckSameCode = 
+                QueryFirstOrDefault<int>(dbConnection, storedProcedureNameCheckSameCode, 
+                                         parametersCheckSameCode, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             return numberOfAffectedRowsCheckSameCode;
         }
