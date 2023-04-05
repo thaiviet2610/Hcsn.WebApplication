@@ -68,6 +68,14 @@ namespace Hcsn.WebApplication.BL.AssetBL
             };
         }
 
+		/// <summary>
+		/// Hàm logic xử lý việc xuất dữ liệu ra file excel
+		/// </summary>
+		/// <param name="keyword">Từ khóa tìm kiếm</param>
+		/// <param name="departmentId">Id phòng ban</param>
+		/// <param name="fixedAssetCatagortId">Id loại tài sản</param>
+		/// <returns>Đối tượng stream lưu dữ liệu</returns>
+		/// Created by: LTVIET (09/03/2023)
 		public Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId)
 		{
 			var result = _assetDL.GetPaging(keyword, departmentId, fixedAssetCatagortId, 0, 0);
@@ -83,6 +91,15 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			return null;
 		}
 
+		/// <summary>
+		/// Hàm sinh ra file excel từ dữ liệu cho trước
+		/// </summary>
+		/// <param name="assets">Danh sách tài sản truyền vào</param>
+		/// <param name="quantityTotal">Tổng số luognjw</param>
+		/// <param name="costTotal">Tổng nguyên giá</param>
+		/// <param name="depreciationValueTotal">Tổng hao mòn lũy kế</param>
+		/// <returns>Đối tượng stream lưu file excel</returns>
+		/// Created by: LTVIET (09/03/2023)
 		public static Stream GenerateExcelFile(List<FixedAsset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
 		{
 			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -109,6 +126,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			return stream;
 
 		}
+
 		/// <summary>
 		/// Hàm format cột và ô của table trong excel
 		/// </summary>
@@ -213,9 +231,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			for (int i = 0; i < assets.Count; i++)
 			{
 				// Chuẩn bị giá trị đầu vào
-				var quantity = assets[i].quantity > 0 ? assets[i].quantity : 0;
-				var cost = assets[i].cost > 0 ? assets[i].cost : 0;
-				var depreciationValue = assets[i].depreciation_value > 0 ? assets[i].depreciation_value : 0;
+				
 				var residualValue = Math.Round(assets[i].cost - assets[i].depreciation_value);
 				residualValue = residualValue > 0 ? residualValue : 0;
 				// Gán giá trị vào từng ô trên từng dòng trong file excel
@@ -224,9 +240,9 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				workSheet.Cells[i + 4, 4].Value = assets[i].fixed_asset_name;
 				workSheet.Cells[i + 4, 5].Value = assets[i].fixed_asset_category_name;
 				workSheet.Cells[i + 4, 6].Value = assets[i].department_name;
-				workSheet.Cells[i + 4, 7].Value = quantity == 0 ? 0 : quantity.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 8].Value = cost == 0 ? 0 : cost.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 9].Value = depreciationValue == 0 ? 0 : depreciationValue.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 7].Value = assets[i].quantity == 0 ? 0 : assets[i].quantity.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 8].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
 				workSheet.Cells[i + 4, 10].Value = residualValue == 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
 
 				workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
@@ -248,14 +264,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (29/03/2023)
 		private static void CreateHeaderTableExcel(ExcelWorksheet workSheet)
 		{
-			List<string> listHeader = new()
-				{
-					"STT","Mã tài sản","Tên tài sản","Loại tài sản","Bộ phận sử dụng","Số lượng","Nguyên giá","HM/KH lũy kế","Giá trị còn lại"
-				};
+			List<string> headers = ExcelResult.headers;
 
-			for (int i = 0; i < listHeader.Count; i++)
+			for (int i = 0; i < headers.Count; i++)
 			{
-				workSheet.Cells[3, i + 2].Value = listHeader[i];
+				workSheet.Cells[3, i + 2].Value = headers[i];
 				workSheet.Cells[3, i + 2].Style.Font.Bold = true;
 				workSheet.Cells[3, i + 2].Style.Border.Top.Style = ExcelBorderStyle.Medium;
 				workSheet.Cells[3, i + 2].Style.Border.Right.Style = ExcelBorderStyle.Medium;
@@ -287,7 +300,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		private static void CreateTitleTableExcel(ExcelWorksheet workSheet)
 		{
 			workSheet.Cells["B2:J2"].Merge = true;
-			workSheet.Cells["B2:J2"].Value = "Danh sách tài sản";
+			workSheet.Cells["B2:J2"].Value = ExcelResult.title;
 			workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.Font.Bold = true;
@@ -307,6 +320,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// IsSuccess = True: Nếu validate dữ liệu thành công
 		/// IsSuccess = False: Nếu validate dữ liệu thất bại
 		/// </returns>
+		/// Created by: LTVIET (09/03/2023)
 		protected override ValidateResult ValidateCustom(FixedAsset asset)
         {
 			float depreciationValueYear = (float)asset.cost * (asset.depreciation_rate / 100);
@@ -364,64 +378,6 @@ namespace Hcsn.WebApplication.BL.AssetBL
                 IsSuccess = true,
             };
         }
-
-		public ServiceResult ImportExcel()
-		{
-			string file = @"D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Assets\assets.xlsx";
-			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-			var assets = new List<FixedAsset>();
-			using(ExcelPackage package = new ExcelPackage(new FileInfo(file))) 
-			{				
-				var sheet = package.Workbook.Worksheets["assets"];
-				assets = GetListFromExcel(sheet);
-			}
-			
-			if (assets != null)
-			{
-				return new ServiceResult { IsSuccess = true, Data = assets };
-			}
-			return new ServiceResult
-			{
-				IsSuccess = false,
-				Message = "Import Failed"
-			};
-		}
-
-		private List<FixedAsset> GetListFromExcel(ExcelWorksheet sheet)
-		{
-			List<FixedAsset> list = new List<FixedAsset> ();
-			var columnInfo = Enumerable.Range(1, sheet.Dimension.Columns).ToList().Select(n =>
-				new {Index = n, ColumnName = sheet.Cells[1,n].Value.ToString() }
-			);
-
-			for(int row = 2; row < sheet.Dimension.Rows; row++)
-			{
-				FixedAsset asset = (FixedAsset)Activator.CreateInstance(typeof(FixedAsset));
-				var properties = typeof(FixedAsset).GetProperties();
-				Console.WriteLine(1);
-                foreach (var property in properties)
-                {
-					var indexColumn = columnInfo.SingleOrDefault(c => c.ColumnName == property.Name);
-					if (indexColumn != null)
-					{
-
-						int column = indexColumn.Index;
-						var value = sheet.Cells[row, column].Value;
-						if (property.IsDefined(typeof(HcsnNumberAttribute), false) && value.ToString().IndexOf(".") != -1)
-						{
-							value = value.ToString().Replace(".", "");
-						}
-						var propertyType = property.PropertyType;
-						property.SetValue(asset, Convert.ChangeType(value, propertyType));
-
-					}
-				}
-				list.Add(asset);
-            }
-			return list;
-		}
-
-		
 
 		
 		#endregion

@@ -300,13 +300,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// </summary>
 		/// <param name="oldCode">Code cần tách ra</param>
 		/// <returns>Code mới</returns>
+		/// Created by: LTViet (20/03/2023)
 		private string GenerateNewCode(string oldCode)
 		{
 			// Thành công
 			// lấy ra code của đối tượng asset 
 			string newCode = "";
 			bool check = false;
-			var regex = new Regex(@"([a-zA-Z]+)(\d+)");
+			var regex = new Regex(@"(\D+)(\d+)");
 			// vòng lặp lấy 
 			while (!check)
 			{
@@ -341,6 +342,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// <param name="record">bản ghi cần validate</param>
 		/// <param name="recordId">Id của bản ghi</param>
 		/// <returns>Kết quả validate dữ liệu</returns>
+		/// Created by: LTViet (20/03/2023)
 		protected virtual ValidateResult ValidateRequesData(T record,Guid recordId)
         {
             var properties = typeof(T).GetProperties();
@@ -392,7 +394,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
             return new ValidateResult { IsSuccess = true };
         }
 
-        protected virtual ValidateResult ValidatePropertyNumber(PropertyInfo property,T record)
+		/// <summary>
+		/// Hàm validate giá trị các thuộc tính kiểu số
+		/// </summary>
+		/// <param name="property"> Đối tượng mảng chứa các thuộc tính</param>
+		/// <param name="record">Đối tượng chứa các thuộc tính</param>
+		/// <returns>Kết quả validate</returns>
+		/// Created by: LTViet (20/03/2023)
+		protected virtual ValidateResult ValidatePropertyNumber(PropertyInfo property,T record)
         {
 			var propValue = property.GetValue(record);
 			string propName = property.Name;
@@ -448,12 +457,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
             return new ValidateResult { IsSuccess = true };
 		}
 
-        /// <summary>
-        /// Hàm validate riêng dữ liệu 
-        /// </summary>
-        /// <param name="record">bản ghi cần validate</param>
-        /// <returns>Kết quả validate dữ liệu</returns>
-        protected virtual ValidateResult ValidateCustom(T record)
+		/// <summary>
+		/// Hàm validate riêng dữ liệu 
+		/// </summary>
+		/// <param name="record">bản ghi cần validate</param>
+		/// <returns>Kết quả validate dữ liệu</returns>
+		/// Created by: LTViet (20/03/2023)
+		protected virtual ValidateResult ValidateCustom(T record)
         {
             return new ValidateResult() { IsSuccess = true };
         }

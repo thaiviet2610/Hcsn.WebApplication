@@ -61,7 +61,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched a delete failed.
+        ///   Looks up a localized string similar to Catched a delete failed!.
         /// </summary>
         public static string DevMsg_DeleteFailed {
             get {
@@ -70,7 +70,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched a delete multiple failed.
+        ///   Looks up a localized string similar to Catched a delete multiple failed!.
         /// </summary>
         public static string DevMsg_DeleteMultipleFailed {
             get {
@@ -79,7 +79,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an duplicate code.
+        ///   Looks up a localized string similar to Catched an duplicate code!.
         /// </summary>
         public static string DevMsg_DuplicateCode {
             get {
@@ -88,7 +88,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an exception.
+        ///   Looks up a localized string similar to Catched an exception!.
         /// </summary>
         public static string DevMsg_Exception {
             get {
@@ -97,7 +97,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an export excel failed.
+        ///   Looks up a localized string similar to Catched an export excel failed!.
         /// </summary>
         public static string DevMsg_ExportExcelFailed {
             get {
@@ -106,7 +106,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched a get new code failed.
+        ///   Looks up a localized string similar to Catched a get new code failed!.
         /// </summary>
         public static string DevMsg_GetNewCodeFailed {
             get {
@@ -115,7 +115,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an insert failed.
+        ///   Looks up a localized string similar to Catched an insert failed!.
         /// </summary>
         public static string DevMsg_InsertFailed {
             get {
@@ -124,7 +124,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an invalid data.
+        ///   Looks up a localized string similar to Catched an invalid data!.
         /// </summary>
         public static string DevMsg_InvalidData {
             get {
@@ -133,7 +133,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched a not found.
+        ///   Looks up a localized string similar to Catched a not found!.
         /// </summary>
         public static string DevMsg_NotFound {
             get {
@@ -142,11 +142,20 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Catched an update failed.
+        ///   Looks up a localized string similar to Catched an update failed!.
         /// </summary>
         public static string DevMsg_UpdateFailed {
             get {
                 return ResourceManager.GetString("DevMsg_UpdateFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã xảy ra lỗi. Vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string Exception_MoreInfo {
+            get {
+                return ResourceManager.GetString("Exception_MoreInfo", resourceCulture);
             }
         }
         
@@ -196,7 +205,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lỗi sinh ra code mới thất bại.
+        ///   Looks up a localized string similar to Lỗi sinh ra code mới thất bại!.
         /// </summary>
         public static string UserMsg_GetNewCodeFailed {
             get {

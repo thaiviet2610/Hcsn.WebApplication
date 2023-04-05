@@ -68,6 +68,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// 1: Nếu update thành công
 		/// 0: Nếu update thất bại
 		/// </returns>
+		/// Created by: LTViet (20/03/2023)
 		int DeleteMultipleRecord(List<Guid> entitiesId);
 
         /// <summary>

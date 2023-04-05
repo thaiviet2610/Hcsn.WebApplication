@@ -8,15 +8,15 @@ namespace Hcsn.WebApplication.Common.Constants
 {
     public static class ProcedureName
     {
-        /// <summary>
-        /// Thêm 1 bản ghi mới
-        /// </summary>
-        public static string Insert = "Proc_{0}_Insert";
+		/// <summary>
+		/// Thêm 1 bản ghi mới
+		/// </summary>
+		public static string Insert = "Proc_{0}_Insert";
 
-        /// <summary>
-        /// Lấy thông tin tất cả các bản ghi
-        /// </summary>
-        public static string GetAll = "Proc_{0}_GetAll";
+		/// <summary>
+		/// Lấy thông tin tất cả các bản ghi
+		/// </summary>
+		public static string GetAll = "Proc_{0}_GetAll";
 
         /// <summary>
         /// Lấy thông tin một bản ghi theo id

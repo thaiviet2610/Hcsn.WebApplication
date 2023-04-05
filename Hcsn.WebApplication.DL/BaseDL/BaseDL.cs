@@ -59,6 +59,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// 1: Nếu update thành công
 		/// 0: Nếu update thất bại
 		/// </returns>
+		/// Created by: LTViet (20/03/2023)
 		public int DeleteMultipleRecord(List<Guid> entitiesId)
 		{
 			// Chuẩn bị tham số đầu vào
@@ -104,6 +105,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// Hàm lấy ra tên của đối tượng được lưu trong database
 		/// </summary>
 		/// <returns>Tên của đối tượng được lưu trong database</returns>
+		/// Created by: LTViet (20/03/2023)
 		private static string GetEntityName()
 		{
 			string nameEntity = "";
@@ -130,8 +132,6 @@ namespace Hcsn.WebApplication.DL.BaseDL
 
 			return nameEntity;
 		}
-
-
 
 		/// <summary>
 		/// API Lấy ra danh sách tất cả các bản ghi

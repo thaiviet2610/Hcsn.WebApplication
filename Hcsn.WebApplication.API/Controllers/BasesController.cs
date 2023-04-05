@@ -66,7 +66,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
         }
@@ -111,7 +111,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
         }
@@ -184,7 +184,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
 
@@ -258,11 +258,8 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
-
-				//System.IO.writeline(ex.ToString(), "D\:log.txt");
-
 
 			}
         }
@@ -311,7 +308,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = traceId,
-                    MoreInfo = "Xảy ra exception",
+                    MoreInfo = ErrorResource.Exception_MoreInfo,
                 });
             }
         }
@@ -360,7 +357,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
 		}
@@ -406,7 +403,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     DevMsg = ErrorResource.DevMsg_Exception,
                     UserMsg = ErrorResource.UserMsg_Exception,
                     TraceId = traceId,
-                    MoreInfo = "Xảy ra exception",
+                    MoreInfo = ErrorResource.Exception_MoreInfo,
                 });
             }
             

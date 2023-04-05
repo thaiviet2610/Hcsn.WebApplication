@@ -118,34 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DevMsg_DeleteFailed" xml:space="preserve">
-    <value>Catched a delete failed</value>
+    <value>Catched a delete failed!</value>
   </data>
   <data name="DevMsg_DeleteMultipleFailed" xml:space="preserve">
-    <value>Catched a delete multiple failed</value>
+    <value>Catched a delete multiple failed!</value>
   </data>
   <data name="DevMsg_DuplicateCode" xml:space="preserve">
-    <value>Catched an duplicate code</value>
+    <value>Catched an duplicate code!</value>
   </data>
   <data name="DevMsg_Exception" xml:space="preserve">
-    <value>Catched an exception</value>
+    <value>Catched an exception!</value>
   </data>
   <data name="DevMsg_ExportExcelFailed" xml:space="preserve">
-    <value>Catched an export excel failed</value>
+    <value>Catched an export excel failed!</value>
   </data>
   <data name="DevMsg_GetNewCodeFailed" xml:space="preserve">
-    <value>Catched a get new code failed</value>
+    <value>Catched a get new code failed!</value>
   </data>
   <data name="DevMsg_InsertFailed" xml:space="preserve">
-    <value>Catched an insert failed</value>
+    <value>Catched an insert failed!</value>
   </data>
   <data name="DevMsg_InvalidData" xml:space="preserve">
-    <value>Catched an invalid data</value>
+    <value>Catched an invalid data!</value>
   </data>
   <data name="DevMsg_NotFound" xml:space="preserve">
-    <value>Catched a not found</value>
+    <value>Catched a not found!</value>
   </data>
   <data name="DevMsg_UpdateFailed" xml:space="preserve">
-    <value>Catched an update failed</value>
+    <value>Catched an update failed!</value>
+  </data>
+  <data name="Exception_MoreInfo" xml:space="preserve">
+    <value>Đã xảy ra lỗi. Vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_DeleteFailed" xml:space="preserve">
     <value>Xóa không thành công. Vui lòng kiểm tra lại!</value>
@@ -163,7 +166,7 @@
     <value>Dữ liệu xuất ra file excel không thành công. Vui lòng kiểm tra lại!</value>
   </data>
   <data name="UserMsg_GetNewCodeFailed" xml:space="preserve">
-    <value>Lỗi sinh ra code mới thất bại</value>
+    <value>Lỗi sinh ra code mới thất bại!</value>
   </data>
   <data name="UserMsg_InsertFailed" xml:space="preserve">
     <value>Thêm mới không thành công. Vui lòng kiểm tra lại!</value>

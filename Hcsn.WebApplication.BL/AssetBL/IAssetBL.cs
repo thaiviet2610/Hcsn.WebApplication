@@ -25,7 +25,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (09/03/2023)
 		ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
 
-		
+
 
 		/// <summary>
 		/// Hàm xuất dữ liệu ra file excel
@@ -38,10 +38,9 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Thành công: Trả về đường đẫn lưu file excel
 		/// Thất bại: Thông báo lỗi
 		/// </returns>
+		/// Created by: LTViet (20/03/2023)
 		Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
 
-		
-		ServiceResult ImportExcel();
 	} 
     #endregion
 }

@@ -33,16 +33,17 @@ namespace Hcsn.WebApplication.API.Controllers
             _assetBL = assetBL;
         }
 
-        /// <summary>
-        /// API phân trang, lọc danh sách tài sản
-        /// </summary>
-        /// <param name="keyword">Từ khóa tìm kiếm</param>
-        /// <param name="departmentId">Id phòng ban tìm kiếm</param>
-        /// <param name="fixedAssetCatagortId">Id loại tài sản tìm kiếm</param>
-        /// <param name="pageSize">Số bản ghi trong 1 trang</param>
-        /// <param name="pageNumber">Vị trí trang hiện tại</param>
-        /// <returns>Danh sách các tài sản phù hợp</returns>
-        [HttpGet("Filter")]
+		/// <summary>
+		/// API phân trang, lọc danh sách tài sản
+		/// </summary>
+		/// <param name="keyword">Từ khóa tìm kiếm</param>
+		/// <param name="departmentId">Id phòng ban tìm kiếm</param>
+		/// <param name="fixedAssetCatagortId">Id loại tài sản tìm kiếm</param>
+		/// <param name="pageSize">Số bản ghi trong 1 trang</param>
+		/// <param name="pageNumber">Vị trí trang hiện tại</param>
+		/// <returns>Danh sách các tài sản phù hợp</returns>
+		/// Created by: LTVIET (09/03/2023)
+		[HttpGet("Filter")]
         public IActionResult GetPaging(
             [FromQuery] string? keyword,
             [FromQuery] Guid? departmentId,
@@ -81,12 +82,12 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
         }
 
-		
+
 
 		/// <summary>
 		/// API xuất danh sách tài sản theo phân trang, bộ lọc ra file excel 
@@ -95,6 +96,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// <param name="departmentId"> Id phòng ban tìm kiếm</param>
 		/// <param name="fixedAssetCatagortId"> Id loại tìa sản tìm kiếm</param>
 		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
+		/// Created by: LTVIET (29/03/2023)
 		[HttpGet("Export")]
 		public IActionResult GetExcelFiles(
 			[FromQuery] string? keyword,
@@ -132,24 +134,11 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_Exception,
 					UserMsg = ErrorResource.UserMsg_Exception,
 					TraceId = traceId,
-					MoreInfo = "Xảy ra exception",
+					MoreInfo = ErrorResource.Exception_MoreInfo,
 				});
 			}
 		}
 
-		[HttpGet("test")]
-        public IActionResult get()
-        {
-
-			var result = _assetBL.ImportExcel();
-			if (result.IsSuccess)
-			{
-				return StatusCode(200, result.Data);
-			}
-			return StatusCode(500, result.Message);
-			
-            
-        }
        
     }
 }
