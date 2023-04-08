@@ -322,7 +322,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// 2: Nếu delete thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		[HttpDelete("DeleteMultiple")]
+		[HttpDelete]
 		public ActionResult DeleteMultipleRecord([FromBody] List<Guid> entitiesId)
 		{
 			try
@@ -367,7 +367,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// </summary>
 		/// <returns>Mã code mới</returns>
 		/// Created by: LTViet (20/03/2023)
-		[HttpGet("GetNewCode")]
+		[HttpGet("NewCode")]
         public IActionResult GetNewCode()
         {
             try

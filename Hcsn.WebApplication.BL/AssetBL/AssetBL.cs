@@ -61,6 +61,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ServiceResource.NotFound
                 };
             }
+			
             return new ServiceResult
             {
                 IsSuccess = true,
@@ -100,7 +101,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="depreciationValueTotal">Tổng hao mòn lũy kế</param>
 		/// <returns>Đối tượng stream lưu file excel</returns>
 		/// Created by: LTVIET (09/03/2023)
-		public static Stream GenerateExcelFile(List<FixedAsset> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
+		public static Stream GenerateExcelFile(List<AssetDTO> assets, int quantityTotal, decimal costTotal, double depreciationValueTotal)
 		{
 			ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 			var stream = new MemoryStream();
@@ -224,7 +225,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="assets">Đối tượng tài sản truyền dữ liệu vào table</param>
 		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
 		/// Created by: LTVIET (29/03/2023)
-		private static void CreateDataTableExcel(List<FixedAsset> assets, ExcelWorksheet workSheet)
+		private static void CreateDataTableExcel(List<AssetDTO> assets, ExcelWorksheet workSheet)
 		{
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
 
@@ -243,7 +244,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				workSheet.Cells[i + 4, 7].Value = assets[i].quantity == 0 ? 0 : assets[i].quantity.ToString("#,###", cul.NumberFormat);
 				workSheet.Cells[i + 4, 8].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
 				workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
-				workSheet.Cells[i + 4, 10].Value = residualValue == 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
+				workSheet.Cells[i + 4, 10].Value = residualValue <= 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
 
 				workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;

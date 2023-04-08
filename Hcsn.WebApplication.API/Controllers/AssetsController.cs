@@ -97,7 +97,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// <param name="fixedAssetCatagortId"> Id loại tìa sản tìm kiếm</param>
 		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
 		/// Created by: LTVIET (29/03/2023)
-		[HttpGet("Export")]
+		[HttpGet("Excel")]
 		public IActionResult GetExcelFiles(
 			[FromQuery] string? keyword,
 			[FromQuery] Guid? departmentId,

@@ -606,3 +606,621 @@ Connect Timeout expired. All pooled connections are in use.
    at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 51
    at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
    at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPLER68HCT9:0000000B
+SSL Authentication Error
+   at MySqlConnector.Core.ServerSession.InitSslAsync(ProtocolCapabilities serverCapabilities, ConnectionSettings cs, MySqlConnection connection, SslProtocols sslProtocols, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1569
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 335
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 51
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPLGRNO2174:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2176:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2176:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2176:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2176:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2179:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2179:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217C:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217C:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217E:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217E:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217E:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217G:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217G:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217G:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217G:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217I:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217I:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217I:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217I:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217M:00000005
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217M:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217M:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217M:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217P:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217P:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:0000000D
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:0000000F
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000013
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000015
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:00000019
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO217T:0000001B
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:0000000F
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:0000000D
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000013
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000015
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000019
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:0000001F
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000021
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000025
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2180:00000027
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2182:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLGRNO2182:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 186
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KL:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KR:00000001
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KR:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KR:00000007
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KR:00000009
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KT:00000002
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLJSLQG0KT:00000003
+Can't call this method when MySqlDataReader is closed.
+   at MySqlConnector.MySqlDataReader.VerifyNotDisposed() in /_/src/MySqlConnector/MySqlDataReader.cs:line 675
+   at MySqlConnector.MySqlDataReader.get_FieldCount() in /_/src/MySqlConnector/MySqlDataReader.cs:line 184
+   at Dapper.SqlMapper.GetColumnHash(IDataReader reader, Int32 startBound, Int32 length) in /_/Dapper/SqlMapper.cs:line 38
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 156
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 153
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPLQGJ4IF33:00000009
+Duplicate entry 'TS50828' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 356
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 168
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPN00ISJLGB:00000009
+Unknown column 'residual_value' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.NextResultAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 90
+   at MySqlConnector.MySqlDataReader.NextResult() in /_/src/MySqlConnector/MySqlDataReader.cs:line 22
+   at Dapper.SqlMapper.GridReader.NextResult() in /_/Dapper/SqlMapper.GridReader.cs:line 400
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 362
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 55
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPN00ISJLGB:0000000F
+Unknown column 'residual_value' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.NextResultAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 90
+   at MySqlConnector.MySqlDataReader.NextResult() in /_/src/MySqlConnector/MySqlDataReader.cs:line 22
+   at Dapper.SqlMapper.GridReader.NextResult() in /_/Dapper/SqlMapper.GridReader.cs:line 400
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 362
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 55
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPN00ISJLG7:00000004
+Unknown column 'residual_value' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.NextResultAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 90
+   at MySqlConnector.MySqlDataReader.NextResult() in /_/src/MySqlConnector/MySqlDataReader.cs:line 22
+   at Dapper.SqlMapper.GridReader.NextResult() in /_/Dapper/SqlMapper.GridReader.cs:line 400
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 362
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 55
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPN00ISJLGD:00000005
+Unknown column 'residual_value' in 'field list'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.NextResultAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 90
+   at MySqlConnector.MySqlDataReader.NextResult() in /_/src/MySqlConnector/MySqlDataReader.cs:line 22
+   at Dapper.SqlMapper.GridReader.NextResult() in /_/Dapper/SqlMapper.GridReader.cs:line 400
+   at Dapper.SqlMapper.GridReader.ReadDeferred[T](Int32 index, Func`2 deserializer, Type effectiveType)+MoveNext() in /_/Dapper/SqlMapper.GridReader.cs:line 362
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 151
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 55
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPN9F87QOBL:00000002
+Unable to cast object of type 'DapperRow' to type 'System.Int32'.
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 61
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56

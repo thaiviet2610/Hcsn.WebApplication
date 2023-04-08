@@ -147,10 +147,11 @@ namespace Hcsn.WebApplication.DL.BaseDL
             // Khởi tạo kết nối tới Database
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            var entites = QueryMultiple(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
-            dbConnection.Close();
+            var result = QueryMultiple(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+            var entites = result.Read<T>().ToList();
+			dbConnection.Close();
             // Xử lý kết quả trả về 
-            return entites.Read<T>().ToList();
+            return entites;
         }
 
         /// <summary>

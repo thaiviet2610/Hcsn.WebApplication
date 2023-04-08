@@ -51,10 +51,11 @@ namespace Hcsn.WebApplication.DL.AssetDL
             var dbConnection = GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
             var result = QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-            var data = result.Read<FixedAsset>().ToList();
-            var totalRecord = result.Read<int>().Single();
-            var totalResult = result.Read<FixedAsset>().Single();
-            dbConnection.Close();
+            var data = result.Read<AssetDTO>().ToList();
+            int totalRecord = result.Read<int>().Single();
+            var totalResult = result.Read<AssetDTO>().Single();
+            double residualTotal = result.Read<double>().Single();
+			dbConnection.Close();
             // Xử lý kết quả trả về
             return new PagingResultAsset
             {
@@ -62,7 +63,8 @@ namespace Hcsn.WebApplication.DL.AssetDL
                 TotalRecord = totalRecord,
                 QuantityTotal = totalResult.quantity_total,
                 CostTotal = totalResult.cost_total,
-                DepreciationValueTotal = totalResult.depreciation_value_total
+                DepreciationValueTotal = totalResult.depreciation_value_total,
+                ResidualValueTotal = residualTotal,
             };
         } 
         #endregion

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
-    public class PagingResultAsset : PagingResult<FixedAsset>
+    public class PagingResultAsset : PagingResult<AssetDTO>
     {
         /// <summary>
         /// Tổng số lượng của các bản ghi thỏa mãn điều kiện
@@ -22,5 +22,10 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// Tổng khấu hao lũy kế của các bản ghi thỏa mãn điều kiện
         /// </summary>
         public double DepreciationValueTotal { get; set; }
-    }
+
+		/// <summary>
+		/// Tổng giá trị còn lại của các bản ghi thỏa mãn điều kiện
+		/// </summary>
+		public double ResidualValueTotal { get; set; }
+	}
 }
