@@ -37,11 +37,11 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.GetAllRecord();
                 if (result.IsSuccess)
                 {
-                    return StatusCode(200, result.Data);
+                    return StatusCode(StatusCodes.Status200OK, result.Data);
                 }
                 else
                 {
-                    return StatusCode(500, new ErrorResult
+                    return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                     {
                         ErrorCode = ErrorCode.NotFound,
                         DevMsg = ErrorResource.DevMsg_NotFound,
@@ -60,7 +60,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -85,9 +85,9 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.GetRecordById(recordId);
                 if (result.IsSuccess)
                 {
-					return StatusCode(200, result.Data);
+					return StatusCode(StatusCodes.Status200OK, result.Data);
                 }
-                return StatusCode(500, new ErrorResult
+                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                 {
                     ErrorCode = ErrorCode.NotFound,
                     DevMsg = ErrorResource.DevMsg_NotFound,
@@ -105,7 +105,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -137,7 +137,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else if (!result.IsSuccess && result.ErrorCode == ErrorCode.InvalidateData)
                 {
-                    return StatusCode(400, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.InvalidateData,
                         DevMsg = ErrorResource.DevMsg_InvalidData,
@@ -148,7 +148,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else if (!result.IsSuccess && result.ErrorCode == ErrorCode.DuplicateCode)
                 {
-                    return StatusCode(400, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.DuplicateCode,
                         DevMsg = ErrorResource.DevMsg_DuplicateCode,
@@ -159,7 +159,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-					return StatusCode(500, new ErrorResult
+					return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                     {
                         ErrorCode = ErrorCode.InsertFailed,
                         DevMsg = ErrorResource.DevMsg_InsertFailed,
@@ -178,7 +178,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -207,11 +207,11 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.UpdateRecord(recordId, record);
                 if (result.IsSuccess)
                 {
-                    return StatusCode(200);
+                    return StatusCode(StatusCodes.Status200OK);
                 }
                 else if (!result.IsSuccess && result.ErrorCode == ErrorCode.InvalidateData)
                 {
-                    return StatusCode(400, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.InvalidateData,
                         DevMsg = ErrorResource.DevMsg_InvalidData,
@@ -222,7 +222,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else if (!result.IsSuccess && result.ErrorCode == ErrorCode.DuplicateCode)
                 {
-                    return StatusCode(400, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.DuplicateCode,
                         DevMsg = ErrorResource.DevMsg_DuplicateCode,
@@ -233,7 +233,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-                    return StatusCode(500, new ErrorResult
+                    return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                     {
                         ErrorCode = ErrorCode.UpdateFailed,
                         DevMsg = ErrorResource.DevMsg_UpdateFailed,
@@ -252,7 +252,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -281,9 +281,9 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.DeleteRecord(recordId);
                 if (result.IsSuccess)
                 {
-                    return StatusCode(200);
+                    return StatusCode(StatusCodes.Status200OK);
                 }
-                return StatusCode(500, new ErrorResult
+                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                 {
                     ErrorCode = ErrorCode.DeleteFailed,
                     DevMsg = ErrorResource.DevMsg_DeleteFailed,
@@ -302,7 +302,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
                     DevMsg = ErrorResource.DevMsg_Exception,
@@ -330,9 +330,9 @@ namespace Hcsn.WebApplication.API.Controllers
 				var result = _baseBL.DeleteMultipleRecord(entitiesId);
 				if (result.IsSuccess)
 				{
-					return StatusCode(200,result.Data);
+					return StatusCode(StatusCodes.Status200OK, result.Data);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.DeleteMultipleFailed,
 					DevMsg = ErrorResource.DevMsg_DeleteMultipleFailed,
@@ -351,7 +351,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -375,10 +375,10 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _baseBL.GetNewCode();
                 if (result.IsSuccess)
                 {
-                    return StatusCode(200, result.Data);
+                    return StatusCode(StatusCodes.Status200OK, result.Data);
                 }
 
-                return StatusCode(500, new ErrorResult
+                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                 {
                     ErrorCode = ErrorCode.GenerateNewCodefailed,
                     DevMsg = ErrorResource.DevMsg_GetNewCodeFailed,
@@ -397,7 +397,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
                 {
                     ErrorCode = ErrorCode.Exception,
                     DevMsg = ErrorResource.DevMsg_Exception,

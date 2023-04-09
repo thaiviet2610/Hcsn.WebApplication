@@ -61,8 +61,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
                     Message = ServiceResource.NotFound
                 };
             }
-			
-            return new ServiceResult
+			foreach (var item in result.Data)
+			{
+				item.residual_value = item.residual_value < 0 ? 0 : item.residual_value;
+			}
+			return new ServiceResult
             {
                 IsSuccess = true,
                 Data = result
@@ -107,7 +110,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			var stream = new MemoryStream();
 			using (var package = new ExcelPackage(stream))
 			{
-				var workSheet = package.Workbook.Worksheets.Add("Assets");
+				var workSheet = package.Workbook.Worksheets.Add(ExcelResult.SheetName);
 
 				// tạo tiêu đề của bảng trong file excel
 				CreateTitleTableExcel(workSheet);
@@ -177,7 +180,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
 			count += 4;
 			workSheet.Cells[$"B{count}:F{count}"].Merge = true;
-			workSheet.Cells[$"B{count}:F{count}"].Value = "Tổng cộng";
+			workSheet.Cells[$"B{count}:F{count}"].Value = ExcelResult.FooterTotal;
 			workSheet.Cells[$"B{count}:F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 			workSheet.Cells[$"B{count}:F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 			workSheet.Cells[$"B{count}:F{count}"].Style.Font.Bold = true;
@@ -265,7 +268,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (29/03/2023)
 		private static void CreateHeaderTableExcel(ExcelWorksheet workSheet)
 		{
-			List<string> headers = ExcelResult.headers;
+			List<string> headers = ExcelResult.Headers;
 
 			for (int i = 0; i < headers.Count; i++)
 			{
@@ -301,7 +304,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		private static void CreateTitleTableExcel(ExcelWorksheet workSheet)
 		{
 			workSheet.Cells["B2:J2"].Merge = true;
-			workSheet.Cells["B2:J2"].Value = ExcelResult.title;
+			workSheet.Cells["B2:J2"].Value = ExcelResult.Title;
 			workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.Font.Bold = true;

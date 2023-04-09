@@ -278,10 +278,10 @@ namespace Hcsn.WebApplication.BL.BaseBL
 			var oldCode = _baseDL.GetNewCode();
 			if (oldCode == null)
 			{
-				return new ServiceResult
-				{
-					IsSuccess = true,
-					Data = "TS00001"
+                return new ServiceResult
+                {
+                    IsSuccess = true,
+                    Data = Resources.NewCodeDefault
 				};
 			}
 			else

@@ -10,6 +10,11 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 	public class AssetDTO
 	{
 		/// <summary>
+		/// Số thứ tự
+		/// </summary>
+		public int index { get; set; }
+
+		/// <summary>
 		/// Khóa chính
 		/// </summary>
 		[HcsnPrimaryKey]

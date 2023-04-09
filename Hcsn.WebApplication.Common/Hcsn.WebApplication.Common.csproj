@@ -16,6 +16,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ErrorResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resource\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resource\ServiceResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -32,6 +37,10 @@
     <EmbeddedResource Update="Resource\ErrorResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resource\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resource\ServiceResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

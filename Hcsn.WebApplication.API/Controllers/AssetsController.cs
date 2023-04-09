@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using System.Data;
@@ -65,8 +64,8 @@ namespace Hcsn.WebApplication.API.Controllers
                         MoreInfo = result.Data,
                     });
                 }
-                return StatusCode(200, result.Data);
-            }
+				return StatusCode(StatusCodes.Status200OK, result.Data);
+			}
             catch (Exception ex)
             {
 				string traceId = HttpContext.TraceIdentifier;
@@ -76,7 +75,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,
@@ -110,7 +109,7 @@ namespace Hcsn.WebApplication.API.Controllers
 				{
 					return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 				}
-				return StatusCode(400, new ErrorResult
+				return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
 				{
 					ErrorCode = ErrorCode.ExportExcelFailed,
 					DevMsg = ErrorResource.DevMsg_ExportExcelFailed,
@@ -128,7 +127,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					sws.WriteLine(ex.Message);
 					sws.WriteLine(ex.StackTrace);
 				}
-				return StatusCode(500, new ErrorResult
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
 				{
 					ErrorCode = ErrorCode.Exception,
 					DevMsg = ErrorResource.DevMsg_Exception,

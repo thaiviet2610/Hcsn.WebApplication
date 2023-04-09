@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hcsn.WebApplication.Common.Resource;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,18 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 	public class ExcelResult
 	{
         #region Field
-        public static List<string> headers = new()
+        public static List<string> Headers = new()
 				{
-					"STT","Mã tài sản","Tên tài sản","Loại tài sản","Bộ phận sử dụng","Số lượng","Nguyên giá","HM/KH lũy kế","Giá trị còn lại"
+					Resources.TableExcelHeaderColumnIndex,Resources.TableExcelHeaderColumnAssetCode,Resources.TableExcelHeaderColumnAssetName,
+					Resources.TableExcelHeaderColumnAssetCategory,Resources.TableExcelHeaderColumnDepartment,Resources.TableExcelHeaderColumnQuantity,
+					Resources.TableExcelHeaderColumnCost,Resources.TableExcelHeaderColumnDepreciationValue,Resources.TableExcelHeaderColumnResidualValue
 				};
 
-		public static string title = "Danh sách tài sản";
+		public static string Title = Resources.TableExcelTitle;
+
+		public static string SheetName = Resources.TableExcelSheetName;
+
+		public static string FooterTotal = Resources.FooterTableExcelTotal;
 		#endregion
 		/// <summary>
 		/// Tên file excel
@@ -27,5 +34,8 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         public Object Data { get; set; }
 
         
+
+
+
     }
 }
