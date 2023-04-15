@@ -117,11 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cost" xml:space="preserve">
+    <value>cost</value>
+  </data>
+  <data name="CostPropName" xml:space="preserve">
+    <value>cost</value>
+  </data>
+  <data name="DepreciationRatePropName" xml:space="preserve">
+    <value>depreciation_rate</value>
+  </data>
+  <data name="FixedAssetCategoryCodePropName" xml:space="preserve">
+    <value>fixed_asset_category_code</value>
+  </data>
+  <data name="FixedAssetCategoryIdPropName" xml:space="preserve">
+    <value>fixed_asset_category_id</value>
+  </data>
+  <data name="FixedAssetCategoryNamePropName" xml:space="preserve">
+    <value>fixed_asset_category_name</value>
+  </data>
+  <data name="FixedAssetCodePropName" xml:space="preserve">
+    <value>fixed_asset_code</value>
+  </data>
+  <data name="FixedAssetIdPropName" xml:space="preserve">
+    <value>fixed_asset_id</value>
+  </data>
+  <data name="FixedAssetNamePropName" xml:space="preserve">
+    <value>fixed_asset_name</value>
+  </data>
   <data name="FooterTableExcelTotal" xml:space="preserve">
     <value>Tổng cộng</value>
   </data>
+  <data name="LifeTimePropName" xml:space="preserve">
+    <value>life_time</value>
+  </data>
   <data name="NewCodeDefault" xml:space="preserve">
     <value>TS00001</value>
+  </data>
+  <data name="ProductionYear" xml:space="preserve">
+    <value>production_year</value>
+  </data>
+  <data name="QuantityPropName" xml:space="preserve">
+    <value>quantity</value>
   </data>
   <data name="TableExcelHeaderColumnAssetCategory" xml:space="preserve">
     <value>Loại tài sản</value>
@@ -149,6 +185,9 @@
   </data>
   <data name="TableExcelHeaderColumnResidualValue" xml:space="preserve">
     <value>Giá trị còn lại</value>
+  </data>
+  <data name="TableExcelNoData" xml:space="preserve">
+    <value>Không tìm thấy dữ liệu phù hợp. Vui lòng kiểm tra lại!</value>
   </data>
   <data name="TableExcelSheetName" xml:space="preserve">
     <value>Assets</value>

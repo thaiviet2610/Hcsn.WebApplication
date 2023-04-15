@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
-	public class AssetDTO
+	public class FixedAssetDTO
 	{
 		/// <summary>
 		/// Số thứ tự
@@ -81,26 +81,6 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 		/// <summary>
 		/// Giá trị còn lại
 		/// </summary>
-		public double residual_value { get; set; }
-
-		/// <summary>
-		/// Tống giá trị của số lượng
-		/// </summary>
-		public int quantity_total { get; set; }
-
-		/// <summary>
-		/// Tổng giá trị của nguyên giá
-		/// </summary>
-		public decimal cost_total { get; set; }
-
-		/// <summary>
-		/// Tổng giá trị hao mòn lũy kế
-		/// </summary>
-		public double depreciation_value_total { get; set; }
-
-		/// <summary>
-		/// Tổng giá trị còn lại
-		/// </summary>
-		public double residual_value_total { get; set; }
+		public decimal residual_value { get; set; }
 	}
 }

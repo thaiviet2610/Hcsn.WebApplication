@@ -29,5 +29,7 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// Thông báo lỗi chi tiết
         /// </summary>
         public string? Message { get; set; }
+
+        public Object? Data { get; set; }
     }
 }

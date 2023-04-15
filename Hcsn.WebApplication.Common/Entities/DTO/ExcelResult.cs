@@ -21,6 +21,8 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 
 		public static string SheetName = Resources.TableExcelSheetName;
 
+		public static string NoData = Resources.TableExcelNoData;
+
 		public static string FooterTotal = Resources.FooterTableExcelTotal;
 		#endregion
 		/// <summary>

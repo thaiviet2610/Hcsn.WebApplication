@@ -65,21 +65,9 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Created by: LTViet (20/03/2023)
 		ServiceResult DeleteMultipleRecord(List<Guid> entitiesId);
 
-		/// <summary>
-		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
-		/// </summary>
-		/// <returns>Kết quả sinh mã code mới</returns>
-		/// Created by: LTViet (20/03/2023)
-		ServiceResult GetNewCode();
+		
 
-		/// <summary>
-		/// Hàm xử lý logic khi kiểm tra xem code có bị trùng không ?
-		/// </summary>
-		/// <param name="recordCode">Code cần kiểm tra</param>
-		/// <param name="recordId">Id </param>
-		/// <returns>Kết quả việc kiểm tra trùng code</returns>
-		/// Created by: LTViet (20/03/2023)
-		ServiceResult IsSameCode(string recordCode, Guid recordId);
+		
 		#endregion
 	}
 }

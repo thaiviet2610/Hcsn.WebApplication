@@ -34,12 +34,12 @@ namespace Hcsn.WebApplication.Common.Enums
         /// <summary>
         /// Lỗi trùng mã
         /// </summary>
-        DuplicateCode = 5,
+        Duplicate = 5,
 
         /// <summary>
         /// Lỗi dữ liệu kiểu number thuộc trường bắt buộc lớn hơn 0 nhưng có giá trị <= 0
         /// </summary>
-        NumberEqual0 = 6,
+        NumberLessThanOrEqualZero = 6,
 
         /// <summary>
         /// Lỗi validate tỷ lệ hao mòn != (1/số năm sử dụng)*100

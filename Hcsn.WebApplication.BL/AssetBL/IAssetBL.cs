@@ -18,12 +18,22 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="departmentId">Id của phòng ban</param> 
 		/// <param name="fixedAssetCatagortId">Id của loại tài sản</param> 
-		/// <returns> Đối tượng PagingResult bao gồm:
+		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
+		/// <param name="pageNumber">Vị trí trang hiện tại</param>
+		/// <returns> 
+		/// Đối tượng PagingResult bao gồm:
 		/// - Danh sách tài sản trong 1 trang
 		/// - Tổng số bản ghi thỏa mãn điều kiện
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
+
+		/// <summary>
+		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
+		/// </summary>
+		/// <returns>Kết quả sinh mã code mới</returns>
+		/// Created by: LTViet (20/03/2023)
+		ServiceResult GetNewCode();
 
 
 
@@ -40,6 +50,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
+
 
 	} 
     #endregion

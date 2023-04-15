@@ -36,12 +36,12 @@ namespace Hcsn.WebApplication.Common.Constants
         /// <summary>
         /// Xóa nhiều bản ghi
         /// </summary>
-        public static string DeleteMultiple = "DELETE FROM {0} WHERE {1} IN ('{2}')";
+        public static string DeleteMultiple = "Proc_{0}_DeleteMultiple";
 
-        /// <summary>
-        /// Xóa một bản ghi
-        /// </summary>
-        public static string DeleteById = "Proc_{0}_DeleteById";
+		/// <summary>
+		/// Xóa một bản ghi
+		/// </summary>
+		public static string DeleteById = "Proc_{0}_DeleteById";
 
         /// <summary>
         /// Thực hiện lọc, phân trang các bản ghi
@@ -51,7 +51,7 @@ namespace Hcsn.WebApplication.Common.Constants
         /// <summary>
         /// thực hiện kiểm tra xem có bị trùng code không ?
         /// </summary>
-        public static string CheckSameCode = "Proc_{0}_CheckSameCode";
+        public static string CheckDuplicate = "Proc_{0}_GetNumberRecordOfDuplicate{1}";
 
         /// <summary>
         /// Lấy ra mã bản ghi của lần nhập gần nhất

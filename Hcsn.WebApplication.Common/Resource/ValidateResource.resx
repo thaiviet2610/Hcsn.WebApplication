@@ -118,30 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DepreciationRateDifferentLifeTime" xml:space="preserve">
-    <value>Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng</value>
+    <value>Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng.</value>
   </data>
   <data name="DepreciationYearGreateThanCost" xml:space="preserve">
-    <value>Giá trị hao mòn năm phải nhỏ hơn hoặc bàng nguyên giá</value>
+    <value>Giá trị hao mòn năm phải nhỏ hơn hoặc bàng nguyên giá.</value>
   </data>
-  <data name="DuplicateCode" xml:space="preserve">
-    <value>Lỗi trùng mã</value>
+  <data name="Duplicate" xml:space="preserve">
+    <value>{0} &lt;&lt; {1} &gt;&gt; đã tồn tại.</value>
   </data>
   <data name="Empty" xml:space="preserve">
-    <value> không được để trống</value>
+    <value> không được phép để trống.</value>
   </data>
-  <data name="MaxLength" xml:space="preserve">
-    <value> vượt quá độ dài ký tự cho phép</value>
-  </data>
-  <data name="NumberEqual0" xml:space="preserve">
-    <value> phải lớn hơn 0</value>
+  <data name="NumberLessThanOrEqualZero" xml:space="preserve">
+    <value> phải lớn hơn 0.</value>
   </data>
   <data name="OutMaxLength" xml:space="preserve">
-    <value> vượt quá độ dài cho phép</value>
+    <value>{0} không được phép vượt quá {1} ký tự.</value>
   </data>
   <data name="OutOfRate" xml:space="preserve">
-    <value> nằm ngoài khoảng cho phép từ 0 -&gt; 100</value>
+    <value>{0} nằm ngoài khoảng cho phép từ 0 -&gt; 100%.</value>
   </data>
   <data name="PurchaseDateGreaterThanProductionYear" xml:space="preserve">
-    <value>Ngày mua phải là ngày trước ngày bắt đầu sử dụng</value>
+    <value>Ngày mua phải là ngày trước ngày bắt đầu sử dụng.</value>
   </data>
 </root>

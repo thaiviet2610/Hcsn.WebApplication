@@ -146,17 +146,6 @@ namespace Hcsn.WebApplication.API.Controllers
                         MoreInfo = result.Data,
                     });
                 }
-                else if (!result.IsSuccess && result.ErrorCode == ErrorCode.DuplicateCode)
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
-                    {
-                        ErrorCode = ErrorCode.DuplicateCode,
-                        DevMsg = ErrorResource.DevMsg_DuplicateCode,
-                        UserMsg = ErrorResource.UserMsg_DuplicateCode,
-                        TraceId = HttpContext.TraceIdentifier,
-                        MoreInfo = result.Data,
-                    });
-                }
                 else
                 {
 					return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
@@ -216,17 +205,6 @@ namespace Hcsn.WebApplication.API.Controllers
                         ErrorCode = ErrorCode.InvalidateData,
                         DevMsg = ErrorResource.DevMsg_InvalidData,
                         UserMsg = ErrorResource.UserMsg_InvalideData,
-                        TraceId = HttpContext.TraceIdentifier,
-                        MoreInfo = result.Data,
-                    });
-                }
-                else if (!result.IsSuccess && result.ErrorCode == ErrorCode.DuplicateCode)
-                {
-                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
-                    {
-                        ErrorCode = ErrorCode.DuplicateCode,
-                        DevMsg = ErrorResource.DevMsg_DuplicateCode,
-                        UserMsg = ErrorResource.UserMsg_DuplicateCode,
                         TraceId = HttpContext.TraceIdentifier,
                         MoreInfo = result.Data,
                     });
@@ -362,52 +340,7 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
 		}
 
-		/// <summary>
-		/// API lấy ra code mới dựa theo code ở lần nhập gần nhất + 1
-		/// </summary>
-		/// <returns>Mã code mới</returns>
-		/// Created by: LTViet (20/03/2023)
-		[HttpGet("NewCode")]
-        public IActionResult GetNewCode()
-        {
-            try
-            {
-                var result = _baseBL.GetNewCode();
-                if (result.IsSuccess)
-                {
-                    return StatusCode(StatusCodes.Status200OK, result.Data);
-                }
-
-                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-                {
-                    ErrorCode = ErrorCode.GenerateNewCodefailed,
-                    DevMsg = ErrorResource.DevMsg_GetNewCodeFailed,
-                    UserMsg = ErrorResource.UserMsg_GetNewCodeFailed,
-                    MoreInfo= result.Data,
-                    TraceId = HttpContext.TraceIdentifier
-                });
-            }
-            catch (Exception ex)
-            {
-                string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-                    
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-                {
-                    ErrorCode = ErrorCode.Exception,
-                    DevMsg = ErrorResource.DevMsg_Exception,
-                    UserMsg = ErrorResource.UserMsg_Exception,
-                    TraceId = traceId,
-                    MoreInfo = ErrorResource.Exception_MoreInfo,
-                });
-            }
-            
-        }
+		
         #endregion
     }
 }

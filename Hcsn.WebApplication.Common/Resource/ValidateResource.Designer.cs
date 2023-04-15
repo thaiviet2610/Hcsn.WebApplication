@@ -61,7 +61,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng.
+        ///   Looks up a localized string similar to Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng..
         /// </summary>
         public static string DepreciationRateDifferentLifeTime {
             get {
@@ -70,7 +70,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Giá trị hao mòn năm phải nhỏ hơn hoặc bàng nguyên giá.
+        ///   Looks up a localized string similar to Giá trị hao mòn năm phải nhỏ hơn hoặc bàng nguyên giá..
         /// </summary>
         public static string DepreciationYearGreateThanCost {
             get {
@@ -79,16 +79,16 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lỗi trùng mã.
+        ///   Looks up a localized string similar to {0} &lt;&lt; {1} &gt;&gt; đã tồn tại..
         /// </summary>
-        public static string DuplicateCode {
+        public static string Duplicate {
             get {
-                return ResourceManager.GetString("DuplicateCode", resourceCulture);
+                return ResourceManager.GetString("Duplicate", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  không được để trống.
+        ///   Looks up a localized string similar to  không được phép để trống..
         /// </summary>
         public static string Empty {
             get {
@@ -97,25 +97,16 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  vượt quá độ dài ký tự cho phép.
+        ///   Looks up a localized string similar to  phải lớn hơn 0..
         /// </summary>
-        public static string MaxLength {
+        public static string NumberLessThanOrEqualZero {
             get {
-                return ResourceManager.GetString("MaxLength", resourceCulture);
+                return ResourceManager.GetString("NumberLessThanOrEqualZero", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  phải lớn hơn 0.
-        /// </summary>
-        public static string NumberEqual0 {
-            get {
-                return ResourceManager.GetString("NumberEqual0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to  vượt quá độ dài cho phép.
+        ///   Looks up a localized string similar to {0} không được phép vượt quá {1} ký tự..
         /// </summary>
         public static string OutMaxLength {
             get {
@@ -124,7 +115,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  nằm ngoài khoảng cho phép từ 0 -&gt; 100.
+        ///   Looks up a localized string similar to {0} nằm ngoài khoảng cho phép từ 0 -&gt; 100%..
         /// </summary>
         public static string OutOfRate {
             get {
@@ -133,7 +124,7 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ngày mua phải là ngày trước ngày bắt đầu sử dụng.
+        ///   Looks up a localized string similar to Ngày mua phải là ngày trước ngày bắt đầu sử dụng..
         /// </summary>
         public static string PurchaseDateGreaterThanProductionYear {
             get {

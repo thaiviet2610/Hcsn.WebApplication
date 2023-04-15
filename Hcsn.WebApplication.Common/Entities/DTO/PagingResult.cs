@@ -15,5 +15,5 @@
         /// Tổng số bản ghi thỏa mãn điều kiện
         /// </summary>
         public int TotalRecord { get; set; }
-    }
+	}
 }

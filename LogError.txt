@@ -1224,3 +1224,903 @@ Unable to cast object of type 'DapperRow' to type 'System.Int32'.
    at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 61
    at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 54
    at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 56
+0HMPPIG02FCCA:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCC:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCE:00000001
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCG:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCM:0000000D
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCM:00000011
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPIG02FCCM:00000015
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 366
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJI8A28IH:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidatePropertyNumber(PropertyInfo property, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJI8A28IH:00000017
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidatePropertyNumber(PropertyInfo property, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJI8A28IJ:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidatePropertyNumber(PropertyInfo property, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJJETQ1PJ:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 330
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 348
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJKU1U40B:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJKU1U40B:00000017
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJKU1U40B:0000001B
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJN6NTP8J:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidatePropertyNumber(PropertyInfo property, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPJPH6FEUS:00000007
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPMUILT62B:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPMUILT62D:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPMUILT62F:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOKPLEQ0K:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQJ7:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQJK:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQJK:00000017
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQJQ:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQJS:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPOP2EBQK2:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759S4:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759S6:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SA:00000001
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 400
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SF:00000001
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SL:00000013
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SL:00000017
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SQ:00000001
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 400
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPP2U759SS:00000001
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 352
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIN:00000011
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIP:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIR:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIS:00000003
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIR:00000003
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKIV:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKJ1:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKJ3:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKJ5:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPL8INKJ7:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03T:00000011
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:00000001
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:00000003
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:00000005
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:00000007
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:00000009
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:0000000B
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE03V:0000000D
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE041:00000003
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPRNQE041:00000007
+The method or operation is not implemented.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPURASMCH:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 355
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPURASMCH:00000007
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 355
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPPURASMCH:0000000B
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 355
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPQ1A7EOFP:00000003
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 400
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPQ1A7EOFP:00000007
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 400
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPQAVQF3VF:00000013
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record, PropertyInfo[] properties) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 351
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPQAVQF3VF:00000017
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record, PropertyInfo[] properties) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 351
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPPQAVQF3VF:0000001B
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record, PropertyInfo[] properties) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 408
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 351
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ5DMC6DJ5:00000003
+Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.set_Item(Int32 index, T value)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record, List`1 inValid) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 296
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 257
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ5DMC6DJ5:00000007
+Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.set_Item(Int32 index, T value)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record, List`1 inValid) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 296
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 257
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 145
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6H0J2KHL:00000003
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 377
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6H0J2KHN:0000000B
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 377
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6H0J2KHP:00000003
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 377
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6IA6FHGT:00000003
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 377
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6IA6FHGV:00000003
+Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 377
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6RMDPO5D:00000003
+Sequence contains more than one element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 389
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ6RMDPO5F:00000003
+Sequence contains more than one element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 389
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 255
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQ9GD3AUIK:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 275
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQAVECFRBP:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 275
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQAVECFRBT:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 275
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQAVECFRBV:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.GetValue(Object obj, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 275
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQB8MKLTM6:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQB8MKLTMC:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQB8MKLTME:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQBB4R4KKM:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQBB4R4KKO:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQBBS5K4I2:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 278
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQBC9BGRPD:00000003
+Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 398
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQDCTMH5P6:00000001
+PROCEDURE test.Proc_FixedAsset_CheckDuplicate does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 349
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.IsDuplicate(String propertName, String propertyValue, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 89
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.IsDuplicate(String propertName, String propertyValue, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 431
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GenerateNewCode(String oldCode) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 506
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetNewCode() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 467
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetNewCode() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 99
+0HMPQDCTMH5PE:00000007
+PROCEDURE test.Proc_FixedAsset_CheckDuplicate does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 349
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.IsDuplicate(String propertName, String propertyValue, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 89
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.IsDuplicate(String propertName, String propertyValue, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 431
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GenerateNewCode(String oldCode) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 506
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetNewCode() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 467
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetNewCode() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 99
+0HMPQDJ0A6VBJ:0000000B
+Couldn't connect to server
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 600
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 403
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 408
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 98
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 128
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 929
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 423
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 292
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 148
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 95
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPQDJ0A6VBR:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQDJ0A6VBT:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQDMQJNML4:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 342
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQDMQJNML6:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 342
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQDMQJNML8:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 342
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE4VEAC6C:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 370
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE4VEAC6E:00000019
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 370
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE4VEAC6G:00000003
+Type passed in must be derived from System.Attribute or System.Attribute itself.
+   at System.Attribute.GetCustomAttributes(MemberInfo element, Type attributeType, Boolean inherit)
+   at System.Reflection.CustomAttributeExtensions.GetCustomAttributes(MemberInfo element, Type attributeType)
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 370
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE5PSJAEI:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 371
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE5PSJAEK:00000019
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 371
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE5PSJAEM:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 371
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE7PCJSU0:00000019
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 374
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE7PCJSU0:0000001D
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 374
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE932AK1H:00000019
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE932AK1J:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE932AK1L:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE932AK1T:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQE932AK1V:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 137
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQEBHEOBD9:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQECNC0CGA:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQECNC0CGA:0000001D
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQECNC0CGC:00000003
+Duplicate entry 'TS50851' for key 'fixed_asset.UK_fixed_asset_fixed_asset_code'
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteNonQueryAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 296
+   at MySqlConnector.MySqlCommand.ExecuteNonQuery() in /_/src/MySqlConnector/MySqlCommand.cs:line 107
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 310
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 203
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 160
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQHI3FSBV2:00000013
+Unable to cast object of type 'System.Single' to type 'System.Double'.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateOutOfRangeRate(PropertyInfo property, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 446
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 339
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQHI3FSBV4:00000003
+Unable to cast object of type 'System.Single' to type 'System.Double'.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateOutOfRangeRate(PropertyInfo property, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 446
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 339
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPQJCBTTA0V:00000001
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 72
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 71
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 308
+0HMPQJCBTTA0V:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 72
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 71
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 308
+0HMPQJCBTTA0V:00000011
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 72
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 71
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 308
+0HMPQJCBTTA0V:00000013
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 72
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 71
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 308
+0HMPQUSRGQG0A:00000003
+Unable to cast object of type 'Hcsn.WebApplication.Common.Constants.HcsnDuplicateAttribute' to type 'Hcsn.WebApplication.Common.Constants.HcsnNameAttribute'.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidatePropertyDuplicate(FixedAsset asset, PropertyInfo property, String propName, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 523
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.UpdateRecord(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 191
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.UpdateRecordById(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 196
+0HMPQUSRGQG0C:00000003
+Unable to cast object of type 'Hcsn.WebApplication.Common.Constants.HcsnDuplicateAttribute' to type 'Hcsn.WebApplication.Common.Constants.HcsnNameAttribute'.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidatePropertyDuplicate(FixedAsset asset, PropertyInfo property, String propName, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 523
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 340
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 245
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.UpdateRecord(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 191
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.UpdateRecordById(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 196
+0HMPRPJBHDT5G:00000003
+Unable to cast object of type 'System.Int32' to type 'System.Decimal'.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidatePropertyNumber(PropertyInfo property, Object propValue, List`1 validatePropNumberMinValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 467
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 359
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPRQSUOKV4P:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.IsOutRangeOfRate(PropertyInfo property, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 535
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 358
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPRQSUOKV4R:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.IsOutRangeOfRate(PropertyInfo property, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 535
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 358
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPRQSUOKV51:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.IsOutRangeOfRate(PropertyInfo property, Object propValue) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 535
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustom(FixedAsset asset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 358
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 239
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 147
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.InsertRecord(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 133
+0HMPRTK48OIF2:00000003
+SSL Authentication Error
+   at MySqlConnector.Core.ServerSession.InitSslAsync(ProtocolCapabilities serverCapabilities, ConnectionSettings cs, MySqlConnection connection, SslProtocols sslProtocols, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1569
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int32 startTickCount, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 539
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, String logMessage, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 468
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int32 startTickCount, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 130
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int32 startTickCount, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 966
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 457
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 382
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 22
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 159
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 95
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37

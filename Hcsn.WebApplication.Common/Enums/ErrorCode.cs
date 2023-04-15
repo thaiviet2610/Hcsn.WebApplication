@@ -16,43 +16,38 @@
         InvalidateData = 2,
 
         /// <summary>
-        /// Lỗi trùng mã
-        /// </summary>
-        DuplicateCode = 3,
-
-        /// <summary>
         /// Lỗi thêm mới thất bại
         /// </summary>
-        InsertFailed = 4,
+        InsertFailed = 3,
         
         /// <summary>
         /// Lỗi cập nhật thất bại
         /// </summary>
-        UpdateFailed = 5,
+        UpdateFailed = 4,
 
         /// <summary>
         /// Lỗi xóa thất bại
         /// </summary>
-        DeleteFailed = 6,
+        DeleteFailed = 5,
 
         /// <summary>
         /// Lỗi không tìm thấy bản ghi nào phù hợp
         /// </summary>
-        NotFound = 7,
+        NotFound = 6,
 
         /// <summary>
         /// Lỗi sinh ra code mới thất bại
         /// </summary>
-        GenerateNewCodefailed = 8,
+        GenerateNewCodefailed = 7,
 
 		/// <summary>
 		/// Lỗi xóa nhiều bản ghi thất bại
 		/// </summary>
-		DeleteMultipleFailed = 9,
+		DeleteMultipleFailed = 8,
 
         /// <summary>
         /// Lỗi xuất dữ liệu ra file excel không thành công
         /// </summary>
-        ExportExcelFailed = 10
+        ExportExcelFailed = 9
     }
 }

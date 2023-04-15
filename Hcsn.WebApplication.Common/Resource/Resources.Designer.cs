@@ -61,6 +61,87 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to cost.
+        /// </summary>
+        public static string Cost {
+            get {
+                return ResourceManager.GetString("Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cost.
+        /// </summary>
+        public static string CostPropName {
+            get {
+                return ResourceManager.GetString("CostPropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to depreciation_rate.
+        /// </summary>
+        public static string DepreciationRatePropName {
+            get {
+                return ResourceManager.GetString("DepreciationRatePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_category_code.
+        /// </summary>
+        public static string FixedAssetCategoryCodePropName {
+            get {
+                return ResourceManager.GetString("FixedAssetCategoryCodePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_category_id.
+        /// </summary>
+        public static string FixedAssetCategoryIdPropName {
+            get {
+                return ResourceManager.GetString("FixedAssetCategoryIdPropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_category_name.
+        /// </summary>
+        public static string FixedAssetCategoryNamePropName {
+            get {
+                return ResourceManager.GetString("FixedAssetCategoryNamePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_code.
+        /// </summary>
+        public static string FixedAssetCodePropName {
+            get {
+                return ResourceManager.GetString("FixedAssetCodePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_id.
+        /// </summary>
+        public static string FixedAssetIdPropName {
+            get {
+                return ResourceManager.GetString("FixedAssetIdPropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fixed_asset_name.
+        /// </summary>
+        public static string FixedAssetNamePropName {
+            get {
+                return ResourceManager.GetString("FixedAssetNamePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tổng cộng.
         /// </summary>
         public static string FooterTableExcelTotal {
@@ -70,11 +151,38 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to life_time.
+        /// </summary>
+        public static string LifeTimePropName {
+            get {
+                return ResourceManager.GetString("LifeTimePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TS00001.
         /// </summary>
         public static string NewCodeDefault {
             get {
                 return ResourceManager.GetString("NewCodeDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to production_year.
+        /// </summary>
+        public static string ProductionYear {
+            get {
+                return ResourceManager.GetString("ProductionYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to quantity.
+        /// </summary>
+        public static string QuantityPropName {
+            get {
+                return ResourceManager.GetString("QuantityPropName", resourceCulture);
             }
         }
         
@@ -156,6 +264,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         public static string TableExcelHeaderColumnResidualValue {
             get {
                 return ResourceManager.GetString("TableExcelHeaderColumnResidualValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Không tìm thấy dữ liệu phù hợp. Vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string TableExcelNoData {
+            get {
+                return ResourceManager.GetString("TableExcelNoData", resourceCulture);
             }
         }
         

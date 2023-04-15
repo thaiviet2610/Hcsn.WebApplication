@@ -16,6 +16,16 @@ namespace Hcsn.WebApplication.Common.Constants
 
     }
 
+	/// <summary>
+	/// Attribute thể hiện các trường không được phép trùng
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	public class HcsnDuplicateAttribute : Attribute
+	{
+
+
+	}
+
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class HcsnNumberAttribute : Attribute
     {
@@ -23,13 +33,26 @@ namespace Hcsn.WebApplication.Common.Constants
 		/// Attribute thể hiện các trường là kiểu number
 		/// </summary>
 		/// <param name="name"> Tên loại dữ liệu trong number(int,float,decimal...)</param>
-		public HcsnNumberAttribute(string name)
+		public HcsnNumberAttribute(object type)
         {
-            PropType = name;
+            PropType = type;
         }
-        public string PropType { get; set; }
-
+        public object PropType { get; set; }
     }
+
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
+	public class HcsnValueTypeAttribute : Attribute
+	{
+		/// <summary>
+		/// Attribute thể hiện kiểu dữ liệu của các trường
+		/// </summary>
+		/// <param name="name"> Tên kiểu dữ liệu trong number(text,date,rate...)</param>
+		public HcsnValueTypeAttribute(object type)
+		{
+			PropType = type;
+		}
+		public object PropType { get; set; }
+	}
 
 	/// <summary>
 	/// Attribute thể hiện các trường là khóa chính

@@ -16,24 +16,37 @@ using System.Net.Http;
 using System.Data.Common;
 using static Dapper.SqlMapper;
 using MySqlConnector;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Hcsn.WebApplication.DL.DBConfig;
 
 namespace Hcsn.WebApplication.DL.BaseDL
 {
     public class BaseDL<T> : IBaseDL<T>
     {
+		#region Field
+		private IRepositoryDB _repositoryDB;
+		#endregion
 
-        #region Method
+		#region Constructor
+		public BaseDL(IRepositoryDB repositoryDB)
+		{
+			_repositoryDB = repositoryDB;
+		}
+		#endregion
 
-        /// <summary>
-        /// Hàm gọi daatabase thực hiện việc xóa 1 bản ghi
-        /// </summary>
-        /// <param name="recordId">Id bản ghi muốn xóa</param>
-        /// <returns>
-        /// 1: Nếu update thành công
-        /// 0: Nếu update thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public int DeleteRecord(Guid recordId)
+		#region Method
+
+		/// <summary>
+		/// Hàm gọi daatabase thực hiện việc xóa 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <returns>
+		/// 1: Nếu update thành công
+		/// 0: Nếu update thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public int DeleteRecord(Guid recordId)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.DeleteById, typeof(T).Name);
@@ -42,9 +55,9 @@ namespace Hcsn.WebApplication.DL.BaseDL
             var properties = typeof(T).GetProperties();
             GeneratePrimaryKeyValue(properties, parameters, recordId);
             // Khởi tạo kết nối tới Database
-            var dbConnection = GetOpenConnection();
+            var dbConnection = _repositoryDB.GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            int numberOfAffectedRows = Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+            int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             // Xử lý kết quả trả về
             return numberOfAffectedRows;
@@ -62,38 +75,36 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// Created by: LTViet (20/03/2023)
 		public int DeleteMultipleRecord(List<Guid> entitiesId)
 		{
-			// Chuẩn bị tham số đầu vào
-			string entityName = GetEntityName();
-			string primaryKey = "";
-			var properties = typeof(T).GetProperties();
-			foreach (var property in properties)
-			{
-				if (property.IsDefined(typeof(HcsnPrimaryKeyAttribute), false))
-				{
-					primaryKey = property.Name;
-					break;
-				}
-			}
-			string sql = string.Format(ProcedureName.DeleteMultiple, entityName, primaryKey, string.Join("','", entitiesId));
+            // Chuẩn bị tham số đầu vào
+            string sql = string.Format(ProcedureName.DeleteMultiple, typeof(T).Name);
 			// Khởi tạo kết nối tới Database
 			int numberOfAffectedRows = 0;
-			var dbConnection = GetOpenConnection();
+			var dbConnection = _repositoryDB.GetOpenConnection();
+            var parameters = new DynamicParameters();
+			var listIdToString = $"('{string.Join("','", entitiesId)}')";
+
+			parameters.Add("p_ids", listIdToString);
 			using (var transaction = dbConnection.BeginTransaction())
 			{
 				try
 				{
 					// Thực hiện gọi vào Database để chạy stored procedure
-					numberOfAffectedRows = Execute(dbConnection, sql, transaction: transaction);
+					numberOfAffectedRows = _repositoryDB.Execute(dbConnection, sql,parameters, transaction: transaction, commandType: CommandType.StoredProcedure);
                     if(numberOfAffectedRows != entitiesId.Count)
                     {
-                        throw new Exception();
-                    }
-					transaction.Commit();
+						transaction.Rollback();
+						numberOfAffectedRows = 0;
+					}
+                    else
+                    {
+						transaction.Commit();
+					}
+					
 				}
 				catch (Exception)
 				{
                     numberOfAffectedRows = 0;
-					transaction.Rollback();
+					//transaction.Rollback();
 				}
 			}
 			dbConnection.Close();
@@ -145,9 +156,9 @@ namespace Hcsn.WebApplication.DL.BaseDL
             // Chuẩn bị tham số đầu vào cho stored
 
             // Khởi tạo kết nối tới Database
-            var dbConnection = GetOpenConnection();
+            var dbConnection = _repositoryDB.GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            var result = QueryMultiple(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+            var result = _repositoryDB.QueryMultiple(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
             var entites = result.Read<T>().ToList();
 			dbConnection.Close();
             // Xử lý kết quả trả về 
@@ -170,10 +181,10 @@ namespace Hcsn.WebApplication.DL.BaseDL
             GeneratePrimaryKeyValue(properties, parameters, recordId);
 
             // Khởi tạo kết nối tới Database
-            var dbConnection = GetOpenConnection();
+            var dbConnection = _repositoryDB.GetOpenConnection();
 
             // Thực hiện gọi vào Database để chạy stored procedure
-            var entity = QueryFirstOrDefault<T>(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+            var entity = _repositoryDB.QueryFirstOrDefault<T>(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             // Xử lý kết quả trả về 
             return entity;
@@ -198,9 +209,9 @@ namespace Hcsn.WebApplication.DL.BaseDL
             AddParametersValue(properties, parameters, record);
             GeneratePrimaryKeyValue(properties, parameters, Guid.Empty);
             // Khởi tạo kết nối tới Database
-            var dbConnection = GetOpenConnection();
+            var dbConnection = _repositoryDB.GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
-            int numberOfAffectedRows = Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+            int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             // Xử lý kết quả trả về
             return numberOfAffectedRows;
@@ -228,62 +239,16 @@ namespace Hcsn.WebApplication.DL.BaseDL
             // Khởi tạo kết nối tới Database
             // Thực hiện gọi vào Database để chạy stored procedure
 
-            var dbConnection = GetOpenConnection();
-            int numberOfAffectedRows = Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+            var dbConnection = _repositoryDB.GetOpenConnection();
+            int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             return numberOfAffectedRows;
 
         }
 
-		/// <summary>
-		/// Hàm lấy ra mã code ở lần nhập gần nhất
-		/// </summary>
-		/// <returns>Mã code của đối tượng</returns>
-		/// Created by: LTViet (20/03/2023)
-		public string? GetNewCode()
-		{
-            // Chuẩn bị tên stored procedure
-            string storedProcedureName = String.Format(ProcedureName.GetNewCode, typeof(FixedAsset).Name);
-            // Chuẩn bị tham số đầu vào cho stored
-            // Khởi tạo kết nối tới Database
-            var dbConnection = GetOpenConnection();
-            // Thực hiện gọi vào Database để chạy stored procedure
-            var asset = QueryFirstOrDefault<FixedAsset>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
-            dbConnection.Close();
+		
 
-            // Xử lý kết quả trả về 
-            if (asset == null)
-            {
-                // Nếu không có đối tượng nào trong database thì trả về kết quả null
-                return null;
-            }
-            else
-            {
-                return asset.fixed_asset_code;
-            }
-        }
-
-        /// <summary>
-        /// Hàm lấy ra số bản ghi có cùng code nhưng khác id được truyền vào
-        /// </summary>
-        /// <param name="recordCode">Code cần tìm</param>
-        /// <param name="recordId">Id cần tìm </param>
-        /// <returns>Số bản ghi cần tìm</returns>
-        /// Created by: LTViet (20/03/2023)
-        public int GetRecordByCode(string recordCode, Guid recordId)
-        {
-            string storedProcedureNameCheckSameCode = String.Format(ProcedureName.CheckSameCode, typeof(FixedAsset).Name);
-            var parametersCheckSameCode = new DynamicParameters();
-            parametersCheckSameCode.Add("p_code", recordCode);
-            parametersCheckSameCode.Add("p_id", recordId);
-            var dbConnection = GetOpenConnection();
-            // Thực hiện gọi vào Database để chạy stored procedure
-            int numberOfAffectedRowsCheckSameCode = 
-                QueryFirstOrDefault<int>(dbConnection, storedProcedureNameCheckSameCode, 
-                                         parametersCheckSameCode, commandType: CommandType.StoredProcedure);
-            dbConnection.Close();
-            return numberOfAffectedRowsCheckSameCode;
-        }
+        
 
         /// <summary>
         /// Sinh dữ liệu khóa chính
@@ -326,75 +291,6 @@ namespace Hcsn.WebApplication.DL.BaseDL
                 parameters.Add($"p_{property.Name}", property.GetValue(entity));
             }
         }
-
-        /// <summary>
-        /// Hàm kết nối tới MySQL database
-        /// </summary>
-        /// <returns>Đối tượng kết nối tới MySQL database</returns>
-        /// Create by: LTVIET (20/03/2023)
-        public IDbConnection GetOpenConnection()
-        {
-            var mySqlConnection = new MySqlConnection(DatabaseContext.ConnectionString);
-            mySqlConnection.Open();
-            return mySqlConnection;
-        }
-
-        /// <summary>
-        /// Thực thi SQL được tham số hóa
-        /// </summary>
-        /// <param name="cnn"> Đối tượng kết nối tới database</param>
-        /// <param name="sql"> Câu lệnh SQL để thực thi cho truy vấn này</param>
-        /// <param name="param"> Các tham số để sử dụng cho truy vấn này</param>
-        /// <param name="transaction"> Giao dịch để sử dụng cho truy vấn này.</param>
-        /// <param name="commandTimeout"> Số giây trước khi hết thời gian thực thi lệnh.</param>
-        /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
-        /// <returns> Số bản ghi bị ảnh hưởng</returns>
-        /// Create by: LTVIET (20/03/2023)
-        public int Execute(IDbConnection cnn, string sql, object? param = null, 
-            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
-        {
-            return cnn.Execute(sql, param, transaction, commandTimeout, commandType);
-        }
-
-        /// <summary>
-        /// Thực thi một lệnh trả về nhiều tập hợp kết quả và truy cập lần lượt từng tập hợp
-        /// </summary>
-        /// <param name="cnn"> Đối tượng kết nối tới database</param>
-        /// <param name="sql"> Câu lệnh SQL để thực thi cho truy vấn này</param>
-        /// <param name="param"> Các tham số để sử dụng cho truy vấn này</param>
-        /// <param name="transaction"> Giao dịch để sử dụng cho truy vấn này.</param>
-        /// <param name="commandTimeout"> Số giây trước khi hết thời gian thực thi lệnh.</param>
-        /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
-        /// <returns>một multiple result sets kiểu GridReader</returns>
-        /// Create by: LTVIET (20/03/2023)
-        public GridReader QueryMultiple(IDbConnection cnn, string sql, object? param = null, 
-            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
-        {
-            var result = cnn.QueryMultiple(sql, param, transaction, commandTimeout, commandType);
-            return result;
-        }
-
-        /// <summary>
-        /// Thực hiện truy vấn một hàng, trả về dữ liệu đã nhập là <typeparamref name="department"/>.
-        /// </summary>
-        /// <param name="cnn"> Đối tượng kết nối tới database</param>
-        /// <param name="sql"> Câu lệnh SQL để thực thi cho truy vấn này</param>
-        /// <param name="param"> Các tham số để sử dụng cho truy vấn này</param>
-        /// <param name="transaction"> Giao dịch để sử dụng cho truy vấn này.</param>
-        /// <param name="commandTimeout"> Số giây trước khi hết thời gian thực thi lệnh.</param>
-        /// <param name="commandType"> Nó có phải là một proc được lưu trữ hoặc một batch không?</param>
-        /// <returns>
-        /// Một chuỗi dữ liệu của loại được cung cấp; 
-        /// nếu một loại cơ bản (int, chuỗi, v.v.) được truy vấn thì dữ liệu từ cột đầu tiên được giả định, 
-        /// nếu không, một phiên bản được tạo trên mỗi hàng và ánh xạ trực tiếp column-name===member-name được giả định (không phân biệt chữ hoa chữ thường)
-        /// </returns>
-        /// Create by: LTVIET (20/03/2023)
-        public Object QueryFirstOrDefault<Object>(IDbConnection cnn, string sql, object? param = null, 
-            IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)
-        {
-            return cnn.QueryFirstOrDefault<Object>(sql, param, transaction, commandTimeout, commandType);
-        }
-
 		
 		#endregion
 	}

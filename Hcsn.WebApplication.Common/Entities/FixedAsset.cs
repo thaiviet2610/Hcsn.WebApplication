@@ -1,4 +1,5 @@
 ﻿using Hcsn.WebApplication.Common.Constants;
+using Hcsn.WebApplication.Common.Enums;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -13,7 +14,6 @@ namespace Hcsn.WebApplication.Common.Entities
         /// Khóa chính
         /// </summary>
         [HcsnPrimaryKey]
-        [HcsnRequired]
         [HcsnName("Id tài sản")]
         public Guid fixed_asset_id { get; set; }
 
@@ -21,6 +21,7 @@ namespace Hcsn.WebApplication.Common.Entities
         /// Mã tài sản
         /// </summary>
         [HcsnRequired]
+        [HcsnDuplicate]
         [HcsnName("Mã tài sản")]
         [HcsnCode]
         [HcsnMaxLength(10)]
@@ -55,7 +56,6 @@ namespace Hcsn.WebApplication.Common.Entities
         /// <summary>
         /// Id bộ phận sử dụng
         /// </summary>
-        [HcsnRequired]
         [HcsnName("Id bộ phận sử dụng")]
         [HcsnForeignKey]
         public Guid department_id { get; set; }
@@ -70,14 +70,12 @@ namespace Hcsn.WebApplication.Common.Entities
         /// <summary>
         /// Tên bộ phận sử dụng
         /// </summary>
-        [HcsnRequired]
         [HcsnName("Tên bộ phận sử dụng")]
         public string department_name { get; set; }
 
         /// <summary>
         /// Id loại tài sản
         /// </summary>
-        [HcsnRequired]
         [HcsnName("Id loại tài sản")]
         [HcsnForeignKey]
         public Guid fixed_asset_category_id { get; set; }
@@ -92,7 +90,6 @@ namespace Hcsn.WebApplication.Common.Entities
         /// <summary>
         /// Tên loại tài sản
         /// </summary>
-        [HcsnRequired]
         [HcsnName("Tên loại tài sản")]
         public string fixed_asset_category_name { get; set; }
 
@@ -102,65 +99,60 @@ namespace Hcsn.WebApplication.Common.Entities
         /// </summary>
         [HcsnRequired]
         [HcsnName("Ngày mua")]
-        public DateTime purchase_date { get; set; }
+        public DateTime? purchase_date { get; set; }
 
         /// <summary>
         /// Nguyên giá
         /// </summary>
         [HcsnRequired]
-        [HcsnNumber("decimal")]
-        [HcsnGreateThanZero]
+		[HcsnNumber(NumberType.Decimal)]
+		[HcsnGreateThanZero]
         [HcsnName("Nguyên giá")]
-        public decimal cost { get; set; }
+		[HcsnMaxLength(14)]
+		public decimal cost { get; set; }
 
         /// <summary>
         /// Số lượng
         /// </summary>
         [HcsnRequired]
-        [HcsnNumber("int")]
-        [HcsnGreateThanZero]
+		[HcsnNumber(NumberType.Int)]
+		[HcsnGreateThanZero]
         [HcsnName("Số lượng")]
-        public int quantity { get; set; }
-
-        /// <summary>
-        /// Tỷ lệ hao mòn (%)
-        /// </summary>
-        [HcsnRequired]
-        [HcsnNumber("rate")]
-        [HcsnName("Tỷ lệ hao mòn")]
-        public float depreciation_rate { get; set; }
+		[HcsnMaxLength(14)]
+		public int quantity { get; set; }
 
 		/// <summary>
-		/// Hao mòn lũy kế
+		/// Tỷ lệ hao mòn (%)
 		/// </summary>
-		[HcsnNumber("decimal")]
-		[HcsnName("Hao mòn lũy kế")]
-		public decimal depreciation_value { get; set; }
+		[HcsnNumber(NumberType.Float)]
+		[HcsnValueType(TypeValue.Rate)]
+		[HcsnName("Tỷ lệ hao mòn")]
+        public float depreciation_rate { get; set; }
 
 		/// <summary>
 		/// Năm bắt đầu theo dõi tài sản trên phần mềm
 		/// </summary>
-		[HcsnRequired]
-        [HcsnNumber("int")]
-        [HcsnGreateThanZero]
+        [HcsnNumber(NumberType.Int)]
         [HcsnName("Năm theo dõi")]
-
-        public int tracked_year { get; set; }
+		public int tracked_year { get; set; }
 
         /// <summary>
         /// Số năm sử dụng
         /// </summary>
         [HcsnRequired]
-        [HcsnNumber("int")]
-        [HcsnName("Số năm sử dụng")]
-        public int life_time { get; set; }
+        [HcsnNumber(NumberType.Int)]
+		[HcsnGreateThanZero]
+		[HcsnName("Số năm sử dụng")]
+		[HcsnMaxLength(14)]
+		public int life_time { get; set; }
 
         /// <summary>
         /// Năm sử dụng
         /// </summary>
         [HcsnRequired]
-        [HcsnName("Năm sử dụng")]
-        public DateTime production_year { get; set; }
+		[HcsnNumber(NumberType.Int)]
+		[HcsnName("Năm sử dụng")]
+        public DateTime? production_year { get; set; }
 
         /// <summary>
         /// Trạng thái sử dụng
