@@ -48,16 +48,16 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// Created by: LTViet (20/03/2023)
         int UpdateRecord(Guid recordId, T record);
 
-        /// <summary>
-        /// Hàm truy cập database xóa 1 bản ghi
-        /// </summary>
-        /// <param name="recordId">Id bản ghi muốn xóa</param>
-        /// <returns>
-        /// 1: Nếu update thành công
-        /// 2: Nếu update thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        int DeleteRecord(Guid recordId);
+		/// <summary>
+		/// Hàm truy cập database xóa 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <returns>
+		/// 1: Nếu delete thành công
+		/// 2: Nếu delete thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		int DeleteRecord(Guid recordId);
 
 		/// <summary>
 		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
@@ -65,8 +65,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
 		/// <returns>
 		/// Kết quả việc thực hiện xóa nhiều bản ghi
-		/// 1: Nếu update thành công
-		/// 0: Nếu update thất bại
+		/// 1: Nếu delete thành công
+		/// 0: Nếu delete thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		int DeleteMultipleRecord(List<Guid> entitiesId);

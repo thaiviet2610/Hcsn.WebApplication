@@ -55,5 +55,10 @@ namespace Hcsn.WebApplication.Common.Enums
         /// Lỗi vượt quá độ dài ký tự cho phép
         /// </summary>
         MaxLength = 9,
+
+		/// <summary>
+		/// Lỗi khi insert chứng từ thì danh sách tài sản rỗng
+		/// </summary>
+		NoAssetIncrements = 10
     }
 }

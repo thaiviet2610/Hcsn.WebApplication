@@ -51,6 +51,21 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTViet (20/03/2023)
 		Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
 
+		/// <summary>
+		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+		/// </summary>
+		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
+		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
+		/// <param name="pageNumber">Vị trí trang hiện tại</param>
+		/// <param name="ids">Danh sách các id của các tài sản không cần lấy ra</param>
+		/// <returns> 
+		/// Đối tượng PagingResult bao gồm:
+		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
+		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// </returns>
+		/// Created by: LTVIET (09/03/2023)
+		public ServiceResult GetAllAssetNotIn(string keyword, int pageSize, int pageNumber, List<Guid> ids);
+
 
 	} 
     #endregion

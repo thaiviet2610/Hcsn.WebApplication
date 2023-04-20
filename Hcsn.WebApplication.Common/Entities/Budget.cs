@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hcsn.WebApplication.Common.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,8 @@ namespace Hcsn.WebApplication.Common.Entities
 		/// <summary>
 		/// Id nguồn hình thành
 		/// </summary>
-        public Guid budget_id { get; set; }
+		[HcsnPrimaryKey]
+		public Guid budget_id { get; set; }
 
 		/// <summary>
 		/// Mã nguồn hình thành

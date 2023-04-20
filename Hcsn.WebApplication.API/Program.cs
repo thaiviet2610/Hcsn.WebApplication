@@ -1,8 +1,11 @@
 using Hcsn.WebApplication.BL.AssetBL;
+using Hcsn.WebApplication.BL.AssetIncrementBL;
 using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.AssetDL;
+using Hcsn.WebApplication.DL.AssetIncrement;
+using Hcsn.WebApplication.DL.AssetIncrementDL;
 using Hcsn.WebApplication.DL.BaseDL;
 using Hcsn.WebApplication.DL.DBConfig;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +28,8 @@ builder.Services.AddSwaggerGen();
 // Dependency injection
 builder.Services.AddScoped<IAssetBL, AssetBL>();
 builder.Services.AddScoped<IAssetDL, AssetDL>();
+builder.Services.AddScoped<IAssetIncrementDL, AssetIncrementDL>();
+builder.Services.AddScoped<IAssetIncrementBL, AssetIncrementBL>();
 builder.Services.AddScoped<IRepositoryDB, RepositoryDB>();
 builder.Services.AddScoped(typeof(IBaseDL<>), typeof(BaseDL<>));
 builder.Services.AddScoped(typeof(IBaseBL<>), typeof(BaseBL<>));

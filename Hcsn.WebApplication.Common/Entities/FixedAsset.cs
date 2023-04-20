@@ -110,6 +110,8 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnName("Nguyên giá")]
 		[HcsnMaxLength(14)]
 		public decimal cost { get; set; }
+		[HcsnRequired]
+		public string cost_new { get; set; }
 
         /// <summary>
         /// Số lượng

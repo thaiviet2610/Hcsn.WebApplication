@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Hcsn.WebApplication.Common.Constants;
 using Hcsn.WebApplication.Common;
 using Hcsn.WebApplication.Common.Entities;
 using Hcsn.WebApplication.Common.Entities.DTO;
@@ -16,6 +15,7 @@ using System.Threading.Tasks;
 using System.Data.Common;
 using System.Collections;
 using Hcsn.WebApplication.DL.DBConfig;
+using Hcsn.WebApplication.Common.Constants.ProcedureName;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {
@@ -137,6 +137,62 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			{
 				return asset.fixed_asset_code;
 			}
+		}
+
+		/// <summary>
+		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+		/// </summary>
+		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
+		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
+		/// <param name="pageNumber">Vị trí trang hiện tại</param>
+		/// <param name="ids">Danh sách các id của các tài sản không cần lấy ra</param>
+		/// <returns> 
+		/// Đối tượng PagingResult bao gồm:
+		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
+		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// </returns>
+		/// Created by: LTVIET (09/03/2023)
+		public PagingResultAsset GetAllAssetNotIn(string keyword, int pageSize, int pageNumber, List<Guid> ids)
+		{
+			// Chuẩn bị tên stored procedure
+			string storedProcedureName = String.Format(ProcedureName.FilterRecordNotIn, typeof(FixedAsset).Name);
+			// Chuẩn bị tham số đầu vào cho stored
+			int limit = pageSize;
+			int offset = (pageNumber - 1) * limit;
+			var parameters = new DynamicParameters();
+			parameters.Add("p_keyword", keyword);
+			parameters.Add("p_limit", limit);
+			parameters.Add("p_offset", offset);
+			if (ids != null)
+			{
+				var listIdToString = $"('{string.Join("','", ids)}')";
+				parameters.Add("p_ids", listIdToString);
+			}
+			else
+			{
+				parameters.Add("p_ids", null);
+			}
+			// Khởi tạo kết nối tới Database
+			var dbConnection = _assetRepository.GetOpenConnection();
+			// Thực hiện gọi vào Database để chạy stored procedure
+			var result = _assetRepository.QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+			var data = result.Read<FixedAssetDTO>().ToList();
+			int totalRecord = result.Read<int>().Single();
+			int quantityTotal = result.Read<int>().Single();
+			decimal costTotal = result.Read<decimal>().Single();
+			decimal depreciationValueTotal = result.Read<decimal>().Single();
+			decimal residualTotal = result.Read<decimal>().Single();
+			dbConnection.Close();
+			// Xử lý kết quả trả về
+			return new PagingResultAsset
+			{
+				Data = data,
+				TotalRecord = totalRecord,
+				QuantityTotal = quantityTotal,
+				CostTotal = costTotal,
+				DepreciationValueTotal = depreciationValueTotal,
+				ResidualValueTotal = residualTotal,
+			};
 		}
 		#endregion
 	}

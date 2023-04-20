@@ -19,6 +19,7 @@ using MySqlConnector;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Hcsn.WebApplication.DL.DBConfig;
+using Hcsn.WebApplication.Common.Constants.ProcedureName;
 
 namespace Hcsn.WebApplication.DL.BaseDL
 {
@@ -42,8 +43,8 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="recordId">Id bản ghi muốn xóa</param>
 		/// <returns>
-		/// 1: Nếu update thành công
-		/// 0: Nếu update thất bại
+		/// 1: Nếu delete thành công
+		/// 0: Nếu delete thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public int DeleteRecord(Guid recordId)
@@ -68,9 +69,9 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
 		/// <returns>
-		/// Kết quả việc thực hiện xóa nhiều bản ghi
-		/// 1: Nếu update thành công
-		/// 0: Nếu update thất bại
+		/// Kết quả việc thực hiện xóa nhiều bản ghi:
+		/// 1: Nếu delete thành công
+		/// 0: Nếu delete thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public int DeleteMultipleRecord(List<Guid> entitiesId)
@@ -79,11 +80,12 @@ namespace Hcsn.WebApplication.DL.BaseDL
             string sql = string.Format(ProcedureName.DeleteMultiple, typeof(T).Name);
 			// Khởi tạo kết nối tới Database
 			int numberOfAffectedRows = 0;
-			var dbConnection = _repositoryDB.GetOpenConnection();
             var parameters = new DynamicParameters();
 			var listIdToString = $"('{string.Join("','", entitiesId)}')";
 
 			parameters.Add("p_ids", listIdToString);
+			var dbConnection = _repositoryDB.GetOpenConnection();
+
 			using (var transaction = dbConnection.BeginTransaction())
 			{
 				try
@@ -104,44 +106,12 @@ namespace Hcsn.WebApplication.DL.BaseDL
 				catch (Exception)
 				{
                     numberOfAffectedRows = 0;
-					//transaction.Rollback();
+					transaction.Rollback();
 				}
 			}
 			dbConnection.Close();
 			// Xử lý kết quả trả về
 			return numberOfAffectedRows;
-		}
-
-		/// <summary>
-		/// Hàm lấy ra tên của đối tượng được lưu trong database
-		/// </summary>
-		/// <returns>Tên của đối tượng được lưu trong database</returns>
-		/// Created by: LTViet (20/03/2023)
-		private static string GetEntityName()
-		{
-			string nameEntity = "";
-			int j = 0;
-			for (int i = 0; i < typeof(T).Name.Length; i++)
-			{
-				if (Char.IsUpper(typeof(T).Name[i]))
-				{
-					if (j != 0)
-					{
-						nameEntity += $"_{typeof(T).Name[i]}";
-					}
-					else
-					{
-						j += 1;
-						nameEntity += typeof(T).Name[i];
-					}
-				}
-				else
-				{
-					nameEntity += typeof(T).Name[i];
-				}
-			}
-
-			return nameEntity;
 		}
 
 		/// <summary>

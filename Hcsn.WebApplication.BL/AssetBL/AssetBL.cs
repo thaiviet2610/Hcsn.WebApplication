@@ -689,18 +689,29 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			// lấy ra code của đối tượng asset 
 			string newCode = "";
 			bool check = false;
-			var regex = new Regex(@"(\D+)(\d+)");
+			var regex = new Regex(@"(\D)");
 			// vòng lặp lấy 
 			while (!check)
 			{
 				// Tách phần số và phần chữ của code ra
-				string alphaPart = regex.Match(oldCode).Groups[1].Value;
-				string numberPart = regex.Match(oldCode).Groups[2].Value;
+				int lengthOldCode = oldCode.Length;
+				string numberPart = "";
+				string alphaPart = "";
+				for (int i = lengthOldCode - 1; i >= 0; i--)
+				{
+					if (regex.IsMatch(oldCode[i].ToString()))
+					{
+						alphaPart = oldCode.Substring(0, i + 1);
+						break;
+					}
+					numberPart = oldCode[i].ToString() + numberPart;
+				}
+				int lengthNumberPart = numberPart.Length;
 				// Tăng phần số lên một đơn vị
 				int numberCode = int.Parse(numberPart) + 1;
 				// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
 				string strNumberCode = "" + numberCode;
-				while (strNumberCode.Length < 5)
+				while (strNumberCode.Length < lengthNumberPart)
 				{
 					strNumberCode = '0' + strNumberCode;
 				}
@@ -721,6 +732,42 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			}
 
 			return newCode;
+		}
+
+		/// <summary>
+		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+		/// </summary>
+		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
+		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
+		/// <param name="pageNumber">Vị trí trang hiện tại</param>
+		/// <param name="ids">Danh sách các id của các tài sản không cần lấy ra</param>
+		/// <returns> 
+		/// Đối tượng PagingResult bao gồm:
+		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
+		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// </returns>
+		/// Created by: LTVIET (09/03/2023)
+		public ServiceResult GetAllAssetNotIn(string keyword, int pageSize, int pageNumber, List<Guid> ids)
+		{
+			var result = _assetDL.GetAllAssetNotIn(keyword, pageSize, pageNumber, ids);
+			if (result.Data == null)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.NotFound,
+					Message = ServiceResource.NotFound
+				};
+			}
+			foreach (var item in result.Data)
+			{
+				item.residual_value = item.residual_value < 0 ? 0 : item.residual_value;
+			}
+			return new ServiceResult
+			{
+				IsSuccess = true,
+				Data = result
+			};
 		}
 
 

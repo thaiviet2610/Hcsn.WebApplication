@@ -2124,3 +2124,198 @@ SSL Authentication Error
    at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 159
    at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 95
    at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 37
+0HMPTMJM4POA1:00000003
+Parameter 'p_budget_id' not found in the collection.
+   at MySqlConnector.Core.CachedProcedure.AlignParamsWithDb(MySqlParameterCollection parameterCollection) in /_/src/MySqlConnector/Core/CachedProcedure.cs:line 122
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteStoredProcedure(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 188
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryPayload(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 75
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryCommand(CommandListPosition& commandListPosition, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 47
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 43
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 79
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 187
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 120
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPTMJM4POA1:00000004
+Parameter 'p_budget_id' not found in the collection.
+   at MySqlConnector.Core.CachedProcedure.AlignParamsWithDb(MySqlParameterCollection parameterCollection) in /_/src/MySqlConnector/Core/CachedProcedure.cs:line 122
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteStoredProcedure(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 188
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryPayload(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 75
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryCommand(CommandListPosition& commandListPosition, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 47
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 43
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 120
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPTMJM4POA1:00000005
+Parameter 'p_budget_id' not found in the collection.
+   at MySqlConnector.Core.CachedProcedure.AlignParamsWithDb(MySqlParameterCollection parameterCollection) in /_/src/MySqlConnector/Core/CachedProcedure.cs:line 122
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteStoredProcedure(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 188
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryPayload(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 75
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryCommand(CommandListPosition& commandListPosition, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 47
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 43
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType)
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 120
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMPV9P1TN9JL:00000002
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 173
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 208
+0HMPV9P1TN9JL:00000003
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 173
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 208
+0HMPV9P1TN9JL:00000004
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 173
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 208
+0HMPV9P1TN9JP:00000002
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 173
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 208
+0HMPV9RROEHIH:00000002
+Parameter 'p_ids' not found in the collection.
+   at MySqlConnector.Core.CachedProcedure.AlignParamsWithDb(MySqlParameterCollection parameterCollection) in /_/src/MySqlConnector/Core/CachedProcedure.cs:line 122
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteStoredProcedure(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 188
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryPayload(IMySqlCommand command, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 75
+   at MySqlConnector.Core.SingleCommandPayloadCreator.WriteQueryCommand(CommandListPosition& commandListPosition, IDictionary`2 cachedProcedures, ByteBufferWriter writer, Boolean appendSemicolon) in /_/src/MySqlConnector/Core/SingleCommandPayloadCreator.cs:line 47
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 43
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 57
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 171
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 208
+0HMPVAKACTK2R:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 166
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetAllAssetNotIn(String keyword, Int32 pageSize, Int32 pageNumber, List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 752
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetRecordNotIn(List`1 ids, String keyword, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 207
+0HMQ015CKKSS7:00000003
+Non-static method requires a target.
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.PropertyInfo.GetValue(Object obj)
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateEmpty(T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 265
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.ValidateRequesData(T record, Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 238
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.UpdateRecord(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 191
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.UpdateRecordById(Guid recordId, T record) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 196
+0HMQ1DR4P436U:00000002
+PROCEDURE test.Proc_FixedAssetIncrement_GetById does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 79
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 157
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 120
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMQ1DR4P436U:00000003
+PROCEDURE test.Proc_FixedAssetIncrement_GetById does not exist
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 79
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 157
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 120
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetRecordById(Guid recordId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 85
+0HMQ1E1GVT8NL:00000002
+Already committed or rolled back.
+   at MySqlConnector.MySqlTransaction.VerifyValid() in /_/src/MySqlConnector/MySqlTransaction.cs:line 277
+   at MySqlConnector.MySqlTransaction.RollbackAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlTransaction.cs:line 66
+   at MySqlConnector.MySqlTransaction.Rollback() in /_/src/MySqlConnector/MySqlTransaction.cs:line 51
+   at Hcsn.WebApplication.DL.AssetIncrement.AssetIncrementDL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 101
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 55
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.Insert(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 29
+0HMQ1E89T6RTB:00000002
+Already committed or rolled back.
+   at MySqlConnector.MySqlTransaction.VerifyValid() in /_/src/MySqlConnector/MySqlTransaction.cs:line 277
+   at MySqlConnector.MySqlTransaction.RollbackAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlTransaction.cs:line 66
+   at MySqlConnector.MySqlTransaction.Rollback() in /_/src/MySqlConnector/MySqlTransaction.cs:line 51
+   at Hcsn.WebApplication.DL.AssetIncrement.AssetIncrementDL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 103
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 55
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.Insert(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 29
+0HMQ1E9DDS00K:00000002
+Already committed or rolled back.
+   at MySqlConnector.MySqlTransaction.VerifyValid() in /_/src/MySqlConnector/MySqlTransaction.cs:line 277
+   at MySqlConnector.MySqlTransaction.RollbackAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlTransaction.cs:line 66
+   at MySqlConnector.MySqlTransaction.Rollback() in /_/src/MySqlConnector/MySqlTransaction.cs:line 51
+   at Hcsn.WebApplication.DL.AssetIncrement.AssetIncrementDL.InsertAssetIncrement(AssetIncrementInsertDTO entity)
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 55
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.Insert(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 29
+0HMQ1EHMD6U3O:00000005
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 66
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 58
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 55
+0HMQ1EHMD6U3O:00000007
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 66
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 58
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 55
+0HMQ1EHMD6U3Q:00000002
+Already committed or rolled back.
+   at MySqlConnector.MySqlTransaction.VerifyValid() in /_/src/MySqlConnector/MySqlTransaction.cs:line 277
+   at MySqlConnector.MySqlTransaction.RollbackAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlTransaction.cs:line 66
+   at MySqlConnector.MySqlTransaction.Rollback() in /_/src/MySqlConnector/MySqlTransaction.cs:line 51
+   at Hcsn.WebApplication.DL.AssetIncrement.AssetIncrementDL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 102
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.InsertAssetIncrement(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 55
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.Insert(AssetIncrementInsertDTO entity) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 29

@@ -144,7 +144,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
         /// Created by: LTViet (20/03/2023)
         public ServiceResult InsertRecord(T record)
         {
-            var validateResult = ValidateRequesData(record,Guid.Empty);
+            var validateResult = ValidateRequesData(record);
             if(!validateResult.IsSuccess)
             {
                 return new ServiceResult
@@ -188,7 +188,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
         public ServiceResult UpdateRecord(Guid recordId, T record)
         {
             // Validate dữ liệu đầu vào
-            var validateResult = ValidateRequesData(record,recordId);
+            var validateResult = ValidateRequesData(record);
             if (!validateResult.IsSuccess)
             {
                 return new ServiceResult
@@ -230,10 +230,9 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Hàm validate chung dữ liệu 
 		/// </summary>
 		/// <param name="record">bản ghi cần validate</param>
-		/// <param name="recordId">Id của bản ghi</param>
 		/// <returns>Kết quả validate dữ liệu</returns>
 		/// Created by: LTViet (20/03/2023)
-		protected virtual ValidateResult ValidateRequesData(T record,Guid recordId)
+		protected virtual ValidateResult ValidateRequesData(T record)
 		{
 			var validateEmptyResult =  ValidateEmpty(record);
 			var validateCustomResult = ValidateCustom(record);

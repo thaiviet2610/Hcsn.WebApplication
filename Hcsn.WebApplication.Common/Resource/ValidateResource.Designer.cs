@@ -97,6 +97,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chọn ít nhất 1 tài sản.
+        /// </summary>
+        public static string NoAssetIncrements {
+            get {
+                return ResourceManager.GetString("NoAssetIncrements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  phải lớn hơn 0..
         /// </summary>
         public static string NumberLessThanOrEqualZero {

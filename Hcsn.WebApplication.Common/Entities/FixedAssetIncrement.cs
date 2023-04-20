@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hcsn.WebApplication.Common.Constants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Hcsn.WebApplication.Common.Entities
 {
 	public class FixedAssetIncrement : BaseEntity
 	{
+		[HcsnPrimaryKey]
         public Guid voucher_id { get; set; }
 
         public string voucher_code { get; set; }
@@ -16,7 +18,7 @@ namespace Hcsn.WebApplication.Common.Entities
 
 		public DateTime increment_date { get; set; }
 
-		public string price { get; set; }
+		public decimal price { get; set; }
 
 
 		public string description { get; set; }
