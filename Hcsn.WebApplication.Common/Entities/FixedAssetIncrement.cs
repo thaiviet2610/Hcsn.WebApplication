@@ -12,15 +12,26 @@ namespace Hcsn.WebApplication.Common.Entities
 		[HcsnPrimaryKey]
         public Guid voucher_id { get; set; }
 
+		[HcsnDuplicate("code")]
+		[HcsnCode]
+		[HcsnRequired]
+		[HcsnMaxLength(50)]
+		[HcsnName("Mã chứng từ")]
         public string voucher_code { get; set; }
 
-		public DateTime voucher_date { get; set; }
+		[HcsnRequired]
+		[HcsnName("Ngày chứng từ")]
+		public DateTime? voucher_date { get; set; }
 
-		public DateTime increment_date { get; set; }
+		[HcsnRequired]
+		[HcsnName("Ngày ghi tăng")]
+		public DateTime? increment_date { get; set; }
 
+		[HcsnName("Tổng nguyên giá")]
 		public decimal price { get; set; }
 
-
+		[HcsnMaxLength(255)]
+		[HcsnName("Ghi chú")]
 		public string description { get; set; }
 
 

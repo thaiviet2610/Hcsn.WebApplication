@@ -63,6 +63,11 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 		public decimal cost { get; set; }
 
 		/// <summary>
+		/// Nguyên giá
+		/// </summary>
+		public string cost_new { get; set; }
+
+		/// <summary>
 		/// Số lượng
 		/// </summary>
 		[HcsnRequired]

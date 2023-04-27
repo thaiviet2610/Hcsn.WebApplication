@@ -141,6 +141,9 @@
   <data name="FixedAssetIdPropName" xml:space="preserve">
     <value>fixed_asset_id</value>
   </data>
+  <data name="FixedAssetIncrementCodePropName" xml:space="preserve">
+    <value>voucher_code</value>
+  </data>
   <data name="FixedAssetNamePropName" xml:space="preserve">
     <value>fixed_asset_name</value>
   </data>
@@ -150,8 +153,11 @@
   <data name="LifeTimePropName" xml:space="preserve">
     <value>life_time</value>
   </data>
-  <data name="NewCodeDefault" xml:space="preserve">
+  <data name="NewAssetCodeDefault" xml:space="preserve">
     <value>TS00001</value>
+  </data>
+  <data name="NewVoucherCodeDefault" xml:space="preserve">
+    <value>GT00001</value>
   </data>
   <data name="ProductionYear" xml:space="preserve">
     <value>production_year</value>

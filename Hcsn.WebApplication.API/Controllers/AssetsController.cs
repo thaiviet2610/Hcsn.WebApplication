@@ -32,6 +32,9 @@ namespace Hcsn.WebApplication.API.Controllers
             _assetBL = assetBL;
         }
 
+
+		
+
 		/// <summary>
 		/// API phân trang, lọc danh sách tài sản
 		/// </summary>
@@ -133,8 +136,6 @@ namespace Hcsn.WebApplication.API.Controllers
 
 		}
 
-
-
 		/// <summary>
 		/// API xuất danh sách tài sản theo phân trang, bộ lọc ra file excel 
 		/// </summary>
@@ -196,14 +197,16 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// Created by: LTVIET (09/03/2023)
 		[HttpPost("FilterNotIn")]
 		public IActionResult GetRecordNotIn(
-			[FromBody] List<Guid>? ids,
+			[FromBody] FixedAssetFilterNotIn assetFilterNotIn,
 			[FromQuery] string? keyword,
 			[FromQuery] int pageSize = 10,
 			[FromQuery] int pageNumber = 1)
 		{
 			try
 			{
-					var result = _assetBL.GetAllAssetNotIn(keyword, pageSize, pageNumber, ids);
+				var notInIdAssets = assetFilterNotIn.NotInAssets;
+				var activeIdAssets = assetFilterNotIn.ActiveAssets;
+				var result = _assetBL.GetAllAssetNotIn(keyword, pageSize, pageNumber, notInIdAssets, activeIdAssets);
 				if (!result.IsSuccess)
 				{
 					return StatusCode(500, new ErrorResult

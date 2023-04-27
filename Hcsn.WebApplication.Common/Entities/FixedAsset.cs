@@ -21,7 +21,7 @@ namespace Hcsn.WebApplication.Common.Entities
         /// Mã tài sản
         /// </summary>
         [HcsnRequired]
-        [HcsnDuplicate]
+        [HcsnDuplicate("code")]
         [HcsnName("Mã tài sản")]
         [HcsnCode]
         [HcsnMaxLength(10)]
@@ -110,7 +110,7 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnName("Nguyên giá")]
 		[HcsnMaxLength(14)]
 		public decimal cost { get; set; }
-		[HcsnRequired]
+
 		public string cost_new { get; set; }
 
         /// <summary>

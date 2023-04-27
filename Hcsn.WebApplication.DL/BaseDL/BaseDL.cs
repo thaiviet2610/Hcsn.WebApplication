@@ -43,8 +43,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="recordId">Id bản ghi muốn xóa</param>
 		/// <returns>
-		/// 1: Nếu delete thành công
-		/// 0: Nếu delete thất bại
+		/// Số bản ghi bị ảnh hưởng
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public int DeleteRecord(Guid recordId)
@@ -69,9 +68,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
 		/// <returns>
-		/// Kết quả việc thực hiện xóa nhiều bản ghi:
-		/// 1: Nếu delete thành công
-		/// 0: Nếu delete thất bại
+		/// Số bản ghi bị ảnh hưởng
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public int DeleteMultipleRecord(List<Guid> entitiesId)
@@ -160,16 +157,15 @@ namespace Hcsn.WebApplication.DL.BaseDL
             return entity;
         }
 
-        /// <summary>
-        /// Hàm thêm mới 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn thêm</param>
-        /// <returns>
-        /// 1: Nếu insert thành công
-        /// 2: Nếu insert thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public int InsertRecord(T record)
+		/// <summary>
+		/// Hàm thêm mới 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn thêm</param>
+		/// <returns>
+		/// Số bản ghi bị ảnh hưởng
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public int InsertRecord(T record)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.Insert, typeof(T).Name);
@@ -188,16 +184,15 @@ namespace Hcsn.WebApplication.DL.BaseDL
             
         }
 
-        /// <summary>
-        /// Hàm sửa đổi 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn sửa đổi</param>
-        /// <returns>
-        /// 1: Nếu update thành công
-        /// 2: Nếu update thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public int UpdateRecord(Guid recordId,T record)
+		/// <summary>
+		/// Hàm sửa đổi 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn sửa đổi</param>
+		/// <returns>
+		/// Số bản ghi bị ảnh hưởng
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public int UpdateRecord(Guid recordId,T record)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.Update, typeof(T).Name);

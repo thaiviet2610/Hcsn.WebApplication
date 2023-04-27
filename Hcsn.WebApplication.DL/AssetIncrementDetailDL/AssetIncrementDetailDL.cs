@@ -22,7 +22,5 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDetailDL
 		{
 			_assetIncrementDetailRepository = repositoryDB;
 		}
-
-
 	}
 }

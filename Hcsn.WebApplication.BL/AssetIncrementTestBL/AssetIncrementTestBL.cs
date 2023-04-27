@@ -1,9 +1,11 @@
-﻿using Hcsn.WebApplication.Common.Constants;
-using Hcsn.WebApplication.Common.Entities.DTO;
+﻿using Hcsn.WebApplication.BL.BaseBL;
+using Hcsn.WebApplication.Common.Constants;
 using Hcsn.WebApplication.Common.Entities;
+using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.Common.Resource;
 using Hcsn.WebApplication.DL.AssetIncrementTest1DL;
+using Hcsn.WebApplication.DL.BaseDL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +13,16 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Hcsn.WebApplication.DL.AssetIncrementDL;
 
-namespace Hcsn.WebApplication.BL.AssetIncrementBL
+namespace Hcsn.WebApplication.BL.AssetIncrementTest1BL
 {
-	public class AssetIncrementBL : IAssetIncrementBL
+	public class AssetIncrementTestBL : BaseBL<FixedAssetIncrement>, IAssetIncrementTestBL
 	{
 		#region Field
-		private IAssetIncrementDL _assetIncrementDL;
-		protected List<ValidateResult> inValidList = new();
+        private IAssetIncrementTestDL _assetIncrementDL;
 		#endregion
 		#region Constructor
-		public AssetIncrementBL(IAssetIncrementDL assetIncrementDL)
+		public AssetIncrementTestBL(IAssetIncrementTestDL assetIncrementDL) : base(assetIncrementDL)
 		{
 			_assetIncrementDL = assetIncrementDL;
 		}
@@ -47,42 +47,74 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		public ServiceResult GetPaging(string? keyword, int pageSize, int pageNumber)
 		{
 			var result = _assetIncrementDL.GetPaging(keyword, pageSize, pageNumber);
+			if (result.Data == null)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.NotFound,
+					Message = ServiceResource.NotFound
+				};
+			}
 			return new ServiceResult
 			{
-				IsSuccess = result.Data != null,
-				ErrorCode = ErrorCode.NotFound,
-				Message = ServiceResource.NotFound,
+				IsSuccess = true,
 				Data = result
 			};
 		}
 
-		public ServiceResult GetById(Guid assetIncrementId)
+		public ServiceResult GetAssetIncrementDTOById(Guid assetIncrementId)
 		{
-			var assetIncrement = _assetIncrementDL.GetById(assetIncrementId);
+			var record = _assetIncrementDL.GetAssetIncrementDTOById(assetIncrementId);
+			if (record == null)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.NotFound,
+					Message = ServiceResource.NotFound
+				};
+			}
 			return new ServiceResult
 			{
-				IsSuccess = assetIncrement != null,
-				ErrorCode = ErrorCode.NotFound,
-				Message = ServiceResource.NotFound,
-				Data = assetIncrement
+				IsSuccess = true,
+				Data = record
 			};
 		}
 
 		/// <summary>
 		/// Hàm thêm mới 1 bản ghi chứng từ
 		/// </summary>
-		/// <param name="assetIncrementDTO">Đối tượng chứa thông tin chứng từ cần thêm mới(thông tin chứng từ, danh sách tài sản ghi tăng)</param>
+		/// <param name="entity">Đối tượng chứa thông tin chứng từ cần thêm mới(thông tin chứng từ, danh sách tài sản ghi tăng)</param>
 		/// <returns>
 		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện thêm mới:
 		/// IsSuccess == true: thêm mới thành công
 		/// IsSuccess == false: thêm mới thất bại
 		/// </returns>
-		public ServiceResult InsertAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO)
+		public ServiceResult InsertAssetIncrement(FixedAssetIncrementDTO entity)
 		{
-			
-			var assets = assetIncrementDTO.assets;
-			var validateResult = ValidateRequesData(assetIncrementDTO);
-			
+			var assetIncrement = new FixedAssetIncrement()
+			{
+				voucher_id = entity.voucher_id,
+				voucher_code = entity.voucher_code,
+				voucher_date = entity.voucher_date,
+				increment_date = entity.increment_date,
+				price = entity.price,
+				description = entity.description,
+			};
+			var assets = entity.assets;
+			var validateResult = ValidateRequesData(assetIncrement);
+			if (assets.Count == 0 || assets == null)
+			{
+				inValidList.Add(new ValidateResult
+				{
+					IsSuccess = false,
+					ValidateCode = ValidateCode.NoAssetIncrements,
+					Message = ValidateResource.NoAssetIncrements,
+				});
+				validateResult.IsSuccess = false;
+				validateResult.Data = inValidList;
+			}
 
 			if (!validateResult.IsSuccess)
 			{
@@ -96,86 +128,37 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				};
 			}
 
-			int numberOfAffectedRows = _assetIncrementDL.InsertAssetIncrement(assetIncrementDTO, assets);
-			return new ServiceResult
+			int numberOfAffectedRows = _assetIncrementDL.InsertAssetIncrement(assetIncrement, assets);
+			if (numberOfAffectedRows > 0)
 			{
-				IsSuccess = numberOfAffectedRows > 0,
-				ErrorCode = ErrorCode.InsertFailed,
-				Message = ServiceResource.InsertFailed,
-			};
-		}
-
-		/// <summary>
-		/// Hàm validate chung dữ liệu 
-		/// </summary>
-		/// <param name="assetIncrementDTO">bản ghi cần validate</param>
-		/// <returns>Kết quả validate dữ liệu</returns>
-		/// Created by: LTViet (20/03/2023)
-		public ValidateResult ValidateRequesData(FixedAssetIncrementDTO assetIncrementDTO)
-		{
-			var validateEmptyResult = ValidateEmpty(assetIncrementDTO);
-			var validateCustomResult = ValidateCustom(assetIncrementDTO);
-			bool checkAssetsNull = true;
-			if (assetIncrementDTO.assets.Count == 0 || assetIncrementDTO.assets == null)
+				return new ServiceResult
+				{
+					IsSuccess = true,
+				};
+			}
+			else
 			{
-				inValidList.Add(new ValidateResult
+				return new ServiceResult
 				{
 					IsSuccess = false,
-					ValidateCode = ValidateCode.NoAssetIncrements,
-					Message = ValidateResource.NoAssetIncrements,
-				});
-				checkAssetsNull = false;
+					ErrorCode = ErrorCode.InsertFailed,
+					Message = ServiceResource.InsertFailed,
+				};
 			}
 
-			return new ValidateResult
-			{
-				IsSuccess = validateEmptyResult && validateCustomResult && checkAssetsNull,
-				Data = inValidList
-			};
-			
+
 		}
 
-		/// <summary>
-		/// Hàm validate giá trị các thuộc tính không được để trống
-		/// </summary>
-		/// <param name="assetIncrement">Đối tượng chứa các thuộc tính</param>
-		/// <returns>Kết quả validate</returns>
-		/// Created by: LTViet (20/03/2023)
-		private bool ValidateEmpty(FixedAssetIncrement assetIncrement)
+		protected override ValidateResult ValidateRequesData(FixedAssetIncrement record)
 		{
-			bool check = true;
-			var validateEmpty = new List<String>();
-			var properties = typeof(FixedAssetIncrement).GetProperties();
-
-			foreach (var property in properties)
-			{
-				var propValue = property.GetValue(assetIncrement);
-				var propName = property.Name;
-
-				var requiredAttribute = (HcsnRequiredAttribute?)property.GetCustomAttributes(typeof(HcsnRequiredAttribute)).FirstOrDefault();
-				if (requiredAttribute != null && (propValue == null || String.IsNullOrEmpty(propValue.ToString().Trim())))
-				{
-					validateEmpty.Add(propName);
-					check = false;
-				}
-			}
-			if (!check)
-			{
-				inValidList.Add(new ValidateResult
-				{
-					IsSuccess = false,
-					ValidateCode = ValidateCode.Empty,
-					Message = ValidateResource.Empty,
-					Data = validateEmpty
-				});
-			}
-			return check;
+			return base.ValidateRequesData(record);
 		}
 
-		public bool ValidateCustom(FixedAssetIncrement assetIncrement)
+		protected override bool ValidateCustom(FixedAssetIncrement assetIncrement)
 		{
 			bool check = true;
 			var properties = typeof(FixedAssetIncrement).GetProperties();
+
 
 			foreach (var property in properties)
 			{
@@ -371,89 +354,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			return newCode;
 		}
 
-		/// <summary>
-		/// Hàm sửa đổi 1 bản ghi chứng từ
-		/// </summary>
-		/// <param name="assetIncrementDTO">Thông tin chứng từ cần sửa sửa đổi</param>
-		/// <param name="assetsAdd">Danh sách id tài sản được chứng từ thêm</param>
-		/// <param name="assetsDelete">Danh sách id tài sản không còn được chứng từ</param>
-		/// <returns>
-		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện sửa:
-		/// IsSuccess == true: sửa thành công
-		/// IsSuccess == false: sửa thất bại
-		/// </returns>
-		/// Created by: LTViet (20/03/2023)
-		public ServiceResult UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List<Guid>? assetsAdd, List<Guid>? assetsDelete)
-		{
-			// Validate dữ liệu đầu vào
-			var validateResult = ValidateRequesData(assetIncrementDTO);
-			if (!validateResult.IsSuccess)
-			{
-				return new ServiceResult
-				{
-					// Thất bại
-					IsSuccess = false,
-					ErrorCode = ErrorCode.InvalidateData,
-					Message = ServiceResource.InvalidData,
-					Data = validateResult.Data
-				};
-			}
-
-			// Thành công
-
-			var isUpdateSuccess = _assetIncrementDL.UpdateAssetIncrement(assetIncrementDTO, assetsAdd, assetsDelete);
-			return new ServiceResult
-			{
-				IsSuccess = isUpdateSuccess,
-				ErrorCode = ErrorCode.UpdateFailed,
-				Message = ServiceResource.UpdateFailed,
-			};
-		}
-
-		/// <summary>
-		/// Hàm gọi database thực hiện việc xóa 1 bản ghi
-		/// </summary>
-		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>
-		/// <returns>
-		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện xóa:
-		/// IsSuccess == true: xóa thành công
-		/// IsSuccess == false: xóa thất bại
-		/// </returns>
-		/// Created by: LTViet (20/03/2023)
-		public ServiceResult DeleteAssetIncrementById(Guid voucherId)
-		{
-			var numberOfAffectedRows = _assetIncrementDL.DeleteAssetIncrementById(voucherId);
-			return new ServiceResult
-			{
-				IsSuccess = numberOfAffectedRows != 0,
-				ErrorCode = ErrorCode.DeleteFailed,
-				Message = ServiceResource.DeleteFailed
-			};
-		}
-
-		/// <summary>
-		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
-		/// </summary>
-		/// <param name="ids">Danh sách id bản ghi cần xóa</param>
-		/// <returns>
-		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện xóa:
-		/// IsSuccess == true: xóa thành công
-		/// IsSuccess == false: xóa thất bại
-		/// </returns>
-		/// Created by: LTViet (20/03/2023)
-		public ServiceResult DeleteMultipleAssetIncrement(List<Guid> ids)
-		{
-			var numberOfAffectedRows = _assetIncrementDL.DeleteMultipleAssetIncrement(ids);
-			return new ServiceResult
-			{
-				IsSuccess = numberOfAffectedRows != 0,
-				ErrorCode = ErrorCode.DeleteMultipleFailed,
-				Message = ServiceResource.DeleteMultipleFailed,
-				Data = numberOfAffectedRows
-			};
-		}
-
-
+		
 		#endregion
 	}
 }

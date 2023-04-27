@@ -1,10 +1,6 @@
-﻿using MySqlConnector;
-using System;
-using System.Collections.Generic;
+﻿
+using MySql.Data.MySqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Dapper.SqlMapper;
 
 namespace Hcsn.WebApplication.DL.DBConfig

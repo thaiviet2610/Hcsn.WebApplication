@@ -1,10 +1,12 @@
 using Hcsn.WebApplication.BL.AssetBL;
+using Hcsn.WebApplication.BL.AssetIncrementTest1BL;
 using Hcsn.WebApplication.BL.AssetIncrementBL;
 using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.AssetDL;
-using Hcsn.WebApplication.DL.AssetIncrement;
+using Hcsn.WebApplication.DL.AssetIncrementTest1DL;
+using Hcsn.WebApplication.DL.AssetIncrementTest1DL;
 using Hcsn.WebApplication.DL.AssetIncrementDL;
 using Hcsn.WebApplication.DL.BaseDL;
 using Hcsn.WebApplication.DL.DBConfig;
@@ -28,6 +30,8 @@ builder.Services.AddSwaggerGen();
 // Dependency injection
 builder.Services.AddScoped<IAssetBL, AssetBL>();
 builder.Services.AddScoped<IAssetDL, AssetDL>();
+builder.Services.AddScoped<IAssetIncrementTestDL, AssetIncrementTestDL>();
+builder.Services.AddScoped<IAssetIncrementTestBL, AssetIncrementTestBL>();
 builder.Services.AddScoped<IAssetIncrementDL, AssetIncrementDL>();
 builder.Services.AddScoped<IAssetIncrementBL, AssetIncrementBL>();
 builder.Services.AddScoped<IRepositoryDB, RepositoryDB>();

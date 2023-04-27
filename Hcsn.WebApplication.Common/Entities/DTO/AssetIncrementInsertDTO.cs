@@ -8,8 +8,19 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 {
 	public class AssetIncrementInsertDTO
 	{
-        public FixedAssetIncrement fixedAssetIncrement { get; set; }
 
-        public List<FixedAsset> assets { get; set; }
-    }
+		public Guid voucher_id { get; set; }
+
+		public string voucher_code { get; set; }
+
+		public DateTime? voucher_date { get; set; }
+
+		public DateTime? increment_date { get; set; }
+
+		public decimal price { get; set; }
+
+		public string description { get; set; }
+
+		public List<Guid> id_assets { get; set; }
+	}
 }

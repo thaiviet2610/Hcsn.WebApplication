@@ -11,5 +11,6 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDetailDL
 {
 	public interface IAssetIncrementDetailDL: IBaseDL<FixedAssetIncrementDetail>
 	{
+		
 	}
 }

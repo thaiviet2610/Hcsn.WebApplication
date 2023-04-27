@@ -21,15 +21,18 @@ namespace Hcsn.WebApplication.API.Controllers
         {
             _baseBL = baseBL;
         }
-        #endregion
+		#endregion
 
-        #region Method
-        /// <summary>
-        /// API Lấy ra danh sách tất cả các bản ghi
-        /// </summary>
-        /// <returns>Danh sách tất cả các bản ghi</returns>
-        /// Created by: LTVIET (20/03/2023)
-        [HttpGet]
+		#region Method
+		/// <summary>
+		/// API Lấy ra danh sách tất cả các bản ghi
+		/// </summary>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTVIET (20/03/2023)
+		[HttpGet]
         public IActionResult GetAllRecord()
         {
             try
@@ -71,13 +74,16 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
         }
 
-        /// <summary>
-        /// API Lấy thông tin chi tiết 1 bản ghi theo id
-        /// </summary>
-        /// <param name="recordId">ID bản ghi muốn lấy</param>
-        /// <returns>Bản ghi muốn lấy</returns>
-        /// Created by: LTVIET (20/03/2023)
-        [HttpGet("{recordId}")]
+		/// <summary>
+		/// API Lấy thông tin chi tiết 1 bản ghi theo id
+		/// </summary>
+		/// <param name="recordId">ID bản ghi muốn lấy</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTVIET (20/03/2023)
+		[HttpGet("{recordId}")]
         public IActionResult GetRecordById([FromRoute]Guid recordId)
         {
             try
@@ -116,16 +122,16 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
         }
 
-        /// <summary>
-        /// Hàm thêm mới 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn thêm</param>
-        /// <returns>
-        /// 1: Nếu insert thành công
-        /// 2: Nếu insert thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        [HttpPost]
+		/// <summary>
+		/// Hàm thêm mới 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn thêm</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		[HttpPost]
         public IActionResult InsertRecord([FromBody]T record)
         {
             try
@@ -179,16 +185,17 @@ namespace Hcsn.WebApplication.API.Controllers
 
         }
 
-        /// <summary>
-        /// Hàm sửa đổi 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn sửa đổi</param>
-        /// <returns>
-        /// 1: Nếu update thành công
-        /// 2: Nếu update thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        [HttpPut("{recordId}")]
+		/// <summary>
+		/// Hàm sửa đổi 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn sửa đổi</param>
+		/// <param name="record">Bản ghi muốn sửa đổi</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		[HttpPut("{recordId}")]
         public IActionResult UpdateRecordById([FromRoute]Guid recordId, [FromBody]T record)
         {
             try
@@ -242,16 +249,16 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
         }
 
-        /// <summary>
-        /// API xóa 1 bản ghi
-        /// </summary>
-        /// <param name="recordId">Id bản ghi muốn xóa</param>
-        /// <returns>
-        /// 1: Nếu delete thành công
-        /// 2: Nếu delete thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        [HttpDelete("{recordId}")]
+		/// <summary>
+		/// API xóa 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		[HttpDelete("{recordId}")]
         public ActionResult DeleteRecordById([FromRoute]Guid recordId)
         {
             try
@@ -294,10 +301,10 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// <summary>
 		/// API xóa 1 bản ghi
 		/// </summary>
-		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <param name="entitiesId">Danh sách id bản ghi muốn xóa</param>
 		/// <returns>
-		/// 1: Nếu delete thành công
-		/// 2: Nếu delete thất bại
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		[HttpDelete]

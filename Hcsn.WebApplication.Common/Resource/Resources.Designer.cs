@@ -133,6 +133,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to voucher_code.
+        /// </summary>
+        public static string FixedAssetIncrementCodePropName {
+            get {
+                return ResourceManager.GetString("FixedAssetIncrementCodePropName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fixed_asset_name.
         /// </summary>
         public static string FixedAssetNamePropName {
@@ -162,9 +171,18 @@ namespace Hcsn.WebApplication.Common.Resource {
         /// <summary>
         ///   Looks up a localized string similar to TS00001.
         /// </summary>
-        public static string NewCodeDefault {
+        public static string NewAssetCodeDefault {
             get {
-                return ResourceManager.GetString("NewCodeDefault", resourceCulture);
+                return ResourceManager.GetString("NewAssetCodeDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GT00001.
+        /// </summary>
+        public static string NewVoucherCodeDefault {
+            get {
+                return ResourceManager.GetString("NewVoucherCodeDefault", resourceCulture);
             }
         }
         

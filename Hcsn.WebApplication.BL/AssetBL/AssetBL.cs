@@ -1,26 +1,14 @@
-﻿using Dapper;
-using Hcsn.WebApplication.BL.BaseBL;
-using Hcsn.WebApplication.Common;
+﻿using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.Common.Constants;
 using Hcsn.WebApplication.Common.Entities;
 using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.AssetDL;
-using Hcsn.WebApplication.DL.BaseDL;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Hcsn.WebApplication.Common.Resource;
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
 using System.Globalization;
-using OfficeOpenXml.DataValidation;
-using System.IO;
 using System.Reflection;
 
 namespace Hcsn.WebApplication.BL.AssetBL
@@ -36,10 +24,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
         {
             _assetDL = assetDL;
         }
-        #endregion
+		#endregion
 
-        #region Method
-        /// <summary>
+		#region Method
+		/// <summary>
 		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
@@ -48,12 +36,12 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
 		/// <returns> 
-		/// Đối tượng PagingResult bao gồm:
-		/// - Danh sách tài sản trong 1 trang
-		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-        public ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
+		public ServiceResult GetPaging(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber)
         {
             var result = _assetDL.GetPaging(keyword, departmentId, fixedAssetCatagortId, pageSize, pageNumber);
             if (result.Data == null)
@@ -341,9 +329,9 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// </summary>
 		/// <param name="asset">Đối tượng cần validate</param>
 		/// <returns>
-		/// Trả về 1 đối tượng ValidateResult mô tả kết quả validate, bao gồm:
-		/// IsSuccess = True: Nếu validate dữ liệu thành công
-		/// IsSuccess = False: Nếu validate dữ liệu thất bại
+		/// Trả về kết quả validate, bao gồm:
+		/// True: Nếu validate dữ liệu thành công
+		/// False: Nếu validate dữ liệu thất bại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		protected override bool ValidateCustom(FixedAsset asset)
@@ -471,7 +459,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// </summary>
 		/// <param name="quantity">Số lượng</param>
 		/// <param name="cost">Nguyên giá</param>
-		/// <param name="lifeTie">Số năm sử dụng</param>
+		/// <param name="lifeTime">Số năm sử dụng</param>
 		/// <param name="depreciationRate">Tỷ lệ hao mòn</param>
 		/// <returns>
 		/// Kết quả validate
@@ -479,7 +467,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// flase: Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		private bool IsCheckPropertyNumberLessThanOrEqualZero(int quantity, decimal cost, int lifeTie, float depreciationRate)
+		private bool IsCheckPropertyNumberLessThanOrEqualZero(int quantity, decimal cost, int lifeTime, float depreciationRate)
 		{
 			bool check = true;
 			var propertyNumberLessThanOrEqualZero = new List<string>();
@@ -493,7 +481,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				propertyNumberLessThanOrEqualZero.Add(Resources.CostPropName);
 				check = false;
 			}
-			if (lifeTie <= 0)
+			if (lifeTime <= 0)
 			{
 				propertyNumberLessThanOrEqualZero.Add(Resources.LifeTimePropName);
 				check = false;
@@ -665,7 +653,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <summary>
 		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
-		/// <returns>Đối tượng mã code mới</returns>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public ServiceResult GetNewCode()
 		{
@@ -673,7 +665,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			return new ServiceResult
 			{
 				IsSuccess = true,
-				Data = oldCode == null ? Resources.NewCodeDefault : GenerateNewCode(oldCode)
+				Data = GenerateNewCode(oldCode)
 			};
 		}
 
@@ -683,11 +675,14 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="oldCode">Code cần tách ra</param>
 		/// <returns>Code mới</returns>
 		/// Created by: LTViet (20/03/2023)
-		private string GenerateNewCode(string oldCode)
+		private string GenerateNewCode(string? oldCode)
 		{
-			// Thành công
-			// lấy ra code của đối tượng asset 
-			string newCode = "";
+            if (oldCode == null)
+            {
+				return Resources.NewAssetCodeDefault;
+            }
+            // lấy ra code của đối tượng asset 
+            string newCode = "";
 			bool check = false;
 			var regex = new Regex(@"(\D)");
 			// vòng lặp lấy 
@@ -740,16 +735,17 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
-		/// <param name="ids">Danh sách các id của các tài sản không cần lấy ra</param>
+		/// <param name="notInIdAssets">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
+		/// <param name="activeIdAssets">Danh sách các id của các tài sản đã active cần lấy ra</param>
 		/// <returns> 
-		/// Đối tượng PagingResult bao gồm:
-		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
-		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		public ServiceResult GetAllAssetNotIn(string keyword, int pageSize, int pageNumber, List<Guid> ids)
+		public ServiceResult GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets)
 		{
-			var result = _assetDL.GetAllAssetNotIn(keyword, pageSize, pageNumber, ids);
+			var result = _assetDL.GetAllAssetNotIn(keyword, pageSize, pageNumber, notInIdAssets, activeIdAssets);
 			if (result.Data == null)
 			{
 				return new ServiceResult

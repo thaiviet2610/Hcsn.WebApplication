@@ -28,19 +28,21 @@ namespace Hcsn.WebApplication.BL.BaseBL
         {
             _baseDL = baseDL;
         }
-        #endregion
+		#endregion
 
-        #region Method
+		#region Method
 
-        /// <summary>
-        /// Hàm xử lý logic khi xóa 1 bản ghi
-        /// </summary>
-        /// <param name="recordId">Id bản ghi muốn xóa</param>
-        /// <returns>
-        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public ServiceResult DeleteRecord(Guid recordId)
+		/// <summary>
+		/// Hàm xử lý logic khi xóa 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn xóa</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện thêm mới:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult DeleteRecord(Guid recordId)
         {
             var numberOfAffectedRows = _baseDL.DeleteRecord(recordId);
             if (numberOfAffectedRows == 0)
@@ -63,7 +65,9 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// </summary>
 		/// <param name="entitiesId">Danh sách Id các bản ghi muốn xóa</param>
 		/// <returns>
-		/// Kết quả việc xóa nhiều bản ghi
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện xóa:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		public ServiceResult DeleteMultipleRecord(List<Guid> entitiesId)
@@ -88,7 +92,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// <summary>
 		/// Hàm xử lý logic khi lấy ra danh sách tất cả các bản ghi
 		/// </summary>
-		/// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
 		/// Created by: LTVIET (20/03/2023)
 		public ServiceResult GetAllRecord()
         {
@@ -109,13 +117,18 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
-        /// <summary>
-        /// Hàm xử lý logic khi lấy thông tin chi tiết 1 bản ghi theo id từ tầng DL 
-        /// </summary>
-        /// <param name="recordId">ID bản ghi muốn lấy</param>
-        /// <returns>Đối tượng ServiceResult thể hiện kết quả xử lý logic</returns>
-        /// Created by: LTVIET (20/03/2023)
-        public ServiceResult GetRecordById(Guid recordId)
+		/// <summary>
+		/// Hàm xử lý logic khi lấy thông tin chi tiết 1 bản ghi theo id từ tầng DL 
+		/// </summary>
+		/// <param name="recordId">ID bản ghi muốn lấy</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// </returns>
+		/// Created by: LTVIET (20/03/2023)
+		public ServiceResult GetRecordById(Guid recordId)
         {
             var record = _baseDL.GetRecordById(recordId);
             if (record == null)
@@ -134,15 +147,18 @@ namespace Hcsn.WebApplication.BL.BaseBL
             };
         }
 
-        /// <summary>
-        /// Hàm xử lý logic khi thêm mới 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn thêm</param>
-        /// <returns>
-        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public ServiceResult InsertRecord(T record)
+		/// <summary>
+		/// Hàm xử lý logic khi thêm mới 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn thêm</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult InsertRecord(T record)
         {
             var validateResult = ValidateRequesData(record);
             if(!validateResult.IsSuccess)
@@ -177,15 +193,18 @@ namespace Hcsn.WebApplication.BL.BaseBL
         }
 
 
-        /// <summary>
-        /// Hàm xử lý logic khi sửa đổi 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn sửa đổi</param>
-        /// <returns>
-        /// Đối tượng ServiceResult thể hiện kết quả xử lý logic
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        public ServiceResult UpdateRecord(Guid recordId, T record)
+		/// <summary>
+		/// Hàm xử lý logic khi sửa đổi 1 bản ghi
+		/// </summary>
+		/// <param name="recordId">Id bản ghi muốn sửa đổi</param>
+		/// <param name="record">Bản ghi muốn sửa đổi</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult UpdateRecord(Guid recordId, T record)
         {
             // Validate dữ liệu đầu vào
             var validateResult = ValidateRequesData(record);
@@ -222,15 +241,19 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
         }
 
-		
 
-		
+
+
 
 		/// <summary>
 		/// Hàm validate chung dữ liệu 
 		/// </summary>
 		/// <param name="record">bản ghi cần validate</param>
-		/// <returns>Kết quả validate dữ liệu</returns>
+		/// <returns>
+		/// Đối tượng ValidateResult thể hiện kết quả việc thực hiện validate:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		protected virtual ValidateResult ValidateRequesData(T record)
 		{
@@ -251,7 +274,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Hàm validate giá trị các thuộc tính không được để trống
 		/// </summary>
 		/// <param name="record">Đối tượng chứa các thuộc tính</param>
-		/// <returns>Kết quả validate</returns>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// true: thành công
+		/// false: thất bại
+		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		private bool ValidateEmpty(T record)
 		{
@@ -285,46 +312,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		}
 
 		/// <summary>
-		/// Hàm validate giá trị các thuộc tính kiểu số
-		/// </summary>
-		/// <param name="record">Đối tượng chứa các thuộc tính</param>
-		/// <returns>Kết quả validate</returns>
-		/// Created by: LTViet (20/03/2023)
-		protected virtual ValidateResult ValidatePropertyNumber(T record)
-        {
-			List<String> validateNumber = new();
-			var properties = typeof(T).GetProperties();
-			foreach (var property in properties)
-            {
-				var propValue = property.GetValue(record);
-				string propName = property.Name;
-				if (property.IsDefined(typeof(HcsnNumberAttribute), false))
-				{
-					var attHcsnNumber = property.GetCustomAttributes(typeof(HcsnNumberAttribute), false).FirstOrDefault();
-					var propType = (attHcsnNumber as HcsnNumberAttribute).PropType;
-					if (propType == (object)TypeValue.Rate && ((double)propValue < 0 || (double)propValue > 100))
-					{
-						validateNumber.Add(propName);
-					}
-				}
-			}
-            if (validateNumber.Count > 0)
-            {
-				return new ValidateResult
-				{
-					IsSuccess = false,
-					ValidateCode = ValidateCode.OutOfRate,
-					Data = validateNumber
-				};
-			}
-            return new ValidateResult { IsSuccess = true };
-		}
-
-		/// <summary>
 		/// Hàm validate riêng dữ liệu 
 		/// </summary>
 		/// <param name="record">bản ghi cần validate</param>
-		/// <returns>Kết quả validate dữ liệu</returns>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// true: thành công
+		/// false: thất bại
+		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		protected virtual bool ValidateCustom(T record)
         {

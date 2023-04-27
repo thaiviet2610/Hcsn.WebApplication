@@ -22,7 +22,15 @@ namespace Hcsn.WebApplication.Common.Constants
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
 	public class HcsnDuplicateAttribute : Attribute
 	{
-
+		/// <summary>
+		/// Attribute thể hiện các trường không được phép trùng
+		/// </summary>
+		/// <param name="name"> tên thuộc tính cần kiểm tra</param>
+		public HcsnDuplicateAttribute(string name)
+		{
+			Name = name;
+		}
+		public string Name { get; set; }
 
 	}
 

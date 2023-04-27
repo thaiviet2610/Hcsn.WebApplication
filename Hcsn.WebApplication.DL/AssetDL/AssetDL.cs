@@ -16,6 +16,8 @@ using System.Data.Common;
 using System.Collections;
 using Hcsn.WebApplication.DL.DBConfig;
 using Hcsn.WebApplication.Common.Constants.ProcedureName;
+using Newtonsoft.Json;
+using Hcsn.WebApplication.Common.Constants;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {
@@ -41,6 +43,10 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// Đối tượng PagingResult bao gồm:
 		/// - Danh sách tài sản trong 1 trang
 		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// - Tổng số lượng
+		/// - Tổng nguyên giá
+		/// - Tổng hao mòn lũy kế
+		/// - Tổng giá trị còn lại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		public PagingResultAsset GetPaging
@@ -61,22 +67,37 @@ namespace Hcsn.WebApplication.DL.AssetDL
             var dbConnection = _assetRepository.GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
             var result = _assetRepository.QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-            var data = result.Read<FixedAssetDTO>().ToList();
-            int totalRecord = result.Read<int>().Single();
-            int quantityTotal = result.Read<int>().Single();
-            decimal costTotal = result.Read<decimal>().Single();
+			var data = result.Read<FixedAssetDTO>().ToList();
+			int totalRecord = result.Read<int>().Single();
+			int quantityTotal = result.Read<int>().Single();
+			decimal costTotal = result.Read<decimal>().Single();
 			decimal depreciationValueTotal = result.Read<decimal>().Single();
-			decimal residualTotal = result.Read<decimal>().Single();
+			decimal residualValueTotal = result.Read<decimal>().Single();
+			var assetsDTO = new List<FixedAssetDTO>();
+			foreach (var asset in data)
+			{
+				
+				string costString = asset.cost_new;
+				decimal cost = 0;
+				var priceAssetDTOList = JsonConvert.DeserializeObject<List<PriceAssetDTO>>(costString);
+                foreach (var item in priceAssetDTOList)
+                {
+					cost += item.mount;
+                }
+				asset.cost = cost;
+				assetsDTO.Add(asset);
+			}
+			
 			dbConnection.Close();
             // Xử lý kết quả trả về
             return new PagingResultAsset
             {
-                Data = data,
+                Data = assetsDTO,
                 TotalRecord = totalRecord,
                 QuantityTotal = quantityTotal,
                 CostTotal = costTotal,
                 DepreciationValueTotal = depreciationValueTotal,
-                ResidualValueTotal = residualTotal,
+                ResidualValueTotal = residualValueTotal,
             };
         }
 
@@ -92,13 +113,9 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			var duplicateProperty = typeof(FixedAsset).GetProperties().FirstOrDefault(prop => prop.Name == propertyName);
 			var propertyValue = duplicateProperty.GetValue(asset);
 			var assetId = asset.fixed_asset_id;
-			var arr = propertyName.Split('_');
-			string name = "";
-			foreach(var item in arr)
-			{
-				name += item;
-			}
-			string storedProcedureNameGetNumberRecordOfPropertyDuplicate = String.Format(ProcedureName.CheckDuplicate, typeof(FixedAsset).Name, name);
+			var attHcsnDuplicate = duplicateProperty.GetCustomAttributes(typeof(HcsnDuplicateAttribute), false).FirstOrDefault();
+			var propDuplicateName = (attHcsnDuplicate as HcsnDuplicateAttribute).Name;
+			string storedProcedureNameGetNumberRecordOfPropertyDuplicate = String.Format(ProcedureName.CheckDuplicate, typeof(FixedAsset).Name, propDuplicateName);
 			var parametersCheckSameCode = new DynamicParameters();
 			parametersCheckSameCode.Add($"p_{propertyName}", propertyValue);
 			parametersCheckSameCode.Add("p_id", assetId);
@@ -145,14 +162,19 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
-		/// <param name="ids">Danh sách các id của các tài sản không cần lấy ra</param>
+		/// <param name="notInIdAssets">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
+		/// <param name="activeIdAssets">Danh sách các id của các tài sản đã active cần lấy ra</param>
 		/// <returns> 
 		/// Đối tượng PagingResult bao gồm:
 		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
 		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// - Tổng số lượng
+		/// - Tổng nguyên giá
+		/// - Tổng hao mòn lũy kế
+		/// - Tổng giá trị còn lại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		public PagingResultAsset GetAllAssetNotIn(string keyword, int pageSize, int pageNumber, List<Guid> ids)
+		public PagingResultAsset GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets)
 		{
 			// Chuẩn bị tên stored procedure
 			string storedProcedureName = String.Format(ProcedureName.FilterRecordNotIn, typeof(FixedAsset).Name);
@@ -163,15 +185,9 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			parameters.Add("p_keyword", keyword);
 			parameters.Add("p_limit", limit);
 			parameters.Add("p_offset", offset);
-			if (ids != null)
-			{
-				var listIdToString = $"('{string.Join("','", ids)}')";
-				parameters.Add("p_ids", listIdToString);
-			}
-			else
-			{
-				parameters.Add("p_ids", null);
-			}
+			parameters.Add("p_not_in_ids", notInIdAssets==null ? null: $"('{string.Join("','", notInIdAssets)}')");
+			parameters.Add("p_active_ids", activeIdAssets == null ? null: $"('{string.Join("','", activeIdAssets)}')");
+
 			// Khởi tạo kết nối tới Database
 			var dbConnection = _assetRepository.GetOpenConnection();
 			// Thực hiện gọi vào Database để chạy stored procedure
@@ -181,17 +197,31 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			int quantityTotal = result.Read<int>().Single();
 			decimal costTotal = result.Read<decimal>().Single();
 			decimal depreciationValueTotal = result.Read<decimal>().Single();
-			decimal residualTotal = result.Read<decimal>().Single();
+			decimal residualValueTotal = result.Read<decimal>().Single();
+			var assetsDTO = new List<FixedAssetDTO>();
+			foreach (var asset in data)
+			{
+
+				string costString = asset.cost_new;
+				decimal cost = 0;
+				var priceAssetDTOList = JsonConvert.DeserializeObject<List<PriceAssetDTO>>(costString);
+				foreach (var item in priceAssetDTOList)
+				{
+					cost += item.mount;
+				}
+				asset.cost = cost;
+				assetsDTO.Add(asset);
+			}
 			dbConnection.Close();
 			// Xử lý kết quả trả về
 			return new PagingResultAsset
 			{
-				Data = data,
+				Data = assetsDTO,
 				TotalRecord = totalRecord,
 				QuantityTotal = quantityTotal,
 				CostTotal = costTotal,
 				DepreciationValueTotal = depreciationValueTotal,
-				ResidualValueTotal = residualTotal,
+				ResidualValueTotal = residualValueTotal,
 			};
 		}
 		#endregion
