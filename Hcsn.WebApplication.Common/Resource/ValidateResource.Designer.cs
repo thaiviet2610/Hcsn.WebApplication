@@ -61,6 +61,33 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nguồn chi phí {0} đã tồn tại!.
+        /// </summary>
+        public static string CostSourceDuplicate {
+            get {
+                return ResourceManager.GetString("CostSourceDuplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Các thuộc tính của nguồn chi phí không được để trống.
+        /// </summary>
+        public static string CostSourceEmpty {
+            get {
+                return ResourceManager.GetString("CostSourceEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Giá trị của nguồn chi phải lớn hơn 0.
+        /// </summary>
+        public static string CostSourceMountLessOrEqualThanZero {
+            get {
+                return ResourceManager.GetString("CostSourceMountLessOrEqualThanZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng..
         /// </summary>
         public static string DepreciationRateDifferentLifeTime {

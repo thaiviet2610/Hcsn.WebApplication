@@ -111,7 +111,7 @@ namespace Hcsn.WebApplication.Common.Entities
 		[HcsnMaxLength(14)]
 		public decimal cost { get; set; }
 
-		public string cost_new { get; set; }
+		public string cost_source { get; set; }
 
         /// <summary>
         /// Số lượng

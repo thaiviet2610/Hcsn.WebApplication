@@ -67,32 +67,18 @@ namespace Hcsn.WebApplication.DL.AssetDL
             var dbConnection = _assetRepository.GetOpenConnection();
             // Thực hiện gọi vào Database để chạy stored procedure
             var result = _assetRepository.QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-			var data = result.Read<FixedAssetDTO>().ToList();
+			var assetDTOs = result.Read<FixedAssetDTO>().ToList();
 			int totalRecord = result.Read<int>().Single();
 			int quantityTotal = result.Read<int>().Single();
 			decimal costTotal = result.Read<decimal>().Single();
 			decimal depreciationValueTotal = result.Read<decimal>().Single();
 			decimal residualValueTotal = result.Read<decimal>().Single();
-			var assetsDTO = new List<FixedAssetDTO>();
-			foreach (var asset in data)
-			{
-				
-				string costString = asset.cost_new;
-				decimal cost = 0;
-				var priceAssetDTOList = JsonConvert.DeserializeObject<List<PriceAssetDTO>>(costString);
-                foreach (var item in priceAssetDTOList)
-                {
-					cost += item.mount;
-                }
-				asset.cost = cost;
-				assetsDTO.Add(asset);
-			}
 			
 			dbConnection.Close();
             // Xử lý kết quả trả về
             return new PagingResultAsset
             {
-                Data = assetsDTO,
+                Data = assetDTOs,
                 TotalRecord = totalRecord,
                 QuantityTotal = quantityTotal,
                 CostTotal = costTotal,
@@ -192,31 +178,17 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			var dbConnection = _assetRepository.GetOpenConnection();
 			// Thực hiện gọi vào Database để chạy stored procedure
 			var result = _assetRepository.QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-			var data = result.Read<FixedAssetDTO>().ToList();
+			var assetDTOs = result.Read<FixedAssetDTO>().ToList();
 			int totalRecord = result.Read<int>().Single();
 			int quantityTotal = result.Read<int>().Single();
 			decimal costTotal = result.Read<decimal>().Single();
 			decimal depreciationValueTotal = result.Read<decimal>().Single();
 			decimal residualValueTotal = result.Read<decimal>().Single();
-			var assetsDTO = new List<FixedAssetDTO>();
-			foreach (var asset in data)
-			{
-
-				string costString = asset.cost_new;
-				decimal cost = 0;
-				var priceAssetDTOList = JsonConvert.DeserializeObject<List<PriceAssetDTO>>(costString);
-				foreach (var item in priceAssetDTOList)
-				{
-					cost += item.mount;
-				}
-				asset.cost = cost;
-				assetsDTO.Add(asset);
-			}
 			dbConnection.Close();
 			// Xử lý kết quả trả về
 			return new PagingResultAsset
 			{
-				Data = assetsDTO,
+				Data = assetDTOs,
 				TotalRecord = totalRecord,
 				QuantityTotal = quantityTotal,
 				CostTotal = costTotal,

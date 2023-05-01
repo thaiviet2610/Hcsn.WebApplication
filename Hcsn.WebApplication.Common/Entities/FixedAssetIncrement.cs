@@ -28,6 +28,7 @@ namespace Hcsn.WebApplication.Common.Entities
 		public DateTime? increment_date { get; set; }
 
 		[HcsnName("Tổng nguyên giá")]
+		[HcsnMaxLength(19)]
 		public decimal price { get; set; }
 
 		[HcsnMaxLength(255)]

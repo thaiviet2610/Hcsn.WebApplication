@@ -18,11 +18,14 @@ namespace Hcsn.WebApplication.Common.Entities
 		/// <summary>
 		/// Mã nguồn hình thành
 		/// </summary>
-        public string budget_code { get; set; }
+		[HcsnCode]
+		[HcsnRequired]
+		public string budget_code { get; set; }
 
 		/// <summary>
 		/// Tên nguồn hình thành
 		/// </summary>
-        public string budget_name { get; set; }
+		[HcsnRequired] 
+		public string budget_name { get; set; }
 	}
 }

@@ -65,7 +65,7 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 		/// <summary>
 		/// Nguyên giá
 		/// </summary>
-		public string cost_new { get; set; }
+		public string cost_source { get; set; }
 
 		/// <summary>
 		/// Số lượng
@@ -87,5 +87,13 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 		/// Giá trị còn lại
 		/// </summary>
 		public decimal residual_value { get; set; }
+
+		/// <summary>
+		/// Mã chứng từ
+		/// </summary>
+		public string? voucher_code { get; set; }
+
+
+		
 	}
 }

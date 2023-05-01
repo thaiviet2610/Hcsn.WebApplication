@@ -59,6 +59,26 @@ namespace Hcsn.WebApplication.Common.Enums
 		/// <summary>
 		/// Lỗi khi insert chứng từ thì danh sách tài sản rỗng
 		/// </summary>
-		NoAssetIncrements = 10
-    }
+		NoAssetIncrements = 10,
+
+        /// <summary>
+        /// Lỗi khi 1 trong các thuộc tính của nguồn chi phí rỗng
+        /// </summary>
+        CostSourceEmpty = 11,
+
+		/// <summary>
+		/// Lỗi khi giá trị của nguồn chi phí nhỏ hơn hoặc bằng 0
+		/// </summary>
+		CostSourceMountLessOrEqualThanZero = 12,
+
+		/// <summary>
+		/// Lỗi khi có 2 nguồn chi phí trùng nhau
+		/// </summary>
+		CostSourceDuplicate = 13,
+
+		/// <summary>
+		/// Lỗi khi dữ liệu của nguồn chi phí không hợp lệ
+		/// </summary>
+		CostSourceInValid = 14,
+	}
 }
