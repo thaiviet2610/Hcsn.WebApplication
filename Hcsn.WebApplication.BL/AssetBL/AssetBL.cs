@@ -344,11 +344,14 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			foreach (var property in properties)
 			{
 				var propValue = property.GetValue(asset);
-				bool isDuplicate = IsPropertyDuplicate(asset, property);
 				bool isOutMaxLength = IsOutMaxLength(property, propValue);
 				bool isOutRangeOfRate = IsOutRangeOfRate(property, propValue);
-
-				if (!isDuplicate | !isOutMaxLength | !isOutRangeOfRate)
+				bool isDuplicate = true;
+				if (isOutMaxLength)
+				{
+					isDuplicate = IsPropertyDuplicate(asset, property);
+				}
+				if (!isOutMaxLength || !isOutRangeOfRate || !isDuplicate)
 				{
 					check = false;
 				}
@@ -360,8 +363,8 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			bool isDepreciationRateDifferentOnePerLifeTime = IsDepreciationRateDifferentOnePerLifeTime(asset);
 			bool isProductionYearGreaterThanPurchaseDate = IsProductionYearGreaterThanPurchaseDate(asset);
 
-			if(!isValidCostSource | !isPropertyNumberGreaterThanZero | !isDepreciationYearGreaterThanCost 
-				| !isDepreciationRateDifferentOnePerLifeTime | !isProductionYearGreaterThanPurchaseDate)
+			if(!isValidCostSource || !isPropertyNumberGreaterThanZero || !isDepreciationYearGreaterThanCost 
+				|| !isDepreciationRateDifferentOnePerLifeTime || !isProductionYearGreaterThanPurchaseDate)
 			{
 				check = false;
 			}

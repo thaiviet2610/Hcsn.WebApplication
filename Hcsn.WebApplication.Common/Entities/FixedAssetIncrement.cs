@@ -34,8 +34,5 @@ namespace Hcsn.WebApplication.Common.Entities
 		[HcsnMaxLength(255)]
 		[HcsnName("Ghi chú")]
 		public string description { get; set; }
-
-
-
 	}
 }

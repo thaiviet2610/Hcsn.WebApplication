@@ -25,7 +25,7 @@ namespace Hcsn.WebApplication.Common.Entities
 		/// <summary>
 		/// Tên nguồn hình thành
 		/// </summary>
-		[HcsnRequired] 
+		[HcsnRequired]
 		public string budget_name { get; set; }
 	}
 }

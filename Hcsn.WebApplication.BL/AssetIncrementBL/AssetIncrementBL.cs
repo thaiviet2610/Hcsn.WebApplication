@@ -181,10 +181,13 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			{
 				string propName = property.Name;
 				var propValue = property.GetValue(assetIncrement);
-				bool isDuplicate = IsPropertyDuplicate(assetIncrement, property, propName, propValue);
 				bool isOutMaxLength = IsOutMaxLength(property, propName, propValue);
-
-				if (!isDuplicate | !isOutMaxLength)
+				bool isDuplicate = true;
+				if (isOutMaxLength)
+				{
+					isDuplicate = IsPropertyDuplicate(assetIncrement, property, propName, propValue);
+				}
+				if (!isOutMaxLength || !isDuplicate)
 				{
 					check = false;
 				}

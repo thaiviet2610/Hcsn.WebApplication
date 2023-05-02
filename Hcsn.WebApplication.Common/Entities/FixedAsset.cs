@@ -108,7 +108,7 @@ namespace Hcsn.WebApplication.Common.Entities
 		[HcsnNumber(NumberType.Decimal)]
 		[HcsnGreateThanZero]
         [HcsnName("Nguyên giá")]
-		[HcsnMaxLength(14)]
+		[HcsnMaxLength(19)]
 		public decimal cost { get; set; }
 
 		public string cost_source { get; set; }
@@ -120,7 +120,7 @@ namespace Hcsn.WebApplication.Common.Entities
 		[HcsnNumber(NumberType.Int)]
 		[HcsnGreateThanZero]
         [HcsnName("Số lượng")]
-		[HcsnMaxLength(14)]
+		[HcsnMaxLength(19)]
 		public int quantity { get; set; }
 
 		/// <summary>
@@ -145,7 +145,7 @@ namespace Hcsn.WebApplication.Common.Entities
         [HcsnNumber(NumberType.Int)]
 		[HcsnGreateThanZero]
 		[HcsnName("Số năm sử dụng")]
-		[HcsnMaxLength(14)]
+		[HcsnMaxLength(19)]
 		public int life_time { get; set; }
 
         /// <summary>
