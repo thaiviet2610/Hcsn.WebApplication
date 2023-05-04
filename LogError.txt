@@ -4577,3 +4577,133 @@ An item with the same key has already been added. Key: server=localhost;port=330
    at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
    at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
    at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQCGFU10SRH:00000005
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQCJQSNK0DN:00000003
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQCKTRCCTAB:0000000B
+Procedure or function '`UPDATE fixed_asset_increment fai SET fai.price = p_price WHERE fai.voucher_id = p_voucher_id`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQCKVRV7B65:00000007
+Procedure or function '`UPDATE fixed_asset_increment fai SET fai.price = p_price WHERE fai.voucher_id = p_voucher_id`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQCL4ONOQ7K:0000000B
+Procedure or function '`UPDATE fixed_asset_increment fai SET fai.price = @p_price WHERE fai.voucher_id = @p_voucher_id`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQCL5LUDI7S:0000000B
+Procedure or function '`UPDATE fixed_asset_increment fai SET fai.price = @p_price WHERE fai.voucher_id = @p_voucher_id`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQCL8QJEV67:0000000B
+Procedure or function 'Proc_{0}_UpdatePrice' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQCL8QJEV67:0000001D
+Procedure or function 'Proc_{0}_UpdatePrice' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2848
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 581
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 452
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 36
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321

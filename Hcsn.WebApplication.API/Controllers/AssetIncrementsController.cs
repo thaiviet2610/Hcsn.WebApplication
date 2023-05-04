@@ -304,6 +304,70 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
+		/// Hàm sửa đổi tổng nguyên giá của bản ghi chứng từ
+		/// </summary>
+		/// <param name="voucherId">Id của chứng từ cần sửa</param>
+		/// <param name="price">Giá trị của tổng nguyên giá</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/04/2023)
+		[HttpPut("Price")]
+		public IActionResult UpdateAssetIncrementPrice([FromQuery] Guid voucherId, [FromQuery] Decimal price )
+		{
+			try
+			{
+				var result = _assetIncrementBL.UpdateAssetIncrementPrice(voucherId, price);
+				if (result.IsSuccess)
+				{
+					return StatusCode(StatusCodes.Status200OK);
+				}
+				else if (!result.IsSuccess && result.ErrorCode == ErrorCode.InvalidateData)
+				{
+					return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
+					{
+						ErrorCode = ErrorCode.InvalidateData,
+						DevMsg = ErrorResource.DevMsg_InvalidData,
+						UserMsg = ErrorResource.UserMsg_InvalideData,
+						TraceId = HttpContext.TraceIdentifier,
+						MoreInfo = result.Data,
+					});
+				}
+				else
+				{
+					return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+					{
+						ErrorCode = ErrorCode.UpdateFailed,
+						DevMsg = ErrorResource.DevMsg_UpdateFailed,
+						UserMsg = ErrorResource.UserMsg_UpdateFailed,
+						TraceId = HttpContext.TraceIdentifier,
+						MoreInfo = result.Data,
+					});
+				}
+			}
+			catch (Exception ex)
+			{
+				string traceId = HttpContext.TraceIdentifier;
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(traceId);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+				{
+					ErrorCode = ErrorCode.Exception,
+					DevMsg = ErrorResource.DevMsg_Exception,
+					UserMsg = ErrorResource.UserMsg_Exception,
+					TraceId = traceId,
+					MoreInfo = ErrorResource.Exception_MoreInfo,
+				});
+
+			}
+		}
+
+		/// <summary>
 		/// API xóa 1 bản ghi chứng từ
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>

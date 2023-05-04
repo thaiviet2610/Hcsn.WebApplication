@@ -70,6 +70,19 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		ServiceResult UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List<Guid>? assetsAdd, List<Guid>? assetsDelete);
 
 		/// <summary>
+		/// Hàm sửa đổi tổng nguyên giá của bản ghi chứng từ
+		/// </summary>
+		/// <param name="voucherId">Id của chứng từ cần sửa</param>
+		/// <param name="price">Giá trị của tổng nguyên giá</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện sửa:
+		/// IsSuccess == true: sửa thành công
+		/// IsSuccess == false: sửa thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		ServiceResult UpdateAssetIncrementPrice(Guid voucherId, Decimal price);
+
+		/// <summary>
 		/// Hàm gọi database thực hiện việc xóa 1 bản ghi
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>

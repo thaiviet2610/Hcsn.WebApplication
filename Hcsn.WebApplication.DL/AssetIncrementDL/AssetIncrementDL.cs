@@ -355,6 +355,35 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		}
 
 		/// <summary>
+		/// Hàm sửa đổi tổng nguyên giá của bản ghi chứng từ
+		/// </summary>
+		/// <param name="voucherId">Id của chứng từ cần sửa</param>
+		/// <param name="price">Giá trị của tổng nguyên giá</param>
+		/// <returns>
+		/// 1: update thành công
+		/// 0: update thất bại
+		/// </returns>
+		/// Created by: LTViet (20/04/2023)
+		public int UpdateAssetIncrementPrice(Guid voucherId,Decimal price)
+		{
+			// Chuẩn bị tên stored procedure
+			string storedProcedureName = ProcedureNameAssetIncrement.UpdatePrice;
+			// Chuẩn bị tham số đầu vào cho stored
+			var parameters = new DynamicParameters();
+			parameters.Add("p_voucher_id", voucherId);
+			parameters.Add("p_price", price);
+			// Khởi tạo kết nối tới Database
+			var dbConnection = _assetIncrementRepository.GetOpenConnection();
+			
+			// Thực hiện gọi vào Database để chạy stored procedure
+			int numberOfAffectedRows = _assetIncrementRepository.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
+			
+			dbConnection.Close();
+			// Xử lý kết quả trả về
+			return numberOfAffectedRows;
+		}
+
+		/// <summary>
 		/// Hàm gọi database thực hiện việc xóa 1 bản ghi
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>

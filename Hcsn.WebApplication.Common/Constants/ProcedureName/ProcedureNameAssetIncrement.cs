@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Constants.ProcedureName
 {
-	public class ProcedureNameAssetIncrementDetail
+	public class ProcedureNameAssetIncrement
 	{
 		/// <summary>
-		/// Thêm 1 bản ghi mới
+		/// Sửa thông tin tổng nguyên giá của một chứng từ
 		/// </summary>
-		public static string Insert = "Proc_{0}_Insert";
+		public static string UpdatePrice = "Proc_FixedAssetIncrement_UpdatePrice";
 	}
 }

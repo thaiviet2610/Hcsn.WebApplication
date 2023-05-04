@@ -71,6 +71,18 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		bool UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO,List<Guid>? assetsAdd, List<Guid>? assetsDelete);
 
 		/// <summary>
+		/// Hàm sửa đổi tổng nguyên giá của bản ghi chứng từ
+		/// </summary>
+		/// <param name="voucherId">Id của chứng từ cần sửa</param>
+		/// <param name="price">Giá trị của tổng nguyên giá</param>
+		/// <returns>
+		/// 1: update thành công
+		/// 0: update thất bại
+		/// </returns>
+		/// Created by: LTViet (20/04/2023)
+		public int UpdateAssetIncrementPrice(Guid voucherId, Decimal price);
+
+		/// <summary>
 		/// Hàm gọi database thực hiện việc xóa 1 bản ghi
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>

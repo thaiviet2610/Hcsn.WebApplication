@@ -199,6 +199,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				{
 					isDuplicate = IsPropertyDuplicate(assetIncrement, property, propName, propValue);
 				}
+
 				if (!isOutMaxLength || !isDuplicate)
 				{
 					check = false;
@@ -420,6 +421,40 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			return new ServiceResult
 			{
 				IsSuccess = isUpdateSuccess,
+				ErrorCode = ErrorCode.UpdateFailed,
+				Message = ServiceResource.UpdateFailed,
+			};
+		}
+
+		/// <summary>
+		/// Hàm sửa đổi tổng nguyên giá của bản ghi chứng từ
+		/// </summary>
+		/// <param name="voucherId">Id của chứng từ cần sửa</param>
+		/// <param name="price">Giá trị của tổng nguyên giá</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện sửa:
+		/// IsSuccess == true: sửa thành công
+		/// IsSuccess == false: sửa thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		public ServiceResult UpdateAssetIncrementPrice(Guid voucherId, Decimal price)
+		{
+			if (price <= 0)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.InvalidateData,
+					Message = ServiceResource.InvalidData,
+				};
+			}
+
+			// Thành công
+
+			var isUpdateSuccess = _assetIncrementDL.UpdateAssetIncrementPrice(voucherId, price);
+			return new ServiceResult
+			{
+				IsSuccess = isUpdateSuccess == 1,
 				ErrorCode = ErrorCode.UpdateFailed,
 				Message = ServiceResource.UpdateFailed,
 			};
