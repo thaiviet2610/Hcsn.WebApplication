@@ -13,6 +13,7 @@ namespace Hcsn.WebApplication.Common.Constants.ProcedureName
         /// </summary>
         public static string Insert = "Proc_{0}_Insert";
 
+
         /// <summary>
         /// Lấy thông tin tất cả các bản ghi
         /// </summary>

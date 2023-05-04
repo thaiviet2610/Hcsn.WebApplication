@@ -21,7 +21,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true:  thành công
 		/// IsSuccess == false: thất bại
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult GetPaging(string? keyword, int pageSize, int pageNumber);
 
 		/// <summary>
@@ -33,15 +33,26 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: thêm mới thành công
 		/// IsSuccess == false: thêm mới thất bại
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult InsertAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO);
 
 		/// <summary>
 		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
 		/// <returns>Kết quả sinh mã code mới</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult GetNewCode();
 
+		/// <summary>
+		/// Hàm xử lý logic khi lấy thông tin chi tiết 1 chứng từ theo id từ tầng DL 
+		/// </summary>
+		/// <param name="assetIncrementId">Id chứng từ muốn lấy</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult GetById(Guid assetIncrementId);
 
 		/// <summary>
@@ -55,7 +66,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: sửa thành công
 		/// IsSuccess == false: sửa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List<Guid>? assetsAdd, List<Guid>? assetsDelete);
 
 		/// <summary>
@@ -67,7 +78,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: xóa thành công
 		/// IsSuccess == false: xóa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult DeleteAssetIncrementById(Guid voucherId);
 
 		/// <summary>
@@ -79,7 +90,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: xóa thành công
 		/// IsSuccess == false: xóa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		ServiceResult DeleteMultipleAssetIncrement(List<Guid> ids);
 	}
 }

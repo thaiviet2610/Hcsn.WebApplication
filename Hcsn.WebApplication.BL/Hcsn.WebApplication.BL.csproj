@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Hcsn.WebApplication.DL\Hcsn.WebApplication.DL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AssetIncrementDetail\" />
-  </ItemGroup>
-
 </Project>

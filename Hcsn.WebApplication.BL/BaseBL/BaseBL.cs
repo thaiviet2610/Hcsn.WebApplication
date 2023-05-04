@@ -44,6 +44,17 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Created by: LTViet (20/03/2023)
 		public ServiceResult DeleteRecord(Guid recordId)
         {
+			var validate = ValidateCustomDelete(new List<Guid>() { recordId });
+			if(!validate.IsSuccess)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.InvalidateData,
+					Message = ServiceResource.InvalidData,
+					Data = validate
+				};
+			}
             var numberOfAffectedRows = _baseDL.DeleteRecord(recordId);
             if (numberOfAffectedRows == 0)
             {
@@ -72,6 +83,17 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Created by: LTViet (20/03/2023)
 		public ServiceResult DeleteMultipleRecord(List<Guid> entitiesId)
 		{
+			var validate = ValidateCustomDelete(entitiesId);
+			if (!validate.IsSuccess)
+			{
+				return new ServiceResult
+				{
+					IsSuccess = false,
+					ErrorCode = ErrorCode.InvalidateData,
+					Message = ServiceResource.InvalidData,
+					Data = validate
+				};
+			}
 			var numberOfAffectedRows = _baseDL.DeleteMultipleRecord(entitiesId);
 			if (numberOfAffectedRows == 0)
 			{
@@ -125,7 +147,6 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
 		/// IsSuccess == true: thành công
 		/// IsSuccess == false: thất bại
-		/// </returns>
 		/// </returns>
 		/// Created by: LTVIET (20/03/2023)
 		public ServiceResult GetRecordById(Guid recordId)
@@ -312,7 +333,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		}
 
 		/// <summary>
-		/// Hàm validate riêng dữ liệu 
+		/// Hàm validate riêng dữ liệu cho việc thêm mới hoặc sửa bản ghi
 		/// </summary>
 		/// <param name="record">bản ghi cần validate</param>
 		/// <returns>
@@ -326,7 +347,25 @@ namespace Hcsn.WebApplication.BL.BaseBL
             return true;
         }
 
-		
+		/// <summary>
+		/// Hàm validate riêng dữ liệu cho việc xóa bản ghi
+		/// </summary>
+		/// <param name="recordsId">Danh sách Id các bản ghi cần validate</param>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		protected virtual ValidateResult ValidateCustomDelete(List<Guid> recordsId)
+		{
+			return new ValidateResult
+			{
+				IsSuccess = true
+			};
+		}
+
+
 
 
 		#endregion

@@ -3,14 +3,8 @@ using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Entities;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.Common.Resource;
-using Hcsn.WebApplication.DL.AssetIncrementTest1DL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Hcsn.WebApplication.DL.AssetIncrementDL;
 
 namespace Hcsn.WebApplication.BL.AssetIncrementBL
@@ -43,7 +37,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: thêm mới thành công
 		/// IsSuccess == false: thêm mới thất bại
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult GetPaging(string? keyword, int pageSize, int pageNumber)
 		{
 			var result = _assetIncrementDL.GetPaging(keyword, pageSize, pageNumber);
@@ -56,6 +50,16 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			};
 		}
 
+		/// <summary>
+		/// Hàm xử lý logic khi lấy thông tin chi tiết 1 chứng từ theo id từ tầng DL 
+		/// </summary>
+		/// <param name="assetIncrementId">Id chứng từ muốn lấy</param>
+		/// <returns>
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult GetById(Guid assetIncrementId)
 		{
 			var assetIncrement = _assetIncrementDL.GetById(assetIncrementId);
@@ -77,25 +81,23 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: thêm mới thành công
 		/// IsSuccess == false: thêm mới thất bại
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult InsertAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO)
 		{
-			
 			var assets = assetIncrementDTO.assets;
 			var validateResult = ValidateRequesData(assetIncrementDTO);
-			
-
+			// Thất bại
 			if (!validateResult.IsSuccess)
 			{
 				return new ServiceResult
 				{
-					// Thất bại
 					IsSuccess = false,
 					ErrorCode = ErrorCode.InvalidateData,
 					Message = ServiceResource.InvalidData,
 					Data = validateResult.Data
 				};
 			}
-
+			// Thành công
 			int numberOfAffectedRows = _assetIncrementDL.InsertAssetIncrement(assetIncrementDTO, assets);
 			return new ServiceResult
 			{
@@ -110,7 +112,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// </summary>
 		/// <param name="assetIncrementDTO">bản ghi cần validate</param>
 		/// <returns>Kết quả validate dữ liệu</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ValidateResult ValidateRequesData(FixedAssetIncrementDTO assetIncrementDTO)
 		{
 			var validateEmptyResult = ValidateEmpty(assetIncrementDTO);
@@ -140,7 +142,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// </summary>
 		/// <param name="assetIncrement">Đối tượng chứa các thuộc tính</param>
 		/// <returns>Kết quả validate</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		private bool ValidateEmpty(FixedAssetIncrement assetIncrement)
 		{
 			bool check = true;
@@ -172,6 +174,16 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			return check;
 		}
 
+		/// <summary>
+		/// Hàm validate riêng dữ liệu 
+		/// </summary>
+		/// <param name="assetIncrement">Đối tượng chứng từ cần validate</param>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// true: thành công
+		/// false: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/04/2023)
 		public bool ValidateCustom(FixedAssetIncrement assetIncrement)
 		{
 			bool check = true;
@@ -207,7 +219,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// true: Không có lỗi
 		/// flase: Có lỗi
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		private bool IsPropertyDuplicate(FixedAssetIncrement assetIncrement, PropertyInfo property, string propName, object? propValue)
 		{
 			bool check = true;
@@ -246,7 +258,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: không bị trùng
 		/// IsSuccess == false:  bị trùng
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ValidateResult IsDuplicate(FixedAssetIncrement assetIncrement, string propertyName)
 		{
 			var numberOfAffectedRows = _assetIncrementDL.GetNumberRecordOfPropertyDuplicate(assetIncrement, propertyName);
@@ -268,7 +280,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// true: Không có lỗi
 		/// flase: Có lỗi
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		private bool IsOutMaxLength(PropertyInfo property, string propName, object? propValue)
 		{
 			bool check = true;
@@ -302,7 +314,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
 		/// <returns>Đối tượng mã code mới</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult GetNewCode()
 		{
 			var oldCode = _assetIncrementDL.GetNewCode();
@@ -318,7 +330,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// </summary>
 		/// <param name="oldCode">Code cần tách ra</param>
 		/// <returns>Code mới</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		private string GenerateNewCode(string? oldCode)
 		{
 			// Thành công
@@ -385,16 +397,16 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: sửa thành công
 		/// IsSuccess == false: sửa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List<Guid>? assetsAdd, List<Guid>? assetsDelete)
 		{
 			// Validate dữ liệu đầu vào
 			var validateResult = ValidateRequesData(assetIncrementDTO);
+			// Thất bại
 			if (!validateResult.IsSuccess)
 			{
 				return new ServiceResult
 				{
-					// Thất bại
 					IsSuccess = false,
 					ErrorCode = ErrorCode.InvalidateData,
 					Message = ServiceResource.InvalidData,
@@ -422,7 +434,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: xóa thành công
 		/// IsSuccess == false: xóa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult DeleteAssetIncrementById(Guid voucherId)
 		{
 			var numberOfAffectedRows = _assetIncrementDL.DeleteAssetIncrementById(voucherId);
@@ -443,7 +455,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: xóa thành công
 		/// IsSuccess == false: xóa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult DeleteMultipleAssetIncrement(List<Guid> ids)
 		{
 			var numberOfAffectedRows = _assetIncrementDL.DeleteMultipleAssetIncrement(ids);

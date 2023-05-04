@@ -88,6 +88,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Không được xóa tài sản đã chứng từ.
+        /// </summary>
+        public static string DeleteAssetActive {
+            get {
+                return ResourceManager.GetString("DeleteAssetActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng..
         /// </summary>
         public static string DepreciationRateDifferentLifeTime {

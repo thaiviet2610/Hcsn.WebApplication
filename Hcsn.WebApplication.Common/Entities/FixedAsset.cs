@@ -160,6 +160,6 @@ namespace Hcsn.WebApplication.Common.Entities
         /// Trạng thái sử dụng
         /// </summary>
         [AllowNull]
-        public bool? active { get; set; }   
+        public bool active { get; set; }   
 	}
 }

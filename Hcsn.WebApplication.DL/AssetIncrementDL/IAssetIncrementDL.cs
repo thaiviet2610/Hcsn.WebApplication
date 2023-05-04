@@ -37,7 +37,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <summary>
 		/// Hàm truy cập database lấy ra số bản ghi có cùng code nhưng khác id được truyền vào
 		/// </summary>
-		///	<param name="asset"> Đối tượng tài sản chứa thuôc tính cần kiểm tra trùng </param>
+		///	<param name="assetIncrement"> Đối tượng tài sản chứa thuôc tính cần kiểm tra trùng </param>
 		/// <param name="propertName">Tên thuộc tính cần kiểm tra</param>
 		/// <returns>Số bản ghi cần tìm</returns>
 		/// Created by: LTViet (20/03/2023)

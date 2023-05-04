@@ -126,6 +126,9 @@
   <data name="CostSourceMountLessOrEqualThanZero" xml:space="preserve">
     <value>Giá trị của nguồn chi phải lớn hơn 0</value>
   </data>
+  <data name="DeleteAssetActive" xml:space="preserve">
+    <value>Không được xóa tài sản đã chứng từ</value>
+  </data>
   <data name="DepreciationRateDifferentLifeTime" xml:space="preserve">
     <value>Tỷ lệ hao mòn phải bằng 1/Số năm sử dụng.</value>
   </data>

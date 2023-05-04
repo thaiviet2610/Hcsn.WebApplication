@@ -372,6 +372,36 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		}
 
 		/// <summary>
+		/// Hàm validate riêng dữ liệu cho việc xóa tài sản
+		/// </summary>
+		/// <param name="assetsId">Danh sách Id các tài sản cần validate</param>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		protected override ValidateResult ValidateCustomDelete(List<Guid> assetsId)
+		{
+			var inValidList = new List<Guid>();
+            foreach (var assetId in assetsId)
+            {
+				var asset = _assetDL.GetRecordById(assetId);
+				if (asset.active)
+				{
+					inValidList.Add(assetId);
+				}
+            }
+			return new ValidateResult
+			{
+				IsSuccess = inValidList.Count == 0,
+				ValidateCode = ValidateCode.DeleteAssetActive,
+				Message = ValidateResource.DeleteAssetActive,
+				Data = inValidList
+			};
+		}
+
+		/// <summary>
 		/// Hàm validate giá trị ngày mua phải là ngày diễn ra trước ngày sử dụng
 		/// </summary>
 		/// <param name="asset">Đối tượng tài sản cần validate</param>

@@ -4518,3 +4518,62 @@ An item with the same key has already been added. Key: server=localhost;port=330
    at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
    at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 103
    at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQBF2601UCV:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQC78HJHD77:00000005
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQC7SNA66JE:00000003
+There is already an open DataReader associated with this Connection which must be closed first.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQueryAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlTransaction.RollbackAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlTransaction.Rollback()
+   at MySql.Data.MySqlClient.MySqlTransaction.Dispose(Boolean disposing)
+   at System.Data.Common.DbTransaction.Dispose()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.InsertAssetIncrement(FixedAssetIncrement assetIncrement, List`1 assets) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 148
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.InsertAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 93
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.InsertAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 132
+0HMQC9EBLC3SJ:00000005
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQCCV1A1VIN:00000003
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40

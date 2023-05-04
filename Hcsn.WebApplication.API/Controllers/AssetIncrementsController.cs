@@ -1,5 +1,4 @@
-﻿using Hcsn.WebApplication.BL.AssetIncrementTest1BL;
-using Hcsn.WebApplication.BL.AssetIncrementBL;
+﻿using Hcsn.WebApplication.BL.AssetIncrementBL;
 using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.Common.Resource;
@@ -24,6 +23,15 @@ namespace Hcsn.WebApplication.API.Controllers
 		#endregion
 
 		#region Method
+		/// <summary>
+		/// API Lấy thông tin chi tiết 1 chứng từ theo id
+		/// </summary>
+		/// <param name="assetIncrementId">Id chứng từ muốn lấy</param>
+		/// <returns>
+		/// StatusCode == 200: thành công
+		/// StatusCode != 200: thất bại
+		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		[HttpGet("{assetIncrementId}")]
 		public IActionResult GetById([FromRoute] Guid assetIncrementId)
 		{
@@ -64,7 +72,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
-		/// API phân trang, lọc danh sách tài sản
+		/// API phân trang, lọc danh sách tài sản chứng từ
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm</param>
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param>
@@ -73,7 +81,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// StatusCode == 200: thành công
 		/// StatusCode != 200: thất bại
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		[HttpGet("Filter")]
 		public IActionResult GetPaging(
 			[FromQuery] string? keyword,
@@ -117,14 +125,14 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
-		/// Hàm thêm mới 1 bản ghi
+		/// Hàm thêm mới 1 bản ghi chứng từ
 		/// </summary>
-		/// <param name="assetIncrementDTO">Bản ghi muốn thêm</param>
+		/// <param name="assetIncrementDTO">Bản ghi chứng từ muốn thêm</param>
 		/// <returns>
 		/// StatusCode == 200: thành công
 		/// StatusCode != 200: thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		[HttpPost]
 		public IActionResult InsertAssetIncrement([FromBody] FixedAssetIncrementDTO assetIncrementDTO)
 		{
@@ -186,7 +194,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// StatusCode == 200: thành công
 		/// StatusCode != 200: thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		[HttpGet("NewCode")]
 		public IActionResult GetNewCode()
 		{
@@ -230,14 +238,14 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
-		/// Hàm sửa đổi 1 bản ghi
+		/// Hàm sửa đổi 1 bản ghi chứng từ
 		/// </summary>
-		/// <param name="assetIncrementUpdate">Đối tượng chứa thông tin để update</param>
+		/// <param name="assetIncrementUpdate">Đối tượng chứng từ chứa thông tin để update</param>
 		/// <returns>
 		/// StatusCode == 200: thành công
 		/// StatusCode != 200: thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		[HttpPut]
 		public IActionResult UpdateAssetIncrement([FromBody] FixedAssetIncrementUpdate assetIncrementUpdate)
 		{
@@ -296,14 +304,14 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
-		/// API xóa 1 bản ghi
+		/// API xóa 1 bản ghi chứng từ
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>
 		/// <returns>
 		/// StatusCode == 200: Nếu delete thành công
 		/// StatusCode != 200: Nếu delete thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		[HttpDelete("{voucherId}")]
 		public ActionResult DeleteRecordById([FromRoute] Guid voucherId)
 		{
@@ -345,14 +353,14 @@ namespace Hcsn.WebApplication.API.Controllers
 		}
 
 		/// <summary>
-		/// API xóa nhiều bản ghi
+		/// API xóa nhiều bản ghi chứng từ
 		/// </summary>
 		/// <param name="ids">Danh sách id các bản ghi chứng từ muốn xóa</param>
 		/// <returns>
 		/// StatusCode == 200: Nếu delete thành công
 		/// StatusCode != 200: Nếu delete thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		[HttpDelete]
 		public ActionResult DeleteMultipleRecord([FromBody]List<Guid> ids)
 		{

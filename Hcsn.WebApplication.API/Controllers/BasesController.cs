@@ -274,7 +274,7 @@ namespace Hcsn.WebApplication.API.Controllers
                     DevMsg = ErrorResource.DevMsg_DeleteFailed,
                     UserMsg = ErrorResource.UserMsg_DeleteFailed,
                     TraceId = HttpContext.TraceIdentifier,
-                    MoreInfo = result.Message,
+                    MoreInfo = result,
                 });
                 
             }
@@ -323,7 +323,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					DevMsg = ErrorResource.DevMsg_DeleteMultipleFailed,
 					UserMsg = ErrorResource.UserMsg_DeleteMultipleFailed,
 					TraceId = HttpContext.TraceIdentifier,
-					MoreInfo = result.Message,
+					MoreInfo = result,
 				});
 
 			}

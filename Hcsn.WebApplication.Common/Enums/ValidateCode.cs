@@ -80,5 +80,10 @@ namespace Hcsn.WebApplication.Common.Enums
 		/// Lỗi khi dữ liệu của nguồn chi phí không hợp lệ
 		/// </summary>
 		CostSourceInValid = 14,
+
+        /// <summary>
+        /// Lỗi khi xóa tài sản đã chứng từ
+        /// </summary>
+        DeleteAssetActive = 15
 	}
 }
