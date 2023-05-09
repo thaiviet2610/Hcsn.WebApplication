@@ -165,6 +165,27 @@
   <data name="QuantityPropName" xml:space="preserve">
     <value>quantity</value>
   </data>
+  <data name="TableExcelAssetIncrementDetailSheetName" xml:space="preserve">
+    <value>Chứng từ chi tiết</value>
+  </data>
+  <data name="TableExcelAssetIncrementDetailTitleAsset" xml:space="preserve">
+    <value>Thông tin chi tiêt</value>
+  </data>
+  <data name="TableExcelAssetIncrementDetailTitleAssetIncrement" xml:space="preserve">
+    <value>Thông tin chứng từ</value>
+  </data>
+  <data name="TableExcelAssetIncrementSheetName" xml:space="preserve">
+    <value>Chứng từ</value>
+  </data>
+  <data name="TableExcelAssetIncrementTitle" xml:space="preserve">
+    <value>Danh sách chứng từ</value>
+  </data>
+  <data name="TableExcelAssetSheetName" xml:space="preserve">
+    <value>Tài sản</value>
+  </data>
+  <data name="TableExcelAssetTitle" xml:space="preserve">
+    <value>Danh sách tài sản</value>
+  </data>
   <data name="TableExcelHeaderColumnAssetCategory" xml:space="preserve">
     <value>Loại tài sản</value>
   </data>
@@ -183,8 +204,17 @@
   <data name="TableExcelHeaderColumnDepreciationValue" xml:space="preserve">
     <value>HM/KH lũy kế</value>
   </data>
+  <data name="TableExcelHeaderColumnDescription" xml:space="preserve">
+    <value>Nội dung</value>
+  </data>
+  <data name="TableExcelHeaderColumnIncrementDate" xml:space="preserve">
+    <value>Ngày ghi tăng</value>
+  </data>
   <data name="TableExcelHeaderColumnIndex" xml:space="preserve">
     <value>STT</value>
+  </data>
+  <data name="TableExcelHeaderColumnPrice" xml:space="preserve">
+    <value>Tổng nguyên giá</value>
   </data>
   <data name="TableExcelHeaderColumnQuantity" xml:space="preserve">
     <value>Số lượng</value>
@@ -192,13 +222,13 @@
   <data name="TableExcelHeaderColumnResidualValue" xml:space="preserve">
     <value>Giá trị còn lại</value>
   </data>
+  <data name="TableExcelHeaderColumnVoucherCode" xml:space="preserve">
+    <value>Mã chứng từ</value>
+  </data>
+  <data name="TableExcelHeaderColumnVoucherDate" xml:space="preserve">
+    <value>Ngày chứng từ</value>
+  </data>
   <data name="TableExcelNoData" xml:space="preserve">
     <value>Không tìm thấy dữ liệu phù hợp. Vui lòng kiểm tra lại!</value>
-  </data>
-  <data name="TableExcelSheetName" xml:space="preserve">
-    <value>Assets</value>
-  </data>
-  <data name="TableExcelTitle" xml:space="preserve">
-    <value>Danh sách tài sản</value>
   </data>
 </root>

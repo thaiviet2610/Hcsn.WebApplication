@@ -52,6 +52,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 				voucher_id = assetIncrement.voucher_id,
 				voucher_code = assetIncrement.voucher_code,
 				voucher_date = assetIncrement.voucher_date,
+				increment_date = assetIncrement.increment_date,
 				price = assetIncrement.price,
 				description = assetIncrement.description,
 				assets = assets

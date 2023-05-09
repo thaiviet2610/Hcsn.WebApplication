@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO
 {
-	public class ExcelResult
+	public class ExportAssetResult
 	{
         #region Field
         public static List<string> Headers = new()
@@ -17,9 +17,9 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 					Resources.TableExcelHeaderColumnCost,Resources.TableExcelHeaderColumnDepreciationValue,Resources.TableExcelHeaderColumnResidualValue
 				};
 
-		public static string Title = Resources.TableExcelTitle;
+		public static string Title = Resources.TableExcelAssetTitle;
 
-		public static string SheetName = Resources.TableExcelSheetName;
+		public static string SheetName = Resources.TableExcelAssetSheetName;
 
 		public static string NoData = Resources.TableExcelNoData;
 

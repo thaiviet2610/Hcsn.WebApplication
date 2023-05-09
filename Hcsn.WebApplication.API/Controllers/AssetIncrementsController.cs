@@ -464,6 +464,60 @@ namespace Hcsn.WebApplication.API.Controllers
 				});
 			}
 		}
+
+		/// <summary>
+		/// API xuất danh sách chứng từ theo bộ lọc ra file excel 
+		/// </summary>
+		/// <param name="keyword"> Từ khóa tìm kiếm</param>
+		/// <param name="voucherId"> Id chứng từ</param>
+		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
+		/// Created by: LTVIET (29/03/2023)
+		[HttpGet("Export")]
+		public IActionResult GetExcelFiles([FromQuery] string? keyword, [FromQuery] Guid? voucherId)
+		{
+			try
+			{
+				var stream = (Stream)new MemoryStream();
+				if(voucherId == null)
+				{
+					stream = _assetIncrementBL.ExportExcel(keyword);
+				}
+				else
+				{
+					stream = _assetIncrementBL.ExportAssetIncrementDetailExcel((Guid)voucherId);
+				}
+				if (stream != null)
+				{
+					return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+				}
+				return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
+				{
+					ErrorCode = ErrorCode.ExportExcelFailed,
+					DevMsg = ErrorResource.DevMsg_ExportExcelFailed,
+					UserMsg = ErrorResource.UserMsg_ExportExcelFailed,
+					TraceId = HttpContext.TraceIdentifier,
+				});
+
+			}
+			catch (Exception ex)
+			{
+				string traceId = HttpContext.TraceIdentifier;
+				using (StreamWriter sws = new(ErrorResult.LogError, true))
+				{
+					sws.WriteLine(traceId);
+					sws.WriteLine(ex.Message);
+					sws.WriteLine(ex.StackTrace);
+				}
+				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+				{
+					ErrorCode = ErrorCode.Exception,
+					DevMsg = ErrorResource.DevMsg_Exception,
+					UserMsg = ErrorResource.UserMsg_Exception,
+					TraceId = traceId,
+					MoreInfo = ErrorResource.Exception_MoreInfo,
+				});
+			}
+		}
 		#endregion
 	}
 }

@@ -4707,3 +4707,175 @@ Procedure or function 'Proc_{0}_UpdatePrice' cannot be found in database ''. Ver
    at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 379
    at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 454
    at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrementPrice(Guid voucherId, Decimal price) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 321
+0HMQD05MTFLF5:00000001
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at MySql.Data.Common.Ssl.StartSSLAsync(Stream baseStream, Encoding encoding, String connectionString, CancellationToken cancellationToken, Boolean execAsync)
+   at MySql.Data.MySqlClient.NativeDriver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.Driver.CreateAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetPooledConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.TryToGetDriverAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlPool.GetConnectionAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQD665UG08J:00000003
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQD6LPHADUT:00000009
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GI8K:00000013
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GI8Q:00000009
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GI98:00000007
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GI9O:00000007
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GIA3:00000001
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GIAB:00000009
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GIAL:00000007
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GIBJ:00000009
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQD7173GIBT:00000001
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 43
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 65
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetById(Guid assetIncrementId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 40
+0HMQEIJ2RSBP6:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQFBQD7LOD4:00000003
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQFEC52R1UA:00000001
+Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.CreateDataTableExcel(List`1 assetIncrements, ExcelWorksheet workSheet) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 687
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GenerateExcelFileAssetIncrementDetail(FixedAssetIncrementDTO assetIncrement, PagingResultAsset pagingResultAsset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 807
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.ExportAssetIncrementDetailExcel(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 777
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, Nullable`1 voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 487
+0HMQFEC52R1UC:00000001
+Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.CreateDataTableExcel(List`1 assetIncrements, ExcelWorksheet workSheet) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 687
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.GenerateExcelFileAssetIncrementDetail(FixedAssetIncrementDTO assetIncrement, PagingResultAsset pagingResultAsset) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 807
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.ExportAssetIncrementDetailExcel(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 777
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, Nullable`1 voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 487
+0HMQFEI36I2TO:00000001
+Nullable object must have a value.
+   at System.Nullable`1.get_Value()
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, Nullable`1 voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 487
+0HMQFFAUPGC2H:00000001
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQFI8VMA0VK:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQG4SB5S8D5:00000005
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40

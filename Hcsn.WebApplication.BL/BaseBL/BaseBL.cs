@@ -297,14 +297,14 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// <param name="record">Đối tượng chứa các thuộc tính</param>
 		/// <returns>
 		/// Kết quả validate dữ liệu:
-		/// true: thành công
-		/// false: thất bại
+		/// true: không có giá trị rỗng
+		/// false: có giá trị rỗng
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		private bool ValidateEmpty(T record)
 		{
             bool check = true;
-			List<String> validateEmpty = new();
+			var validateEmpty = new List<String>();
 			var properties = typeof(T).GetProperties();
             
 			foreach (var property in properties)
@@ -316,7 +316,7 @@ namespace Hcsn.WebApplication.BL.BaseBL
 				if (requiredAttribute != null && (propValue == null || String.IsNullOrEmpty(propValue.ToString().Trim())))
 				{
                     validateEmpty.Add(propName);
-                    check = false;
+					check = false;
                 }
 			}
 			if(!check)

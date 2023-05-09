@@ -94,7 +94,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			var stream = new MemoryStream();
 			using (var package = new ExcelPackage(stream))
 			{
-				var workSheet = package.Workbook.Worksheets.Add(ExcelResult.SheetName);
+				var workSheet = package.Workbook.Worksheets.Add(ExportAssetResult.SheetName);
 
 				// tạo tiêu đề của bảng trong file excel
 				CreateTitleTableExcel(workSheet);
@@ -175,7 +175,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
             }
             count += 4;
 			workSheet.Cells[$"B{count}:F{count}"].Merge = true;
-			workSheet.Cells[$"B{count}:F{count}"].Value = ExcelResult.FooterTotal;
+			workSheet.Cells[$"B{count}:F{count}"].Value = ExportAssetResult.FooterTotal;
 			workSheet.Cells[$"B{count}:F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 			workSheet.Cells[$"B{count}:F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 			workSheet.Cells[$"B{count}:F{count}"].Style.Font.Bold = true;
@@ -229,7 +229,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			if(assets.Count == 0)
 			{
 				workSheet.Cells["B4:J4"].Merge = true;
-				workSheet.Cells["B4:J4"].Value = ExcelResult.NoData;
+				workSheet.Cells["B4:J4"].Value = ExportAssetResult.NoData;
 				workSheet.Cells["B4:J4"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 				workSheet.Cells["B4:J4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				workSheet.Cells["B4:J4"].Style.Font.Bold = true;
@@ -278,7 +278,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (29/03/2023)
 		private static void CreateHeaderTableExcel(ExcelWorksheet workSheet)
 		{
-			List<string> headers = ExcelResult.Headers;
+			var headers = ExportAssetResult.Headers;
 
 			for (int i = 0; i < headers.Count; i++)
 			{
@@ -314,7 +314,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		private static void CreateTitleTableExcel(ExcelWorksheet workSheet)
 		{
 			workSheet.Cells["B2:J2"].Merge = true;
-			workSheet.Cells["B2:J2"].Value = ExcelResult.Title;
+			workSheet.Cells["B2:J2"].Value = ExportAssetResult.Title;
 			workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 			workSheet.Cells["B2:J2"].Style.Font.Bold = true;
@@ -346,25 +346,26 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				var propValue = property.GetValue(asset);
 				bool isOutMaxLength = IsOutMaxLength(property, propValue);
 				bool isOutRangeOfRate = IsOutRangeOfRate(property, propValue);
-				bool isDuplicate = true;
-				if (isOutMaxLength)
+				bool isDuplicate = false;
+				if (!isOutMaxLength)
 				{
 					isDuplicate = IsPropertyDuplicate(asset, property);
 				}
-				if (!isOutMaxLength || !isOutRangeOfRate || !isDuplicate)
+				if ( isOutMaxLength || isOutRangeOfRate || isDuplicate)
 				{
 					check = false;
 				}
 			}
-			bool isValidCostSource = ValidateCostSource(asset.cost_source);
-			bool isPropertyNumberGreaterThanZero = IsCheckPropertyNumberLessThanOrEqualZero(asset.quantity, asset.cost,
+			
+            bool isValidCostSource = ValidateCostSource(asset.cost_source);
+			bool isPropertyNumberLessThanOrEqualZero = IsCheckPropertyNumberLessThanOrEqualZero(asset.quantity, asset.cost,
 																			asset.life_time, asset.depreciation_rate);
 			bool isDepreciationYearGreaterThanCost = IsDepreciationYearGreaterThanCost(asset);
 			bool isDepreciationRateDifferentOnePerLifeTime = IsDepreciationRateDifferentOnePerLifeTime(asset);
 			bool isProductionYearGreaterThanPurchaseDate = IsProductionYearGreaterThanPurchaseDate(asset);
 
-			if(!isValidCostSource || !isPropertyNumberGreaterThanZero || !isDepreciationYearGreaterThanCost 
-				|| !isDepreciationRateDifferentOnePerLifeTime || !isProductionYearGreaterThanPurchaseDate)
+			if(!isValidCostSource || isPropertyNumberLessThanOrEqualZero || isDepreciationYearGreaterThanCost 
+				|| isDepreciationRateDifferentOnePerLifeTime || !isProductionYearGreaterThanPurchaseDate)
 			{
 				check = false;
 			}
@@ -413,7 +414,7 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsProductionYearGreaterThanPurchaseDate(FixedAsset asset)
 		{
-			bool check = true;
+			bool checkProductionYearGreaterThanPurchaseDate = true;
 			if ((asset.purchase_date != null && asset.production_year != null) &&
 							((TimeSpan)(asset.purchase_date - asset.production_year)).TotalDays > 0)
 			{
@@ -424,10 +425,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					Message = ValidateResource.PurchaseDateGreaterThanProductionYear,
 					Data = Resources.ProductionYear
 				});
-				check = false;
+				checkProductionYearGreaterThanPurchaseDate = false;
 			}
 
-			return check;
+			return checkProductionYearGreaterThanPurchaseDate;
 		}
 
 		/// <summary>
@@ -436,13 +437,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="asset">Đối tượng tài sản cần validate</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true: có lỗi
+		/// flase: Không Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsDepreciationRateDifferentOnePerLifeTime(FixedAsset asset)
 		{
-			bool check = true;
+			bool checkDepreciationRateDifferentOnePerLifeTime = false;
 			if (asset.life_time != 0 && asset.depreciation_rate != (float)Math.Round((decimal)1 / asset.life_time, 3))
 			{
 
@@ -453,10 +454,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					Message = ValidateResource.DepreciationRateDifferentLifeTime,
 					Data = Resources.LifeTimePropName
 				});
-				check = false;
+				checkDepreciationRateDifferentOnePerLifeTime = true;
 			}
 
-			return check;
+			return checkDepreciationRateDifferentOnePerLifeTime;
 		}
 
 		/// <summary>
@@ -465,13 +466,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="asset">Đối tượng tài sản cần validate</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true: có lỗi
+		/// flase: Không Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsDepreciationYearGreaterThanCost(FixedAsset asset)
 		{
-			bool check = true;
+			bool checkDepreciationYearGreaterThanCost = false;
 			float depreciationValueYear = (float)asset.cost * (asset.depreciation_rate / 100);
 			if (depreciationValueYear > (float)asset.cost)
 			{
@@ -482,10 +483,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					Message = ValidateResource.DepreciationYearGreateThanCost,
 					Data = Resources.Cost
 				});
-				check = false;
+				checkDepreciationYearGreaterThanCost = true;
 			}
 
-			return check;
+			return checkDepreciationYearGreaterThanCost;
 		}
 
 		/// <summary>
@@ -497,35 +498,35 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="depreciationRate">Tỷ lệ hao mòn</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true:  có lỗi
+		/// flase: Không Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsCheckPropertyNumberLessThanOrEqualZero(int quantity, decimal cost, int lifeTime, float depreciationRate)
 		{
-			bool check = true;
+			bool checkPropertyNumberLessThanOrEqualZero = false;
 			var propertyNumberLessThanOrEqualZero = new List<string>();
 			if (quantity <= 0)
 			{
 				propertyNumberLessThanOrEqualZero.Add(Resources.QuantityPropName);
-				check = false;
+				checkPropertyNumberLessThanOrEqualZero = true;
 			}
 			if(cost <= 0)
 			{
 				propertyNumberLessThanOrEqualZero.Add(Resources.CostPropName);
-				check = false;
+				checkPropertyNumberLessThanOrEqualZero = true;
 			}
 			if (lifeTime <= 0)
 			{
 				propertyNumberLessThanOrEqualZero.Add(Resources.LifeTimePropName);
-				check = false;
+				checkPropertyNumberLessThanOrEqualZero = true;
 			}
 			if (depreciationRate <= 0)
 			{
 				propertyNumberLessThanOrEqualZero.Add(Resources.DepreciationRatePropName);
-				check = false;
+				checkPropertyNumberLessThanOrEqualZero = true;
 			}
-			if (!check)
+			if (checkPropertyNumberLessThanOrEqualZero)
 			{
 				inValidList.Add(new ValidateResult
 				{
@@ -534,10 +535,9 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					Message = ValidateResource.NumberLessThanOrEqualZero,
 					Data = propertyNumberLessThanOrEqualZero
 				});
-				check = false;
 			}
 
-			return check;
+			return checkPropertyNumberLessThanOrEqualZero;
 		}
 
 		/// <summary>
@@ -547,13 +547,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="propValue">Giá trị của thuộc tính cần validate</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true: có lỗi
+		/// flase: không Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsOutRangeOfRate(PropertyInfo property, object? propValue)
 		{
-			bool check = true;
+			bool checkOutRangeOfRate = false;
 			
 			if (property.IsDefined(typeof(HcsnNumberAttribute), false) && property.IsDefined(typeof(HcsnValueTypeAttribute),false))
 			{
@@ -573,12 +573,12 @@ namespace Hcsn.WebApplication.BL.AssetBL
 						ValidateCode = ValidateCode.OutOfRate,
 						Message = String.Format(ValidateResource.OutOfRate, attributeName)
 					});
-					check = false;
+					checkOutRangeOfRate = true;
 				}
 			}
 
 			
-			return check;
+			return checkOutRangeOfRate;
 		}
 
 		/// <summary>
@@ -588,13 +588,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="propValue">Giá trị của thuộc tính cần validate</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true: có lỗi
+		/// flase: Không Có lỗi
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsOutMaxLength(PropertyInfo property, object? propValue)
 		{
-			bool check = true;
+			bool checkOutMaxLength = false;
 			string propName = property.Name;
 			if (property.IsDefined(typeof(HcsnMaxLengthAttribute), false))
 			{
@@ -615,11 +615,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 						Message = String.Format(ValidateResource.OutMaxLength, attributeName, propLength),
 						Data = propName
 					});
-					check = false;
+					checkOutMaxLength = true;
 				}
 			}
 
-			return check;
+			return checkOutMaxLength;
 		}
 
 		/// <summary>
@@ -634,22 +634,22 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (09/03/2023)
 		private bool ValidateCostSource(String costSourceToString)
 		{
-			bool check = true;
+			bool checkValidate = true;
 			var inValidCostSourceList = new List<ValidateResult>();
 			var costSources = JsonConvert.DeserializeObject<List<CostSourceDTO>>(costSourceToString);
 			
 			for (int i = 0; i < costSources.Count;i++)
 			{
 				var costSource = costSources[i];
-				bool checkCostSourceEmpty = isCheckCostSourceEmpty(inValidCostSourceList, i, costSource);
+				bool checkCostSourceEmpty = IsCheckCostSourceEmpty(inValidCostSourceList, i, costSource);
 				bool checkCostSourceDuplicate = IsCheckCostSourceDuplicate(inValidCostSourceList, costSources, i);
 				bool checkMountGreaterThanZero = IsCheckCostSourceMountGreaterThanZero(inValidCostSourceList, i, costSource);
-				if (!checkCostSourceEmpty | !checkCostSourceDuplicate | !checkMountGreaterThanZero)
+				if (checkCostSourceEmpty | checkCostSourceDuplicate | !checkMountGreaterThanZero)
 				{
-					check = false;
+					checkValidate = false;
 				}
 			}
-			if (!check)
+			if (!checkValidate)
 			{
 				inValidList.Add(new ValidateResult
 				{
@@ -659,12 +659,22 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				});
 			}
 
-			return check;
+			return checkValidate;
 		}
 
-		private static bool IsCheckCostSourceMountGreaterThanZero(List<ValidateResult> inValidCostSourceList, int i, CostSourceDTO costSource)
+		/// <summary>
+		/// Hàm kiểm tra xem giá trị nguồn hình thành có lớn hơn 0 hay không
+		/// </summary>
+		/// <param name="inValidCostSourceList">Danh sách chứa thông tin lỗi</param>
+		/// <param name="index">vị trí của nguồn cần kiểm tra trong danh sách</param>
+		/// <param name="costSource">Đối tượng nguồn chi phí cần kiểm tra</param>
+		/// <returns>
+		/// true: giá trị nguồn hình thành có lớn hơn 0
+		/// false: giá trị nguồn hình thành có nhỏ hơn hoặc bằng 0 
+		/// </returns>
+		private static bool IsCheckCostSourceMountGreaterThanZero(List<ValidateResult> inValidCostSourceList, int index, CostSourceDTO costSource)
 		{
-			bool check = true;
+			bool checkMountGreaterThanZero = true;
 			if (costSource.mount == 0)
 			{
 				inValidCostSourceList.Add(new ValidateResult
@@ -672,39 +682,59 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					IsSuccess = false,
 					ValidateCode = ValidateCode.CostSourceMountLessOrEqualThanZero,
 					Message = ValidateResource.CostSourceMountLessOrEqualThanZero,
-					Data = i
+					Data = index
 				});
-				check = false;
+				checkMountGreaterThanZero = false;
 			}
 
-			return check;
+			return checkMountGreaterThanZero;
 		}
 
-		private static bool IsCheckCostSourceDuplicate(List<ValidateResult> inValidCostSourceList, List<CostSourceDTO>? costSources, int i)
+		/// <summary>
+		/// Hàm kiểm tra xem có 2 nguồn trùng nhau trong danh sách không
+		/// </summary>
+		/// <param name="inValidCostSourceList">Danh sách chứa thông tin lỗi</param>
+		/// <param name="index">vị trí của nguồn cần kiểm tra trong danh sách</param>
+		/// <param name="costSources">Danh sách nguồn chi phí cần kiểm tra</param>
+		/// <returns>
+		/// true: có trùng nhau
+		/// false: không trùng nhau 
+		/// </returns>
+		private static bool IsCheckCostSourceDuplicate(List<ValidateResult> inValidCostSourceList, List<CostSourceDTO>? costSources, int index)
 		{
-			bool check = true;
-			for (int j = 0; j < i; j++)
+			bool checkDuplicate = false;
+			for (int j = 0; j < index; j++)
 			{
-				if (costSources[i].budget_id == costSources[j].budget_id)
+				if (costSources[index].budget_id == costSources[j].budget_id)
 				{
 					inValidCostSourceList.Add(new ValidateResult
 					{
 						IsSuccess = false,
 						ValidateCode = ValidateCode.CostSourceDuplicate,
-						Message = String.Format(ValidateResource.CostSourceDuplicate, costSources[i].budget_name),
-						Data = i
+						Message = String.Format(ValidateResource.CostSourceDuplicate, costSources[index].budget_name),
+						Data = index
 					});
-					check = false;
+					checkDuplicate = true;
 					break;
 				}
 			}
 
-			return check;
+			return checkDuplicate;
 		}
 
-		private static bool isCheckCostSourceEmpty(List<ValidateResult> inValidCostSourceList, int i, CostSourceDTO costSource)
+		/// <summary>
+		/// Hàm kiểm tra xem có  nguồn nào có giá trị rỗng hay không
+		/// </summary>
+		/// <param name="inValidCostSourceList">Danh sách chứa thông tin lỗi</param>
+		/// <param name="index">vị trí của nguồn cần kiểm tra trong danh sách</param>
+		/// <param name="costSource">Đối tượng nguồn chi phí cần kiểm tra</param>
+		/// <returns>
+		/// true: có giá trị rỗng
+		/// false: không có giá trị rỗng 
+		/// </returns>
+		private static bool IsCheckCostSourceEmpty(List<ValidateResult> inValidCostSourceList, int index, CostSourceDTO costSource)
 		{
-			bool check = true;
+			bool checkEmpty = false;
 			var propertiesCostSource = typeof(CostSourceDTO).GetProperties();
 			List<String> validateEmpty = new();
 			foreach (var property in propertiesCostSource)
@@ -716,10 +746,10 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				if (requiredAttribute != null && (propValue == null || String.IsNullOrEmpty(propValue.ToString().Trim())))
 				{
 					validateEmpty.Add(propName);
-					check = false;
+					checkEmpty = true;
 				}
 			}
-			if (!check)
+			if (checkEmpty)
 			{
 				inValidCostSourceList.Add(new ValidateResult
 				{
@@ -728,13 +758,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					Message = ValidateResource.CostSourceEmpty,
 					Data = new
 					{
-						Index = i,
+						Index = index,
 						Data = validateEmpty
 					}
 				});
 			}
 
-			return check;
+			return checkEmpty;
 		}
 
 
@@ -745,13 +775,13 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// <param name="property">Thuộc tính cần validate</param>
 		/// <returns>
 		/// Kết quả validate
-		/// true: Không có lỗi
-		/// flase: Có lỗi
+		/// true: có trùng 
+		/// flase: không có trùng
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		private bool IsPropertyDuplicate(FixedAsset asset, PropertyInfo property)
 		{
-			bool check = true;
+			bool checkDuplicate = false;
 			string propName = property.Name;
 			var propValue = property.GetValue(asset);
 			if (property.IsDefined(typeof(HcsnDuplicateAttribute), false))
@@ -771,12 +801,12 @@ namespace Hcsn.WebApplication.BL.AssetBL
 							ValidateCode = ValidateCode.Duplicate,
 							Message = String.Format(ValidateResource.Duplicate, attributeName, propValue),
 						});
-						check = false;
+						checkDuplicate = true;
 					}
 				}
 			}
 
-			return check;
+			return checkDuplicate;
 		}
 
 		/// <summary>

@@ -205,6 +205,69 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chứng từ chi tiết.
+        /// </summary>
+        public static string TableExcelAssetIncrementDetailSheetName {
+            get {
+                return ResourceManager.GetString("TableExcelAssetIncrementDetailSheetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông tin chi tiêt.
+        /// </summary>
+        public static string TableExcelAssetIncrementDetailTitleAsset {
+            get {
+                return ResourceManager.GetString("TableExcelAssetIncrementDetailTitleAsset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thông tin chứng từ.
+        /// </summary>
+        public static string TableExcelAssetIncrementDetailTitleAssetIncrement {
+            get {
+                return ResourceManager.GetString("TableExcelAssetIncrementDetailTitleAssetIncrement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chứng từ.
+        /// </summary>
+        public static string TableExcelAssetIncrementSheetName {
+            get {
+                return ResourceManager.GetString("TableExcelAssetIncrementSheetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danh sách chứng từ.
+        /// </summary>
+        public static string TableExcelAssetIncrementTitle {
+            get {
+                return ResourceManager.GetString("TableExcelAssetIncrementTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tài sản.
+        /// </summary>
+        public static string TableExcelAssetSheetName {
+            get {
+                return ResourceManager.GetString("TableExcelAssetSheetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danh sách tài sản.
+        /// </summary>
+        public static string TableExcelAssetTitle {
+            get {
+                return ResourceManager.GetString("TableExcelAssetTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loại tài sản.
         /// </summary>
         public static string TableExcelHeaderColumnAssetCategory {
@@ -259,11 +322,38 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nội dung.
+        /// </summary>
+        public static string TableExcelHeaderColumnDescription {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderColumnDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngày ghi tăng.
+        /// </summary>
+        public static string TableExcelHeaderColumnIncrementDate {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderColumnIncrementDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to STT.
         /// </summary>
         public static string TableExcelHeaderColumnIndex {
             get {
                 return ResourceManager.GetString("TableExcelHeaderColumnIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tổng nguyên giá.
+        /// </summary>
+        public static string TableExcelHeaderColumnPrice {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderColumnPrice", resourceCulture);
             }
         }
         
@@ -286,29 +376,29 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mã chứng từ.
+        /// </summary>
+        public static string TableExcelHeaderColumnVoucherCode {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderColumnVoucherCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ngày chứng từ.
+        /// </summary>
+        public static string TableExcelHeaderColumnVoucherDate {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderColumnVoucherDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Không tìm thấy dữ liệu phù hợp. Vui lòng kiểm tra lại!.
         /// </summary>
         public static string TableExcelNoData {
             get {
                 return ResourceManager.GetString("TableExcelNoData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Assets.
-        /// </summary>
-        public static string TableExcelSheetName {
-            get {
-                return ResourceManager.GetString("TableExcelSheetName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Danh sách tài sản.
-        /// </summary>
-        public static string TableExcelTitle {
-            get {
-                return ResourceManager.GetString("TableExcelTitle", resourceCulture);
             }
         }
     }

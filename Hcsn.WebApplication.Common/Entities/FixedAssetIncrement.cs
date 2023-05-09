@@ -29,7 +29,7 @@ namespace Hcsn.WebApplication.Common.Entities
 
 		[HcsnName("Tổng nguyên giá")]
 		[HcsnMaxLength(19)]
-		public decimal? price { get; set; }
+		public decimal price { get; set; }
 
 		[HcsnMaxLength(255)]
 		[HcsnName("Ghi chú")]
