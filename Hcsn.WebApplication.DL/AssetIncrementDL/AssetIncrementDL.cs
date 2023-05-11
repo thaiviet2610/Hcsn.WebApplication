@@ -548,7 +548,6 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			//var result = _assetIncrementRepository.QueryMultiple(dbConnection, storedProcedureNameGetAssetsByIdVoucher, parametersGetAssetsByIdVoucher, commandType: CommandType.StoredProcedure);
 			//var idAssets = result.Read<Guid>().ToList();
 			dbConnection.Close();
-			return false;
 			PrepareDataDeleteMultipleAssetIncrement(ids, out string storedProcedureNameDeleteMultipleAssetIncrement, out DynamicParameters parametersDeleteMultipleAssetIncrement);
 			PrepareDataDeleteAssetIncrementDetailByIdAssets(idAssets, out string storedProcedureNameDeleteMultipleAssetIncrementDetail, out DynamicParameters parametersDeleteMultipleAssetIncrementDetail);
 			PrepareUpdateAssetActive(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.False);
