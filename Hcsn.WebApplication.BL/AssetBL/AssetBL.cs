@@ -384,21 +384,14 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTViet (20/03/2023)
 		protected override ValidateResult ValidateCustomDelete(List<Guid> assetsId)
 		{
-			var inValidList = new List<Guid>();
-            foreach (var assetId in assetsId)
-            {
-				var asset = _assetDL.GetRecordById(assetId);
-				if (asset.active)
-				{
-					inValidList.Add(assetId);
-				}
-            }
+			int quantityAssetActive = _assetDL.GetQuantityAssetActive(assetsId);
+			
 			return new ValidateResult
 			{
-				IsSuccess = inValidList.Count == 0,
+				IsSuccess = quantityAssetActive == 0,
 				ValidateCode = ValidateCode.DeleteAssetActive,
 				Message = ValidateResource.DeleteAssetActive,
-				Data = inValidList
+				Data = assetsId
 			};
 		}
 

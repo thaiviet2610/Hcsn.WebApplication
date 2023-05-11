@@ -8,10 +8,10 @@ namespace Hcsn.WebApplication.Common.Constants.ProcedureName
 {
     public static class ProcedureName
     {
-        /// <summary>
-        /// Thêm 1 bản ghi mới
-        /// </summary>
-        public static string Insert = "Proc_{0}_Insert";
+		/// <summary>
+		/// Thêm 1 bản ghi mới
+		/// </summary>
+		public static string Insert = "Proc_{0}_Insert";
 
 
         /// <summary>

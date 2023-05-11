@@ -12,5 +12,6 @@ namespace Hcsn.WebApplication.Common.Constants.ProcedureName
 		/// Sửa thông tin tổng nguyên giá của một chứng từ
 		/// </summary>
 		public static string UpdatePrice = "Proc_FixedAssetIncrement_UpdatePrice";
+
 	}
 }

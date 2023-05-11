@@ -31,8 +31,12 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// </summary>
 		/// <param name="assetIncrement">Đối tượng thông tin chứng từ</param>
 		/// <param name="assets">Danh sách tài sản được ghi tăng trong chứng từ</param>
-		/// <returns>Số bản ghi được thêm mới</returns>
-		public int InsertAssetIncrement(FixedAssetIncrement assetIncrement, List<FixedAssetDTO> assets);
+		/// <returns>
+		/// Kết quả việc thêm mới:
+		/// true: thêm mới thành công
+		/// false: thêm mới thất bại
+		/// </returns>
+		public bool InsertAssetIncrement(FixedAssetIncrement assetIncrement, List<FixedAssetDTO> assets);
 
 		/// <summary>
 		/// Hàm truy cập database lấy ra số bản ghi có cùng code nhưng khác id được truyền vào
@@ -87,10 +91,12 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// </summary>
 		/// <param name="voucherId">Id bản ghi chứng từ muốn xóa</param>
 		/// <returns>
-		/// Số bản ghi được xóa
+		/// Kết quả thực hiện việc xóa
+		/// True: thành công
+		/// False: thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		public int DeleteAssetIncrementById(Guid voucherId);
+		public bool DeleteAssetIncrementById(Guid voucherId);
 
 		/// <summary>
 		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
@@ -98,10 +104,10 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="ids">Danh sách id bản ghi cần xóa</param>
 		/// <returns>
 		/// Kết quả việc thực hiện xóa nhiều bản ghi
-		/// 1: Nếu delete thành công
-		/// 0: Nếu delete thất bại
+		/// True: Nếu delete thành công
+		/// False: Nếu delete thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		int DeleteMultipleAssetIncrement(List<Guid> ids);
+		bool DeleteMultipleAssetIncrement(List<Guid> ids);
 	}
 }

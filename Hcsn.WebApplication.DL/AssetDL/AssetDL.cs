@@ -196,6 +196,26 @@ namespace Hcsn.WebApplication.DL.AssetDL
 				ResidualValueTotal = residualValueTotal,
 			};
 		}
+
+		/// <summary>
+		/// Hàm gọi api lấy ra ố lượng tài sản đã chứng từ
+		/// </summary>
+		/// <param name="ids">danh sách id tài sản cần kiểm tra</param>
+		/// <returns>
+		/// Số lượng tài sản đã chứng từ
+		/// </returns>
+		public int GetQuantityAssetActive(List<Guid> ids)
+		{
+			string idsToString = $"('{string.Join("','", ids)}')";
+			string storedProcedureName = ProcedureNameAsset.CheckIncrement;
+			var parameters = new DynamicParameters();
+				parameters.Add("@ids", ids);
+            var dbConnection = _assetRepository.GetOpenConnection();
+			// Thực hiện gọi vào Database để chạy stored procedure
+			var quantityAssetActive = _assetRepository.QueryFirstOrDefault<int>(dbConnection, storedProcedureName, parameters, commandType: CommandType.Text);
+			dbConnection.Close();
+			return quantityAssetActive;
+		}
 		#endregion
 	}
 }

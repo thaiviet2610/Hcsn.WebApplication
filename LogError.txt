@@ -4879,3 +4879,459 @@ An item with the same key has already been added. Key: server=localhost;port=330
    at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
    at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
    at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQGUALRJ824:00000001
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQHAROANKH4:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQHC4I1M9N5:00000005
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQHC4I1M9NB:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN @p_ids`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHC4I1M9ND:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN @p_ids`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHC5LLP0NJ:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN @p_ids`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHC6G24N62:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN @p_ids`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHC8K74BRQ:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN (@p_ids1,@p_ids2,@p_ids3)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHCA98MAPQ:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN (@ids1,@ids2,@ids3)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHCA98MAPS:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN (@ids1,@ids2,@ids3)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHCBRVJHB4:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN @ids`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 218
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHCCVDMTHU:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN (@ids1,@ids2,@ids3)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHN4DT5FUM:00000003
+Procedure or function '`SELECT fai.voucher_code FROM fixed_asset_increment_detail faid LEFT JOIN fixed_asset_increment fai ON faid.voucher_id = fai.voucher_id WHERE faid.fixed_asset_id IN (@ids1,@ids2,@ids3)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetVoucherCodeOfAssets(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 215
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.ValidateCustomDelete(List`1 assetsId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 387
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 86
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.DeleteMultipleRecord(List`1 entitiesId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 315
+0HMQHO3FLK7UT:00000011
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 158
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 283
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQHQU5VFJFB:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQHSBRKA421:00000003
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQHSLC50BKB:00000001
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.AssetDL.AssetDL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetDL\AssetDL.cs:line 67
+   at Hcsn.WebApplication.BL.AssetBL.AssetBL.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetBL\AssetBL.cs:line 47
+   at Hcsn.WebApplication.API.Controllers.AssetsController.GetPaging(String keyword, Nullable`1 departmentId, Nullable`1 fixedAssetCatagortId, Int32 pageSize, Int32 pageNumber) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetsController.cs:line 58
+0HMQHTKIBOJAB:00000037
+Parameter 'p_voucher_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTKIBOJAD:00000003
+Parameter 'p_voucher_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTKIBOJAF:00000003
+Parameter 'p_voucher_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTKIBOJAF:00000007
+Parameter 'p_voucher_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1075
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTP8TQ7GN:00000003
+Parameter 'p_voucher_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTQ70HDPV:00000003
+Parameter 'p_ids' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryRowImpl[T](IDbConnection cnn, Row row, CommandDefinition& command, Type effectiveType) in /_/Dapper/SqlMapper.cs:line 1187
+   at Dapper.SqlMapper.QueryFirstOrDefault[T](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 774
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryFirstOrDefault[Object](IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 75
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 472
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTR85MV4E:00000003
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 484
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHTR85MV4G:00000003
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 484
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQHU8VR4JDM:0000000F
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 553
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHU9OLQS66:00000003
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 553
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHUAADUF01:00000003
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 553
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHUAADUF03:00000003
+The connection is not open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginTransactionAsync(Boolean execAsync, IsolationLevel isolationLevel, CancellationToken cancellationToken, String scope)
+   at MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Common.DbConnection.System.Data.IDbConnection.BeginTransaction()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 553
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHUCUHLQUI:00000003
+The connection is already open.
+   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 553
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHV6IJLBIS:00000003
+Procedure or function '`SELECT fa.fixed_asset_id FROM fixed_asset fa LEFT JOIN fixed_asset_increment_detail faid ON fa.fixed_asset_id = faid.fixed_asset_id WHERE faid.voucher_id IN (@p_ids1,@p_ids2)`' cannot be found in database ''. Verify that user 'root'@'localhost' has enough privileges to execute.
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcDataAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.AddNewAsync(MySqlConnection connection, String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.ProcedureCache.GetProcedureAsync(MySqlConnection conn, String spName, String cacheKey, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.GetParametersAsync(String procName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParametersAsync(String spName, Boolean execAsync)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 53
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 546
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433

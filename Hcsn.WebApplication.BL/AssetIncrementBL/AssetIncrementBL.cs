@@ -101,10 +101,10 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				};
 			}
 			// Thành công
-			int numberOfAffectedRows = _assetIncrementDL.InsertAssetIncrement(assetIncrementDTO, assets);
+			bool check = _assetIncrementDL.InsertAssetIncrement(assetIncrementDTO, assets);
 			return new ServiceResult
 			{
-				IsSuccess = numberOfAffectedRows > 0,
+				IsSuccess = check,
 				ErrorCode = ErrorCode.InsertFailed,
 				Message = ServiceResource.InsertFailed,
 			};
@@ -479,10 +479,10 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult DeleteAssetIncrementById(Guid voucherId)
 		{
-			var numberOfAffectedRows = _assetIncrementDL.DeleteAssetIncrementById(voucherId);
+			bool checkDelete = _assetIncrementDL.DeleteAssetIncrementById(voucherId);
 			return new ServiceResult
 			{
-				IsSuccess = numberOfAffectedRows != 0,
+				IsSuccess = checkDelete,
 				ErrorCode = ErrorCode.DeleteFailed,
 				Message = ServiceResource.DeleteFailed
 			};
@@ -500,13 +500,12 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult DeleteMultipleAssetIncrement(List<Guid> ids)
 		{
-			var numberOfAffectedRows = _assetIncrementDL.DeleteMultipleAssetIncrement(ids);
+			var checkDeleteMultiple = _assetIncrementDL.DeleteMultipleAssetIncrement(ids);
 			return new ServiceResult
 			{
-				IsSuccess = numberOfAffectedRows != 0,
+				IsSuccess = checkDeleteMultiple,
 				ErrorCode = ErrorCode.DeleteMultipleFailed,
 				Message = ServiceResource.DeleteMultipleFailed,
-				Data = numberOfAffectedRows
 			};
 		}
 

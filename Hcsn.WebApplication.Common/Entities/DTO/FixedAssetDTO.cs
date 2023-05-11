@@ -1,6 +1,7 @@
 ﻿using Hcsn.WebApplication.Common.Constants;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,6 +88,12 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 		/// Giá trị còn lại
 		/// </summary>
 		public decimal residual_value { get; set; }
+
+		/// <summary>
+		/// Trạng thái sử dụng
+		/// </summary>
+		[AllowNull]
+		public bool active { get; set; }
 
 		/// <summary>
 		/// Mã chứng từ

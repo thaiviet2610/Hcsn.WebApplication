@@ -68,5 +68,14 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
 		public PagingResultAsset GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets);
+
+		/// <summary>
+		/// Hàm gọi api lấy ra ố lượng tài sản đã chứng từ
+		/// </summary>
+		/// <param name="ids">danh sách id tài sản cần kiểm tra</param>
+		/// <returns>
+		/// Số lượng tài sản đã chứng từ
+		/// </returns>
+		public int GetQuantityAssetActive(List<Guid> ids);
 	}
 }
