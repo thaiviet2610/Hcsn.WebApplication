@@ -61,6 +61,24 @@ namespace Hcsn.WebApplication.Common.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Chưa sử dụng.
+        /// </summary>
+        public static string ActiveFalse {
+            get {
+                return ResourceManager.GetString("ActiveFalse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Đã sử dụng.
+        /// </summary>
+        public static string ActiveTrue {
+            get {
+                return ResourceManager.GetString("ActiveTrue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to cost.
         /// </summary>
         public static string Cost {
@@ -390,6 +408,15 @@ namespace Hcsn.WebApplication.Common.Resource {
         public static string TableExcelHeaderColumnVoucherDate {
             get {
                 return ResourceManager.GetString("TableExcelHeaderColumnVoucherDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trạng thái.
+        /// </summary>
+        public static string TableExcelHeaderCoulumnActive {
+            get {
+                return ResourceManager.GetString("TableExcelHeaderCoulumnActive", resourceCulture);
             }
         }
         

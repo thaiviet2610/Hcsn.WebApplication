@@ -126,24 +126,24 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			// Định dạng cell border
 			for (int i = 0; i <= count; i++)
 			{
-				for (int j = 2; j < 11; j++)
+				for (int j = 1; j < 11; j++)
 				{
-					workSheet.Cells[i + 3, j].Style.Font.Size = 10;
-					workSheet.Cells[i + 3, j].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[i + 3, j].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[i + 3, j].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-					workSheet.Cells[i + 3, j].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 2, j].Style.Font.Size = 10;
+					workSheet.Cells[i + 2, j].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 2, j].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 2, j].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+					workSheet.Cells[i + 2, j].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 
 				}
 			}
 			// định dạng độ rộng của cột
-			for (int i = 2; i < 11; i++)
+			for (int i = 1; i < 11; i++)
 			{
 				workSheet.Column(i).AutoFit();
 			}
 
 			// định dạng độ cao của dòng
-			for (int i = 3; i < count+4; i++)
+			for (int i = 2; i < count+3; i++)
 			{
 				workSheet.Row(i).Height = 20;
 			}
@@ -173,20 +173,20 @@ namespace Hcsn.WebApplication.BL.AssetBL
 				depreciationValueTotal = "0";
 				residualValueTotal = "0";
             }
-            count += 4;
-			workSheet.Cells[$"B{count}:F{count}"].Merge = true;
-			workSheet.Cells[$"B{count}:F{count}"].Value = ExportAssetResult.FooterTotal;
-			workSheet.Cells[$"B{count}:F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-			workSheet.Cells[$"B{count}:F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-			workSheet.Cells[$"B{count}:F{count}"].Style.Font.Bold = true;
-			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells[$"B{count}:F{count}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+            count += 3;
+			workSheet.Cells[$"A{count}:E{count}"].Merge = true;
+			workSheet.Cells[$"A{count}:E{count}"].Value = ExportAssetResult.FooterTotal;
+			workSheet.Cells[$"A{count}:E{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells[$"A{count}:E{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+			workSheet.Cells[$"A{count}:E{count}"].Style.Font.Bold = true;
+			workSheet.Cells[$"A{count}:E{count}"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"A{count}:E{count}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"A{count}:E{count}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"A{count}:E{count}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 
 			List<string> listFooter = new()
 				{
-					$"G{count}",$"H{count}",$"I{count}",$"J{count}"
+					$"F{count}",$"G{count}",$"H{count}",$"I{count}"
 				};
 
 			for (int i = 0; i < listFooter.Count; i++)
@@ -215,6 +215,11 @@ namespace Hcsn.WebApplication.BL.AssetBL
 						break;
 				}
 			}
+
+			workSheet.Cells[$"J{count}"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"J{count}"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"J{count}"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells[$"J{count}"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 		}
 
 		/// <summary>
@@ -228,15 +233,15 @@ namespace Hcsn.WebApplication.BL.AssetBL
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
 			if(assets.Count == 0)
 			{
-				workSheet.Cells["B4:J4"].Merge = true;
-				workSheet.Cells["B4:J4"].Value = ExportAssetResult.NoData;
-				workSheet.Cells["B4:J4"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-				workSheet.Cells["B4:J4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-				workSheet.Cells["B4:J4"].Style.Font.Bold = true;
-				workSheet.Cells["B4:J4"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B4:J4"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B4:J4"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B4:J4"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A3:J3"].Merge = true;
+				workSheet.Cells["A3:J3"].Value = ExportAssetResult.NoData;
+				workSheet.Cells["A3:J3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				workSheet.Cells["A3:J3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				workSheet.Cells["A3:J3"].Style.Font.Bold = true;
+				workSheet.Cells["A3:J3"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A3:J3"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A3:J3"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A3:J3"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 			}
 			else
 			{
@@ -247,25 +252,27 @@ namespace Hcsn.WebApplication.BL.AssetBL
 					var residualValue = Math.Round(assets[i].cost - assets[i].depreciation_value);
 					residualValue = residualValue > 0 ? residualValue : 0;
 					// Gán giá trị vào từng ô trên từng dòng trong file excel
-					workSheet.Cells[i + 4, 2].Value = (i + 1).ToString();
-					workSheet.Cells[i + 4, 3].Value = assets[i].fixed_asset_code;
-					workSheet.Cells[i + 4, 4].Value = assets[i].fixed_asset_name;
-					workSheet.Cells[i + 4, 5].Value = assets[i].fixed_asset_category_name;
-					workSheet.Cells[i + 4, 6].Value = assets[i].department_name;
-					workSheet.Cells[i + 4, 7].Value = assets[i].quantity == 0 ? 0 : assets[i].quantity.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 8].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 9].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 10].Value = residualValue <= 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 1].Value = (i + 1).ToString();
+					workSheet.Cells[i + 3, 2].Value = assets[i].fixed_asset_code;
+					workSheet.Cells[i + 3, 3].Value = assets[i].fixed_asset_name;
+					workSheet.Cells[i + 3, 4].Value = assets[i].fixed_asset_category_name;
+					workSheet.Cells[i + 3, 5].Value = assets[i].department_name;
+					workSheet.Cells[i + 3, 6].Value = assets[i].quantity == 0 ? 0 : assets[i].quantity.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 7].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 8].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 9].Value = residualValue <= 0 ? 0 : residualValue.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 10].Value = assets[i].active ? Resources.ActiveTrue:Resources.ActiveFalse;
 
-					workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 10].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[i + 3, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 				}
 			}
 			
@@ -282,26 +289,24 @@ namespace Hcsn.WebApplication.BL.AssetBL
 
 			for (int i = 0; i < headers.Count; i++)
 			{
-				workSheet.Cells[3, i + 2].Value = headers[i];
-				workSheet.Cells[3, i + 2].Style.Font.Bold = true;
-				workSheet.Cells[3, i + 2].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[3, i + 2].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[3, i + 2].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells[3, i + 2].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[2, i + 1].Value = headers[i];
+				workSheet.Cells[2, i + 1].Style.Font.Bold = true;
+				workSheet.Cells[2, i + 1].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[2, i + 1].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[2, i + 1].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[2, i + 1].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells[2, i + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 				if (i == 0)
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				}
-				else if (i == 1 || i == 2 || i == 3 || i == 4)
+				else if (i == 1 || i == 2 || i == 3 || i == 4 || i == 10)
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 				}
 				else
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 				}
 			}
 		}
@@ -313,16 +318,16 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTVIET (29/03/2023)
 		private static void CreateTitleTableExcel(ExcelWorksheet workSheet)
 		{
-			workSheet.Cells["B2:J2"].Merge = true;
-			workSheet.Cells["B2:J2"].Value = ExportAssetResult.Title;
-			workSheet.Cells["B2:J2"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-			workSheet.Cells["B2:J2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-			workSheet.Cells["B2:J2"].Style.Font.Bold = true;
-			workSheet.Cells["B2:J2"].Style.Font.Size = 20;
-			workSheet.Cells["B2:J2"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells["B2:J2"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells["B2:J2"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-			workSheet.Cells["B2:J2"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["A1:J1"].Merge = true;
+			workSheet.Cells["A1:J1"].Value = ExportAssetResult.Title;
+			workSheet.Cells["A1:J1"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells["A1:J1"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+			workSheet.Cells["A1:J1"].Style.Font.Bold = true;
+			workSheet.Cells["A1:J1"].Style.Font.Size = 20;
+			workSheet.Cells["A1:J1"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["A1:J1"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["A1:J1"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+			workSheet.Cells["A1:J1"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 		}
 
 		/// <summary>

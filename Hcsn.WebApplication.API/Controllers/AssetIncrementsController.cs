@@ -473,18 +473,18 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
 		/// Created by: LTVIET (29/03/2023)
 		[HttpGet("Export")]
-		public IActionResult GetExcelFiles([FromQuery] string? keyword, [FromQuery] Guid? voucherId)
+		public IActionResult GetExcelFiles([FromQuery] string? keyword, [FromQuery]Guid? voucherId)
 		{
 			try
 			{
 				var stream = (Stream)new MemoryStream();
 				if(voucherId == null)
 				{
-					stream = _assetIncrementBL.ExportExcel(keyword);
+					stream = _assetIncrementBL.ExportAllExcel(keyword);
 				}
 				else
 				{
-					stream = _assetIncrementBL.ExportAssetIncrementDetailExcel((Guid)voucherId);
+					stream = _assetIncrementBL.ExportDetailExcel((Guid)voucherId);
 				}
 				if (stream != null)
 				{

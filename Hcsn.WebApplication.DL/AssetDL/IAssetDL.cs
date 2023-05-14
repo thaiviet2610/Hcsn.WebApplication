@@ -70,7 +70,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		public PagingResultAsset GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets);
 
 		/// <summary>
-		/// Hàm gọi api lấy ra ố lượng tài sản đã chứng từ
+		/// Hàm gọi api lấy ra số lượng tài sản đã chứng từ
 		/// </summary>
 		/// <param name="ids">danh sách id tài sản cần kiểm tra</param>
 		/// <returns>

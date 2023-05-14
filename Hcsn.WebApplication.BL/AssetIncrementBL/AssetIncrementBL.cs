@@ -25,8 +25,6 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		}
 		#endregion
 
-
-
 		#region Method
 
 		/// <summary>
@@ -510,12 +508,12 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		}
 
 		/// <summary>
-		/// Hàm logic xử lý việc xuất dữ liệu ra file excel
+		/// Hàm logic xử lý việc xuất toàn bộ danh sách chứng từ ra file excel
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm</param>
 		/// <returns>Đối tượng stream lưu dữ liệu</returns>
 		/// Created by: LTVIET (29/04/2023)
-		public Stream ExportExcel(string? keyword)
+		public Stream ExportAllExcel(string? keyword)
 		{
 			var result = _assetIncrementDL.GetPaging(keyword, 0, 0);
 			var assetIncrements = result.Data;
@@ -539,7 +537,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				var workSheet = package.Workbook.Worksheets.Add(ExportAssetIncrementResult.SheetName);
 
 				// tạo tiêu đề của bảng trong file excel
-				CreateTitleTableExcel(workSheet, "B2:G2", ExportAssetIncrementResult.Title, 20);
+				CreateTitleTableExcel(workSheet, "A1:F1", ExportAssetIncrementResult.Title, 20);
 				// tạo header table
 				CreateHeaderTableAssetIncrementExcel(workSheet);
 				// tạo dữ liệu
@@ -569,54 +567,21 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			// Định dạng cell border
 			for (int i = 0; i <= count; i++)
 			{
-				for (int j = 2; j < (countColumn + 2); j++)
+				for (int j = 1; j < (countColumn + 1); j++)
 				{
-					workSheet.Cells[i + 3, j].Style.Font.Size = 10;
-					FormatBorderCell(workSheet, "", i + 3, j);
+					workSheet.Cells[i + 2, j].Style.Font.Size = 10;
+					FormatBorderCell(workSheet, "", i + 2, j);
 
 				}
 			}
 			// định dạng độ rộng của cột
-			for (int i = 2; i < (countColumn + 2); i++)
+			for (int i = 1; i < (countColumn + 1); i++)
 			{
 				workSheet.Column(i).AutoFit();
 			}
 
 			// định dạng độ cao của dòng
-			for (int i = 3; i < count + 4; i++)
-			{
-				workSheet.Row(i).Height = 20;
-			}
-
-		}
-
-		/// <summary>
-		/// Hàm format cột và ô của table trong excel
-		/// </summary>
-		/// <param name="count">Số lượng bản ghi trong danh sách dữ liệu</param>
-		/// <param name="countColumn">Số lượng cột trong table</param>
-		/// /// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
-		/// Created by: LTVIET (29/04/2023)
-		private static void FormatTableAssetsExcel(int count, ExcelWorksheet workSheet, int countColumn)
-		{
-			// Định dạng cell border
-			for (int i = 0; i < count; i++)
-			{
-				for (int j = 2; j < (countColumn + 2); j++)
-				{
-					workSheet.Cells[i + 8, j].Style.Font.Size = 10;
-					FormatBorderCell(workSheet, "", i + 8, j);
-
-				}
-			}
-			// định dạng độ rộng của cột
-			for (int i = 2; i < (countColumn + 2); i++)
-			{
-				workSheet.Column(i).AutoFit();
-			}
-
-			// định dạng độ cao của dòng
-			for (int i = 8; i < count + 8; i++)
+			for (int i = 2; i < count + 3; i++)
 			{
 				workSheet.Row(i).Height = 20;
 			}
@@ -640,28 +605,24 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				count = 1;
 				priceTotal = "0";
 			}
-			count += 4;
-			workSheet.Cells[$"B{count}:E{count}"].Merge = true;
-			workSheet.Cells[$"B{count}:E{count}"].Value = ExportAssetIncrementResult.FooterTotal;
-			workSheet.Cells[$"B{count}:E{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-			workSheet.Cells[$"B{count}:E{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-			workSheet.Cells[$"B{count}:E{count}"].Style.Font.Bold = true;
-			FormatBorderCell(workSheet, $"B{count}:E{count}" , 0, 0);
+			count += 3;
+			workSheet.Cells[$"A{count}:D{count}"].Merge = true;
+			workSheet.Cells[$"A{count}:D{count}"].Value = ExportAssetIncrementResult.FooterTotal;
+			workSheet.Cells[$"A{count}:D{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+			workSheet.Cells[$"A{count}:D{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells[$"A{count}:D{count}"].Style.Font.Bold = true;
+			FormatBorderCell(workSheet, $"A{count}:D{count}" , 0, 0);
 
-			workSheet.Cells[$"F{count}"].Value = priceTotal;
-			workSheet.Cells[$"F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+			workSheet.Cells[$"E{count}"].Value = priceTotal;
+			workSheet.Cells[$"E{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+			workSheet.Cells[$"E{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells[$"E{count}"].Style.Font.Bold = true;
+			FormatBorderCell(workSheet, $"E{count}", 0,0);
+
 			workSheet.Cells[$"F{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+			workSheet.Cells[$"F{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 			workSheet.Cells[$"F{count}"].Style.Font.Bold = true;
-			FormatBorderCell(workSheet, $"F{count}", 0,0);
-
-			workSheet.Cells[$"G{count}"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-			workSheet.Cells[$"G{count}"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-			workSheet.Cells[$"G{count}"].Style.Font.Bold = true;
-			FormatBorderCell(workSheet, $"G{count}", 0, 0);
-
-
-
-
+			FormatBorderCell(workSheet, $"F{count}", 0, 0);
 		}
 
 		/// <summary>
@@ -701,31 +662,31 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
 			if (assetIncrements.Count == 0)
 			{
-				workSheet.Cells["B4:G4"].Merge = true;
-				workSheet.Cells["B4:G4"].Value = ExportAssetResult.NoData;
-				workSheet.Cells["B4:G4"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-				workSheet.Cells["B4:G4"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-				workSheet.Cells["B4:G4"].Style.Font.Bold = true;
-				FormatBorderCell(workSheet, "B4:G4", 0, 0);
+				workSheet.Cells["A3:F3"].Merge = true;
+				workSheet.Cells["A3:F3"].Value = ExportAssetResult.NoData;
+				workSheet.Cells["A3:F3"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				workSheet.Cells["A3:F3"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				workSheet.Cells["A3:F3"].Style.Font.Bold = true;
+				FormatBorderCell(workSheet, "A3:F3", 0, 0);
 			}
 			else
 			{
 				for (int i = 0; i < assetIncrements.Count; i++)
 				{
 					// Gán giá trị vào từng ô trên từng dòng trong file excel
-					workSheet.Cells[i + 4, 2].Value = i+1;
-					workSheet.Cells[i + 4, 3].Value = assetIncrements[i].voucher_code;
-					workSheet.Cells[i + 4, 4].Value = ((DateTime)assetIncrements[i].voucher_date).ToString("dd/MM/yyyy");
-					workSheet.Cells[i + 4, 5].Value = ((DateTime)assetIncrements[i].increment_date).ToString("dd/MM/yyyy");
-					workSheet.Cells[i + 4, 6].Value = assetIncrements[i].price.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 4, 7].Value = assetIncrements[i].description; 
-
-					workSheet.Cells[i + 4, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 4, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 4, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 4, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 4, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 4, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 1].Value = i+1;
+					workSheet.Cells[i + 3, 2].Value = assetIncrements[i].voucher_code;
+					workSheet.Cells[i + 3, 3].Value = ((DateTime)assetIncrements[i].voucher_date).ToString("dd/MM/yyyy");
+					workSheet.Cells[i + 3, 4].Value = ((DateTime)assetIncrements[i].increment_date).ToString("dd/MM/yyyy");
+					workSheet.Cells[i + 3, 5].Value = assetIncrements[i].price.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 3, 6].Value = assetIncrements[i].description; 
+										
+					workSheet.Cells[i + 3, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[i + 3, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 3, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[i + 3, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[i + 3, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 3, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 				}
 			}
 
@@ -742,23 +703,23 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 
 			for (int i = 0; i < headers.Count; i++)
 			{
-				workSheet.Cells[3, i + 2].Value = headers[i];
-				workSheet.Cells[3, i + 2].Style.Font.Bold = true;
-				FormatBorderCell(workSheet, "", 3, i+2);
+				workSheet.Cells[2, i + 1].Value = headers[i];
+				workSheet.Cells[2, i + 1].Style.Font.Bold = true;
+				FormatBorderCell(workSheet, "", 2, i+1);
 				if (i == 0 || i == 2 || i== 3)
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[2, i + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				}
 				else if (i == 1 || i == 5)
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[2, i + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 				}
 				else
 				{
-					workSheet.Cells[3, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-					workSheet.Cells[3, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[2, i + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+					workSheet.Cells[2, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 				}
 			}
 		}
@@ -788,7 +749,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// <param name="voucherId">Id chứng từ</param>
 		/// <returns>Đối tượng stream lưu dữ liệu</returns>
 		/// Created by: LTVIET (29/04/2023)
-		public Stream ExportAssetIncrementDetailExcel(Guid voucherId)
+		public Stream ExportDetailExcel(Guid voucherId)
 		{
 			var assetIncrement = _assetIncrementDL.GetById(voucherId);
 			Stream data = GenerateExcelFileAssetIncrementDetail(assetIncrement);
@@ -816,7 +777,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				{
 					assetIncrement
 				};
-				CreateTitleTableExcel(workSheet, "B2:G2", ExportAssetIncrementDetailResult.TitleAssetIncrementTable,10);
+				CreateTitleTableExcel(workSheet, "A1:F1", ExportAssetIncrementDetailResult.TitleAssetIncrementTable,10);
 				// tạo header table
 				CreateHeaderTableAssetIncrementExcel(workSheet);
 				// tạo dữ liệu
@@ -825,7 +786,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				FormatTableAssetIncrementExcel(assetIncrements.Count, workSheet, ExportAssetIncrementDetailResult.HeaderAssetIncrements.Count);
 				var assets = assetIncrement.assets;
 				// tạo tiêu đề của bảng trong file excel
-				CreateTitleTableExcel(workSheet, "B6:H6", ExportAssetIncrementDetailResult.TitleAssetTable, 10);
+				CreateTitleTableExcel(workSheet, "A5:G5", ExportAssetIncrementDetailResult.TitleAssetTable, 10);
 				// tạo header table
 				CreateHeaderTableAssetsExcel(workSheet);
 				// tạo dữ liệu
@@ -840,8 +801,6 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			return stream;
 
 		}
-
-
 
 		/// <summary>
 		/// Hàm tạo header cho table tài sản chứng từ trong file excel chứng từ chi tiết
@@ -859,21 +818,21 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 
 			for (int i = 0; i < headers.Count; i++)
 			{
-				workSheet.Cells[7, i + 2].Value = headers[i];
-				workSheet.Cells[7, i + 2].Style.Font.Bold = true;
-				FormatBorderCell(workSheet, "", 7, i + 2);
-				workSheet.Cells[7, i + 2].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				workSheet.Cells[6, i + 1].Value = headers[i];
+				workSheet.Cells[6, i + 1].Style.Font.Bold = true;
+				FormatBorderCell(workSheet, "", 6, i + 1);
+				workSheet.Cells[6, i + 1].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
 				if (i == 0)
 				{
-					workSheet.Cells[7, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[6, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 				}
 				else if (i == 1 || i == 2 || i == 3)
 				{
-					workSheet.Cells[7, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[6, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
 				}
 				else
 				{
-					workSheet.Cells[7, i + 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[6, i + 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 				}
 			}
 		}
@@ -889,41 +848,73 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
 			if (assets.Count == 0)
 			{
-				workSheet.Cells["B8:H8"].Merge = true;
-				workSheet.Cells["B8:H8"].Value = ExportAssetResult.NoData;
-				workSheet.Cells["B8:H8"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
-				workSheet.Cells["B8:H8"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-				workSheet.Cells["B8:H8"].Style.Font.Bold = true;
-				workSheet.Cells["B8:H8"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B8:H8"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B8:H8"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
-				workSheet.Cells["B8:H8"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A7:G7"].Merge = true;
+				workSheet.Cells["A7:G7"].Value = ExportAssetResult.NoData;
+				workSheet.Cells["A7:G7"].Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+				workSheet.Cells["A7:G7"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+				workSheet.Cells["A7:G7"].Style.Font.Bold = true;
+				workSheet.Cells["A7:G7"].Style.Border.Top.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A7:G7"].Style.Border.Right.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A7:G7"].Style.Border.Left.Style = ExcelBorderStyle.Medium;
+				workSheet.Cells["A7:G7"].Style.Border.Bottom.Style = ExcelBorderStyle.Medium;
 			}
 			else
 			{
 				for (int i = 0; i < assets.Count; i++)
 				{
 					// Gán giá trị vào từng ô trên từng dòng trong file excel
-					workSheet.Cells[i + 8, 2].Value = i+1;
-					workSheet.Cells[i + 8, 3].Value = assets[i].fixed_asset_code;
-					workSheet.Cells[i + 8, 4].Value = assets[i].fixed_asset_name;
-					workSheet.Cells[i + 8, 5].Value = assets[i].department_name;
-					workSheet.Cells[i + 8, 6].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 8, 7].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
-					workSheet.Cells[i + 8, 8].Value = assets[i].residual_value <= 0 ? 0 : assets[i].residual_value.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 7, 1].Value = i+1;
+					workSheet.Cells[i + 7, 2].Value = assets[i].fixed_asset_code;
+					workSheet.Cells[i + 7, 3].Value = assets[i].fixed_asset_name;
+					workSheet.Cells[i + 7, 4].Value = assets[i].department_name;
+					workSheet.Cells[i + 7, 5].Value = assets[i].cost == 0 ? 0 : assets[i].cost.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 7, 6].Value = assets[i].depreciation_value == 0 ? 0 : assets[i].depreciation_value.ToString("#,###", cul.NumberFormat);
+					workSheet.Cells[i + 7, 7].Value = assets[i].residual_value <= 0 ? 0 : assets[i].residual_value.ToString("#,###", cul.NumberFormat);
 										
-					workSheet.Cells[i + 8, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-					workSheet.Cells[i + 8, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 8, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 8, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
-					workSheet.Cells[i + 8, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 8, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
-					workSheet.Cells[i + 8, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 7, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+					workSheet.Cells[i + 7, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 7, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 7, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Left;
+					workSheet.Cells[i + 7, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 7, 6].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+					workSheet.Cells[i + 7, 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
 				}
 			}
 
 		}
 
+		/// <summary>
+		/// Hàm format cột và ô của table trong excel
+		/// </summary>
+		/// <param name="count">Số lượng bản ghi trong danh sách dữ liệu</param>
+		/// <param name="countColumn">Số lượng cột trong table</param>
+		/// /// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// Created by: LTVIET (29/04/2023)
+		private static void FormatTableAssetsExcel(int count, ExcelWorksheet workSheet, int countColumn)
+		{
+			// Định dạng cell border
+			for (int i = 0; i < count; i++)
+			{
+				for (int j = 1; j < (countColumn + 1); j++)
+				{
+					workSheet.Cells[i + 7, j].Style.Font.Size = 10;
+					FormatBorderCell(workSheet, "", i + 7, j);
+
+				}
+			}
+			// định dạng độ rộng của cột
+			for (int i = 1; i < (countColumn + 1); i++)
+			{
+				workSheet.Column(i).AutoFit();
+			}
+
+			// định dạng độ cao của dòng
+			for (int i = 7; i < count + 7; i++)
+			{
+				workSheet.Row(i).Height = 20;
+			}
+
+		}
 		#endregion
 	}
 }

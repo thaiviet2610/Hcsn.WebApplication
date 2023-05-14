@@ -5335,3 +5335,175 @@ Procedure or function '`SELECT fa.fixed_asset_id FROM fixed_asset fa LEFT JOIN f
    at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 546
    at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
    at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQHVMCRLQV5:0000000F
+The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.ReadImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 150
+   at Dapper.SqlMapper.GridReader.Read[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.cs:line 66
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 546
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteMultipleAssetIncrement(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 503
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteMultipleRecord(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 433
+0HMQI42RM8G97:00000005
+Operations that change non-concurrent collections must have exclusive access. A concurrent update was performed on this collection and corrupted its state. The collection's state is no longer correct.
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQIG8HGF2QS:00000005
+An item with the same key has already been added. Key: server=localhost;port=3306;database=test;user id=root;password=123456
+   at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+   at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+   at MySql.Data.MySqlClient.MySqlPoolManager.GetPoolAsync(MySqlConnectionStringBuilder settings, Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.OpenAsync(Boolean execAsync, CancellationToken cancellationToken)
+   at MySql.Data.MySqlClient.MySqlConnection.Open()
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.GetOpenConnection() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 18
+   at Hcsn.WebApplication.DL.BaseDL.BaseDL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\BaseDL\BaseDL.cs:line 126
+   at Hcsn.WebApplication.BL.BaseBL.BaseBL`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\BaseBL\BaseBL.cs:line 125
+   at Hcsn.WebApplication.API.Controllers.BasesController`1.GetAllRecord() in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\BasesController.cs:line 40
+0HMQIG8HGF320:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIG8HGF322:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIG8HGF324:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIJ8728H9D:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIJ8728H9F:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIJ8728H9F:00000007
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIJ99IB4US:00000003
+Value cannot be null. (Parameter 'values')
+   at System.String.JoinCore[T](ReadOnlySpan`1 separator, IEnumerable`1 values)
+   at System.String.Join[T](String separator, IEnumerable`1 values)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.PrepareUpdateAssetActive(List`1 idAssets, String& storedProcedureNameUpdateAssetActive, DynamicParameters& parametersUpdateAssetActive, Int32 valueActive) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 167
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List`1 idAssetsAdd, List`1 idAssetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 302
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO, List`1 assetsAdd, List`1 assetsDelete) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 427
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.UpdateAssetIncrement(FixedAssetIncrementUpdate assetIncrementUpdate) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 257
+0HMQIMQ6LPRHC:00000003
+Could not determine function/procedure name (Parameter 'name')
+   at MySqlConnector.Core.NormalizedSchema.MustNormalize(String name, String defaultSchema) in /_/src/MySqlConnector/Core/NormalizedSchema.cs:line 24
+   at MySqlConnector.MySqlConnection.GetCachedProcedure(String name, Boolean revalidateMissing, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 815
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 34
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 54
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 394
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQIMQ6LPRHE:00000003
+Could not determine function/procedure name (Parameter 'name')
+   at MySqlConnector.Core.NormalizedSchema.MustNormalize(String name, String defaultSchema) in /_/src/MySqlConnector/Core/NormalizedSchema.cs:line 24
+   at MySqlConnector.MySqlConnection.GetCachedProcedure(String name, Boolean revalidateMissing, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 815
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 34
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 54
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 394
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQIMQ6LPRHG:00000005
+Could not determine function/procedure name (Parameter 'name')
+   at MySqlConnector.Core.NormalizedSchema.MustNormalize(String name, String defaultSchema) in /_/src/MySqlConnector/Core/NormalizedSchema.cs:line 24
+   at MySqlConnector.MySqlConnection.GetCachedProcedure(String name, Boolean revalidateMissing, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 815
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 34
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 54
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 394
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.DeleteAssetIncrementById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 482
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.DeleteRecordById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 384
+0HMQJHC5HDI9F:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHC5HDI9R:00000005
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHC5HDI9T:00000009
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHC5HDI9V:00000005
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHC5HDIA1:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHC5HDIA7:00000003
+Object reference not set to an instance of an object.
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 481
+0HMQJHK2H5SRC:00000001
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM fixed_asset_increment WHERE voucher_id IN (@p_ids1,@p_ids2)('3fa85' at line 1
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 43
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.CreateAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 468
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(IReadOnlyList`1 commands, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 344
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 278
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in /_/Dapper/SqlMapper.cs:line 1066
+   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 1033
+   at Dapper.SqlMapper.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 1009
+   at Hcsn.WebApplication.DL.DBConfig.RepositoryDB.QueryMultiple(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\DBConfig\RepositoryDB.cs:line 54
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetMultipleByIds(List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 85
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.ExportMultipleExcel(List`1 ids) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 927
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, List`1 voucherIds) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 491
+0HMQJHMELJ7GM:00000001
+Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at Hcsn.WebApplication.DL.AssetIncrementDL.AssetIncrementDL.GetById(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.DL\AssetIncrementDL\AssetIncrementDL.cs:line 46
+   at Hcsn.WebApplication.BL.AssetIncrementBL.AssetIncrementBL.ExportDetailExcel(Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.BL\AssetIncrementBL\AssetIncrementBL.cs:line 754
+   at Hcsn.WebApplication.API.Controllers.AssetIncrementsController.GetExcelFiles(String keyword, Guid voucherId) in D:\code\misa\API\Hcsn.WebApplication\Hcsn.WebApplication.API\Controllers\AssetIncrementsController.cs:line 487

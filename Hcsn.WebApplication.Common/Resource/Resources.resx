@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ActiveFalse" xml:space="preserve">
+    <value>Chưa sử dụng</value>
+  </data>
+  <data name="ActiveTrue" xml:space="preserve">
+    <value>Đã sử dụng</value>
+  </data>
   <data name="Cost" xml:space="preserve">
     <value>cost</value>
   </data>
@@ -227,6 +233,9 @@
   </data>
   <data name="TableExcelHeaderColumnVoucherDate" xml:space="preserve">
     <value>Ngày chứng từ</value>
+  </data>
+  <data name="TableExcelHeaderCoulumnActive" xml:space="preserve">
+    <value>Trạng thái</value>
   </data>
   <data name="TableExcelNoData" xml:space="preserve">
     <value>Không tìm thấy dữ liệu phù hợp. Vui lòng kiểm tra lại!</value>

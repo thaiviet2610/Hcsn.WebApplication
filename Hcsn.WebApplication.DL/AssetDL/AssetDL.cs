@@ -198,7 +198,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		}
 
 		/// <summary>
-		/// Hàm gọi api lấy ra ố lượng tài sản đã chứng từ
+		/// Hàm gọi api lấy ra số lượng tài sản đã chứng từ
 		/// </summary>
 		/// <param name="ids">danh sách id tài sản cần kiểm tra</param>
 		/// <returns>
@@ -206,7 +206,6 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// </returns>
 		public int GetQuantityAssetActive(List<Guid> ids)
 		{
-			string idsToString = $"('{string.Join("','", ids)}')";
 			string storedProcedureName = ProcedureNameAsset.CheckIncrement;
 			var parameters = new DynamicParameters();
 				parameters.Add("@ids", ids);

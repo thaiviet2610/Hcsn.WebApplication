@@ -107,7 +107,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		ServiceResult DeleteMultipleAssetIncrement(List<Guid> ids);
 
 		/// <summary>
-		/// Hàm xuất dữ liệu ra file excel
+		/// Hàm logic xử lý việc xuất toàn bộ danh sách chứng từ ra file excel
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <returns>
@@ -116,7 +116,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Thất bại: Thông báo lỗi
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		Stream ExportExcel(string? keyword);
+		Stream ExportAllExcel(string? keyword);
 
 		/// <summary>
 		/// Hàm logic xử lý việc xuất dữ liệu của 1 chứng từ ra file excel
@@ -124,6 +124,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// <param name="voucherId">Id chứng từ</param>
 		/// <returns>Đối tượng stream lưu dữ liệu</returns>
 		/// Created by: LTVIET (29/04/2023)
-		Stream ExportAssetIncrementDetailExcel(Guid voucherId);
+		Stream ExportDetailExcel(Guid voucherId);
+
 	}
 }

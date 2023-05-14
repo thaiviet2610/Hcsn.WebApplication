@@ -14,7 +14,7 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
 				{
 					Resources.TableExcelHeaderColumnIndex,Resources.TableExcelHeaderColumnAssetCode,Resources.TableExcelHeaderColumnAssetName,
 					Resources.TableExcelHeaderColumnAssetCategory,Resources.TableExcelHeaderColumnDepartment,Resources.TableExcelHeaderColumnQuantity,
-					Resources.TableExcelHeaderColumnCost,Resources.TableExcelHeaderColumnDepreciationValue,Resources.TableExcelHeaderColumnResidualValue
+					Resources.TableExcelHeaderColumnCost,Resources.TableExcelHeaderColumnDepreciationValue,Resources.TableExcelHeaderColumnResidualValue,Resources.TableExcelHeaderCoulumnActive,
 				};
 
 		public static string Title = Resources.TableExcelAssetTitle;
