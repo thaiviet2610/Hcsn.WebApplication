@@ -80,9 +80,6 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
 		ServiceResult DeleteMultipleRecord(List<Guid> entitiesId);
-
-		
-
 		
 		#endregion
 	}

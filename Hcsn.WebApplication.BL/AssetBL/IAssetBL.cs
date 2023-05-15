@@ -35,8 +35,6 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		/// Created by: LTViet (20/03/2023)
 		ServiceResult GetNewCode();
 
-
-
 		/// <summary>
 		/// Hàm xuất dữ liệu ra file excel
 		/// </summary>

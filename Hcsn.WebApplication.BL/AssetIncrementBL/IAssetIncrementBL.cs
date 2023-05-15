@@ -79,7 +79,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: sửa thành công
 		/// IsSuccess == false: sửa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		ServiceResult UpdateAssetIncrementPrice(Guid voucherId, Decimal price);
 
 		/// <summary>
@@ -115,7 +115,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Thành công: Trả về đường đẫn lưu file excel
 		/// Thất bại: Thông báo lỗi
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		Stream ExportAllExcel(string? keyword);
 
 		/// <summary>

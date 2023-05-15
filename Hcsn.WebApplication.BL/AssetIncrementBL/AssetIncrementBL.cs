@@ -35,8 +35,8 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
 		/// <returns> 
 		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện thêm mới:
-		/// IsSuccess == true: thêm mới thành công
-		/// IsSuccess == false: thêm mới thất bại
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
 		/// </returns>
 		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult GetPaging(string? keyword, int pageSize, int pageNumber)
@@ -112,9 +112,13 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Hàm validate chung dữ liệu 
 		/// </summary>
 		/// <param name="assetIncrementDTO">bản ghi cần validate</param>
-		/// <returns>Kết quả validate dữ liệu</returns>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
+		/// </returns>
 		/// Created by: LTVIET (20/04/2023)
-		public ValidateResult ValidateRequesData(FixedAssetIncrementDTO assetIncrementDTO)
+		private ValidateResult ValidateRequesData(FixedAssetIncrementDTO assetIncrementDTO)
 		{
 			var validateEmptyResult = ValidateEmpty(assetIncrementDTO);
 			var validateCustomResult = ValidateCustom(assetIncrementDTO);
@@ -319,7 +323,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// <summary>
 		/// Hàm xử lý logic khi lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
-		/// <returns>Đối tượng mã code mới</returns>
+		/// <returns>Đối tượng mã mới</returns>
 		/// Created by: LTVIET (20/04/2023)
 		public ServiceResult GetNewCode()
 		{
@@ -335,7 +339,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Hàm sinh ra code mới từ việc tách code ra phần chữ và số rồi tăng phần số lên 1 đơn vị
 		/// </summary>
 		/// <param name="oldCode">Code cần tách ra</param>
-		/// <returns>Code mới</returns>
+		/// <returns>Mã mới</returns>
 		/// Created by: LTVIET (20/04/2023)
 		private string GenerateNewCode(string? oldCode)
 		{
@@ -441,7 +445,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// IsSuccess == true: sửa thành công
 		/// IsSuccess == false: sửa thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		public ServiceResult UpdateAssetIncrementPrice(Guid voucherId, Decimal price)
 		{
 			if (price <= 0)
@@ -806,7 +810,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Hàm tạo header cho table tài sản chứng từ trong file excel chứng từ chi tiết
 		/// </summary>
 		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
-		/// Created by: LTVIET (29/03/2023)
+		/// Created by: LTVIET (29/04/2023)
 		private static void CreateHeaderTableAssetsExcel(ExcelWorksheet workSheet)
 		{
 			var headers = new List<String>() 
@@ -842,7 +846,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// </summary>
 		/// <param name="assets">Đối tượng tài sản truyền dữ liệu vào table</param>
 		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
-		/// Created by: LTVIET (29/03/2023)
+		/// Created by: LTVIET (29/04/2023)
 		private static void CreateDataTableAssetsExcel(List<FixedAssetDTO> assets, ExcelWorksheet workSheet)
 		{
 			CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
@@ -888,7 +892,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// </summary>
 		/// <param name="count">Số lượng bản ghi trong danh sách dữ liệu</param>
 		/// <param name="countColumn">Số lượng cột trong table</param>
-		/// /// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
+		/// <param name="workSheet">Đối tượng worksheet cần tạo table</param>
 		/// Created by: LTVIET (29/04/2023)
 		private static void FormatTableAssetsExcel(int count, ExcelWorksheet workSheet, int countColumn)
 		{

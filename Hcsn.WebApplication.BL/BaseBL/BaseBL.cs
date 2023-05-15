@@ -123,20 +123,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		public ServiceResult GetAllRecord()
         {
             var records = _baseDL.GetAllRecord();
-            if(records == null)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.NotFound,
-                    Message = ServiceResource.NotFound
-                };
-            }
-            return new ServiceResult
-            {
-                IsSuccess = true,
-                Data = records
-            };
+			return new ServiceResult
+			{
+				IsSuccess = records != null,
+				ErrorCode = ErrorCode.NotFound,
+				Message = ServiceResource.NotFound,
+				Data = records
+			};
         }
 
 		/// <summary>
@@ -152,20 +145,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		public ServiceResult GetRecordById(Guid recordId)
         {
             var record = _baseDL.GetRecordById(recordId);
-            if (record == null)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.NotFound,
-                    Message = ServiceResource.NotFound
-                };
-            }
-            return new ServiceResult
-            {
-                IsSuccess = true,
-                Data = record
-            };
+			return new ServiceResult
+			{
+				IsSuccess = record != null,
+				ErrorCode = ErrorCode.NotFound,
+				Message = ServiceResource.NotFound,
+				Data = record
+			};
         }
 
 		/// <summary>
@@ -195,22 +181,12 @@ namespace Hcsn.WebApplication.BL.BaseBL
             }
             // Thành công
             var numberOfAffectedRows = _baseDL.InsertRecord(record);
-            if(numberOfAffectedRows > 0)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = true,
-                };
-            }
-            else
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.InsertFailed,
-                    Message = ServiceResource.InsertFailed,
-                };
-            }
+			return new ServiceResult
+			{
+				IsSuccess = numberOfAffectedRows > 0,
+				ErrorCode = ErrorCode.InsertFailed,
+				Message = ServiceResource.InsertFailed,
+			};
         }
 
 
@@ -244,27 +220,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
             // Thành công
 
             var numberOfAffectedRows = _baseDL.UpdateRecord(recordId, record);
-            if (numberOfAffectedRows > 0)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = true,
-                };
-            }
-            else
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.UpdateFailed,
-                    Message = ServiceResource.UpdateFailed,
-                };
-            }
+			return new ServiceResult
+			{
+				IsSuccess = numberOfAffectedRows > 0,
+				ErrorCode = ErrorCode.UpdateFailed,
+				Message = ServiceResource.UpdateFailed,
+			};
         }
-
-
-
-
 
 		/// <summary>
 		/// Hàm validate chung dữ liệu 
@@ -280,15 +242,11 @@ namespace Hcsn.WebApplication.BL.BaseBL
 		{
 			var validateEmptyResult =  ValidateEmpty(record);
 			var validateCustomResult = ValidateCustom(record);
-			if (!validateEmptyResult | !validateCustomResult)
+			return new ValidateResult
 			{
-				return new ValidateResult
-				{
-					IsSuccess = false,
-					Data = inValidList
-				};
-			}
-			return new ValidateResult { IsSuccess = true };
+				IsSuccess = validateEmptyResult & validateCustomResult,
+				Data = inValidList
+			};
 		}
 
 		/// <summary>
@@ -364,9 +322,6 @@ namespace Hcsn.WebApplication.BL.BaseBL
 				IsSuccess = true
 			};
 		}
-
-
-
 
 		#endregion
 	}

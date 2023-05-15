@@ -16,7 +16,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		#endregion
 
 		#region Constructor
-		public AssetIncrementsController(IAssetIncrementBL assetIncrementBL) 
+		public AssetIncrementsController(IAssetIncrementBL assetIncrementBL)
 		{
 			_assetIncrementBL = assetIncrementBL;
 		}
@@ -51,23 +51,9 @@ namespace Hcsn.WebApplication.API.Controllers
 					MoreInfo = result.Message,
 				});
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 		}
 
@@ -104,23 +90,9 @@ namespace Hcsn.WebApplication.API.Controllers
 				}
 				return StatusCode(StatusCodes.Status200OK, result.Data);
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 		}
 
@@ -167,23 +139,9 @@ namespace Hcsn.WebApplication.API.Controllers
 					});
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 		}
 
@@ -215,24 +173,9 @@ namespace Hcsn.WebApplication.API.Controllers
 					TraceId = HttpContext.TraceIdentifier
 				});
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 
 		}
@@ -254,7 +197,7 @@ namespace Hcsn.WebApplication.API.Controllers
 				var assetIncrement = assetIncrementUpdate.AssetIncrement;
 				var assetsAdd = assetIncrementUpdate.AssetsAdd;
 				var assetsDelete = assetIncrementUpdate.AssetsDelete;
-				var result = _assetIncrementBL.UpdateAssetIncrement(assetIncrement, assetsAdd,assetsDelete);
+				var result = _assetIncrementBL.UpdateAssetIncrement(assetIncrement, assetsAdd, assetsDelete);
 				if (result.IsSuccess)
 				{
 					return StatusCode(StatusCodes.Status200OK);
@@ -282,24 +225,9 @@ namespace Hcsn.WebApplication.API.Controllers
 					});
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
-
+				return HandleErrorException();
 			}
 		}
 
@@ -314,7 +242,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// </returns>
 		/// Created by: LTViet (20/04/2023)
 		[HttpPut("Price")]
-		public IActionResult UpdateAssetIncrementPrice([FromQuery] Guid voucherId, [FromQuery] Decimal price )
+		public IActionResult UpdateAssetIncrementPrice([FromQuery] Guid voucherId, [FromQuery] Decimal price)
 		{
 			try
 			{
@@ -346,23 +274,9 @@ namespace Hcsn.WebApplication.API.Controllers
 					});
 				}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 
 			}
 		}
@@ -396,23 +310,9 @@ namespace Hcsn.WebApplication.API.Controllers
 				});
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 		}
 
@@ -426,7 +326,7 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// </returns>
 		/// Created by: LTViet (20/04/2023)
 		[HttpDelete]
-		public ActionResult DeleteMultipleRecord([FromBody]List<Guid> ids)
+		public ActionResult DeleteMultipleRecord([FromBody] List<Guid> ids)
 		{
 			try
 			{
@@ -445,23 +345,9 @@ namespace Hcsn.WebApplication.API.Controllers
 				});
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
 		}
 
@@ -473,12 +359,12 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// <returns> Kết quả việc thực hiện xuất file excel</returns>
 		/// Created by: LTVIET (29/03/2023)
 		[HttpGet("Export")]
-		public IActionResult GetExcelFiles([FromQuery] string? keyword, [FromQuery]Guid? voucherId)
+		public IActionResult GetExcelFiles([FromQuery] string? keyword, [FromQuery] Guid? voucherId)
 		{
 			try
 			{
 				var stream = (Stream)new MemoryStream();
-				if(voucherId == null)
+				if (voucherId == null)
 				{
 					stream = _assetIncrementBL.ExportAllExcel(keyword);
 				}
@@ -499,24 +385,22 @@ namespace Hcsn.WebApplication.API.Controllers
 				});
 
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				string traceId = HttpContext.TraceIdentifier;
-				using (StreamWriter sws = new(ErrorResult.LogError, true))
-				{
-					sws.WriteLine(traceId);
-					sws.WriteLine(ex.Message);
-					sws.WriteLine(ex.StackTrace);
-				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
-				{
-					ErrorCode = ErrorCode.Exception,
-					DevMsg = ErrorResource.DevMsg_Exception,
-					UserMsg = ErrorResource.UserMsg_Exception,
-					TraceId = traceId,
-					MoreInfo = ErrorResource.Exception_MoreInfo,
-				});
+				return HandleErrorException();
 			}
+		}
+
+		private ActionResult HandleErrorException()
+		{
+			return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+			{
+				ErrorCode = ErrorCode.Exception,
+				DevMsg = ErrorResource.DevMsg_Exception,
+				UserMsg = ErrorResource.UserMsg_Exception,
+				TraceId = HttpContext.TraceIdentifier,
+				MoreInfo = ErrorResource.Exception_MoreInfo,
+			});
 		}
 		#endregion
 	}
