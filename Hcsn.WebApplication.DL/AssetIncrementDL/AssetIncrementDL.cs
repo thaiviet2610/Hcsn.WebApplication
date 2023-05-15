@@ -1,17 +1,18 @@
 ﻿using Dapper;
 using Hcsn.WebApplication.Common.Constants.ProcedureName;
 using Hcsn.WebApplication.Common.Constants;
-using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Entities;
 using Hcsn.WebApplication.DL.DBConfig;
 using System.Data;
 using Org.BouncyCastle.Crypto;
 using Hcsn.WebApplication.Common.Enums;
 using System.Transactions;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
 
 namespace Hcsn.WebApplication.DL.AssetIncrementDL
 {
-	public class AssetIncrementDL : IAssetIncrementDL
+    public class AssetIncrementDL : IAssetIncrementDL
 	{
 		#region Field
 		private IRepositoryDB _assetIncrementRepository;
@@ -53,11 +54,11 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			var assetIncrementDTO = new FixedAssetIncrementDTO()
 			{
 				voucher_id = assetIncrement.voucher_id,
-				voucher_code = assetIncrement.voucher_code,
+				voucher_code = assetIncrement.voucher_code.Trim(),
 				voucher_date = assetIncrement.voucher_date,
 				increment_date = assetIncrement.increment_date,
 				price = assetIncrement.price,
-				description = assetIncrement.description,
+				description = assetIncrement.description?.Trim(),
 				assets = assets
 			};
 			dbConnection.Close();
@@ -261,7 +262,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			var assetIncrement = _assetIncrementRepository.QueryFirstOrDefault<FixedAssetIncrement>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
 			dbConnection.Close();
 
-			return assetIncrement?.voucher_code;
+			return assetIncrement?.voucher_code.Trim();
 		}
 
 		/// <summary>

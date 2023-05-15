@@ -1,5 +1,6 @@
 ﻿using Hcsn.WebApplication.Common.Entities;
-using Hcsn.WebApplication.Common.Entities.DTO;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.BL.AssetIncrementBL
 {
-	public interface IAssetIncrementBL
+    public interface IAssetIncrementBL
 	{
 		/// <summary>
 		/// Hàm lấy danh sách chứng từ theo bộ lọc và phân trang

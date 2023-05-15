@@ -1,14 +1,15 @@
-﻿using Hcsn.WebApplication.Common.Entities.DTO;
-using Hcsn.WebApplication.Common.Entities;
+﻿using Hcsn.WebApplication.Common.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
 
 namespace Hcsn.WebApplication.DL.AssetIncrementDL
 {
-	public interface IAssetIncrementDL
+    public interface IAssetIncrementDL
 	{
 		/// <summary>
 		/// Hàm lấy danh sách chứng từ theo bộ lọc và phân trang

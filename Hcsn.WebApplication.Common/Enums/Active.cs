@@ -12,6 +12,7 @@ namespace Hcsn.WebApplication.Common.Enums
 		/// Hoạt động
 		/// </summary>
 		True = 1,
+
 		/// <summary>
 		/// Không hoạt động
 		/// </summary>

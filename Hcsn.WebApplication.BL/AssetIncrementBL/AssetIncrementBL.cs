@@ -1,5 +1,4 @@
 ﻿using Hcsn.WebApplication.Common.Constants;
-using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Entities;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.Common.Resource;
@@ -9,10 +8,15 @@ using Hcsn.WebApplication.DL.AssetIncrementDL;
 using OfficeOpenXml.Style;
 using OfficeOpenXml;
 using System.Globalization;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
+using Hcsn.WebApplication.Common.Entities.DTO.result.export;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.validate;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 
 namespace Hcsn.WebApplication.BL.AssetIncrementBL
 {
-	public class AssetIncrementBL : IAssetIncrementBL
+    public class AssetIncrementBL : IAssetIncrementBL
 	{
 		#region Field
 		private IAssetIncrementDL _assetIncrementDL;
@@ -298,7 +302,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 			{
 				var attHcsnLength = property.GetCustomAttributes(typeof(HcsnMaxLengthAttribute), false).FirstOrDefault();
 				int propLength = (attHcsnLength as HcsnMaxLengthAttribute).Length;
-				if (propValue.ToString().Length > propLength)
+				if (propValue?.ToString()?.Trim().Length > propLength)
 				{
 					var attributeName = "";
 					if (property.IsDefined(typeof(HcsnNameAttribute), false))
@@ -363,21 +367,30 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				{
 					if (regex.IsMatch(oldCode[i].ToString()))
 					{
-						alphaPart = oldCode.Substring(0, i + 1);
+						alphaPart = oldCode[..(i + 1)];
 						break;
 					}
-					numberPart = oldCode[i].ToString() + numberPart;
+					numberPart = $"{oldCode[i]}{numberPart.Trim()}";
 				}
-				int lengthNumberPart = numberPart.Length;
-				// Tăng phần số lên một đơn vị
-				int numberCode = int.Parse(numberPart) + 1;
-				// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
-				string strNumberCode = "" + numberCode;
-				while (strNumberCode.Length < lengthNumberPart)
+				string strNumberCode;
+				if (numberPart == "")
+                {
+					strNumberCode = "00001";
+				}
+				else
 				{
-					strNumberCode = '0' + strNumberCode;
+					int lengthNumberPart = numberPart.Length;
+					// Tăng phần số lên một đơn vị
+					int numberCode = int.Parse(numberPart) + 1;
+					// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
+					strNumberCode = "" + numberCode;
+					while (strNumberCode.Length < lengthNumberPart)
+					{
+						strNumberCode = '0' + strNumberCode.Trim();
+					}
 				}
-				newCode = alphaPart + strNumberCode;
+                
+				newCode = alphaPart.Trim() + strNumberCode.Trim();
 				// Kiểm tra xem code mới có bị trùng không
 				// Lấy ra số bản ghi tài sản có code bằng code mới
 				var assetIncrement = new FixedAssetIncrement
@@ -393,7 +406,7 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				}
 			}
 
-			return newCode;
+			return newCode.Trim();
 		}
 
 		/// <summary>

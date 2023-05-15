@@ -1,4 +1,4 @@
-﻿using Hcsn.WebApplication.Common.Entities.DTO;
+﻿using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 using System;
 using System.Collections.Generic;
 using System.Linq;

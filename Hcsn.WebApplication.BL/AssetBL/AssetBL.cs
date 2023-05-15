@@ -1,7 +1,6 @@
 ﻿using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.Common.Constants;
 using Hcsn.WebApplication.Common.Entities;
-using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.AssetDL;
 using System.Text.RegularExpressions;
@@ -11,6 +10,11 @@ using OfficeOpenXml;
 using System.Globalization;
 using System.Reflection;
 using Newtonsoft.Json;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
+using Hcsn.WebApplication.Common.Entities.DTO.result.export;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.validate;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 
 namespace Hcsn.WebApplication.BL.AssetBL
 {

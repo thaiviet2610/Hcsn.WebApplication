@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using Hcsn.WebApplication.Common.Entities.DTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 using Hcsn.WebApplication.Common.Entities;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
@@ -18,10 +18,12 @@ using Hcsn.WebApplication.Common.Resource;
 using System.Collections;
 using OfficeOpenXml.DataValidation;
 using System.IO;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.error;
 
 namespace Hcsn.WebApplication.API.Controllers
 {
-    
+
     public class AssetsController : BasesController<FixedAsset>
     {
         #region Field

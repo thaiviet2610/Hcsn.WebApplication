@@ -1,6 +1,6 @@
 ﻿using Hcsn.WebApplication.Common.Enums;
 
-namespace Hcsn.WebApplication.Common.Entities.DTO
+namespace Hcsn.WebApplication.Common.Entities.DTO.result.error
 {
     /// <summary>
     /// Đối tượng chứa thông tin lỗi được trả về cho frontend
@@ -8,16 +8,10 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
     /// </summary>
     public class ErrorResult
     {
-		#region Field
         /// <summary>
-        /// Địa chỉ lưu lại log lỗi
+        /// Mã lỗi
         /// </summary>
-		public static string LogError = "D:\\code\\misa\\API\\Hcsn.WebApplication\\LogError.txt";
-		#endregion
-		/// <summary>
-		/// Mã lỗi
-		/// </summary>
-		public ErrorCode? ErrorCode { get; set; }
+        public ErrorCode? ErrorCode { get; set; }
 
         /// <summary>
         /// Thông báo lỗi cho dev
@@ -39,6 +33,6 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// </summary>
         public string? TraceId { get; set; }
 
-		
-	}
+
+    }
 }

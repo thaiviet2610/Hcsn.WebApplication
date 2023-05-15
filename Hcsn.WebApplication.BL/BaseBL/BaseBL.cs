@@ -1,6 +1,5 @@
 ﻿using Hcsn.WebApplication.Common;
 using Hcsn.WebApplication.Common.Constants;
-using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.BaseDL;
 using System;
@@ -12,6 +11,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Hcsn.WebApplication.Common.Resource;
 using System.Reflection;
+using Hcsn.WebApplication.Common.Entities.DTO.result.validate;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 
 namespace Hcsn.WebApplication.BL.BaseBL
 {

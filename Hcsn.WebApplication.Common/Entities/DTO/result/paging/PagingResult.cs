@@ -1,4 +1,4 @@
-﻿namespace Hcsn.WebApplication.Common.Entities.DTO
+﻿namespace Hcsn.WebApplication.Common.Entities.DTO.result.paging
 {
     /// <summary>
     /// Đối tượng chứa kết quả ccuar việc phân trang, lọc danh sách đối tượng
@@ -15,5 +15,5 @@
         /// Tổng số bản ghi thỏa mãn điều kiện
         /// </summary>
         public int TotalRecord { get; set; }
-	}
+    }
 }

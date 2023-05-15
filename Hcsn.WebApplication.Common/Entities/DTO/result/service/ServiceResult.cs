@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hcsn.WebApplication.Common.Entities.DTO
+namespace Hcsn.WebApplication.Common.Entities.DTO.result.service
 {
     /// <summary>
-    /// Đối tượng chứa thông tin lỗi nhận được khi validate dữ liệu
+    /// Đối tượng chứa thông tin lỗi nhận đucợ ở tầng BL trả về cho tầng Controller 
     /// Created by: LTVIET (10/03/2023)
     /// </summary>
-    public class ValidateResult
+    public class ServiceResult
     {
         /// <summary>
         /// Thành công hay không
@@ -23,13 +23,16 @@ namespace Hcsn.WebApplication.Common.Entities.DTO
         /// <summary>
         /// Mã code của lỗi
         /// </summary>
-        public ValidateCode? ValidateCode { get; set; }
+        public ErrorCode? ErrorCode { get; set; }
+
+        /// <summary>
+        /// Thông tin đối tượng trả về
+        /// </summary>
+        public object? Data { get; set; }
 
         /// <summary>
         /// Thông báo lỗi chi tiết
         /// </summary>
         public string? Message { get; set; }
-
-        public Object? Data { get; set; }
     }
 }

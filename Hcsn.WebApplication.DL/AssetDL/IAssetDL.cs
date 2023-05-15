@@ -1,5 +1,5 @@
 ﻿using Hcsn.WebApplication.Common.Entities;
-using Hcsn.WebApplication.Common.Entities.DTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
 using Hcsn.WebApplication.DL.BaseDL;
 using System;
 using System.Collections.Generic;

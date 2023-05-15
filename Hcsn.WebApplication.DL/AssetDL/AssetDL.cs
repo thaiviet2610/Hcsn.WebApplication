@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using Hcsn.WebApplication.Common;
 using Hcsn.WebApplication.Common.Entities;
-using Hcsn.WebApplication.Common.Entities.DTO;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.DL.BaseDL;
 using System;
@@ -18,6 +17,8 @@ using Hcsn.WebApplication.DL.DBConfig;
 using Hcsn.WebApplication.Common.Constants.ProcedureName;
 using Newtonsoft.Json;
 using Hcsn.WebApplication.Common.Constants;
+using Hcsn.WebApplication.Common.Entities.DTO.result.paging;
+using Hcsn.WebApplication.Common.Entities.DTO.entityDTO;
 
 namespace Hcsn.WebApplication.DL.AssetDL
 {

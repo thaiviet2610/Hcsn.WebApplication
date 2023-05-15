@@ -1,6 +1,7 @@
 ﻿using Hcsn.WebApplication.BL.BaseBL;
 using Hcsn.WebApplication.Common;
-using Hcsn.WebApplication.Common.Entities.DTO;
+using Hcsn.WebApplication.Common.Entities.DTO.result.error;
+using Hcsn.WebApplication.Common.Entities.DTO.result.service;
 using Hcsn.WebApplication.Common.Enums;
 using Hcsn.WebApplication.Common.Resource;
 using Microsoft.AspNetCore.Http;
