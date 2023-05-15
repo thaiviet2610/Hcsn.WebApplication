@@ -473,10 +473,10 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 
 			// Thành công
 
-			var isUpdateSuccess = _assetIncrementDL.UpdateAssetIncrementPrice(voucherId, price);
+			bool isUpdateSuccess = _assetIncrementDL.UpdateAssetIncrementPrice(voucherId, price);
 			return new ServiceResult
 			{
-				IsSuccess = isUpdateSuccess == 1,
+				IsSuccess = isUpdateSuccess,
 				ErrorCode = ErrorCode.UpdateFailed,
 				Message = ServiceResource.UpdateFailed,
 			};

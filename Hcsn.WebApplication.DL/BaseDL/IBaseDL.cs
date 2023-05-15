@@ -26,50 +26,49 @@ namespace Hcsn.WebApplication.DL.BaseDL
         /// Created by: LTVIET (20/03/2023)
         T GetRecordById(Guid recordId);
 
-        /// <summary>
-        /// Hàm truy cập database thêm mới 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn thêm</param>
-        /// <returns>
-        /// 1: Nếu insert thành công
-        /// 2: Nếu insert thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        int InsertRecord(T record);
+		/// <summary>
+		/// Hàm truy cập database thêm mới 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn thêm</param>
+		/// <returns>
+		/// true: thêm mới thành công
+		/// false: thêm mới thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		bool InsertRecord(T record);
 
-        /// <summary>
-        /// Hàm truy cập database sửa đổi 1 bản ghi
-        /// </summary>
-        /// <param name="record">Bản ghi muốn sửa đổi</param>
-        /// <returns>
-        /// 1: Nếu update thành công
-        /// 2: Nếu update thất bại
-        /// </returns>
-        /// Created by: LTViet (20/03/2023)
-        int UpdateRecord(Guid recordId, T record);
+		/// <summary>
+		/// Hàm truy cập database sửa đổi 1 bản ghi
+		/// </summary>
+		/// <param name="record">Bản ghi muốn sửa đổi</param>
+		/// <returns>
+		/// true: sửa thành công
+		/// false: sửa thất bại
+		/// </returns>
+		/// Created by: LTViet (20/03/2023)
+		bool UpdateRecord(Guid recordId, T record);
 
 		/// <summary>
 		/// Hàm truy cập database xóa 1 bản ghi
 		/// </summary>
 		/// <param name="recordId">Id bản ghi muốn xóa</param>
 		/// <returns>
-		/// 1: Nếu delete thành công
-		/// 2: Nếu delete thất bại
+		/// true: Xóa thành công
+		/// false: Xóa thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		int DeleteRecord(Guid recordId);
+		bool DeleteRecord(Guid recordId);
 
 		/// <summary>
 		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
 		/// </summary>
 		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
 		/// <returns>
-		/// Kết quả việc thực hiện xóa nhiều bản ghi
-		/// 1: Nếu delete thành công
-		/// 0: Nếu delete thất bại
+		/// true: Xóa thành công
+		/// false: Xóa thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		int DeleteMultipleRecord(List<Guid> entitiesId);
+		bool DeleteMultipleRecord(List<Guid> entitiesId);
         #endregion
     }
 }

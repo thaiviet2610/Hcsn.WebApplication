@@ -43,10 +43,11 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="recordId">Id bản ghi muốn xóa</param>
 		/// <returns>
-		/// Số bản ghi bị ảnh hưởng
+		/// true: Xóa thành công
+        /// false: Xóa thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		public int DeleteRecord(Guid recordId)
+		public bool DeleteRecord(Guid recordId)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.DeleteById, typeof(T).Name);
@@ -60,7 +61,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             // Xử lý kết quả trả về
-            return numberOfAffectedRows;
+            return numberOfAffectedRows == 1;
         }
 
 		/// <summary>
@@ -68,10 +69,11 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="entitiesId">Danh sách bản ghi cần xóa</param>
 		/// <returns>
-		/// Số bản ghi bị ảnh hưởng
+		/// true: Xóa thành công
+		/// false: Xóa thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		public int DeleteMultipleRecord(List<Guid> entitiesId)
+		public bool DeleteMultipleRecord(List<Guid> entitiesId)
 		{
             // Chuẩn bị tham số đầu vào
             string sql = string.Format(ProcedureName.DeleteMultiple, typeof(T).Name);
@@ -82,7 +84,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
 
 			parameters.Add("p_ids", listIdToString);
 			var dbConnection = _repositoryDB.GetOpenConnection();
-
+            bool checkMultiple = true;
 			using (var transaction = dbConnection.BeginTransaction())
 			{
 				try
@@ -92,7 +94,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
                     if(numberOfAffectedRows != entitiesId.Count)
                     {
 						transaction.Rollback();
-						numberOfAffectedRows = 0;
+                        checkMultiple = false;
 					}
                     else
                     {
@@ -102,13 +104,13 @@ namespace Hcsn.WebApplication.DL.BaseDL
 				}
 				catch (Exception)
 				{
-                    numberOfAffectedRows = 0;
+					checkMultiple = false;
 					transaction.Rollback();
 				}
 			}
 			dbConnection.Close();
 			// Xử lý kết quả trả về
-			return numberOfAffectedRows;
+			return checkMultiple;
 		}
 
 		/// <summary>
@@ -162,10 +164,11 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="record">Bản ghi muốn thêm</param>
 		/// <returns>
-		/// Số bản ghi bị ảnh hưởng
+		/// true: thêm mới thành công
+		/// false: thêm mới thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
-		public int InsertRecord(T record)
+		/// Created by: LTVIET (20/03/2023)
+		public bool InsertRecord(T record)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.Insert, typeof(T).Name);
@@ -180,7 +183,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
             // Xử lý kết quả trả về
-            return numberOfAffectedRows;
+            return numberOfAffectedRows == 1;
             
         }
 
@@ -189,10 +192,11 @@ namespace Hcsn.WebApplication.DL.BaseDL
 		/// </summary>
 		/// <param name="record">Bản ghi muốn sửa đổi</param>
 		/// <returns>
-		/// Số bản ghi bị ảnh hưởng
+		/// true: sửa thành công
+		/// false: sửa thất bại
 		/// </returns>
 		/// Created by: LTViet (20/03/2023)
-		public int UpdateRecord(Guid recordId,T record)
+		public bool UpdateRecord(Guid recordId,T record)
         {
             // Chuẩn bị tên stored procedure
             string storedProcedureName = String.Format(ProcedureName.Update, typeof(T).Name);
@@ -207,7 +211,7 @@ namespace Hcsn.WebApplication.DL.BaseDL
             var dbConnection = _repositoryDB.GetOpenConnection();
             int numberOfAffectedRows = _repositoryDB.Execute(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
             dbConnection.Close();
-            return numberOfAffectedRows;
+            return numberOfAffectedRows == 1;
 
         }
 

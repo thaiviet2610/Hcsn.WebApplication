@@ -31,6 +31,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// </summary>
 		/// <param name="voucherId">id của chứng từ</param>
 		/// <returns>Bản ghi chứng từ cần tìm</returns>
+		/// Created by: LTVIET (20/04/2023)
 		public FixedAssetIncrementDTO GetById(Guid voucherId)
 		{
 			// Chuẩn bị tên stored procedure
@@ -78,7 +79,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// - Tổng số bản ghi thỏa mãn điều kiện
 		/// - Tổng nguyên giá
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public PagingResultAssetIncrement GetPaging
 			(string? keyword, int pageSize, int pageNumber)
 		{
@@ -118,6 +119,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// true: thêm mới thành công
 		/// false: thêm mới thất bại
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public bool InsertAssetIncrement(FixedAssetIncrement assetIncrement, List<FixedAssetDTO> assets)
 		{
 			bool check = true;
@@ -167,6 +169,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="assetIncrement">Đối tượng chứng từ chứa dũ liệu cần thêm mới</param>
 		/// <param name="storedProcedureNameInsertAssetIncrement">Tên stored procedure</param>
 		/// <param name="parametersAssetIncrement">Tham số đầu vào cho stored</param>
+		/// Created by: LTVIET (20/04/2023)
 		private void PrepareInsertDataInsertAssetIncrement(FixedAssetIncrement assetIncrement, out string storedProcedureNameInsertAssetIncrement, out DynamicParameters parametersAssetIncrement)
 		{
 			storedProcedureNameInsertAssetIncrement = String.Format(ProcedureName.Insert, typeof(FixedAssetIncrement).Name);
@@ -181,6 +184,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="assets">Danh sách tài sản chứa dũ liệu cần thêm mới</param>
 		/// <param name="storedProcedureNameInsertAssetIncrementDetail">Tên stored procedure</param>
 		/// <param name="parametersAssetIncrementDetail">Tham số đầu vào cho stored</param>
+		/// Created by: LTVIET (20/04/2023)
 		private static void PrepareInsertDataInsertAssetIncrementDetail(FixedAssetIncrement assetIncrement, List<FixedAssetDTO> assets, out string storedProcedureNameInsertAssetIncrementDetail, out DynamicParameters parametersAssetIncrementDetail)
 		{
 			storedProcedureNameInsertAssetIncrementDetail = String.Format(ProcedureName.Insert, typeof(FixedAssetIncrementDetail).Name);
@@ -209,7 +213,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// </summary>
 		/// <param name="parameters">Các tham số truyền vào</param>
 		/// <param name="assetIncrement">Đối tượng chứng từ chứa dữ liệu</param>
-		/// Create by: LTVIET (20/03/2023)
+		/// Create by: LTVIET (20/04/2023)
 		protected virtual void AddParametersValue(DynamicParameters parameters, FixedAssetIncrement assetIncrement)
 		{
 			var properties = typeof(FixedAssetIncrement).GetProperties();
@@ -225,7 +229,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="assetIncrement"> Đối tượng tài sản chứa thuôc tính cần kiểm tra trùng </param>
 		/// <param name="propertyName">Tên thuộc tính cần kiểm tra</param>
 		/// <returns>Số bản ghi cần tìm</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		public int GetNumberRecordOfPropertyDuplicate(FixedAssetIncrement assetIncrement, string propertyName)
 		{
 			var duplicateProperty = typeof(FixedAssetIncrement).GetProperties().FirstOrDefault(prop => prop.Name == propertyName);
@@ -249,8 +253,8 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <summary>
 		/// Hàm lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
-		/// <returns>Mã code của đối tượng</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// <returns>Mã chứng từ của đối tượng</returns>
+		/// Created by: LTViet (20/04/2023)
 		public string? GetNewCode()
 		{
 			// Chuẩn bị tên stored procedure
@@ -275,7 +279,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// true: update thành công
 		/// false: update thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		public bool UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrement, List<Guid>? idAssetsAdd, List<Guid>? idAssetsDelete)
 		{
 			// Chuẩn bị tên stored procedure
@@ -350,11 +354,11 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="voucherId">Id của chứng từ cần sửa</param>
 		/// <param name="price">Giá trị của tổng nguyên giá</param>
 		/// <returns>
-		/// 1: update thành công
-		/// 0: update thất bại
+		/// true: update thành công
+		/// false: update thất bại
 		/// </returns>
 		/// Created by: LTViet (20/04/2023)
-		public int UpdateAssetIncrementPrice(Guid voucherId, Decimal price)
+		public bool UpdateAssetIncrementPrice(Guid voucherId, Decimal price)
 		{
 			// Chuẩn bị tên stored procedure
 			string storedProcedureName = ProcedureNameAssetIncrement.UpdatePrice;
@@ -370,7 +374,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 
 			dbConnection.Close();
 			// Xử lý kết quả trả về
-			return numberOfAffectedRows;
+			return numberOfAffectedRows == 1;
 		}
 
 		/// <summary>
@@ -382,7 +386,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// True: thành công
 		/// False: thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		public bool DeleteAssetIncrementById(Guid voucherId)
 		{
 			// Chuẩn bị tên stored procedure
@@ -433,7 +437,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			return checkDelete;
 		}
 
-		
+
 
 		/// <summary>
 		/// Hàm gọi database để thực hiện việc xóa nhiều bản ghi
@@ -444,6 +448,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// True: Nếu delete thành công
 		/// False: Nếu delete thất bại
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public bool DeleteMultipleAssetIncrement(List<Guid> ids)
 		{
 			PrepareDataGetAssetsByVoucherId(ids, out string storedProcedureNameGetAssetsByIdVoucher, out DynamicParameters parametersGetAssetsByIdVoucher);
@@ -592,7 +597,6 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		{
 			storedProcedureNameGetAssetsByIdVoucher = ProcedureNameAsset.GetByVoucherId;
 			// Chuẩn bị tham số đầu vào cho stored
-			//string idsToString = $"('{string.Join("','", idVouchers)}')";
 			parametersGetAssetsByIdVoucher = new DynamicParameters();
 			parametersGetAssetsByIdVoucher.Add("@p_ids", idVouchers);
 		}

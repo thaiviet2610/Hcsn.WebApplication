@@ -23,7 +23,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// - Tổng số bản ghi thỏa mãn điều kiện
 		/// - Tổng nguyên giá
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public PagingResultAssetIncrement GetPaging
 			(string? keyword, int pageSize, int pageNumber);
 
@@ -37,6 +37,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// true: thêm mới thành công
 		/// false: thêm mới thất bại
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public bool InsertAssetIncrement(FixedAssetIncrement assetIncrement, List<FixedAssetDTO> assets);
 
 		/// <summary>
@@ -45,14 +46,14 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		///	<param name="assetIncrement"> Đối tượng tài sản chứa thuôc tính cần kiểm tra trùng </param>
 		/// <param name="propertName">Tên thuộc tính cần kiểm tra</param>
 		/// <returns>Số bản ghi cần tìm</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTViet (20/04/2023)
 		int GetNumberRecordOfPropertyDuplicate(FixedAssetIncrement assetIncrement, string propertName);
 
 		/// <summary>
 		/// Hàm truy cập database lấy ra mã code ở lần nhập gần nhất
 		/// </summary>
-		/// <returns>Mã code của đối tượng</returns>
-		/// Created by: LTViet (20/03/2023)
+		/// <returns>Mã chứng từ của đối tượng</returns>
+		/// Created by: LTVIET (20/04/2023)
 		string? GetNewCode();
 
 		/// <summary>
@@ -60,6 +61,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// </summary>
 		/// <param name="voucherId">id của chứng từ</param>
 		/// <returns>Bản ghi chứng từ cần tìm</returns>
+		/// Created by: LTVIET (20/04/2023)
 		FixedAssetIncrementDTO GetById(Guid voucherId);
 
 		/// <summary>
@@ -72,7 +74,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// true: update thành công
 		/// false: update thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		bool UpdateAssetIncrement(FixedAssetIncrementDTO assetIncrementDTO,List<Guid>? assetsAdd, List<Guid>? assetsDelete);
 
 		/// <summary>
@@ -81,11 +83,11 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="voucherId">Id của chứng từ cần sửa</param>
 		/// <param name="price">Giá trị của tổng nguyên giá</param>
 		/// <returns>
-		/// 1: update thành công
-		/// 0: update thất bại
+		/// true: update thành công
+		/// false: update thất bại
 		/// </returns>
-		/// Created by: LTViet (20/04/2023)
-		public int UpdateAssetIncrementPrice(Guid voucherId, Decimal price);
+		/// Created by: LTVIET (20/04/2023)
+		public bool UpdateAssetIncrementPrice(Guid voucherId, Decimal price);
 
 		/// <summary>
 		/// Hàm gọi database thực hiện việc xóa 1 bản ghi
@@ -96,7 +98,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// True: thành công
 		/// False: thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		public bool DeleteAssetIncrementById(Guid voucherId);
 
 		/// <summary>
@@ -108,7 +110,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// True: Nếu delete thành công
 		/// False: Nếu delete thất bại
 		/// </returns>
-		/// Created by: LTViet (20/03/2023)
+		/// Created by: LTVIET (20/04/2023)
 		bool DeleteMultipleAssetIncrement(List<Guid> ids);
 	}
 }

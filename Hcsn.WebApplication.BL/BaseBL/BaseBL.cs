@@ -56,20 +56,13 @@ namespace Hcsn.WebApplication.BL.BaseBL
 					Data = validate
 				};
 			}
-            var numberOfAffectedRows = _baseDL.DeleteRecord(recordId);
-            if (numberOfAffectedRows == 0)
-            {
-                return new ServiceResult
-                {
-                    IsSuccess = false,
-                    ErrorCode = ErrorCode.DeleteFailed,
-                    Message = ServiceResource.DeleteFailed
-                };
-            }
-            return new ServiceResult
-            {
-                IsSuccess = true
-            };
+            bool isDeleteRecord = _baseDL.DeleteRecord(recordId);
+			return new ServiceResult
+			{
+				IsSuccess = isDeleteRecord,
+				ErrorCode = ErrorCode.DeleteFailed,
+				Message = ServiceResource.DeleteFailed
+			};
         }
 
 		/// <summary>
@@ -95,20 +88,12 @@ namespace Hcsn.WebApplication.BL.BaseBL
 					Data = validate
 				};
 			}
-			var numberOfAffectedRows = _baseDL.DeleteMultipleRecord(entitiesId);
-			if (numberOfAffectedRows == 0)
-			{
-				return new ServiceResult
-				{
-					IsSuccess = false,
-					ErrorCode = ErrorCode.DeleteMultipleFailed,
-					Message = ServiceResource.DeleteMultipleFailed,
-				};
-			}
+			bool isDeleteMultiple = _baseDL.DeleteMultipleRecord(entitiesId);
 			return new ServiceResult
 			{
-				IsSuccess = true,
-                Data = numberOfAffectedRows
+				IsSuccess = isDeleteMultiple,
+				ErrorCode = ErrorCode.DeleteMultipleFailed,
+				Message = ServiceResource.DeleteMultipleFailed,
 			};
 		}
 
@@ -181,10 +166,10 @@ namespace Hcsn.WebApplication.BL.BaseBL
                 };
             }
             // Thành công
-            var numberOfAffectedRows = _baseDL.InsertRecord(record);
+            bool isInsertRecord = _baseDL.InsertRecord(record);
 			return new ServiceResult
 			{
-				IsSuccess = numberOfAffectedRows > 0,
+				IsSuccess = isInsertRecord,
 				ErrorCode = ErrorCode.InsertFailed,
 				Message = ServiceResource.InsertFailed,
 			};
@@ -220,10 +205,10 @@ namespace Hcsn.WebApplication.BL.BaseBL
 
             // Thành công
 
-            var numberOfAffectedRows = _baseDL.UpdateRecord(recordId, record);
+            var isUpdateRecord = _baseDL.UpdateRecord(recordId, record);
 			return new ServiceResult
 			{
-				IsSuccess = numberOfAffectedRows > 0,
+				IsSuccess = isUpdateRecord,
 				ErrorCode = ErrorCode.UpdateFailed,
 				Message = ServiceResource.UpdateFailed,
 			};
