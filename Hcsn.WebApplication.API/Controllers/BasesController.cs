@@ -45,7 +45,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.NotFound,
                         DevMsg = ErrorResource.DevMsg_NotFound,
@@ -80,7 +80,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 {
 					return StatusCode(StatusCodes.Status200OK, result.Data);
                 }
-                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+                return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                 {
                     ErrorCode = ErrorCode.NotFound,
                     DevMsg = ErrorResource.DevMsg_NotFound,
@@ -127,7 +127,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-					return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+					return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.InsertFailed,
                         DevMsg = ErrorResource.DevMsg_InsertFailed,
@@ -177,7 +177,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.UpdateFailed,
                         DevMsg = ErrorResource.DevMsg_UpdateFailed,
@@ -213,7 +213,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 {
                     return StatusCode(StatusCodes.Status200OK);
                 }
-                return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+                return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                 {
                     ErrorCode = ErrorCode.DeleteFailed,
                     DevMsg = ErrorResource.DevMsg_DeleteFailed,
@@ -248,7 +248,7 @@ namespace Hcsn.WebApplication.API.Controllers
 				{
 					return StatusCode(StatusCodes.Status200OK, result.Data);
 				}
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+				return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
 				{
 					ErrorCode = ErrorCode.DeleteMultipleFailed,
 					DevMsg = ErrorResource.DevMsg_DeleteMultipleFailed,
@@ -264,6 +264,11 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
 		}
 
+		/// <summary>
+		/// Hàm xử lý lỗi khi xảy ra excepcion
+		/// </summary>
+		/// <returns>Đối tượng chứa thông tin lỗi</returns>
+		/// Created by: LTVIET (15/04/2023)
 		private ActionResult HandleErrorException()
 		{
 			return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult

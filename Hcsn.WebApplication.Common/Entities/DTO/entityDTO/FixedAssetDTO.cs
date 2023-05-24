@@ -13,7 +13,7 @@ namespace Hcsn.WebApplication.Common.Entities.DTO.entityDTO
         /// <summary>
         /// Số thứ tự
         /// </summary>
-        public int index { get; set; }
+        public int row_index { get; set; }
 
         /// <summary>
         /// Khóa chính

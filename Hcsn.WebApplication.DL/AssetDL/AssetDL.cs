@@ -128,29 +128,21 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			// Khởi tạo kết nối tới Database
 			var dbConnection = _assetRepository.GetOpenConnection();
 			// Thực hiện gọi vào Database để chạy stored procedure
-			var asset = _assetRepository.QueryFirstOrDefault<FixedAsset>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+			string fixedAssetCode = _assetRepository.QueryFirstOrDefault<String>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
 			dbConnection.Close();
 
 			// Xử lý kết quả trả về 
-			if (asset == null)
-			{
-				// Nếu không có đối tượng nào trong database thì trả về kết quả null
-				return null;
-			}
-			else
-			{
-				return asset.fixed_asset_code;
-			}
+			return fixedAssetCode;
 		}
 
 		/// <summary>
-		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+		/// Hàm lấy danh sách tài sản chưa chứng từ theo bộ lọc và phân trang
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
-		/// <param name="notInIdAssets">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
-		/// <param name="activeIdAssets">Danh sách các id của các tài sản đã active cần lấy ra</param>
+		/// <param name="idAssetsNotIn">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
+		/// <param name="idAssetsActive">Danh sách các id của các tài sản đã active cần lấy ra</param>
 		/// <returns> 
 		/// Đối tượng PagingResult bao gồm:
 		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
@@ -161,7 +153,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// - Tổng giá trị còn lại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		public PagingResultAsset GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets)
+		public PagingResultAsset GetAllAssetNotActive(string? keyword, int pageSize, int pageNumber, List<Guid>? idAssetsNotIn, List<Guid>? idAssetsActive)
 		{
 			// Chuẩn bị tên stored procedure
 			string storedProcedureName = String.Format(ProcedureName.FilterRecordNotIn, typeof(FixedAsset).Name);
@@ -172,24 +164,28 @@ namespace Hcsn.WebApplication.DL.AssetDL
 			parameters.Add("p_keyword", keyword);
 			parameters.Add("p_limit", limit);
 			parameters.Add("p_offset", offset);
-			parameters.Add("p_not_in_ids", notInIdAssets==null ? null: $"('{string.Join("','", notInIdAssets)}')");
-			parameters.Add("p_active_ids", activeIdAssets == null ? null: $"('{string.Join("','", activeIdAssets)}')");
+			parameters.Add("p_asset_not_in_ids", idAssetsNotIn == null ? null: $"('{string.Join("','", idAssetsNotIn)}')");
+			parameters.Add("p_asset_active_ids", idAssetsActive == null ? null: $"('{string.Join("','", idAssetsActive)}')");
 
 			// Khởi tạo kết nối tới Database
 			var dbConnection = _assetRepository.GetOpenConnection();
 			// Thực hiện gọi vào Database để chạy stored procedure
 			var result = _assetRepository.QueryMultiple(dbConnection, storedProcedureName, parameters, commandType: CommandType.StoredProcedure);
-			var assetDTOs = result.Read<FixedAssetDTO>().ToList();
+			var assetDTO = result.Read<FixedAssetDTO>().ToList();
 			int totalRecord = result.Read<int>().Single();
 			int quantityTotal = result.Read<int>().Single();
 			decimal costTotal = result.Read<decimal>().Single();
 			decimal depreciationValueTotal = result.Read<decimal>().Single();
 			decimal residualValueTotal = result.Read<decimal>().Single();
 			dbConnection.Close();
+			foreach (var item in assetDTO)
+			{
+				item.residual_value = item.residual_value < 0 ? 0 : item.residual_value;
+			}
 			// Xử lý kết quả trả về
 			return new PagingResultAsset
 			{
-				Data = assetDTOs,
+				Data = assetDTO,
 				TotalRecord = totalRecord,
 				QuantityTotal = quantityTotal,
 				CostTotal = costTotal,
@@ -205,6 +201,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// <returns>
 		/// Số lượng tài sản đã chứng từ
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public int GetQuantityAssetActive(List<Guid> ids)
 		{
 			string storedProcedureName = ProcedureNameAsset.CheckIncrement;

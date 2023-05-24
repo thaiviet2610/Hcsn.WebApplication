@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Hcsn.WebApplication.Common.Entities.DTO.entityDTO
 {
-    public class FixedAssetFilterNotIn
+    public class FixedAssetFilterNoActive
     {
-        public List<Guid>? NotInAssets { get; set; }
+        public List<Guid>? AssetsNotIn { get; set; }
 
-        public List<Guid>? ActiveAssets { get; set; }
+        public List<Guid>? AssetsActive { get; set; }
 
     }
 }

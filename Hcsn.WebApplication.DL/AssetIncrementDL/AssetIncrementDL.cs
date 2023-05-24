@@ -132,7 +132,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			{
 				idAssets.Add(asset.fixed_asset_id);
 			}
-			PrepareUpdateAssetActive(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.True);
+			PrepareUpdateAssetActiveByIdAsset(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.True);
 			var dbConnection = _assetIncrementRepository.GetOpenConnection();
 			using (var transaction = dbConnection.BeginTransaction())
 			{
@@ -140,7 +140,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 				{
 					int numberOfAffectedRowsInsertAssetIncrement = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameInsertAssetIncrement, parametersAssetIncrement, transaction: transaction, commandType: CommandType.StoredProcedure);
 					int numberOfAffectedRowsInsertAssetIncrementDetail = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameInsertAssetIncrementDetail, parametersAssetIncrementDetail, transaction: transaction, commandType: CommandType.StoredProcedure);
-					int numberOfAffectedRowsUpdateAssetActive = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameUpdateAssetActive, parametersUpdateAssetActive, transaction: transaction, commandType: CommandType.StoredProcedure);
+					int numberOfAffectedRowsUpdateAssetActive = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameUpdateAssetActive, parametersUpdateAssetActive, transaction: transaction, commandType: CommandType.Text);
 					if (numberOfAffectedRowsInsertAssetIncrement == 0 || numberOfAffectedRowsInsertAssetIncrementDetail != assets.Count || numberOfAffectedRowsUpdateAssetActive != assets.Count)
 					{
 						transaction.Rollback();
@@ -263,10 +263,10 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			// Khởi tạo kết nối tới Database
 			var dbConnection = _assetIncrementRepository.GetOpenConnection();
 			// Thực hiện gọi vào Database để chạy stored procedure
-			var assetIncrement = _assetIncrementRepository.QueryFirstOrDefault<FixedAssetIncrement>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
+			string voucher_code = _assetIncrementRepository.QueryFirstOrDefault<String>(dbConnection, storedProcedureName, commandType: CommandType.StoredProcedure);
 			dbConnection.Close();
 
-			return assetIncrement?.voucher_code.Trim();
+			return voucher_code;
 		}
 
 		/// <summary>
@@ -285,9 +285,9 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			// Chuẩn bị tên stored procedure
 			PrepareUpdateDataUpdateAssetIncrement(assetIncrement, idAssetsDelete, out string storedProcedureNameUpdateAssetIncrement, out DynamicParameters parametersUpdateAssetIncrement);
 			PrepareUpdataDataInsertAssetIncrementDetail(assetIncrement, idAssetsAdd, out string storedProcedureNameInsertAssetIncrementDetail, out DynamicParameters parametersInsertAssetIncrementDetail);
-			PrepareUpdateAssetActive(idAssetsAdd, out string storedProcedureNameUpdateAssetTrue, out DynamicParameters parametersUpdateAssetActiveTrue, (int)Active.True);
+			PrepareUpdateAssetActiveByIdAsset(idAssetsAdd, out string storedProcedureNameUpdateAssetTrue, out DynamicParameters parametersUpdateAssetActiveTrue, (int)Active.True);
 			PrepareDataDeleteAssetIncrementDetailByIdAssets(idAssetsDelete, out string storedProcedureNameDeleteAssetIncrementDetail, out DynamicParameters parametersDeleteAssetIncrementDetail);
-			PrepareUpdateAssetActive(idAssetsDelete, out string storedProcedureNameUpdateAssetFalse, out DynamicParameters parametersUpdateAssetActiveFalse, (int)Active.False);
+			PrepareUpdateAssetActiveByIdAsset(idAssetsDelete, out string storedProcedureNameUpdateAssetFalse, out DynamicParameters parametersUpdateAssetActiveFalse, (int)Active.False);
 			// Khởi tạo kết nối tới Database
 			// Thực hiện gọi vào Database để chạy stored procedure
 			bool check = true;
@@ -311,7 +311,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 															transaction: transaction, commandType: CommandType.StoredProcedure);
 						int numberOfAffectedRowsUpdateAssetActiveTrue = _assetIncrementRepository.Execute(dbConnection,
 															storedProcedureNameUpdateAssetTrue, parametersUpdateAssetActiveTrue,
-															transaction: transaction, commandType: CommandType.StoredProcedure);
+															transaction: transaction, commandType: CommandType.Text);
 						if (numberOfAffectedRowsInsertAssetIncrementDetail != idAssetsAdd.Count || numberOfAffectedRowsUpdateAssetActiveTrue != idAssetsAdd.Count)
 						{
 							transaction.Rollback();
@@ -326,7 +326,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 															transaction: transaction, commandType: CommandType.Text);
 						int numberOfAffectedRowsUpdateAssetActiveFalse = _assetIncrementRepository.Execute(dbConnection,
 															storedProcedureNameUpdateAssetFalse, parametersUpdateAssetActiveFalse,
-															transaction: transaction, commandType: CommandType.StoredProcedure);
+															transaction: transaction, commandType: CommandType.Text);
 						if (numberOfAffectedRowsDeleteAssetIncrementDetail != idAssetsDelete.Count || numberOfAffectedRowsUpdateAssetActiveFalse != idAssetsDelete.Count)
 						{
 							transaction.Rollback();
@@ -394,47 +394,9 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			{
 				voucherId
 			};
-			PrepareDataGetAssetsByVoucherId(idVouchers, out string storedProcedureNameGetAssetsByIdVoucher, out DynamicParameters parametersGetAssetsByIdVoucher);
-			var dbConnection = _assetIncrementRepository.GetOpenConnection();
-			var result = _assetIncrementRepository.QueryMultiple(dbConnection, storedProcedureNameGetAssetsByIdVoucher, parametersGetAssetsByIdVoucher, commandType: CommandType.Text);
-			var idAssets = result.Read<Guid>().ToList();
-			dbConnection.Close();
+			return DeleteMultipleAssetIncrement(idVouchers);
 
-			PrepareDataDeleteAssetIncrementById(voucherId, out string storedProcedureNameDeleteAssetIncrement,
-												out DynamicParameters parametersDeleteAssetIncrement);
-
-			PrepareUpdateAssetActive(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.False);
-			// Khởi tạo kết nối tới Database
-			bool checkDelete = true;
-			dbConnection.Open();
-			using (var transaction = dbConnection.BeginTransaction())
-			{
-				try
-				{
-					// Thực hiện gọi vào Database để chạy stored procedure
-					int numberOfAffectedRowsDeleteAssetIncrement = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameDeleteAssetIncrement, parametersDeleteAssetIncrement, transaction: transaction, commandType: CommandType.StoredProcedure);
-					int numberOfAffectedRowsUpdateAssetActive = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameUpdateAssetActive, parametersUpdateAssetActive, transaction: transaction, commandType: CommandType.StoredProcedure);
-
-					if (numberOfAffectedRowsUpdateAssetActive != idAssets.Count || numberOfAffectedRowsDeleteAssetIncrement == 0)
-					{
-						transaction.Rollback();
-						checkDelete = false;
-					}
-					else
-					{
-						transaction.Commit();
-					}
-
-				}
-				catch (Exception)
-				{
-					transaction.Rollback();
-					checkDelete = false;
-				}
-			}
-			dbConnection.Close();
-			// Xử lý kết quả trả về
-			return checkDelete;
+			
 		}
 
 
@@ -457,7 +419,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 			var idAssets = result.Read<Guid>().ToList();
 			dbConnection.Close();
 			PrepareDataDeleteMultipleAssetIncrement(ids, out string storedProcedureNameDeleteMultipleAssetIncrement, out DynamicParameters parametersDeleteMultipleAssetIncrement);
-			PrepareUpdateAssetActive(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.False);
+			PrepareUpdateAssetActiveByIdAsset(idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, (int)Active.False);
 			bool checkDeleteMultiple = true;
 			dbConnection.Open();
 			using (var transaction = dbConnection.BeginTransaction())
@@ -466,7 +428,7 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 				{
 					// Thực hiện gọi vào Database để chạy stored procedure
 					int numberOfAffectedRowsDeleteMultipleAssetIncrement = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameDeleteMultipleAssetIncrement, parametersDeleteMultipleAssetIncrement, transaction: transaction, commandType: CommandType.StoredProcedure);
-					int numberOfAffectedRowsUpdateAssetActive = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameUpdateAssetActive, parametersUpdateAssetActive, transaction: transaction, commandType: CommandType.StoredProcedure);
+					int numberOfAffectedRowsUpdateAssetActive = _assetIncrementRepository.Execute(dbConnection, storedProcedureNameUpdateAssetActive, parametersUpdateAssetActive, transaction: transaction, commandType: CommandType.Text);
 
 					if (numberOfAffectedRowsUpdateAssetActive != idAssets.Count || numberOfAffectedRowsDeleteMultipleAssetIncrement == 0)
 					{
@@ -498,19 +460,18 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 		/// <param name="parametersUpdateAssetActive">Tham số đầu vào cho stored</param>
 		/// <param name="valueActive">giá trị trạng thái</param>
 		/// Creted by: LTVIET (12/05/2023)
-		private static void PrepareUpdateAssetActive(List<Guid>? idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, int valueActive)
+		private static void PrepareUpdateAssetActiveByIdAsset(List<Guid>? idAssets, out string storedProcedureNameUpdateAssetActive, out DynamicParameters parametersUpdateAssetActive, int valueActive)
 		{
-			storedProcedureNameUpdateAssetActive = ProcedureNameAsset.UpdateActive;
+			storedProcedureNameUpdateAssetActive = ProcedureNameAsset.UpdateActiveByIdAsset;
 			parametersUpdateAssetActive = new DynamicParameters();
-			string idAssetsToString = "('')";
-			if (idAssets != null)
-			{
-				idAssetsToString = $"('{string.Join("','", idAssets)}')";
-			}
-			parametersUpdateAssetActive.Add("p_ids", idAssetsToString);
-			parametersUpdateAssetActive.Add("p_value", valueActive);
+			parametersUpdateAssetActive.Add("@p_idAssets", idAssets);
+			parametersUpdateAssetActive.Add("@p_active", valueActive);
+			parametersUpdateAssetActive.Add("@p_modified_date", DateTime.Now);
 
 		}
+
+
+
 
 		/// <summary>
 		/// Hàm chuẩn bị dữ liệu để gọi vào database để xóa các chứng từ chi tiết theo id tài sản
@@ -524,11 +485,6 @@ namespace Hcsn.WebApplication.DL.AssetIncrementDL
 
 			storedProcedureNameDeleteAssetIncrementDetail = ProcedureNameAssetIncrementDetail.DeleteMultipleByIdAssets;
 			parametersDeleteAssetIncrementDetail = new DynamicParameters();
-			//var listIdToString = "('')";
-			//if (idAssetsDelete != null)
-			//{
-			//	listIdToString = $"('{string.Join("','", idAssetsDelete)}')";
-			//}
 			parametersDeleteAssetIncrementDetail.Add("@p_ids", idAssetsDelete);
 
 		}

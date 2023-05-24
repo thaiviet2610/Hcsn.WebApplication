@@ -124,9 +124,10 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// Created by: LTVIET (20/04/2023)
 		private ValidateResult ValidateRequesData(FixedAssetIncrementDTO assetIncrementDTO)
 		{
-			var validateEmptyResult = ValidateEmpty(assetIncrementDTO);
-			var validateCustomResult = ValidateCustom(assetIncrementDTO);
-			bool checkAssetsNull = false;
+			var isEmpty = IsEmpty(assetIncrementDTO);
+			var isMaxLength = IsOutMaxLength(assetIncrementDTO);
+			var isDuplicate = IsDuplicate(assetIncrementDTO);
+			bool isAssetsNull = false;
 			if (assetIncrementDTO.assets.Count == 0 || assetIncrementDTO.assets == null)
 			{
 				inValidList.Add(new ValidateResult
@@ -135,12 +136,12 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 					ValidateCode = ValidateCode.NoAssetIncrements,
 					Message = ValidateResource.NoAssetIncrements,
 				});
-				checkAssetsNull = true;
+				isAssetsNull = true;
 			}
 
 			return new ValidateResult
 			{
-				IsSuccess = validateEmptyResult && validateCustomResult && !checkAssetsNull,
+				IsSuccess = !isEmpty && !isMaxLength && !isDuplicate && !isAssetsNull,
 				Data = inValidList
 			};
 			
@@ -156,9 +157,9 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// fasle: thất bại
 		/// </returns>
 		/// Created by: LTVIET (20/04/2023)
-		private bool ValidateEmpty(FixedAssetIncrement assetIncrement)
+		private bool IsEmpty(FixedAssetIncrement assetIncrement)
 		{
-			bool check = true;
+			bool isEmpty = false;
 			var validateEmpty = new List<String>();
 			var properties = typeof(FixedAssetIncrement).GetProperties();
 
@@ -171,10 +172,10 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 				if (requiredAttribute != null && (propValue == null || String.IsNullOrEmpty(propValue.ToString().Trim())))
 				{
 					validateEmpty.Add(propName);
-					check = false;
+					isEmpty = true;
 				}
 			}
-			if (!check)
+			if (isEmpty)
 			{
 				inValidList.Add(new ValidateResult
 				{
@@ -184,83 +185,98 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 					Data = validateEmpty
 				});
 			}
-			return check;
+			return isEmpty;
 		}
 
 		/// <summary>
-		/// Hàm validate riêng dữ liệu 
+		/// Hàm kiểm tra độ dài dữ liệu vượt quá giới hạn
 		/// </summary>
 		/// <param name="assetIncrement">Đối tượng chứng từ cần validate</param>
 		/// <returns>
 		/// Kết quả validate dữ liệu:
-		/// true: thành công
-		/// false: thất bại
+		/// true: vượt quá giới hạn
+		/// false: không vượt quá giới hạn
 		/// </returns>
 		/// Created by: LTViet (20/04/2023)
-		public bool ValidateCustom(FixedAssetIncrement assetIncrement)
+		public bool IsOutMaxLength(FixedAssetIncrement assetIncrement)
 		{
-			bool check = true;
+			bool isOutMaxLength = false;
 			var properties = typeof(FixedAssetIncrement).GetProperties();
 
 			foreach (var property in properties)
 			{
 				string propName = property.Name;
 				var propValue = property.GetValue(assetIncrement);
-				bool isOutMaxLength = IsOutMaxLength(property, propName, propValue);
-				bool isDuplicate = false;
-				if (!isOutMaxLength)
+				if (property.IsDefined(typeof(HcsnMaxLengthAttribute), false))
 				{
-					isDuplicate = IsPropertyDuplicate(assetIncrement, property, propName, propValue);
-				}
-
-				if (isOutMaxLength || isDuplicate)
-				{
-					check = false;
-				}
-			}
-			return check;
-		}
-
-		/// <summary>
-		/// Hàm validate giá trị không được trùng nhau
-		/// </summary>
-		/// <param name="assetIncrement">Đối tượng tài sản ghi tăng cần validate</param>
-		/// <param name="property">Thuộc tính cần validate</param>
-		/// <param name="propName">Tên của thuộc tính cần validate</param>
-		/// <param name="propValue">Giá trị của thuộc tính cần validate</param>
-		/// <returns>
-		/// Kết quả validate
-		/// true: có lỗi
-		/// flase: Không Có lỗi
-		/// </returns>
-		/// Created by: LTVIET (20/04/2023)
-		private bool IsPropertyDuplicate(FixedAssetIncrement assetIncrement, PropertyInfo property, string propName, object? propValue)
-		{
-			bool checkDuplicate = false;
-			if (property.IsDefined(typeof(HcsnDuplicateAttribute), false))
-			{
-				var attDuplicate = (HcsnDuplicateAttribute?)property.GetCustomAttributes(typeof(HcsnDuplicateAttribute), false).FirstOrDefault();
-
-				if (attDuplicate != null && !String.IsNullOrEmpty(propValue.ToString().Trim()))
-				{
-					var isSameCode = IsDuplicate(assetIncrement, propName);
-					if (!isSameCode.IsSuccess)
+					var attHcsnLength = property.GetCustomAttributes(typeof(HcsnMaxLengthAttribute), false).FirstOrDefault();
+					int propLength = (attHcsnLength as HcsnMaxLengthAttribute).Length;
+					if (propValue?.ToString()?.Trim().Length > propLength)
 					{
-						var attName = (HcsnNameAttribute?)property.GetCustomAttributes(typeof(HcsnNameAttribute), false).FirstOrDefault();
-						var attributeName = (attName as HcsnNameAttribute).PropName;
+						var attributeName = "";
+						if (property.IsDefined(typeof(HcsnNameAttribute), false))
+						{
+							var attName = (HcsnNameAttribute?)property.GetCustomAttributes(typeof(HcsnNameAttribute), false).FirstOrDefault();
+							attributeName = (attName as HcsnNameAttribute).PropName;
+						}
 						inValidList.Add(new ValidateResult
 						{
 							IsSuccess = false,
-							ValidateCode = ValidateCode.Duplicate,
-							Message = String.Format(ValidateResource.Duplicate, attributeName, propValue)
+							ValidateCode = ValidateCode.MaxLength,
+							Message = String.Format(ValidateResource.OutMaxLength, attributeName, propLength),
+							Data = propName
 						});
-						checkDuplicate = true;
+						isOutMaxLength = true;
 					}
 				}
-			}
 
-			return checkDuplicate;
+			}
+			return isOutMaxLength;
 		}
+
+		/// <summary>
+		/// Hàm kiểm tra xem thuộc tính có bị trùng không
+		/// </summary>
+		/// <param name="assetIncrement">Đối tượng chứng từ cần validate</param>
+		/// <returns>
+		/// Kết quả validate dữ liệu:
+		/// true: thuộc tính có bị trùng
+		/// false: không bị trùng
+		/// </returns>
+		/// Created by: LTViet (20/04/2023)
+		private bool IsDuplicate(FixedAssetIncrement assetIncrement)
+		{
+			bool isDuplicate = false;
+			var properties = typeof(FixedAssetIncrement).GetProperties();
+
+			foreach (var property in properties)
+			{
+				string propName = property.Name;
+				var propValue = property.GetValue(assetIncrement);
+				if (property.IsDefined(typeof(HcsnDuplicateAttribute), false))
+				{
+					if (!String.IsNullOrEmpty(propValue?.ToString()?.Trim()))
+					{
+						if (checkDuplicate(assetIncrement, propName))
+						{
+							var attName = (HcsnNameAttribute?)property.GetCustomAttributes(typeof(HcsnNameAttribute), false).FirstOrDefault();
+							var attributeName = (attName as HcsnNameAttribute).PropName;
+							inValidList.Add(new ValidateResult
+							{
+								IsSuccess = false,
+								ValidateCode = ValidateCode.Duplicate,
+								Message = String.Format(ValidateResource.Duplicate, attributeName, propValue)
+							});
+							isDuplicate = true;
+						}
+					}
+
+				}
+			}
+			return isDuplicate;
+
+		}
+
 
 		/// <summary>
 		/// Hàm xử lý logic khi kiểm tra xem thuộc tính có bị trùng không ?
@@ -269,59 +285,15 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 		/// <param name="propertyName">tên thuộc tính cần kiểm tra</param>
 		/// <returns>
 		/// Kết quả kiểm tra:
-		/// IsSuccess == true: không bị trùng
-		/// IsSuccess == false:  bị trùng
+		/// true: bị trùng
+		/// false: không bị trùng
 		/// </returns>
 		/// Created by: LTVIET (20/04/2023)
-		public ValidateResult IsDuplicate(FixedAssetIncrement assetIncrement, string propertyName)
+		public bool checkDuplicate(FixedAssetIncrement assetIncrement, string propertyName)
 		{
-			var numberOfAffectedRows = _assetIncrementDL.GetNumberRecordOfPropertyDuplicate(assetIncrement, propertyName);
-			return new ValidateResult
-			{
-				IsSuccess = numberOfAffectedRows == 0,
-				ValidateCode = ValidateCode.Duplicate,
-			};
-		}
+			var numberRecord = _assetIncrementDL.GetNumberRecordOfPropertyDuplicate(assetIncrement, propertyName);
 
-		/// <summary>
-		/// Hàm validate giá trị không được vượt quá số ký tự cho trước
-		/// </summary>
-		/// <param name="property">Thuộc tính cần validate</param>
-		/// <param name="propName">Tên của thuộc tính cần validate</param>
-		/// <param name="propValue">Giá trị của thuộc tính cần validate</param>
-		/// <returns>
-		/// Kết quả validate
-		/// true:  có lỗi
-		/// flase: Không Có lỗi
-		/// </returns>
-		/// Created by: LTVIET (20/04/2023)
-		private bool IsOutMaxLength(PropertyInfo property, string propName, object? propValue)
-		{
-			bool checkOutMaxLength = false;
-			if (property.IsDefined(typeof(HcsnMaxLengthAttribute), false))
-			{
-				var attHcsnLength = property.GetCustomAttributes(typeof(HcsnMaxLengthAttribute), false).FirstOrDefault();
-				int propLength = (attHcsnLength as HcsnMaxLengthAttribute).Length;
-				if (propValue?.ToString()?.Trim().Length > propLength)
-				{
-					var attributeName = "";
-					if (property.IsDefined(typeof(HcsnNameAttribute), false))
-					{
-						var attName = (HcsnNameAttribute?)property.GetCustomAttributes(typeof(HcsnNameAttribute), false).FirstOrDefault();
-						attributeName = (attName as HcsnNameAttribute).PropName;
-					}
-					inValidList.Add(new ValidateResult
-					{
-						IsSuccess = false,
-						ValidateCode = ValidateCode.MaxLength,
-						Message = String.Format(ValidateResource.OutMaxLength, attributeName, propLength),
-						Data = propName
-					});
-					checkOutMaxLength = true;
-				}
-			}
-
-			return checkOutMaxLength;
+			return numberRecord > 0;
 		}
 
 		/// <summary>
@@ -382,14 +354,14 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 					int lengthNumberPart = numberPart.Length;
 					// Tăng phần số lên một đơn vị
 					int numberCode = int.Parse(numberPart) + 1;
-					// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
-					strNumberCode = "" + numberCode;
+					strNumberCode = numberCode.ToString();
 					while (strNumberCode.Length < lengthNumberPart)
 					{
 						strNumberCode = '0' + strNumberCode.Trim();
 					}
 				}
-                
+				// Tạo ra code mới bằng cách nối phần chữ và phần số mới 
+
 				newCode = alphaPart.Trim() + strNumberCode.Trim();
 				// Kiểm tra xem code mới có bị trùng không
 				// Lấy ra số bản ghi tài sản có code bằng code mới
@@ -398,8 +370,8 @@ namespace Hcsn.WebApplication.BL.AssetIncrementBL
 					voucher_id = Guid.NewGuid(),
 					voucher_code = newCode,
 				};
-				var result = IsDuplicate(assetIncrement, Resources.FixedAssetIncrementCodePropName);
-				check = result.IsSuccess;
+				var isDuplicate = checkDuplicate(assetIncrement, Resources.FixedAssetIncrementCodePropName);
+				check = !isDuplicate;
 				if (!check)
 				{
 					oldCode = newCode;

@@ -62,7 +62,7 @@ namespace Hcsn.WebApplication.API.Controllers
                 var result = _assetBL.GetPaging(keyword, departmentId, fixedAssetCatagortId, pageSize, pageNumber);
                 if (!result.IsSuccess)
                 {
-                    return StatusCode(500, new ErrorResult
+                    return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
                     {
                         ErrorCode = ErrorCode.NotFound,
                         DevMsg = ErrorResource.DevMsg_NotFound,
@@ -95,7 +95,7 @@ namespace Hcsn.WebApplication.API.Controllers
 					return StatusCode(StatusCodes.Status200OK, result.Data);
 				}
 
-				return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult
+				return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
 				{
 					ErrorCode = ErrorCode.GenerateNewCodefailed,
 					DevMsg = ErrorResource.DevMsg_GetNewCodeFailed,
@@ -158,19 +158,19 @@ namespace Hcsn.WebApplication.API.Controllers
 		/// Created by: LTVIET (09/03/2023)
 		[HttpPost("FilterNotIn")]
 		public IActionResult GetRecordNotIn(
-			[FromBody] FixedAssetFilterNotIn assetFilterNotIn,
+			[FromBody] FixedAssetFilterNoActive assetFilterNoActive,
 			[FromQuery] string? keyword,
 			[FromQuery] int pageSize = 10,
 			[FromQuery] int pageNumber = 1)
 		{
 			try
 			{
-				var notInIdAssets = assetFilterNotIn.NotInAssets;
-				var activeIdAssets = assetFilterNotIn.ActiveAssets;
-				var result = _assetBL.GetAllAssetNotIn(keyword, pageSize, pageNumber, notInIdAssets, activeIdAssets);
+				var assetsNotIn = assetFilterNoActive.AssetsNotIn;
+				var assetsActive = assetFilterNoActive.AssetsActive;
+				var result = _assetBL.GetAllAssetNoActive(keyword, pageSize, pageNumber, assetsNotIn, assetsActive);
 				if (!result.IsSuccess)
 				{
-					return StatusCode(500, new ErrorResult
+					return StatusCode(StatusCodes.Status400BadRequest, new ErrorResult
 					{
 						ErrorCode = ErrorCode.NotFound,
 						DevMsg = ErrorResource.DevMsg_NotFound,
@@ -187,6 +187,11 @@ namespace Hcsn.WebApplication.API.Controllers
 			}
 		}
 
+		/// <summary>
+		/// Hàm xử lý lỗi khi xảy ra excepcion
+		/// </summary>
+		/// <returns>Đối tượng chứa thông tin lỗi</returns>
+		/// Created by: LTVIET (15/04/2023)
 		private ActionResult HandleErrorException()
 		{
 			return StatusCode(StatusCodes.Status500InternalServerError, new ErrorResult

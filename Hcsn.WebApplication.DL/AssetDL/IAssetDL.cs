@@ -29,7 +29,6 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// - Tổng giá trị còn lại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		/// Created by: LTVIET (09/03/2023)
 		PagingResultAsset GetPaging
             (string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId, int pageSize, int pageNumber);
 
@@ -55,8 +54,8 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
-		/// <param name="notInIdAssets">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
-		/// <param name="activeIdAssets">Danh sách các id của các tài sản đã active cần lấy ra</param>
+		/// <param name="idAssetsNoIn">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
+		/// <param name="idAssetsActive">Danh sách các id của các tài sản đã active cần lấy ra</param>
 		/// <returns> 
 		/// Đối tượng PagingResult bao gồm:
 		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
@@ -67,7 +66,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// - Tổng giá trị còn lại
 		/// </returns>
 		/// Created by: LTVIET (09/03/2023)
-		public PagingResultAsset GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets);
+		public PagingResultAsset GetAllAssetNotActive(string? keyword, int pageSize, int pageNumber, List<Guid>? idAssetsNoIn, List<Guid>? idAssetsActive);
 
 		/// <summary>
 		/// Hàm gọi api lấy ra số lượng tài sản đã chứng từ
@@ -76,6 +75,7 @@ namespace Hcsn.WebApplication.DL.AssetDL
 		/// <returns>
 		/// Số lượng tài sản đã chứng từ
 		/// </returns>
+		/// Created by: LTVIET (20/04/2023)
 		public int GetQuantityAssetActive(List<Guid> ids);
 	}
 }

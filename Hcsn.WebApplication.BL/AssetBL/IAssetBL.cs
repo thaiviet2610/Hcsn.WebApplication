@@ -50,20 +50,20 @@ namespace Hcsn.WebApplication.BL.AssetBL
 		Stream ExportExcel(string? keyword, Guid? departmentId, Guid? fixedAssetCatagortId);
 
 		/// <summary>
-		/// Hàm lấy danh sách tài sản theo bộ lọc và phân trang
+		/// Hàm lấy danh sách tài sản chưa chứng từ theo bộ lọc và phân trang
 		/// </summary>
 		/// <param name="keyword">Từ khóa tìm kiếm (mã tài sản, tên tài sản)</param> 
 		/// <param name="pageSize">Số bản ghi trong 1 trang</param> 
 		/// <param name="pageNumber">Vị trí trang hiện tại</param>
-		/// <param name="notInIdAssets">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
-		/// <param name="activeIdAssets">Danh sách các id của các tài sản đã active cần lấy ra</param>
+		/// <param name="idAssetsNotIn">Danh sách các id của các tài sản chưa active không cần lấy ra</param>
+		/// <param name="idAssetsActive">Danh sách các id của các tài sản đã active cần lấy ra</param>
 		/// <returns> 
-		/// Đối tượng PagingResult bao gồm:
-		/// - Danh sách tài sản trong 1 trang không nằm trong danh sách cho trước
-		/// - Tổng số bản ghi thỏa mãn điều kiện
+		/// Đối tượng ServiceResult thể hiện kết quả việc thực hiện logic:
+		/// IsSuccess == true: thành công
+		/// IsSuccess == false: thất bại
 		/// </returns>
-		/// Created by: LTVIET (09/03/2023)
-		public ServiceResult GetAllAssetNotIn(string? keyword, int pageSize, int pageNumber, List<Guid>? notInIdAssets, List<Guid>? activeIdAssets);
+		/// Created by: LTVIET (19/04/2023)
+		public ServiceResult GetAllAssetNoActive(string? keyword, int pageSize, int pageNumber, List<Guid>? idAssetsNotIn, List<Guid>? idAssetsActive);
 
 
 	} 
